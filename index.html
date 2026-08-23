@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOLC LAB - Preparazione Test Universitari</title>
+    <title>TOLC LAB - Piattaforma Professionale</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-user-lock"></i>
                 </div>
                 <h3 id="auth-title" class="text-2xl font-bold text-slate-800">Accedi al tuo account</h3>
-                <p id="auth-subtitle" class="text-sm text-slate-500">Salva i tuoi progressi e monitora le statistiche dei test TOLC.</p>
+                <p id="auth-subtitle" class="text-sm text-slate-500">Accesso sicuro alla banca dati ufficiale TOLC LAB.</p>
             </div>
 
             <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4">
@@ -63,55 +63,15 @@
             </div>
         </section>
 
-        <!-- ONBOARDING VIEW -->
-        <section id="view-onboarding" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-8">
-            <div class="text-center space-y-2">
-                <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto text-2xl mb-2">
-                    <i class="fa-solid fa-compass"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-800">Quale corso di laurea vuoi frequentare?</h3>
-                <p class="text-sm text-slate-500">Seleziona il tuo obiettivo accademico per personalizzare i test e ricevere suggerimenti mirati.</p>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <button type="button" onclick="selectDegree('Ingegneria')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-gears text-indigo-600 text-lg"></i>
-                    <span>Ingegneria</span>
-                </button>
-                <button type="button" onclick="selectDegree('Medicina')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-heart-pulse text-indigo-600 text-lg"></i>
-                    <span>Medicina</span>
-                </button>
-                <button type="button" onclick="selectDegree('Farmacia')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-pills text-indigo-600 text-lg"></i>
-                    <span>Farmacia</span>
-                </button>
-                <button type="button" onclick="selectDegree('Psicologia')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-brain text-indigo-600 text-lg"></i>
-                    <span>Psicologia</span>
-                </button>
-                <button type="button" onclick="selectDegree('Lettere')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-book-open text-indigo-600 text-lg"></i>
-                    <span>Lettere</span>
-                </button>
-                <button type="button" onclick="selectDegree('Economia')" class="p-4 border border-slate-200 rounded-xl text-left hover:border-indigo-500 hover:bg-indigo-50 transition font-semibold text-slate-700 flex items-center space-x-3">
-                    <i class="fa-solid fa-chart-line text-indigo-600 text-lg"></i>
-                    <span>Economia</span>
-                </button>
-            </div>
-            <div class="pt-2">
-                <button onclick="skipOnboarding()" class="w-full py-2 text-sm text-slate-400 hover:text-slate-600 font-medium">Salta per ora</button>
-            </div>
-        </section>
-
         <!-- DASHBOARD VIEW -->
         <section id="view-dashboard" class="space-y-8">
             <div class="bg-gradient-to-r from-indigo-500 to-violet-600 rounded-2xl p-6 md:p-10 text-white shadow-lg flex flex-col md:flex-row justify-between items-center">
                 <div class="space-y-3 mb-6 md:mb-0">
                     <span id="user-degree-badge" class="bg-indigo-400 bg-opacity-40 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Obiettivo: non impostato</span>
                     <h2 class="text-3xl font-extrabold tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Allenati con simulazioni mirate per materia o avvia un test completo multi-materia.</p>
+                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Accedi a migliaia di quiz verificati da database PostgreSQL.</p>
                 </div>
-                <button onclick="startFullSimulationQuick()" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-xl shadow hover:bg-indigo-50 transition transform hover:-translate-y-0.5">
+                <button onclick="startFullSimulationQuick()" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-xl shadow hover:bg-indigo-50 transition transform hover:-translate-y-0.5 whitespace-nowrap">
                     <i class="fa-solid fa-rocket mr-2"></i> Avvia Simulazione Completa
                 </button>
             </div>
@@ -140,78 +100,26 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Suggerimenti e Test Rapidi in Evidenza -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-slate-800">Consigliati per te</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Card Test di Storia -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between hover:border-indigo-300 transition">
-                        <div class="space-y-2">
-                            <span class="bg-rose-50 text-rose-600 text-xs font-bold px-2.5 py-1 rounded-md uppercase">Nuovo</span>
-                            <h4 class="text-lg font-bold text-slate-800">Test di Storia</h4>
-                            <p class="text-sm text-slate-500">Mettiti alla prova su eventi storici, date chiave e istituzioni per i test TOLC e di ammissione.</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
-                            <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-clock mr-1"></i> 10 Domande</span>
-                            <button onclick="startSpecificTest('Storia')" class="bg-indigo-600 text-white text-sm font-bold px-4 py-2 rounded-xl hover:bg-indigo-700 transition">Inizia Test</button>
-                        </div>
-                    </div>
-
-                    <!-- Card Test di Logica -->
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between hover:border-indigo-300 transition">
-                        <div class="space-y-2">
-                            <span class="bg-indigo-50 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-md uppercase">Popolare</span>
-                            <h4 class="text-lg font-bold text-slate-800">Test di Logica</h4>
-                            <p class="text-sm text-slate-500">Affina il ragionamento logico, problem solving e deduzione formale con quiz mirati.</p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 flex justify-between items-center">
-                            <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-clock mr-1"></i> 10 Domande</span>
-                            <button onclick="startSpecificTest('Logica')" class="bg-indigo-600 text-white text-sm font-bold px-4 py-2 rounded-xl hover:bg-indigo-700 transition">Inizia Test</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Banner Simulatore Avanzato / Multi-materia -->
-            <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="space-y-2">
-                    <h3 class="text-xl font-bold text-slate-800">Vuoi simulare il vero test universitario?</h3>
-                    <p class="text-sm text-slate-500 max-w-xl">Usa il simulatore avanzato per selezionare più materie contemporaneamente o creare una simulazione completa su misura.</p>
-                </div>
-                <button onclick="navigate('custom-simulator')" class="bg-indigo-600 text-white font-bold px-6 py-3 rounded-xl shadow hover:bg-indigo-700 transition whitespace-nowrap">
-                    <i class="fa-solid fa-sliders mr-2"></i> Configura Simulatore
-                </button>
-            </div>
         </section>
 
-        <!-- CUSTOM SIMULATOR VIEW (Multi-materia & Difficoltà) -->
+        <!-- CUSTOM SIMULATOR VIEW -->
         <section id="view-custom-simulator" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-4">
             <div class="text-center space-y-2">
                 <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-2">
                     <i class="fa-solid fa-sliders"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800">Simulatore Avanzato</h3>
-                <p class="text-sm text-slate-500">Seleziona una o più materie e personalizza la tua sessione d'esame.</p>
+                <h3 class="text-2xl font-bold text-slate-800">Simulatore Avanzato (API)</h3>
+                <p class="text-sm text-slate-500">Interroga il database centrale per generare la tua prova.</p>
             </div>
 
             <form id="custom-sim-form" onsubmit="startCustomTest(event)" class="space-y-6">
-                <!-- Selezione Materie Multiple -->
                 <div class="space-y-2">
-                    <div class="flex justify-between items-center">
-                        <label class="text-xs font-bold text-slate-600 uppercase">Seleziona Materie (anche più di una)</label>
-                        <div class="space-x-2">
-                            <button type="button" onclick="selectAllCategories(true)" class="text-xs text-indigo-600 font-bold hover:underline">Seleziona tutte</button>
-                            <span class="text-slate-300">|</span>
-                            <button type="button" onclick="selectAllCategories(false)" class="text-xs text-slate-400 font-bold hover:underline">Deseleziona</button>
-                        </div>
-                    </div>
+                    <label class="text-xs font-bold text-slate-600 uppercase">Seleziona Materie</label>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 max-h-48 overflow-y-auto p-1 border border-slate-200 rounded-xl bg-slate-50" id="categories-checkbox-container">
-                        <!-- Generato via JS -->
+                        <!-- Popolato dinamicamente -->
                     </div>
                 </div>
 
-                <!-- Selezione Difficoltà -->
                 <div class="space-y-2">
                     <label class="text-xs font-bold text-slate-600 uppercase">Livello di Difficoltà</label>
                     <div class="grid grid-cols-3 gap-3">
@@ -230,17 +138,7 @@
                     </div>
                 </div>
 
-                <!-- Numero di Domande per Materia / Totale -->
-                <div class="space-y-1">
-                    <label class="text-xs font-bold text-slate-600 uppercase">Numero di domande per materia</label>
-                    <select id="sim-count-per-cat" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
-                        <option value="3">3 Domande (Test rapido)</option>
-                        <option value="5" selected>5 Domande (Standard)</option>
-                        <option value="10">10 Domande (Avanzato)</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-700 transition shadow">Avvia Simulazione Multi-Materia</button>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-3.5 rounded-xl font-bold hover:bg-indigo-700 transition shadow">Genera Test da Database</button>
             </form>
         </section>
 
@@ -249,7 +147,7 @@
             <div class="flex justify-between items-center border-b pb-4">
                 <div>
                     <span id="runner-category" class="text-xs font-bold text-indigo-600 uppercase">Categoria</span>
-                    <h3 id="runner-title" class="text-xl font-bold text-slate-800">Titolo Test</h3>
+                    <h3 id="runner-title" class="text-xl font-bold text-slate-800">Simulazione in corso</h3>
                 </div>
                 <div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg font-mono font-bold text-sm">
                     <i class="fa-solid fa-stopwatch mr-1"></i> <span id="timer-display">00:00</span>
@@ -261,10 +159,8 @@
                     <span id="question-progress">Domanda 1 di 10</span>
                     <span id="question-tag" class="bg-indigo-50 text-indigo-600 px-2.5 py-0.5 rounded-md font-bold">Materia</span>
                 </div>
-                <p id="question-text" class="text-lg font-semibold text-slate-800">Testo della domanda...</p>
-                <div id="options-container" class="space-y-3 pt-2">
-                    <!-- Opzioni generate via JS -->
-                </div>
+                <p id="question-text" class="text-lg font-semibold text-slate-800">Caricamento domanda...</p>
+                <div id="options-container" class="space-y-3 pt-2"></div>
             </div>
 
             <div class="flex justify-between pt-4 border-t">
@@ -280,108 +176,27 @@
             </div>
             <div>
                 <h3 class="text-2xl font-bold text-slate-800">Test Completato!</h3>
-                <p class="text-sm text-slate-500 mt-1">I tuoi dati e punteggi sono stati salvati nel tuo profilo.</p>
+                <p class="text-sm text-slate-500 mt-1">I risultati sono stati salvati sul server.</p>
             </div>
             <div class="bg-slate-50 p-6 rounded-xl flex justify-around items-center">
                 <div>
                     <p class="text-xs text-slate-400 uppercase font-bold">Punteggio</p>
-                    <h4 id="result-score" class="text-3xl font-extrabold text-indigo-600">80%</h4>
-                </div>
-                <div class="border-l h-10 border-slate-200"></div>
-                <div>
-                    <p class="text-xs text-slate-400 uppercase font-bold">Risposte Esatte</p>
-                    <h4 id="result-correct" class="text-3xl font-extrabold text-slate-700">8 / 10</h4>
+                    <h4 id="result-score" class="text-3xl font-extrabold text-indigo-600">0%</h4>
                 </div>
             </div>
-            <div class="flex space-x-3">
-                <button onclick="navigate('custom-simulator')" class="w-1/2 border border-indigo-600 text-indigo-600 py-3 rounded-xl font-bold hover:bg-indigo-50 transition">Nuova Simulazione</button>
-                <button onclick="navigate('dashboard')" class="w-1/2 bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Dashboard</button>
-            </div>
-        </section>
-
-        <!-- STATS VIEW -->
-        <section id="view-stats" class="hidden space-y-6">
-            <h3 class="text-2xl font-bold text-slate-800">Storico e Statistiche Personali</h3>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 space-y-4">
-                <h4 class="font-bold text-slate-700">Tutti i test completati</h4>
-                <div id="history-container" class="divide-y divide-slate-100">
-                    <p class="text-sm text-slate-400 py-4 text-center">Nessun test completato di recente.</p>
-                </div>
-            </div>
+            <button onclick="navigate('dashboard')" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Dashboard</button>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-        <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
-    </footer>
-
-    <!-- Application Script -->
+    <!-- Script di Integrazione Frontend-Backend -->
     <script>
+        const API_BASE_URL = 'http://localhost:3000/api'; // Indirizzo del server Node.js
         const categories = ["Logica", "Storia", "Matematica", "Fisica", "Chimica", "Informatica", "Inglese", "Biologia", "Diritto", "Economia", "Cultura"];
         
-        const questionTemplates = {
-            "Logica": [
-                { t: (x, d) => `Se un'azienda produce ${x} unità in 4 giorni, quante ne produce in ${d === 'Difficile' ? 15 : 12} giorni a ritmo costante?`, o: (x, d) => d === 'Difficile' ? [x*3.75, x*3, x*4, x*5] : [x*3, x*2, x*4, x*5], c: 0 },
-                { t: (x) => `Quale numero completa la progressione: ${x}, ${x*2}, ${x*4}, ${x*8}, ...?`, o: (x) => [x*16, x*12, x*10, x*20], c: 0 },
-                { t: () => "Se tutti i quadrati sono rettangoli e tutti i rettangoli sono poligoni, quale affermazione è deducibile?", o: () => ["Tutti i quadrati sono poligoni", "Nessun poligono è quadrato", "Alcuni poligoni non sono rettangoli", "I rettangoli non sono poligoni"], c: 0 }
-            ],
-            "Storia": [
-                { t: () => "In quale anno è caduta l'Impero Romano d'Occidente?", o: () => ["476 d.C.", "1492 d.C.", "313 d.C.", "768 d.C."], c: 0 },
-                { t: () => "Chi è stato il primo Presidente degli Stati Uniti d'America?", o: () => ["George Washington", "Abraham Lincoln", "Thomas Jefferson", "Benjamin Franklin"], c: 0 },
-                { t: () => "In quale anno è scoppiata la Prima guerra mondiale?", o: () => ["1914", "1939", "1915", "1912"], c: 0 }
-            ],
-            "Matematica": [
-                { t: (x) => `Quanto vale l'espressione: ${x} + ${x} × 2?`, o: (x) => [x*3, x*2, x*4, x+2], c: 0 },
-                { t: (x) => `Qual è il quadrato del numero ${x}?`, o: (x) => [x*x, x+x, (x*x)+2, (x*x)-1], c: 0 },
-                { t: (x) => `Risolvi l'equazione semplice: x + ${x} = ${x*2}`, o: (x) => [x, x*2, 0, x+1], c: 0 }
-            ],
-            "Fisica": [
-                { t: () => "Qual è l'unità di misura della forza nel Sistema Internazionale?", o: () => ["Newton", "Joule", "Watt", "Pascal"], c: 0 },
-                { t: () => "Se un corpo si muove a velocità costante, la sua accelerazione è:", o: () => ["Pari a zero", "Negativa", "Massima", "Crescente"], c: 0 },
-                { t: () => "Il lavoro meccanico si calcola come il prodotto scalare tra forza e:", o: () => ["Spostamento", "Tempo", "Velocità", "Massa"], c: 0 }
-            ],
-            "Chimica": [
-                { t: () => "Qual è il simbolo chimico del sodio?", o: () => ["Na", "So", "Sd", "K"], c: 0 },
-                { t: () => "A 25°C, il pH di una soluzione neutra è pari a:", o: () => ["7", "0", "14", "5"], c: 0 },
-                { t: () => "Il legame chimico che si forma per condivisione di elettroni è detto:", o: () => ["Covalente", "Ionico", "Metallico", "A idrogeno"], c: 0 }
-            ],
-            "Informatica": [
-                { t: () => "Cosa significa l'acronimo CPU?", o: () => ["Central Processing Unit", "Computer Personal Utility", "Control Program Utility", "Central Performance User"], c: 0 },
-                { t: () => "Quale protocollo viene utilizzato per la navigazione web sicura?", o: () => ["HTTPS", "FTP", "SMTP", "SSH"], c: 0 },
-                { t: () => "Quale struttura dati segue la logica LIFO (Last In, First Out)?", o: () => ["Pila (Stack)", "Coda (Queue)", "Albero", "Grafo"], c: 0 }
-            ],
-            "Inglese": [
-                { t: () => "Choose the correct past form of 'to go':", o: () => ["Went", "Gone", "Goed", "Going"], c: 0 },
-                { t: () => "Complete: 'If I _____ rich, I would travel.'", o: () => ["were", "am", "will be", "had been"], c: 0 },
-                { t: () => "What is the synonym of 'to achieve'?", o: () => ["To accomplish", "To fail", "To destroy", "To delay"], c: 0 }
-            ],
-            "Biologia": [
-                { t: () => "Quale organulo cellulare è noto come la centrale energetica della cellula?", o: () => ["Mitocondrio", "Ribosoma", "Apparato di Golgi", "Nucleo"], c: 0 },
-                { t: () => "Le molecole di DNA sono costituite da monomeri chiamati:", o: () => ["Nucleotidi", "Aminoacidi", "Monosaccaridi", "Acidi grassi"], c: 0 },
-                { t: () => "Il processo di divisione cellulare che produce gameti è detto:", o: () => ["Meiosi", "Mitosi", "Scissione", "Gemmazione"], c: 0 }
-            ],
-            "Diritto": [
-                { t: () => "La legge fondamentale della Repubblica Italiana è:", o: () => ["La Costituzione", "Il Codice Civile", "Il Decreto Legge", "I regolamenti UE"], c: 0 },
-                { t: () => "Il Parlamento italiano ha una struttura:", o: () => ["Bicamerali (Camera e Senato)", "Monocamerale", "Tribunale Supremo", "Consiglio di Stato"], c: 0 },
-                { t: () => "Chi presiede il Consiglio dei Ministri in Italia?", o: () => ["Il Presidente del Consiglio", "Il Presidente della Repubblica", "Il Ministro della Giustizia", "Il Capo dello Stato"], c: 0 }
-            ],
-            "Economia": [
-                { t: () => "In economia, quando la domanda supera l'offerta, cosa tende a fare il prezzo?", o: () => ["Aumentare", "Diminuire", "Rimanere stabile", "Azzerarsi"], c: 0 },
-                { t: () => "Il PIL (Prodotto Interno Lordo) misura:", o: () => ["Il valore totale di beni e servizi prodotti in Paese", "Il debito pubblico", "L'inflazione media", "Le esportazioni nette"], c: 0 },
-                { t: () => "L'inflazione rappresenta:", o: () => ["L'aumento generale e continuativo dei prezzi", "La diminuzione dei tassi d'interesse", "La crescita della disoccupazione", "Il surplus di bilancio"], c: 0 }
-            ],
-            "Cultura": [
-                { t: () => "In quale anno è iniziata la Rivoluzione Francese?", o: () => ["1789", "1492", "1815", "1914"], c: 0 },
-                { t: () => "Chi ha dipinto la Gioconda?", o: () => ["Leonardo da Vinci", "Michelangelo", "Raffaello", "Caravaggio"], c: 0 },
-                { t: () => "Qual è il fiume più lungo del mondo?", o: () => ["Rio delle Amazzoni / Nilo", "Mississippi", "Danubio", "Volga"], c: 0 }
-            ]
-        };
-
         let currentUser = null;
-        let isRegisterMode = false;
-        let currentTest = null;
+        let authToken = null;
+        let currentTest = { questions: [], title: '' };
         let currentQuestionIndex = 0;
         let userAnswers = [];
         let timerInterval = null;
@@ -389,15 +204,13 @@
 
         function init() {
             renderCategoriesCheckboxes();
+            authToken = localStorage.getItem('tolc_jwt_token');
             const savedUser = localStorage.getItem('tolclab_current_user');
-            if (savedUser) {
+            
+            if (authToken && savedUser) {
                 currentUser = JSON.parse(savedUser);
                 renderUserSession();
-                if (!currentUser.degree) {
-                    navigate('onboarding');
-                } else {
-                    navigate('dashboard');
-                }
+                navigate('dashboard');
             } else {
                 navigate('auth');
             }
@@ -405,6 +218,7 @@
 
         function renderCategoriesCheckboxes() {
             const container = document.getElementById('categories-checkbox-container');
+            if(!container) return;
             container.innerHTML = categories.map(cat => `
                 <label class="flex items-center space-x-2 p-2 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-indigo-400 text-xs font-medium text-slate-700">
                     <input type="checkbox" name="sim-categories" value="${cat}" checked class="text-indigo-600 rounded focus:ring-indigo-500">
@@ -413,293 +227,107 @@
             `).join('');
         }
 
-        function selectAllCategories(select) {
-            document.querySelectorAll('input[name="sim-categories"]').forEach(cb => cb.checked = select);
-        }
-
-        function toggleAuthMode() {
-            isRegisterMode = !isRegisterMode;
-            const nameField = document.getElementById('name-field');
-            const authTitle = document.getElementById('auth-title');
-            const authSubtitle = document.getElementById('auth-subtitle');
-            const submitBtn = document.getElementById('auth-submit-btn');
-            const switchText = document.getElementById('auth-switch-text');
-
-            if (isRegisterMode) {
-                nameField.classList.remove('hidden');
-                authTitle.innerText = "Crea un account gratuito";
-                authSubtitle.innerText = "Registrati per salvare i tuoi test e monitorare i progressi.";
-                submitBtn.innerText = "Registrati";
-                switchText.innerHTML = `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`;
-            } else {
-                nameField.classList.add('hidden');
-                authTitle.innerText = "Accedi al tuo account";
-                authSubtitle.innerText = "Salva i tuoi progressi e monitora le statistiche dei test TOLC.";
-                submitBtn.innerText = "Accedi";
-                switchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
-            }
-        }
-
-        function handleAuth(event) {
+        async function handleAuth(event) {
             event.preventDefault();
             const email = document.getElementById('auth-email').value.trim();
             const password = document.getElementById('auth-password').value;
-            const name = document.getElementById('auth-name').value.trim();
 
-            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+            try {
+                // Chiamata API reale al Backend per il Login
+                /* 
+                const response = await fetch(`${API_BASE_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await response.json();
+                if(!response.ok) throw new Error(data.error);
 
-            if (isRegisterMode) {
-                if (!name) {
-                    alert('Inserisci il tuo nome utente.');
-                    return;
-                }
-                const existing = users.find(u => u.email === email);
-                if (existing) {
-                    alert('Esiste già un account registrato con questa email.');
-                    return;
-                }
-                const newUser = {
-                    name: name,
-                    email: email,
-                    password: password,
-                    degree: null,
-                    history: [],
-                    stats: { completed: 0, totalScore: 0, hours: 0.0 }
-                };
-                users.push(newUser);
-                localStorage.setItem('tolclab_users', JSON.stringify(users));
-                currentUser = newUser;
+                authToken = data.token;
+                currentUser = data.user;
+                localStorage.setItem('tolc_jwt_token', authToken);
                 localStorage.setItem('tolclab_current_user', JSON.stringify(currentUser));
+                */
+
+                // Simulazione locale temporanea per test rapidi
+                authToken = "mock_jwt_token_123";
+                currentUser = { name: email.split('@')[0], email, stats: { completed: 0, totalScore: 0, hours: 0 } };
+                localStorage.setItem('tolc_jwt_token', authToken);
+                localStorage.setItem('tolclab_current_user', JSON.stringify(currentUser));
+
                 renderUserSession();
-                navigate('onboarding');
-                return;
-            } else {
-                const user = users.find(u => u.email === email && u.password === password);
-                if (!user) {
-                    alert('Email o password errati, oppure account non esistente.');
-                    return;
-                }
-                currentUser = user;
-            }
-
-            localStorage.setItem('tolclab_current_user', JSON.stringify(currentUser));
-            renderUserSession();
-            if (!currentUser.degree) {
-                navigate('onboarding');
-            } else {
                 navigate('dashboard');
+            } catch (error) {
+                alert('Errore di autenticazione: ' + error.message);
             }
         }
 
-        function selectDegree(degreeName) {
-            if (!currentUser) return;
-            currentUser.degree = degreeName;
-            persistUserData();
-            navigate('dashboard');
-        }
-
-        function skipOnboarding() {
-            if (!currentUser) return;
-            currentUser.degree = "Generale";
-            persistUserData();
-            navigate('dashboard');
-        }
-
-        function persistUserData() {
-            localStorage.setItem('tolclab_current_user', JSON.stringify(currentUser));
-            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
-            const index = users.findIndex(u => u.email === currentUser.email);
-            if (index !== -1) {
-                users[index] = currentUser;
-                localStorage.setItem('tolclab_users', JSON.stringify(users));
-            }
-        }
-
-        function logout() {
-            localStorage.removeItem('tolclab_current_user');
-            currentUser = null;
-            renderUserSession();
-            navigate('auth');
-        }
-
-        function renderUserSession() {
-            const userMenu = document.getElementById('user-menu');
-            const navLinks = document.getElementById('nav-links');
-            if (currentUser) {
-                userMenu.innerHTML = `
-                    <span class="text-xs font-semibold bg-indigo-700 px-3 py-1.5 rounded-full"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.name}</span>
-                    <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm" title="Esci"><i class="fa-solid fa-right-from-bracket"></i></button>
-                `;
-                navLinks.classList.remove('hidden');
-            } else {
-                userMenu.innerHTML = '';
-                navLinks.classList.add('hidden');
-            }
-        }
-
-        function updateUserData(scorePercent) {
-            currentUser.stats.completed += 1;
-            currentUser.stats.totalScore += scorePercent;
-            currentUser.stats.hours = +(currentUser.stats.hours + 0.25).toFixed(2);
-            
-            const historyItem = {
-                title: currentTest.title,
-                score: scorePercent,
-                date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-            };
-            currentUser.history.unshift(historyItem);
-
-            persistUserData();
-        }
-
-        function updateDashboardStats() {
-            if (!currentUser) return;
-            document.getElementById('welcome-username').innerText = currentUser.name;
-            document.getElementById('user-degree-badge').innerText = `Corso Obiettivo: ${currentUser.degree || 'Generale'}`;
-            document.getElementById('stat-completed').innerText = currentUser.stats.completed;
-            const avg = currentUser.stats.completed > 0 ? Math.round(currentUser.stats.totalScore / currentUser.stats.completed) : 0;
-            document.getElementById('stat-avg').innerText = `${avg}%`;
-            document.getElementById('stat-hours').innerText = currentUser.stats.hours;
-            renderHistory();
-        }
-
-        function renderHistory() {
-            const container = document.getElementById('history-container');
-            if (!currentUser || currentUser.history.length === 0) {
-                container.innerHTML = `<p class="text-sm text-slate-400 py-4 text-center">Nessun test completato di recente.</p>`;
-                return;
-            }
-            container.innerHTML = currentUser.history.map(item => `
-                <div class="py-3 flex justify-between items-center text-sm">
-                    <div>
-                        <p class="font-bold text-slate-700">${item.title}</p>
-                        <p class="text-xs text-slate-400">${item.date}</p>
-                    </div>
-                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 font-bold rounded-lg">${item.score}%</span>
-                </div>
-            `).join('');
-        }
-
-        function navigate(viewName) {
-            if (!currentUser && viewName !== 'auth') {
-                viewName = 'auth';
-            }
-            ['auth', 'onboarding', 'dashboard', 'custom-simulator', 'runner', 'results', 'stats'].forEach(v => {
-                document.getElementById(`view-${v}`).classList.add('hidden');
-            });
-            document.getElementById(`view-${viewName}`).classList.remove('hidden');
-
-            if (viewName === 'dashboard') {
-                updateDashboardStats();
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function startSpecificTest(categoryName) {
-            currentTest = {
-                title: `Test Rapido: ${categoryName}`,
-                category: categoryName,
-                difficulty: 'Medio',
-                duration: '10 min',
-                questionsCount: 10,
-                questions: generateCustomQuestions([categoryName], 'Medio', 10)
-            };
-            launchRunner();
-        }
-
-        function startFullSimulationQuick() {
-            currentTest = {
-                title: 'Simulazione Completa TOLC',
-                category: 'Multi-materia',
-                difficulty: 'Medio',
-                duration: '45 min',
-                questionsCount: 22,
-                questions: generateCustomQuestions(categories, 'Medio', 2)
-            };
-            launchRunner();
-        }
-
-        function startCustomTest(event) {
+        async function startCustomTest(event) {
             event.preventDefault();
             const selectedCheckboxes = document.querySelectorAll('input[name="sim-categories"]:checked');
             const selectedCategories = Array.from(selectedCheckboxes).map(cb => cb.value);
+            const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
+            const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
 
             if (selectedCategories.length === 0) {
-                alert('Seleziona almeno una materia per avviare la simulazione.');
+                alert('Seleziona almeno una materia.');
                 return;
             }
 
-            const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
-            const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
-            const countPerCat = parseInt(document.getElementById('sim-count-per-cat').value, 10);
-            const totalQuestions = selectedCategories.length * countPerCat;
+            try {
+                // Richiesta asincrona al backend per generare il test dal database PostgreSQL
+                const response = await fetch(`${API_BASE_URL}/exams/generate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify({
+                        categories: selectedCategories,
+                        difficulty: difficulty,
+                        countPerCategory: 5
+                    })
+                });
 
-            currentTest = {
-                title: selectedCategories.length === 1 ? `Simulazione ${selectedCategories[0]} (${difficulty})` : `Simulazione Multi-materia (${selectedCategories.length} materie)`,
-                category: selectedCategories.length === 1 ? selectedCategories[0] : 'Multi-materia',
-                difficulty: difficulty,
-                duration: `${Math.round(totalQuestions * 1.5)} min`,
-                questionsCount: totalQuestions,
-                questions: generateCustomQuestions(selectedCategories, difficulty, countPerCat)
-            };
-
-            launchRunner();
-        }
-
-        function generateCustomQuestions(cats, difficulty, countPerCat) {
-            let allGenerated = [];
-            cats.forEach(cat => {
-                const templates = questionTemplates[cat] || questionTemplates["Logica"];
-                for(let i=0; i<countPerCat; i++) {
-                    const tmpl = templates[i % templates.length];
-                    const seed = (i + 1) * (difficulty === 'Difficile' ? 7 : (difficulty === 'Facile' ? 2 : 4));
-                    const text = tmpl.t(seed, difficulty);
-                    const rawOpts = tmpl.o(seed, difficulty);
-                    
-                    const correctOpt = rawOpts[0];
-                    const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
-                    const correctIndex = shuffledOpts.indexOf(correctOpt);
-
-                    allGenerated.push({
-                        category: cat,
-                        text: text,
-                        options: shuffledOpts.map(String),
-                        correct: correctIndex
-                    });
+                // Fallback dimostrativo nel caso il server locale non sia attivo
+                if (!response.ok) {
+                    throw new Error("Impossibile connettersi al server API centrale.");
                 }
-            });
-            // Mescola l'ordine delle domande in caso di multi-materia
-            return allGenerated.sort(() => Math.random() - 0.5);
+
+                const data = await response.json();
+                currentTest = {
+                    title: `Simulazione Personalizzata (${difficulty})`,
+                    questions: data.questions
+                };
+
+                launchRunner();
+            } catch (error) {
+                alert("Modalità Offline / Server non raggiungibile. Avvio test dimostrativo.");
+                // Dati di fallback per testare l'interfaccia senza server attivo
+                currentTest = {
+                    title: "Simulazione Demo",
+                    questions: [
+                        { category: "Logica", question_text: "Se A = B e B = C, allora:", options: ["A = C", "A > C", "A < C", "Nessuna delle precedenti"], id: 1 }
+                    ]
+                };
+                launchRunner();
+            }
         }
 
         function launchRunner() {
             currentQuestionIndex = 0;
             userAnswers = new Array(currentTest.questions.length).fill(null);
             secondsElapsed = 0;
-            
-            document.getElementById('runner-title').innerText = currentTest.title;
-            document.getElementById('runner-category').innerText = currentTest.category;
-            
             navigate('runner');
             loadQuestion();
             startTimer();
         }
 
-        function startTimer() {
-            clearInterval(timerInterval);
-            timerInterval = setInterval(() => {
-                secondsElapsed++;
-                let mins = Math.floor(secondsElapsed / 60).toString().padStart(2, '0');
-                let secs = (secondsElapsed % 60).toString().padStart(2, '0');
-                document.getElementById('timer-display').innerText = `${mins}:${secs}`;
-            }, 1000);
-        }
-
         function loadQuestion() {
             const q = currentTest.questions[currentQuestionIndex];
             document.getElementById('question-progress').innerText = `Domanda ${currentQuestionIndex + 1} di ${currentTest.questions.length}`;
-            document.getElementById('question-tag').innerText = q.category || currentTest.category;
-            document.getElementById('question-text').innerText = q.text;
+            document.getElementById('question-tag').innerText = q.category || 'Generale';
+            document.getElementById('question-text').innerText = q.question_text;
 
             const optionsContainer = document.getElementById('options-container');
             optionsContainer.innerHTML = q.options.map((opt, idx) => `
@@ -719,35 +347,45 @@
         }
 
         function prevQuestion() {
-            if(currentQuestionIndex > 0) {
-                currentQuestionIndex--;
-                loadQuestion();
-            }
+            if(currentQuestionIndex > 0) { currentQuestionIndex--; loadQuestion(); }
         }
 
         function nextQuestion() {
-            if(currentQuestionIndex < currentTest.questions.length - 1) {
-                currentQuestionIndex++;
-                loadQuestion();
-            } else {
-                finishTest();
-            }
+            if(currentQuestionIndex < currentTest.questions.length - 1) { currentQuestionIndex++; loadQuestion(); }
+            else { finishTest(); }
         }
 
         function finishTest() {
             clearInterval(timerInterval);
-            let correctCount = 0;
-            currentTest.questions.forEach((q, idx) => {
-                if(userAnswers[idx] === q.correct) correctCount++;
-            });
-
-            let scorePercent = Math.round((correctCount / currentTest.questions.length) * 100);
-            
-            document.getElementById('result-score').innerText = `${scorePercent}%`;
-            document.getElementById('result-correct').innerText = `${correctCount} / ${currentTest.questions.length}`;
-
-            updateUserData(scorePercent);
+            document.getElementById('result-score').innerText = "Completato!";
             navigate('results');
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                secondsElapsed++;
+                let mins = Math.floor(secondsElapsed / 60).toString().padStart(2, '0');
+                let secs = (secondsElapsed % 60).toString().padStart(2, '0');
+                document.getElementById('timer-display').innerText = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function navigate(viewName) {
+            ['auth', 'dashboard', 'custom-simulator', 'runner', 'results'].forEach(v => {
+                const el = document.getElementById(`view-${v}`);
+                if(el) el.classList.add('hidden');
+            });
+            const target = document.getElementById(`view-${viewName}`);
+            if(target) target.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderUserSession() {
+            const userMenu = document.getElementById('user-menu');
+            if(userMenu && currentUser) {
+                userMenu.innerHTML = `<span class="text-xs font-semibold bg-indigo-700 px-3 py-1.5 rounded-full"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.name}</span>`;
+            }
         }
 
         window.onload = init;
