@@ -288,9 +288,8 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Application Script (Supabase Integrated) -->
+    <!-- Application Script -->
     <script>
-        // Configurazione Supabase
         const SUPABASE_URL = 'https://kztjkcwivlxtruzzgcjx.supabase.co';
         const SUPABASE_ANON_KEY = 'sb_publishable_1y4YbCegxvpnU5L8HiYhNQ_dr8T2oHc';
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -496,7 +495,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Funzione asincrona che preleva le domande dal database Supabase
         async function startCustomTest(event) {
             event.preventDefault();
             const category = document.getElementById('sim-category').value;
@@ -510,7 +508,6 @@
             submitBtn.disabled = true;
 
             try {
-                // Interroga la tabella 'domande' su Supabase filtrando per categoria e difficoltà
                 const { data: questionsData, error } = await _supabase
                     .from('domande')
                     .select('*')
@@ -521,18 +518,16 @@
                 if (error) throw error;
 
                 if (!questionsData || questionsData.length === 0) {
-                    alert(`Nessuna domanda trovata per "${category}" (${difficulty}) nel database! Aggiungine almeno una su Supabase.`);
+                    alert(`Nessuna domanda trovata per "${category}" (${difficulty}) nel database! Assicurati di aver importato le domande nella tabella "domande".`);
                     submitBtn.innerText = originalText;
                     submitBtn.disabled = false;
                     return;
                 }
 
-                // Mappa i dati ricevuti dal DB nel formato atteso dal runner
                 const formattedQuestions = questionsData.map(q => {
-                    const rawOpts = q.opzioni; // Array JSON memorizzato su Supabase
+                    const rawOpts = q.opzioni;
                     const correctOptText = rawOpts[q.corretta];
                     
-                    // Mischia le opzioni casualmente
                     const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
                     const newCorrectIndex = shuffledOpts.indexOf(correctOptText);
 
@@ -566,7 +561,7 @@
 
             } catch (err) {
                 console.error("Errore di connessione a Supabase:", err);
-                alert("Impossibile connettersi al database delle domande. Controlla la console.");
+                alert("Impossibile connettersi al database delle domande.");
             } finally {
                 submitBtn.innerText = originalText;
                 submitBtn.disabled = false;
