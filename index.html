@@ -19,7 +19,7 @@
             
             <nav id="nav-links" class="hidden md:flex space-x-6 text-sm font-medium items-center">
                 <a href="#" onclick="navigate('dashboard')" class="hover:text-indigo-200 transition">Dashboard</a>
-                <a href="#" onclick="navigate('catalog')" class="hover:text-indigo-200 transition">Tutti i Test</a>
+                <a href="#" onclick="navigate('custom-simulator')" class="hover:text-indigo-200 transition font-bold bg-indigo-700 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-sliders mr-1.5"></i>Simulatore Personalizzato</a>
                 <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche</a>
             </nav>
 
@@ -109,10 +109,10 @@
                 <div class="space-y-3 mb-6 md:mb-0">
                     <span id="user-degree-badge" class="bg-indigo-400 bg-opacity-40 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Obiettivo: non impostato</span>
                     <h2 class="text-3xl font-extrabold tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Simulazioni TOLC e quiz mirati per superare i test di ammissione universitari. Monitora i tuoi progressi in tempo reale.</p>
+                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Configura simulazioni personalizzate per materia e livello di difficoltà. Monitora i tuoi progressi in tempo reale.</p>
                 </div>
-                <button onclick="startQuickTest()" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-xl shadow hover:bg-indigo-50 transition transform hover:-translate-y-0.5">
-                    <i class="fa-solid fa-play mr-2"></i> Inizia Test Rapido
+                <button onclick="navigate('custom-simulator')" class="bg-white text-indigo-600 font-bold px-6 py-3 rounded-xl shadow hover:bg-indigo-50 transition transform hover:-translate-y-0.5">
+                    <i class="fa-solid fa-sliders mr-2"></i> Crea Simulazione
                 </button>
             </div>
 
@@ -141,26 +141,31 @@
                 </div>
             </div>
 
-            <!-- Available Tests Section -->
-            <div>
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold text-slate-800">Test in Evidenza</h3>
-                    <button onclick="navigate('catalog')" class="text-indigo-600 text-sm font-semibold hover:underline">Vedi tutti &rarr;</button>
-                </div>
-                <div id="test-list-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Popolato via JS -->
-                </div>
+            <!-- Quick Start Custom Simulator Card -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                <h3 class="text-xl font-bold text-slate-800">Inizia subito una simulazione mirata</h3>
+                <p class="text-sm text-slate-500">Scegli la materia, imposta il livello di difficoltà (Facile, Medio, Difficile) e mettiti alla prova.</p>
+                <button onclick="navigate('custom-simulator')" class="inline-flex items-center bg-indigo-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition text-sm">
+                    <i class="fa-solid fa-arrow-right mr-2"></i> Apri il Simulatore Personalizzato
+                </button>
             </div>
         </section>
 
-        <!-- CATALOG VIEW -->
-        <section id="view-catalog" class="hidden space-y-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <h3 class="text-2xl font-bold text-slate-800">Catalogo Completo dei Test</h3>
-                <div class="flex flex-wrap gap-3 w-full md:w-auto">
-                    <input type="text" id="search-input" placeholder="Cerca test o materia..." oninput="filterTests()" class="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 flex-grow md:w-64">
-                    <select id="category-filter" onchange="filterTests()" class="px-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-                        <option value="all">Tutte le categorie</option>
+        <!-- CUSTOM SIMULATOR VIEW (NEW) -->
+        <section id="view-custom-simulator" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-4">
+            <div class="text-center space-y-2">
+                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-2">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800">Simulatore Personalizzato</h3>
+                <p class="text-sm text-slate-500">Personalizza i parametri della tua sessione d'esame.</p>
+            </div>
+
+            <form id="custom-sim-form" onsubmit="startCustomTest(event)" class="space-y-5">
+                <!-- Selezione Materia -->
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-600 uppercase">Materia</label>
+                    <select id="sim-category" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
                         <option value="Logica">Logica</option>
                         <option value="Matematica">Matematica</option>
                         <option value="Fisica">Fisica</option>
@@ -173,10 +178,39 @@
                         <option value="Cultura">Cultura</option>
                     </select>
                 </div>
-            </div>
-            <div id="catalog-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Popolato via JS -->
-            </div>
+
+                <!-- Selezione Difficoltà -->
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-600 uppercase">Livello di Difficoltà</label>
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:border-indigo-500 hover:bg-indigo-50 transition flex flex-col items-center">
+                            <input type="radio" name="sim-difficulty" value="Facile" class="text-indigo-600 mb-1">
+                            <span class="text-xs font-bold text-slate-700">Facile</span>
+                        </label>
+                        <label class="border border-indigo-500 bg-indigo-50 ring-1 ring-indigo-500 rounded-xl p-3 text-center cursor-pointer transition flex flex-col items-center">
+                            <input type="radio" name="sim-difficulty" value="Medio" checked class="text-indigo-600 mb-1">
+                            <span class="text-xs font-bold text-slate-700">Medio</span>
+                        </label>
+                        <label class="border border-slate-200 rounded-xl p-3 text-center cursor-pointer hover:border-indigo-500 hover:bg-indigo-50 transition flex flex-col items-center">
+                            <input type="radio" name="sim-difficulty" value="Difficile" class="text-indigo-600 mb-1">
+                            <span class="text-xs font-bold text-slate-700">Difficile</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Numero di Domande -->
+                <div class="space-y-1">
+                    <label class="text-xs font-bold text-slate-600 uppercase">Numero di Domande</label>
+                    <select id="sim-count" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
+                        <option value="5">5 Domande (Test Rapido)</option>
+                        <option value="10" selected>10 Domande (Standard)</option>
+                        <option value="15">15 Domande (Avanzato)</option>
+                        <option value="20">20 Domande (Simulazione Completa)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition shadow">Avvia Simulazione</button>
+            </form>
         </section>
 
         <!-- TEST RUNNER VIEW -->
@@ -194,7 +228,7 @@
             <div class="space-y-4">
                 <div class="flex justify-between text-xs text-slate-400 font-semibold">
                     <span id="question-progress">Domanda 1 di 10</span>
-                    <span id="question-tag">Logica</span>
+                    <span id="question-tag" class="bg-slate-100 px-2 py-0.5 rounded text-slate-600">Medio</span>
                 </div>
                 <p id="question-text" class="text-lg font-semibold text-slate-800">Testo della domanda...</p>
                 <div id="options-container" class="space-y-3 pt-2">
@@ -228,7 +262,10 @@
                     <h4 id="result-correct" class="text-3xl font-extrabold text-slate-700">8 / 10</h4>
                 </div>
             </div>
-            <button onclick="navigate('dashboard')" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Torna alla Dashboard</button>
+            <div class="flex space-x-3">
+                <button onclick="navigate('custom-simulator')" class="w-1/2 border border-indigo-600 text-indigo-600 py-3 rounded-xl font-bold hover:bg-indigo-50 transition">Nuova Simulazione</button>
+                <button onclick="navigate('dashboard')" class="w-1/2 bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Dashboard</button>
+            </div>
         </section>
 
         <!-- STATS VIEW -->
@@ -255,7 +292,7 @@
         
         const questionTemplates = {
             "Logica": [
-                { t: (x) => `Se un'azienda produce ${x} unità in 4 giorni, quante ne produce in 12 giorni a ritmo costante?`, o: (x) => [x*3, x*2, x*4, x*5], c: 0 },
+                { t: (x, d) => `Se un'azienda produce ${x} unità in 4 giorni, quante ne produce in ${d === 'Difficile' ? 15 : 12} giorni a ritmo costante?`, o: (x, d) => d === 'Difficile' ? [x*3.75, x*3, x*4, x*5] : [x*3, x*2, x*4, x*5], c: 0 },
                 { t: (x) => `Quale numero completa la progressione: ${x}, ${x*2}, ${x*4}, ${x*8}, ...?`, o: (x) => [x*16, x*12, x*10, x*20], c: 0 },
                 { t: () => "Se tutti i quadrati sono rettangoli e tutti i rettangoli sono poligoni, quale affermazione è deducibile?", o: () => ["Tutti i quadrati sono poligoni", "Nessun poligono è quadrato", "Alcuni poligoni non sono rettangoli", "I rettangoli non sono poligoni"], c: 0 }
             ],
@@ -306,44 +343,6 @@
             ]
         };
 
-        const tests = [];
-        let testIdCounter = 1;
-        categories.forEach(cat => {
-            for(let i=1; i<=15; i++) {
-                tests.push({
-                    id: testIdCounter++,
-                    title: `Simulazione Ufficiale ${cat} - Livello ${i}`,
-                    category: cat,
-                    duration: "15 min",
-                    questionsCount: 10,
-                    description: `Test avanzato di preparazione TOLC focalizzato sugli argomenti chiave di ${cat}.`,
-                    questions: generateQuestionsForCategory(cat)
-                });
-            }
-        });
-
-        function generateQuestionsForCategory(cat) {
-            const templates = questionTemplates[cat] || questionTemplates["Logica"];
-            const generated = [];
-            for(let i=0; i<10; i++) {
-                const tmpl = templates[i % templates.length];
-                const seed = (i + 1) * 3;
-                const text = tmpl.t(seed);
-                const rawOpts = tmpl.o(seed);
-                
-                const correctOpt = rawOpts[0];
-                const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
-                const correctIndex = shuffledOpts.indexOf(correctOpt);
-
-                generated.push({
-                    text: text,
-                    options: shuffledOpts.map(String),
-                    correct: correctIndex
-                });
-            }
-            return generated;
-        }
-
         let currentUser = null;
         let isRegisterMode = false;
         let currentTest = null;
@@ -365,8 +364,6 @@
             } else {
                 navigate('auth');
             }
-            renderTestList('test-list-container', tests.slice(0, 3));
-            renderTestList('catalog-container', tests);
         }
 
         function toggleAuthMode() {
@@ -536,7 +533,7 @@
             if (!currentUser && viewName !== 'auth') {
                 viewName = 'auth';
             }
-            ['auth', 'onboarding', 'dashboard', 'catalog', 'runner', 'results', 'stats'].forEach(v => {
+            ['auth', 'onboarding', 'dashboard', 'custom-simulator', 'runner', 'results', 'stats'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.add('hidden');
             });
             document.getElementById(`view-${viewName}`).classList.remove('hidden');
@@ -547,43 +544,55 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function renderTestList(containerId, list) {
-            const container = document.getElementById(containerId);
-            if(list.length === 0) {
-                container.innerHTML = `<p class="col-span-3 text-center text-slate-400 py-8">Nessun test trovato con i criteri selezionati.</p>`;
-                return;
-            }
-            container.innerHTML = list.slice(0, 9).map(test => `
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
-                    <div>
-                        <span class="bg-indigo-50 text-indigo-600 text-xs font-bold px-2.5 py-1 rounded-md uppercase">${test.category}</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-3">${test.title}</h4>
-                        <p class="text-sm text-slate-500 mt-2">${test.description}</p>
-                    </div>
-                    <div class="mt-6 flex items-center justify-between pt-4 border-t border-slate-100">
-                        <span class="text-xs text-slate-400 font-medium"><i class="fa-solid fa-clock mr-1"></i> ${test.duration} | ${test.questionsCount} Domande</span>
-                        <button onclick="startTest(${test.id})" class="bg-indigo-600 text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Inizia</button>
-                    </div>
-                </div>
-            `).join('');
-        }
+        function startCustomTest(event) {
+            event.preventDefault();
+            const category = document.getElementById('sim-category').value;
+            const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
+            const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
+            const count = parseInt(document.getElementById('sim-count').value, 10);
 
-        function startQuickTest() {
-            startTest(tests[0].id);
-        }
+            currentTest = {
+                title: `Simulazione ${category} (${difficulty})`,
+                category: category,
+                difficulty: difficulty,
+                duration: `${count * 1.5} min`,
+                questionsCount: count,
+                questions: generateCustomQuestions(category, difficulty, count)
+            };
 
-        function startTest(id) {
-            currentTest = tests.find(t => t.id === id);
             currentQuestionIndex = 0;
             userAnswers = new Array(currentTest.questions.length).fill(null);
             secondsElapsed = 0;
             
             document.getElementById('runner-title').innerText = currentTest.title;
             document.getElementById('runner-category').innerText = currentTest.category;
+            document.getElementById('question-tag').innerText = `Difficoltà: ${difficulty}`;
             
             navigate('runner');
             loadQuestion();
             startTimer();
+        }
+
+        function generateCustomQuestions(cat, difficulty, count) {
+            const templates = questionTemplates[cat] || questionTemplates["Logica"];
+            const generated = [];
+            for(let i=0; i<count; i++) {
+                const tmpl = templates[i % templates.length];
+                const seed = (i + 1) * (difficulty === 'Difficile' ? 7 : (difficulty === 'Facile' ? 2 : 4));
+                const text = tmpl.t(seed, difficulty);
+                const rawOpts = tmpl.o(seed, difficulty);
+                
+                const correctOpt = rawOpts[0];
+                const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
+                const correctIndex = shuffledOpts.indexOf(correctOpt);
+
+                generated.push({
+                    text: text,
+                    options: shuffledOpts.map(String),
+                    correct: correctIndex
+                });
+            }
+            return generated;
         }
 
         function startTimer() {
@@ -599,7 +608,6 @@
         function loadQuestion() {
             const q = currentTest.questions[currentQuestionIndex];
             document.getElementById('question-progress').innerText = `Domanda ${currentQuestionIndex + 1} di ${currentTest.questions.length}`;
-            document.getElementById('question-tag').innerText = currentTest.category;
             document.getElementById('question-text').innerText = q.text;
 
             const optionsContainer = document.getElementById('options-container');
@@ -649,18 +657,6 @@
 
             updateUserData(scorePercent);
             navigate('results');
-        }
-
-        function filterTests() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const category = document.getElementById('category-filter').value;
-            
-            const filtered = tests.filter(t => {
-                const matchesQuery = t.title.toLowerCase().includes(query) || t.category.toLowerCase().includes(query) || t.description.toLowerCase().includes(query);
-                const matchesCategory = category === 'all' || t.category === category;
-                return matchesQuery && matchesCategory;
-            });
-            renderTestList('catalog-container', filtered);
         }
 
         window.onload = init;
