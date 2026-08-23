@@ -6,6 +6,8 @@
     <title>TOLC LAB - Preparazione Test Universitari</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS Client SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
 
@@ -151,7 +153,7 @@
             </div>
         </section>
 
-        <!-- CUSTOM SIMULATOR VIEW (NEW) -->
+        <!-- CUSTOM SIMULATOR VIEW -->
         <section id="view-custom-simulator" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-4">
             <div class="text-center space-y-2">
                 <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-2">
@@ -286,62 +288,12 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Application Script -->
+    <!-- Application Script (Supabase Integrated) -->
     <script>
-        const categories = ["Logica", "Matematica", "Fisica", "Chimica", "Informatica", "Inglese", "Biologia", "Diritto", "Economia", "Cultura"];
-        
-        const questionTemplates = {
-            "Logica": [
-                { t: (x, d) => `Se un'azienda produce ${x} unità in 4 giorni, quante ne produce in ${d === 'Difficile' ? 15 : 12} giorni a ritmo costante?`, o: (x, d) => d === 'Difficile' ? [x*3.75, x*3, x*4, x*5] : [x*3, x*2, x*4, x*5], c: 0 },
-                { t: (x) => `Quale numero completa la progressione: ${x}, ${x*2}, ${x*4}, ${x*8}, ...?`, o: (x) => [x*16, x*12, x*10, x*20], c: 0 },
-                { t: () => "Se tutti i quadrati sono rettangoli e tutti i rettangoli sono poligoni, quale affermazione è deducibile?", o: () => ["Tutti i quadrati sono poligoni", "Nessun poligono è quadrato", "Alcuni poligoni non sono rettangoli", "I rettangoli non sono poligoni"], c: 0 }
-            ],
-            "Matematica": [
-                { t: (x) => `Quanto vale l'espressione: ${x} + ${x} × 2?`, o: (x) => [x*3, x*2, x*4, x+2], c: 0 },
-                { t: (x) => `Qual è il quadrato del numero ${x}?`, o: (x) => [x*x, x+x, (x*x)+2, (x*x)-1], c: 0 },
-                { t: (x) => `Risolvi l'equazione semplice: x + ${x} = ${x*2}`, o: (x) => [x, x*2, 0, x+1], c: 0 }
-            ],
-            "Fisica": [
-                { t: () => "Qual è l'unità di misura della forza nel Sistema Internazionale?", o: () => ["Newton", "Joule", "Watt", "Pascal"], c: 0 },
-                { t: () => "Se un corpo si muove a velocità costante, la sua accelerazione è:", o: () => ["Pari a zero", "Negativa", "Massima", "Crescente"], c: 0 },
-                { t: () => "Il lavoro meccanico si calcola come il prodotto scalare tra forza e:", o: () => ["Spostamento", "Tempo", "Velocità", "Massa"], c: 0 }
-            ],
-            "Chimica": [
-                { t: () => "Qual è il simbolo chimico del sodio?", o: () => ["Na", "So", "Sd", "K"], c: 0 },
-                { t: () => "A 25°C, il pH di una soluzione neutra è pari a:", o: () => ["7", "0", "14", "5"], c: 0 },
-                { t: () => "Il legame chimico che si forma per condivisione di elettroni è detto:", o: () => ["Covalente", "Ionico", "Metallico", "A idrogeno"], c: 0 }
-            ],
-            "Informatica": [
-                { t: () => "Cosa significa l'acronimo CPU?", o: () => ["Central Processing Unit", "Computer Personal Utility", "Control Program Utility", "Central Performance User"], c: 0 },
-                { t: () => "Quale protocollo viene utilizzato per la navigazione web sicura?", o: () => ["HTTPS", "FTP", "SMTP", "SSH"], c: 0 },
-                { t: () => "Quale struttura dati segue la logica LIFO (Last In, First Out)?", o: () => ["Pila (Stack)", "Coda (Queue)", "Albero", "Grafo"], c: 0 }
-            ],
-            "Inglese": [
-                { t: () => "Choose the correct past form of 'to go':", o: () => ["Went", "Gone", "Goed", "Going"], c: 0 },
-                { t: () => "Complete: 'If I _____ rich, I would travel.'", o: () => ["were", "am", "will be", "had been"], c: 0 },
-                { t: () => "What is the synonym of 'to achieve'?", o: () => ["To accomplish", "To fail", "To destroy", "To delay"], c: 0 }
-            ],
-            "Biologia": [
-                { t: () => "Quale organulo cellulare è noto come la centrale energetica della cellula?", o: () => ["Mitocondrio", "Ribosoma", "Apparato di Golgi", "Nucleo"], c: 0 },
-                { t: () => "Le molecole di DNA sono costituite da monomeri chiamati:", o: () => ["Nucleotidi", "Aminoacidi", "Monosaccaridi", "Acidi grassi"], c: 0 },
-                { t: () => "Il processo di divisione cellulare che produce gameti è detto:", o: () => ["Meiosi", "Mitosi", "Scissione", "Gemmazione"], c: 0 }
-            ],
-            "Diritto": [
-                { t: () => "La legge fondamentale della Repubblica Italiana è:", o: () => ["La Costituzione", "Il Codice Civile", "Il Decreto Legge", "I regolamenti UE"], c: 0 },
-                { t: () => "Il Parlamento italiano ha una struttura:", o: () => ["Bicamerali (Camera e Senato)", "Monocamerale", "Tribunale Supremo", "Consiglio di Stato"], c: 0 },
-                { t: () => "Chi presiede il Consiglio dei Ministri in Italia?", o: () => ["Il Presidente del Consiglio", "Il Presidente della Repubblica", "Il Ministro della Giustizia", "Il Capo dello Stato"], c: 0 }
-            ],
-            "Economia": [
-                { t: () => "In economia, quando la domanda supera l'offerta, cosa tende a fare il prezzo?", o: () => ["Aumentare", "Diminuire", "Rimanere stabile", "Azzerarsi"], c: 0 },
-                { t: () => "Il PIL (Prodotto Interno Lordo) misura:", o: () => ["Il valore totale di beni e servizi prodotti in Paese", "Il debito pubblico", "L'inflazione media", "Le esportazioni nette"], c: 0 },
-                { t: () => "L'inflazione rappresenta:", o: () => ["L'aumento generale e continuativo dei prezzi", "La diminuzione dei tassi d'interesse", "La crescita della disoccupazione", "Il surplus di bilancio"], c: 0 }
-            ],
-            "Cultura": [
-                { t: () => "In quale anno è iniziata la Rivoluzione Francese?", o: () => ["1789", "1492", "1815", "1914"], c: 0 },
-                { t: () => "Chi ha dipinto la Gioconda?", o: () => ["Leonardo da Vinci", "Michelangelo", "Raffaello", "Caravaggio"], c: 0 },
-                { t: () => "Qual è il fiume più lungo del mondo?", o: () => ["Rio delle Amazzoni / Nilo", "Mississippi", "Danubio", "Volga"], c: 0 }
-            ]
-        };
+        // Configurazione Supabase
+        const SUPABASE_URL = 'https://kztjkcwivlxtruzzgcjx.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_1y4YbCegxvpnU5L8HiYhNQ_dr8T2oHc';
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         let currentUser = null;
         let isRegisterMode = false;
@@ -544,55 +496,81 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function startCustomTest(event) {
+        // Funzione asincrona che preleva le domande dal database Supabase
+        async function startCustomTest(event) {
             event.preventDefault();
             const category = document.getElementById('sim-category').value;
             const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
             const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
             const count = parseInt(document.getElementById('sim-count').value, 10);
 
-            currentTest = {
-                title: `Simulazione ${category} (${difficulty})`,
-                category: category,
-                difficulty: difficulty,
-                duration: `${count * 1.5} min`,
-                questionsCount: count,
-                questions: generateCustomQuestions(category, difficulty, count)
-            };
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = "Caricamento domande dal database...";
+            submitBtn.disabled = true;
 
-            currentQuestionIndex = 0;
-            userAnswers = new Array(currentTest.questions.length).fill(null);
-            secondsElapsed = 0;
-            
-            document.getElementById('runner-title').innerText = currentTest.title;
-            document.getElementById('runner-category').innerText = currentTest.category;
-            document.getElementById('question-tag').innerText = `Difficoltà: ${difficulty}`;
-            
-            navigate('runner');
-            loadQuestion();
-            startTimer();
-        }
+            try {
+                // Interroga la tabella 'domande' su Supabase filtrando per categoria e difficoltà
+                const { data: questionsData, error } = await _supabase
+                    .from('domande')
+                    .select('*')
+                    .eq('categoria', category)
+                    .eq('difficolta', difficulty)
+                    .limit(count);
 
-        function generateCustomQuestions(cat, difficulty, count) {
-            const templates = questionTemplates[cat] || questionTemplates["Logica"];
-            const generated = [];
-            for(let i=0; i<count; i++) {
-                const tmpl = templates[i % templates.length];
-                const seed = (i + 1) * (difficulty === 'Difficile' ? 7 : (difficulty === 'Facile' ? 2 : 4));
-                const text = tmpl.t(seed, difficulty);
-                const rawOpts = tmpl.o(seed, difficulty);
-                
-                const correctOpt = rawOpts[0];
-                const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
-                const correctIndex = shuffledOpts.indexOf(correctOpt);
+                if (error) throw error;
 
-                generated.push({
-                    text: text,
-                    options: shuffledOpts.map(String),
-                    correct: correctIndex
+                if (!questionsData || questionsData.length === 0) {
+                    alert(`Nessuna domanda trovata per "${category}" (${difficulty}) nel database! Aggiungine almeno una su Supabase.`);
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                    return;
+                }
+
+                // Mappa i dati ricevuti dal DB nel formato atteso dal runner
+                const formattedQuestions = questionsData.map(q => {
+                    const rawOpts = q.opzioni; // Array JSON memorizzato su Supabase
+                    const correctOptText = rawOpts[q.corretta];
+                    
+                    // Mischia le opzioni casualmente
+                    const shuffledOpts = [...rawOpts].sort(() => Math.random() - 0.5);
+                    const newCorrectIndex = shuffledOpts.indexOf(correctOptText);
+
+                    return {
+                        text: q.testo,
+                        options: shuffledOpts,
+                        correct: newCorrectIndex
+                    };
                 });
+
+                currentTest = {
+                    title: `Simulazione ${category} (${difficulty})`,
+                    category: category,
+                    difficulty: difficulty,
+                    duration: `${Math.round(formattedQuestions.length * 1.5)} min`,
+                    questionsCount: formattedQuestions.length,
+                    questions: formattedQuestions
+                };
+
+                currentQuestionIndex = 0;
+                userAnswers = new Array(currentTest.questions.length).fill(null);
+                secondsElapsed = 0;
+                
+                document.getElementById('runner-title').innerText = currentTest.title;
+                document.getElementById('runner-category').innerText = currentTest.category;
+                document.getElementById('question-tag').innerText = `Difficoltà: ${difficulty}`;
+                
+                navigate('runner');
+                loadQuestion();
+                startTimer();
+
+            } catch (err) {
+                console.error("Errore di connessione a Supabase:", err);
+                alert("Impossibile connettersi al database delle domande. Controlla la console.");
+            } finally {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
             }
-            return generated;
         }
 
         function startTimer() {
