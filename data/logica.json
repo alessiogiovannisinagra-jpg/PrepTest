@@ -350,8 +350,6 @@
     "opzioni": ["0%", "10%", "20%", "30%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -702,8 +700,6 @@
     "opzioni": ["40%", "30%", "20%", "50%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -1054,7 +1050,6 @@
     "opzioni": ["20%", "0%", "10%", "30%"],
     "corretta": 0
   }
-][
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -1405,8 +1400,6 @@
     "opzioni": ["10%", "0%", "20%", "15%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -1757,8 +1750,6 @@
     "opzioni": ["25%", "15%", "10%", "20%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -2109,8 +2100,6 @@
     "opzioni": ["30%", "20%", "25%", "15%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -2461,8 +2450,6 @@
     "opzioni": ["30%", "10%", "20%", "40%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -3165,8 +3152,6 @@
     "opzioni": ["10%", "0%", "20%", "15%"],
     "corretta": 0
   }
-]
-[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
