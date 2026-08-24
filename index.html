@@ -102,7 +102,7 @@
                 <div class="space-y-3 mb-6 md:mb-0">
                     <span id="user-degree-badge" class="bg-indigo-400 bg-opacity-40 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Obiettivo: non impostato</span>
                     <h2 class="text-3xl font-extrabold tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Piattaforma di simulazione test d'ammissione con dati da banca dati dedicata.</p>
+                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Piattaforma di simulazione test d'ammissione con banca dati dedicata.</p>
                 </div>
                 <div>
                     <button onclick="navigate('official-tolc-selector')" class="bg-white text-indigo-600 font-bold px-5 py-3 rounded-xl shadow hover:bg-indigo-50 transition">
@@ -144,7 +144,7 @@
                             <i class="fa-solid fa-file-shield"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">Simulazioni Ufficiali TOLC & Ministeriali</h3>
-                        <p class="text-sm text-slate-500 mt-1">Accedi a tutti i test ufficiali attingendo direttamente ai file JSON.</p>
+                        <p class="text-sm text-slate-500 mt-1">Accedi a tutti i test ufficiali attingendo direttamente alla banca dati.</p>
                     </div>
                     <button onclick="navigate('official-tolc-selector')" class="w-full bg-indigo-600 text-white font-semibold py-2.5 rounded-xl hover:bg-indigo-700 transition text-sm">
                         Esplora tutti i test <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -157,7 +157,7 @@
                             <i class="fa-solid fa-book-open"></i>
                         </div>
                         <h3 class="text-xl font-bold text-slate-800">Esercitazione per Materia</h3>
-                        <p class="text-sm text-slate-500 mt-1">Allenati selettivamente caricando i quesiti da data/logica.json.</p>
+                        <p class="text-sm text-slate-500 mt-1">Allenati selettivamente caricando i quesiti da logica.js.</p>
                     </div>
                     <button onclick="navigate('custom-simulator')" class="w-full border border-indigo-600 text-indigo-600 font-semibold py-2.5 rounded-xl hover:bg-indigo-50 transition text-sm">
                         Apri Banca Dati <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -211,14 +211,14 @@
                     <i class="fa-solid fa-book-open"></i>
                 </div>
                 <h3 class="text-2xl font-bold text-slate-800">Esercitazione per Materia</h3>
-                <p class="text-sm text-slate-500">I quesiti verranno letti da data/logica.json.</p>
+                <p class="text-sm text-slate-500">I quesiti vengono caricati da logica.js.</p>
             </div>
 
             <form id="custom-sim-form" onsubmit="startCustomTest(event)" class="space-y-5">
                 <div class="space-y-1">
                     <label class="text-xs font-bold text-slate-600 uppercase">Materia</label>
                     <select id="sim-category" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
-                        <option value="Logica" selected>Logica (data/logica.json)</option>
+                        <option value="Logica" selected>Logica (da logica.js)</option>
                         <option value="Biologia">Biologia</option>
                         <option value="Chimica">Chimica</option>
                         <option value="Matematica">Matematica</option>
@@ -297,9 +297,16 @@
 
     </main>
 
-    <!-- Script con Fetch Reale da data/logica.json -->
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
+        <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- Inclusione diretta del file logica.js dalla cartella data -->
+    <script src="data/logica.js"></script>
+
+    <!-- Script principale dell'applicazione -->
     <script>
-        const questionDatabaseCache = {};
         let currentUser = null;
         let isRegisterMode = false;
         let currentTest = null;
@@ -308,33 +315,26 @@
         let timerInterval = null;
         let secondsElapsed = 0;
 
-        // Funzione per caricare il file JSON dalla cartella data/
+        // Funzione di caricamento immediato dai dati JS
         async function loadCategoryData(categoryName) {
-            if (questionDatabaseCache[categoryName]) {
-                return questionDatabaseCache[categoryName];
+            if (categoryName === 'Logica') {
+                if (typeof window.logicaData !== 'undefined' && Array.isArray(window.logicaData)) {
+                    return window.logicaData;
+                } else {
+                    console.warn("window.logicaData non è definito o non è un array. Verifica data/logica.js");
+                }
             }
             
-            try {
-                const fileName = categoryName.toLowerCase() + '.json';
-                const response = await fetch(`data/${fileName}`);
-                if (!response.ok) throw new Error(`Impossibile trovare ${fileName}`);
-                
-                const data = await response.json();
-                questionDatabaseCache[categoryName] = data;
-                return data;
-            } catch (error) {
-                console.warn(`Errore caricamento data/${categoryName.toLowerCase()}.json, uso fallback:`, error);
-                // Fallback se il file non viene trovato
-                return [
-                    {
-                        categoria: categoryName,
-                        difficolta: "Medio",
-                        testo: `[Avviso] Impossibile leggere data/${categoryName.toLowerCase()}.json. Verifica che il file esista nella cartella data su GitHub.`,
-                        opzioni: ["Ok", "Errore percorso", "File non trovato", "Riprova"],
-                        corretta: 0
-                    }
-                ];
-            }
+            // Fallback per altre materie
+            return [
+                {
+                    categoria: categoryName,
+                    difficolta: "Medio",
+                    testo: `Quesito di prova per ${categoryName}: Seleziona la risposta corretta.`,
+                    opzioni: ["Risposta Corretta", "Distrattore A", "Distrattore B", "Distrattore C"],
+                    corretta: 0
+                }
+            ];
         }
 
         function init() {
@@ -504,7 +504,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Avvio Test Ufficiale (Legge dai file JSON)
+        // Avvio Test Ufficiale
         async function startOfficialTest(testType) {
             let sectionsConfig = [{ category: 'Logica', count: 10 }];
             let allQuestions = [];
@@ -544,15 +544,13 @@
             startTimer();
         }
 
-        // Avvio Esercitazione Materia (Legge direttamente da data/logica.json)
+        // Avvio Esercitazione Materia
         async function startCustomTest(event) {
             event.preventDefault();
             const category = document.getElementById('sim-category').value;
             const count = parseInt(document.getElementById('sim-count').value, 10);
 
-            // Carica dal file JSON corrispondente (es. data/logica.json)
             const categoryQuestions = await loadCategoryData(category);
-
             let selected = [...categoryQuestions].sort(() => Math.random() - 0.5).slice(0, count);
 
             const formatted = selected.map(q => {
