@@ -1,4 +1,4 @@
-[
+window.logica=[
   {
     "categoria": "Logica",
     "difficolta": "Facile",
@@ -3502,6 +3502,6 @@
     "opzioni": ["25%", "15%", "20%", "10%"],
     "corretta": 0
   }
-]
+];
 
 
