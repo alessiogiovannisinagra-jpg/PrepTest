@@ -166,7 +166,7 @@
             </div>
         </section>
 
-        <!-- OFFICIAL TEST SELECTOR VIEW (TUTTI I TOLC + MED) -->
+        <!-- OFFICIAL TEST SELECTOR VIEW -->
         <section id="view-official-tolc-selector" class="hidden max-w-5xl mx-auto space-y-6">
             <div class="text-center space-y-2">
                 <h3 class="text-2xl font-bold text-slate-800">Tutti i Test e TOLC Ufficiali Disponibili</h3>
@@ -174,7 +174,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- MEDICINA -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-rose-100 text-rose-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Area Medica</span>
@@ -188,7 +187,6 @@
                     <button onclick="startOfficialTest('MEDICINA')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia Test</button>
                 </div>
 
-                <!-- SANITARIE -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-teal-100 text-teal-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Area Sanitaria</span>
@@ -202,7 +200,6 @@
                     <button onclick="startOfficialTest('SANITARIE')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia Test</button>
                 </div>
 
-                <!-- TOLC-I -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Ingegneria / STEM</span>
@@ -216,7 +213,6 @@
                     <button onclick="startOfficialTest('TOLC-I')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-I</button>
                 </div>
 
-                <!-- TOLC-E -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-emerald-100 text-emerald-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Economia</span>
@@ -230,7 +226,6 @@
                     <button onclick="startOfficialTest('TOLC-E')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-E</button>
                 </div>
 
-                <!-- TOLC-F -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-cyan-100 text-cyan-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Farmaceutica</span>
@@ -244,7 +239,6 @@
                     <button onclick="startOfficialTest('TOLC-F')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-F</button>
                 </div>
 
-                <!-- TOLC-B -->
                 <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
                     <div>
                         <span class="bg-lime-100 text-lime-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Scienze della Vita</span>
@@ -257,90 +251,6 @@
                     </div>
                     <button onclick="startOfficialTest('TOLC-B')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-B</button>
                 </div>
-
-                <!-- TOLC-S -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-amber-100 text-amber-800 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Scienze di Base</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-S</h4>
-                        <p class="text-xs text-slate-500 mt-1">Matematica, Logica, Scienze di Base + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>50 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-S')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-S</button>
-                </div>
-
-                <!-- TOLC-SU -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-amber-50 text-amber-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase border border-amber-200">Umanistiche</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-SU</h4>
-                        <p class="text-xs text-slate-500 mt-1">Comprensione testo, Studi storico-filosofici, Logica + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>50 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-SU')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-SU</button>
-                </div>
-
-                <!-- TOLC-AV -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-orange-100 text-orange-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Agraria & Vet</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-AV</h4>
-                        <p class="text-xs text-slate-500 mt-1">Biologia, Chimica, Matematica, Fisica, Logica + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>50 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-AV')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-AV</button>
-                </div>
-
-                <!-- TOLC-SPS -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-purple-100 text-purple-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Scienze Politiche</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-SPS</h4>
-                        <p class="text-xs text-slate-500 mt-1">Testo/Storico-Politica, Logica, Numerico + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>40 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-SPS')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-SPS</button>
-                </div>
-
-                <!-- TOLC-PSI -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-violet-100 text-violet-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Psicologia</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-PSI</h4>
-                        <p class="text-xs text-slate-500 mt-1">Testo, Matematica, Verbale, Numerico, Biologia + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>50 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-PSI')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-PSI</button>
-                </div>
-
-                <!-- TOLC-LP -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
-                    <div>
-                        <span class="bg-stone-100 text-stone-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">Professionalizzanti</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1">TOLC-LP</h4>
-                        <p class="text-xs text-slate-500 mt-1">Matematica, Logica, Verbale e Scienze + Inglese.</p>
-                    </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p>30 quesiti + Inglese</p>
-                        <p class="text-amber-600 font-semibold">Penalità -0.25</p>
-                    </div>
-                    <button onclick="startOfficialTest('TOLC-LP')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia TOLC-LP</button>
-                </div>
             </div>
 
             <div class="text-center pt-2">
@@ -348,7 +258,7 @@
             </div>
         </section>
 
-        <!-- CUSTOM SIMULATOR VIEW (Banca Dati Materie) -->
+        <!-- CUSTOM SIMULATOR VIEW -->
         <section id="view-custom-simulator" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-4">
             <div class="text-center space-y-2">
                 <div class="w-14 h-14 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-2">
@@ -482,12 +392,56 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Application Script con Fetch Asincrono dei file JSON -->
+    <!-- Applicazione con Banco Dati Integrato -->
     <script>
         const categories = ["Biologia", "Chimica", "Fisica", "Matematica", "Logica", "Informatica", "Inglese", "Diritto", "Economia", "Cultura"];
         
-        // Cache per memorizzare le domande caricate dai file JSON esterni nella cartella data/
-        const questionDatabaseCache = {};
+        const questionDatabase = [];
+        const diffs = ["Facile", "Medio", "Difficile"];
+
+        // Generazione automatica per le materie standard
+        categories.forEach(cat => {
+            if (cat !== "Logica") {
+                for(let i = 1; i <= 60; i++) {
+                    const diff = diffs[(i + cat.length) % 3];
+                    questionDatabase.push({
+                        categoria: cat,
+                        difficolta: diff,
+                        testo: `Quesito ufficiale di ${cat} n. ${i} - Livello ${diff}: Analizzare il quesito teorico-pratico e selezionare l'opzione corretta.`,
+                        opzioni: [`Risposta Corretta ${i}`, `Distrattore A (${i})`, `Distrattore B (${i})`, `Distrattore C (${i})`],
+                        corretta: 0
+                    });
+                }
+            }
+        });
+
+        // Inserimento dei quesiti di logica
+        const logicaQuesiti = [
+            { categoria: "Logica", difficolta: "Facile", testo: "Individua il numero che completa la serie: 2, 4, 6, 8, 10, ...", opzioni: ["12", "14", "11", "16"], corretta: 0 },
+            { categoria: "Logica", difficolta: "Medio", testo: "Se tutti i gatti sono felini e alcuni felini sono randagi, quale affermazione è deducibile con certezza assoluta?", opzioni: ["Esistono animali che sono felini ma non è detto siano gatti randagi", "Tutti i gatti sono randagi", "Nessun gatto è un felino", "Tutti i felini sono gatti"], corretta: 0 },
+            { categoria: "Logica", difficolta: "Facile", testo: "Completa l'analogia: 'Autore sta a Libro come Regista sta a...'", opzioni: ["Film", "Teatro", "Attore", "Spettatore"], corretta: 0 },
+            { categoria: "Logica", difficolta: "Difficile", testo: "Qual è la negazione logica della proposizione: 'Tutti i partecipanti hanno superato la prova'?", opzioni: ["Almeno un partecipante non ha superato la prova", "Nessun partecipante ha superato la prova", "Tutti i partecipanti sono stati bocciati", "Esiste un partecipante che ha superato la prova"], corretta: 0 },
+            { categoria: "Logica", difficolta: "Medio", testo: "Individua la lettera che completa la serie alfabetica: A, C, E, G, I, ...", opzioni: ["L", "K", "M", "J"], corretta: 1 }
+        ];
+
+        for(let i = 6; i <= 500; i++) {
+            const diff = diffs[i % 3];
+            logicaQuesiti.push({
+                categoria: "Logica",
+                difficolta: diff,
+                testo: `Quesito logico n. ${i} - Livello ${diff}: Individua la risposta corretta per completare il test logico.`,
+                opzioni: [`Risposta Corretta ${i}`, `Distrattore A`, `Distrattore B`, `Distrattore C`],
+                corretta: 0
+            });
+        }
+
+        logicaQuesiti.forEach(q => {
+            const correctText = q.opzioni[q.corretta];
+            q.opzioni.sort(() => Math.random() - 0.5);
+            q.corretta = q.opzioni.indexOf(correctText);
+        });
+
+        questionDatabase.push(...logicaQuesiti);
 
         let currentUser = null;
         let isRegisterMode = false;
@@ -496,35 +450,6 @@
         let userAnswers = [];
         let timerInterval = null;
         let secondsElapsed = 0;
-
-        // Funzione asincrona per caricare i file JSON della banca dati
-        async function loadCategoryData(categoryName) {
-            if (questionDatabaseCache[categoryName]) {
-                return questionDatabaseCache[categoryName];
-            }
-            
-            try {
-                const fileName = categoryName.toLowerCase() + '.json';
-                const response = await fetch(`data/${fileName}`);
-                if (!response.ok) throw new Error(`File ${fileName} non trovato.`);
-                
-                const data = await response.json();
-                questionDatabaseCache[categoryName] = data;
-                return data;
-            } catch (error) {
-                console.warn(`Impossibile caricare data/${categoryName.toLowerCase()}.json, utilizzo dati di fallback temporanei.`, error);
-                // Fallback di sicurezza nel caso il file JSON non sia ancora caricato su GitHub
-                return [
-                    {
-                        categoria: categoryName,
-                        difficolta: "Medio",
-                        testo: `Quesito di riserva per ${categoryName}: Seleziona l'opzione corretta.`,
-                        opzioni: [`Risposta Corretta (${categoryName})`, "Distrattore A", "Distrattore B", "Distrattore C"],
-                        corretta: 0
-                    }
-                ];
-            }
-        }
 
         function init() {
             const savedUser = localStorage.getItem('tolclab_current_user');
@@ -693,8 +618,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // --- CONFIGURAZIONE DI TUTTI I TEST UFFICIALI (ASINCRONA) ---
-        async function startOfficialTest(testType) {
+        function startOfficialTest(testType) {
             let sectionsConfig = [];
             let correctPoints = 1.0;
             let wrongPenalty = 0.25;
@@ -739,70 +663,19 @@
                         { category: 'Inglese', count: 15, isEnglish: true }
                     ];
                     break;
-                case 'TOLC-S':
-                    sectionsConfig = [
-                        { category: 'Matematica', count: 20 },
-                        { category: 'Logica', count: 10 },
-                        { category: 'Fisica', count: 15 },
-                        { category: 'Inglese', count: 15, isEnglish: true }
-                    ];
-                    break;
-                case 'TOLC-SU':
-                    sectionsConfig = [
-                        { category: 'Cultura', count: 30 },
-                        { category: 'Logica', count: 10 },
-                        { category: 'Inglese', count: 15, isEnglish: true }
-                    ];
-                    break;
-                case 'TOLC-SPS':
-                    sectionsConfig = [
-                        { category: 'Cultura', count: 20 },
-                        { category: 'Logica', count: 10 },
-                        { category: 'Matematica', count: 10 },
-                        { category: 'Inglese', count: 15, isEnglish: true }
-                    ];
-                    break;
-                case 'TOLC-PSI':
-                    sectionsConfig = [
-                        { category: 'Cultura', count: 10 },
-                        { category: 'Matematica', count: 10 },
-                        { category: 'Logica', count: 10 },
-                        { category: 'Biologia', count: 10 },
-                        { category: 'Inglese', count: 15, isEnglish: true }
-                    ];
-                    break;
-                case 'TOLC-LP':
-                    sectionsConfig = [
-                        { category: 'Matematica', count: 10 },
-                        { category: 'Logica', count: 10 },
-                        { category: 'Biologia', count: 10 },
-                        { category: 'Inglese', count: 15, isEnglish: true }
-                    ];
-                    break;
-            }
-
-            // Preleva le categorie uniche necessarie per il test
-            const uniqueCategories = [...new Set(sectionsConfig.map(s => s.category))];
-            const loadedDataMap = {};
-            for (const cat of uniqueCategories) {
-                loadedDataMap[cat] = await loadCategoryData(cat);
             }
 
             let allQuestions = [];
             sectionsConfig.forEach(sec => {
-                let pool = loadedDataMap[sec.category] || [];
+                let pool = questionDatabase.filter(q => q.categoria === sec.category);
                 let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, sec.count);
                 
                 shuffled.forEach(q => {
-                    const rawOpts = [...q.opzioni];
-                    const correctText = rawOpts[q.corretta];
-                    const shuffledOpts = rawOpts.sort(() => Math.random() - 0.5);
-                    
                     allQuestions.push({
                         category: sec.category,
                         text: q.testo,
-                        options: shuffledOpts,
-                        correct: shuffledOpts.indexOf(correctText),
+                        options: [...q.opzioni],
+                        correct: q.corretta,
                         isEnglish: !!sec.isEnglish
                     });
                 });
@@ -824,34 +697,25 @@
             startTimer();
         }
 
-        // --- GESTIONE ESERCITAZIONE LIBERA (ASINCRONA) ---
-        async function startCustomTest(event) {
+        function startCustomTest(event) {
             event.preventDefault();
             const category = document.getElementById('sim-category').value;
             const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
             const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
             const count = parseInt(document.getElementById('sim-count').value, 10);
 
-            // Carica le domande dal file JSON specifico della materia (es. data/logica.json)
-            const categoryQuestions = await loadCategoryData(category);
-
-            let filtered = categoryQuestions.filter(q => q.difficolta === difficulty);
-            if (filtered.length === 0) filtered = categoryQuestions; // Fallback se non ci sono filtri esatti
+            let filtered = questionDatabase.filter(q => q.categoria === category && q.difficolta === difficulty);
+            if (filtered.length === 0) filtered = questionDatabase.filter(q => q.categoria === category);
 
             let selected = [...filtered].sort(() => Math.random() - 0.5).slice(0, count);
 
-            const formatted = selected.map(q => {
-                const rawOpts = [...q.opzioni];
-                const correctText = rawOpts[q.corretta];
-                const shuffledOpts = rawOpts.sort(() => Math.random() - 0.5);
-                return {
-                    category: category,
-                    text: q.testo,
-                    options: shuffledOpts,
-                    correct: shuffledOpts.indexOf(correctText),
-                    isEnglish: category === 'Inglese'
-                };
-            });
+            const formatted = selected.map(q => ({
+                category: category,
+                text: q.testo,
+                options: [...q.opzioni],
+                correct: q.corretta,
+                isEnglish: category === 'Inglese'
+            }));
 
             currentTest = {
                 title: `Esercitazione ${category} (${difficulty})`,
