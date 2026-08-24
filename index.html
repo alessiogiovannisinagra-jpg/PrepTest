@@ -366,7 +366,7 @@
                         <option value="Chimica">Chimica</option>
                         <option value="Fisica">Fisica</option>
                         <option value="Matematica">Matematica</option>
-                        <option value="Logica">Logica</option>
+                        <option value="Logica" selected>Logica</option>
                         <option value="Informatica">Informatica</option>
                         <option value="Inglese">Inglese</option>
                         <option value="Diritto">Diritto</option>
@@ -482,31 +482,12 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- Application Script -->
+    <!-- Application Script con Fetch Asincrono dei file JSON -->
     <script>
         const categories = ["Biologia", "Chimica", "Fisica", "Matematica", "Logica", "Informatica", "Inglese", "Diritto", "Economia", "Cultura"];
         
-        const questionDatabase = [];
-        const diffs = ["Facile", "Medio", "Difficile"];
-
-        categories.forEach(cat => {
-            for(let i = 1; i <= 60; i++) {
-                const diff = diffs[(i + cat.length) % 3];
-                questionDatabase.push({
-                    categoria: cat,
-                    difficolta: diff,
-                    testo: `Quesito ufficiale di ${cat} n. ${i} - Livello ${diff}: Analizzare il quesito teorico-pratico e selezionare l'opzione corretta.`,
-                    opzioni: [`Risposta Corretta ${i}`, `Distrattore A (${i})`, `Distrattore B (${i})`, `Distrattore C (${i})`],
-                    corretta: 0
-                });
-            }
-        });
-
-        questionDatabase.forEach(q => {
-            q.opzioni.sort(() => Math.random() - 0.5);
-            const correctIndex = q.opzioni.findIndex(opt => opt.startsWith("Risposta Corretta"));
-            q.corretta = correctIndex !== -1 ? correctIndex : 0;
-        });
+        // Cache per memorizzare le domande caricate dai file JSON esterni nella cartella data/
+        const questionDatabaseCache = {};
 
         let currentUser = null;
         let isRegisterMode = false;
@@ -515,6 +496,35 @@
         let userAnswers = [];
         let timerInterval = null;
         let secondsElapsed = 0;
+
+        // Funzione asincrona per caricare i file JSON della banca dati
+        async function loadCategoryData(categoryName) {
+            if (questionDatabaseCache[categoryName]) {
+                return questionDatabaseCache[categoryName];
+            }
+            
+            try {
+                const fileName = categoryName.toLowerCase() + '.json';
+                const response = await fetch(`data/${fileName}`);
+                if (!response.ok) throw new Error(`File ${fileName} non trovato.`);
+                
+                const data = await response.json();
+                questionDatabaseCache[categoryName] = data;
+                return data;
+            } catch (error) {
+                console.warn(`Impossibile caricare data/${categoryName.toLowerCase()}.json, utilizzo dati di fallback temporanei.`, error);
+                // Fallback di sicurezza nel caso il file JSON non sia ancora caricato su GitHub
+                return [
+                    {
+                        categoria: categoryName,
+                        difficolta: "Medio",
+                        testo: `Quesito di riserva per ${categoryName}: Seleziona l'opzione corretta.`,
+                        opzioni: [`Risposta Corretta (${categoryName})`, "Distrattore A", "Distrattore B", "Distrattore C"],
+                        corretta: 0
+                    }
+                ];
+            }
+        }
 
         function init() {
             const savedUser = localStorage.getItem('tolclab_current_user');
@@ -683,8 +693,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // --- CONFIGURAZIONE DI TUTTI I TEST UFFICIALI ---
-        function startOfficialTest(testType) {
+        // --- CONFIGURAZIONE DI TUTTI I TEST UFFICIALI (ASINCRONA) ---
+        async function startOfficialTest(testType) {
             let sectionsConfig = [];
             let correctPoints = 1.0;
             let wrongPenalty = 0.25;
@@ -771,10 +781,16 @@
                     break;
             }
 
+            // Preleva le categorie uniche necessarie per il test
+            const uniqueCategories = [...new Set(sectionsConfig.map(s => s.category))];
+            const loadedDataMap = {};
+            for (const cat of uniqueCategories) {
+                loadedDataMap[cat] = await loadCategoryData(cat);
+            }
+
             let allQuestions = [];
             sectionsConfig.forEach(sec => {
-                let pool = questionDatabase.filter(q => q.categoria === sec.category);
-                if (pool.length === 0) pool = questionDatabase;
+                let pool = loadedDataMap[sec.category] || [];
                 let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, sec.count);
                 
                 shuffled.forEach(q => {
@@ -808,16 +824,19 @@
             startTimer();
         }
 
-        // --- GESTIONE ESERCITAZIONE LIBERA ---
-        function startCustomTest(event) {
+        // --- GESTIONE ESERCITAZIONE LIBERA (ASINCRONA) ---
+        async function startCustomTest(event) {
             event.preventDefault();
             const category = document.getElementById('sim-category').value;
             const difficultyInput = document.querySelector('input[name="sim-difficulty"]:checked');
             const difficulty = difficultyInput ? difficultyInput.value : 'Medio';
             const count = parseInt(document.getElementById('sim-count').value, 10);
 
-            let filtered = questionDatabase.filter(q => q.categoria === category && q.difficolta === difficulty);
-            if (filtered.length === 0) filtered = questionDatabase.filter(q => q.categoria === category);
+            // Carica le domande dal file JSON specifico della materia (es. data/logica.json)
+            const categoryQuestions = await loadCategoryData(category);
+
+            let filtered = categoryQuestions.filter(q => q.difficolta === difficulty);
+            if (filtered.length === 0) filtered = categoryQuestions; // Fallback se non ci sono filtri esatti
 
             let selected = [...filtered].sort(() => Math.random() - 0.5).slice(0, count);
 
