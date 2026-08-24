@@ -3,29 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOLC LAB PRO - Piattaforma Ufficiale di Simulazione Test</title>
+    <title>TOLC LAB - Piattaforma Ufficiale di Simulazione Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col">
+<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
 
     <!-- Header -->
-    <header class="bg-indigo-600 text-white shadow-md sticky top-0 z-50">
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="navigate('dashboard')">
-                <i class="fa-solid fa-graduation-cap text-2xl"></i>
-                <h1 class="text-xl font-bold tracking-wide">TOLC LAB PRO</h1>
+                <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-wider uppercase">TOLC LAB</h1>
+                    <span id="brand-edition" class="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full text-indigo-100 uppercase">Standard Edition</span>
+                </div>
             </div>
             
-            <nav id="nav-links" class="hidden md:flex space-x-6 text-sm font-medium items-center">
+            <nav id="nav-links" class="hidden md:flex space-x-5 text-sm font-semibold items-center">
                 <a href="#" onclick="navigate('dashboard')" class="hover:text-indigo-200 transition">Dashboard</a>
-                <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition font-bold bg-indigo-700 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-shield-halved mr-1.5"></i>Tutti i TOLC Ufficiali</a>
-                <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition font-bold bg-indigo-700/60 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-sliders mr-1.5"></i>TOLC Personalizzato</a>
-                <a href="#" onclick="navigate('database-manager')" class="hover:text-indigo-200 transition font-bold bg-indigo-700/60 px-3 py-1.5 rounded-lg"><i class="fa-solid fa-database mr-1.5"></i>Gestione Banca Dati</a>
+                <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
+                <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
+                <a href="#" onclick="navigate('database-manager')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-database mr-1.5"></i>Banca Dati</a>
                 <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche</a>
             </nav>
 
-            <div id="user-menu" class="flex items-center space-x-4"></div>
+            <div id="user-menu" class="flex items-center space-x-3"></div>
         </div>
     </header>
 
@@ -33,147 +41,158 @@
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
         
         <!-- AUTH VIEW -->
-        <section id="view-auth" class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6 my-12">
+        <section id="view-auth" class="max-w-md mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6 my-8">
             <div class="text-center space-y-2">
-                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-4">
+                <div class="w-16 h-16 gradient-bg text-white rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md mb-2">
                     <i class="fa-solid fa-user-lock"></i>
                 </div>
-                <h3 id="auth-title" class="text-2xl font-bold text-slate-800">Accedi al tuo account</h3>
-                <p class="text-sm text-slate-500">Monitora le simulazioni e i progressi di studio.</p>
+                <h3 id="auth-title" class="text-2xl font-black text-slate-900">Accesso Area Studio</h3>
+                <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
             <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
-                    <label class="text-xs font-bold text-slate-600 uppercase">Nome e Cognome</label>
-                    <input type="text" id="auth-name" placeholder="Mario Rossi" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
+                    <input type="text" id="auth-name" placeholder="Mario Rossi" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
                 <div class="space-y-1">
-                    <label class="text-xs font-bold text-slate-600 uppercase">Email</label>
-                    <input type="email" id="auth-email" required placeholder="tuamail@esempio.it" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Email</label>
+                    <input type="email" id="auth-email" required placeholder="studente@esempio.it" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
                 <div class="space-y-1">
-                    <label class="text-xs font-bold text-slate-600 uppercase">Password</label>
-                    <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Password</label>
+                    <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
-                <button type="submit" id="auth-submit-btn" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition">Accedi</button>
+                <button type="submit" id="auth-submit-btn" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Accedi</button>
             </form>
 
-            <div class="text-center text-sm text-slate-500 pt-2 border-t border-slate-100">
+            <div class="text-center text-xs text-slate-500 pt-2 border-t border-slate-100">
                 <p id="auth-switch-text">Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button></p>
             </div>
         </section>
 
         <!-- DASHBOARD VIEW -->
         <section id="view-dashboard" class="hidden space-y-8">
-            <div class="bg-gradient-to-r from-indigo-500 to-violet-600 rounded-2xl p-6 md:p-10 text-white shadow-lg flex flex-col md:flex-row justify-between items-center">
-                <div class="space-y-3 mb-6 md:mb-0">
-                    <h2 class="text-3xl font-extrabold tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                    <p class="text-indigo-100 max-w-xl text-sm md:text-base">Piattaforma professionale per simulazioni TOLC ufficiali e test personalizzati.</p>
+            <div class="gradient-bg rounded-3xl p-6 md:p-10 text-white shadow-xl flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-8 translate-y-8 text-9xl">
+                    <i class="fa-solid fa-brain"></i>
                 </div>
-                <div class="flex space-x-3">
-                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-600 font-bold px-4 py-3 rounded-xl shadow hover:bg-indigo-50 transition text-sm">
-                        <i class="fa-solid fa-shield-halved mr-1"></i> TOLC Ufficiali
+                <div class="space-y-3 mb-6 md:mb-0 z-10">
+                    <div class="inline-flex items-center space-x-2 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">
+                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                        <span>Sistema di simulazione attivo</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username" class="text-indigo-200">Studente</span>!</h2>
+                    <p class="text-indigo-100 max-w-xl text-sm leading-relaxed font-medium">Allenati con i test ufficiali CISIA o crea simulazioni personalizzate unendo infinite banche dati in formato JSON.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
+                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 rounded-2xl shadow-md hover:bg-indigo-50 transition text-sm flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved mr-2"></i> Test Ufficiali
                     </button>
-                    <button onclick="navigate('database-manager')" class="bg-indigo-700 text-white font-bold px-4 py-3 rounded-xl shadow hover:bg-indigo-800 transition text-sm">
-                        <i class="fa-solid fa-database mr-1"></i> Banca Dati
+                    <button onclick="toggleEdition()" id="edition-btn" class="bg-indigo-900/40 border border-white/30 text-white font-bold px-4 py-3.5 rounded-2xl shadow-md hover:bg-indigo-900/60 transition text-sm flex items-center justify-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i> Attiva PRO
                     </button>
                 </div>
             </div>
 
             <!-- Stats Overview -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
-                    <div class="bg-blue-100 text-blue-600 p-4 rounded-xl text-xl"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl text-xl shadow-sm"><i class="fa-solid fa-file-lines"></i></div>
                     <div>
-                        <p class="text-xs text-slate-400 font-semibold uppercase">Test Svolti</p>
-                        <h3 class="text-2xl font-bold text-slate-700" id="stat-completed">0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Test Svolti</p>
+                        <h3 class="text-2xl font-black text-slate-800" id="stat-completed">0</h3>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
-                    <div class="bg-emerald-100 text-emerald-600 p-4 rounded-xl text-xl"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-emerald-50 text-emerald-600 p-4 rounded-2xl text-xl shadow-sm"><i class="fa-solid fa-bullseye"></i></div>
                     <div>
-                        <p class="text-xs text-slate-400 font-semibold uppercase">Media Punteggi</p>
-                        <h3 class="text-2xl font-bold text-slate-700" id="stat-avg">0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Media Punteggi</p>
+                        <h3 class="text-2xl font-black text-slate-800" id="stat-avg">0</h3>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center space-x-4">
-                    <div class="bg-amber-100 text-amber-600 p-4 rounded-xl text-xl"><i class="fa-solid fa-clock"></i></div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-amber-50 text-amber-600 p-4 rounded-2xl text-xl shadow-sm"><i class="fa-solid fa-clock"></i></div>
                     <div>
-                        <p class="text-xs text-slate-400 font-semibold uppercase">Sessioni Studio</p>
-                        <h3 class="text-2xl font-bold text-slate-700" id="stat-hours">0.0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Ore di Studio</p>
+                        <h3 class="text-2xl font-black text-slate-800" id="stat-hours">0.0</h3>
                     </div>
                 </div>
             </div>
 
             <!-- Hub Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between space-y-4">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-file-shield"></i></div>
-                        <h3 class="text-xl font-bold text-slate-800">Simulazioni Ufficiali</h3>
-                        <p class="text-sm text-slate-500 mt-1">Struttura, numero di quesiti e penalità conformi agli standard CISIA.</p>
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Struttura, numero di quesiti e penalità conformi agli standard ministeriali e CISIA.</p>
                     </div>
-                    <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-semibold py-2.5 rounded-xl hover:bg-indigo-700 transition text-sm">Avvia Test <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                    <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-2xl hover:bg-indigo-700 transition text-xs shadow-md shadow-indigo-500/20">Avvia Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between space-y-4">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-violet-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-xl flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-sliders"></i></div>
-                        <h3 class="text-xl font-bold text-slate-800">TOLC Personalizzato</h3>
-                        <p class="text-sm text-slate-500 mt-1">Seleziona una o più materie e crea il tuo test su misura.</p>
+                        <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-sliders"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta il numero di quesiti e decidi la penalità.</p>
                     </div>
-                    <button onclick="navigate('custom-builder')" class="w-full border border-indigo-600 text-indigo-600 font-semibold py-2.5 rounded-xl hover:bg-indigo-50 transition text-sm">Crea Test <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                    <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 transition text-xs shadow-md shadow-violet-500/20">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col justify-between space-y-4">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-emerald-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-3"><i class="fa-solid fa-database"></i></div>
-                        <h3 class="text-xl font-bold text-slate-800">Banca Dati Quiz</h3>
-                        <p class="text-sm text-slate-500 mt-1" id="db-status-text">Quesiti reali caricati in memoria.</p>
+                        <div class="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-database"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">Gestione Banca Dati</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed" id="db-status-text">Carica file JSON multipli in memoria.</p>
                     </div>
-                    <button onclick="navigate('database-manager')" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-xl hover:bg-emerald-700 transition text-sm">Gestisci Database <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                    <button onclick="navigate('database-manager')" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-2xl hover:bg-emerald-700 transition text-xs shadow-md shadow-emerald-500/20">Gestisci Database <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
             </div>
         </section>
 
         <!-- OFFICIAL TOLC SELECTOR VIEW -->
         <section id="view-official-selector" class="hidden max-w-6xl mx-auto space-y-6">
-            <div class="flex justify-between items-center">
+            <div class="flex justify-between items-center bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-800">Simulazioni TOLC e Test Ufficiali</h3>
-                    <p class="text-sm text-slate-500">Seleziona il test d'ammissione specifico per il tuo corso di laurea.</p>
+                    <h3 class="text-xl font-black text-slate-900">Simulazioni TOLC e Test Ufficiali</h3>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5">Seleziona il test d'ammissione specifico per il tuo corso di laurea.</p>
                 </div>
-                <button onclick="navigate('dashboard')" class="text-sm text-indigo-600 font-bold hover:underline"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="official-tests-grid"></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="official-tests-grid"></div>
         </section>
 
         <!-- CUSTOM TOLC BUILDER VIEW -->
-        <section id="view-custom-builder" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+        <section id="view-custom-builder" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
             <div class="text-center space-y-1">
-                <h3 class="text-2xl font-bold text-slate-800">Crea TOLC Personalizzato</h3>
-                <p class="text-sm text-slate-500">Seleziona le materie d'interesse dalla banca dati.</p>
+                <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mx-auto text-xl mb-2">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900">Crea TOLC Personalizzato</h3>
+                <p class="text-xs text-slate-500 font-medium">Personalizza ogni parametro attingendo dalla tua banca dati unificata.</p>
             </div>
 
             <form onsubmit="startCustomTest(event)" class="space-y-6">
                 <div class="space-y-3">
-                    <label class="text-xs font-bold text-slate-600 uppercase tracking-wider">Seleziona Materie (almeno una)</label>
+                    <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Seleziona Materie (almeno una)</label>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="custom-categories-checkboxes"></div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-slate-600 uppercase">Domande per Materia</label>
-                        <select id="custom-count-per-cat" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
-                            <option value="5">5 Domande (Rapido)</option>
-                            <option value="10" selected>10 Domande (Standard)</option>
-                            <option value="20">20 Domande (Approfondito)</option>
+                        <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Domande per Materia</label>
+                        <select id="custom-count-per-cat" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-semibold text-slate-700">
+                            <option value="3">3 Domande (Rapido)</option>
+                            <option value="5" selected>5 Domande (Standard)</option>
+                            <option value="10">10 Domande (Approfondito)</option>
+                            <option value="20">20 Domande (Master)</option>
                         </select>
                     </div>
                     <div class="space-y-1">
-                        <label class="text-xs font-bold text-slate-600 uppercase">Penalità Errata</label>
-                        <select id="custom-penalty" class="w-full px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white font-medium">
+                        <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Penalità Errata</label>
+                        <select id="custom-penalty" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-semibold text-slate-700">
                             <option value="0.25" selected>Standard CISIA (-0.25)</option>
                             <option value="0.40">Area Medica (-0.40)</option>
                             <option value="0.0">Nessuna Penalità (0.0)</option>
@@ -181,91 +200,96 @@
                     </div>
                 </div>
 
-                <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition shadow">Avvia Test Personalizzato</button>
+                <button type="submit" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Avvia Test Personalizzato</button>
             </form>
         </section>
 
-        <!-- DATABASE MANAGER VIEW (Per importare grandi banche dati JSON) -->
-        <section id="view-database-manager" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+        <!-- DATABASE MANAGER VIEW -->
+        <section id="view-database-manager" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
             <div class="text-center space-y-2">
-                <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto text-2xl mb-2">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-sm mb-2">
                     <i class="fa-solid fa-database"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-800">Gestione Banca Dati</h3>
-                <p class="text-sm text-slate-500">Visualizza lo stato attuale o importa un file JSON con i tuoi quiz reali.</p>
+                <h3 class="text-2xl font-black text-slate-900">Gestione Banca Dati</h3>
+                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unirà automaticamente i quesiti.</p>
             </div>
 
-            <div class="bg-slate-50 p-5 rounded-xl space-y-3 border border-slate-200">
-                <h4 class="font-bold text-slate-700 text-sm"><i class="fa-solid fa-chart-pie mr-1.5 text-indigo-600"></i> Stato Attuale della Memoria</h4>
-                <div id="db-stats-list" class="text-xs text-slate-600 space-y-1"></div>
+            <div class="bg-slate-50 p-5 rounded-2xl space-y-3 border border-slate-200">
+                <h4 class="font-bold text-slate-800 text-xs flex items-center"><i class="fa-solid fa-chart-pie mr-2 text-emerald-600"></i> Quesiti Attualmente in Memoria</h4>
+                <div id="db-stats-list" class="text-xs text-slate-600 space-y-1.5 font-medium divide-y divide-slate-200/50 pt-1"></div>
             </div>
 
-            <div class="space-y-3 pt-2 border-t">
-                <label class="block text-xs font-bold text-slate-600 uppercase">Carica file banca dati (formato .json)</label>
-                <input type="file" id="json-file-input" accept=".json" class="w-full text-sm text-slate-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 cursor-pointer border border-slate-200 rounded-xl p-2">
-                <button onclick="importDatabaseFile()" class="w-full bg-emerald-600 text-white font-bold py-3 rounded-xl hover:bg-emerald-700 transition text-sm">
-                    <i class="fa-solid fa-upload mr-1.5"></i> Importa e Salva in Memoria
+            <div class="space-y-3 pt-2 border-t border-slate-100">
+                <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider">Aggiungi file banca dati (.json)</label>
+                <input type="file" id="json-file-input" accept=".json" class="w-full text-xs text-slate-500 file:mr-4 file:py-3 file:px-4 file:rounded-2xl file:border-0 file:text-xs file:font-bold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer border border-slate-200 rounded-2xl p-2 bg-slate-50">
+                <button onclick="importDatabaseFile()" class="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-2xl hover:bg-emerald-700 transition text-sm shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-file-arrow-up mr-2"></i> Unisci e Salva in Memoria
                 </button>
             </div>
 
-            <div class="text-center pt-2">
-                <button onclick="navigate('dashboard')" class="text-sm text-slate-500 hover:text-slate-800 font-medium"><i class="fa-solid fa-arrow-left mr-1"></i> Torna alla Dashboard</button>
+            <div class="flex justify-between items-center pt-2 border-t border-slate-100">
+                <button onclick="resetDatabase()" class="text-xs text-rose-600 font-bold hover:underline"><i class="fa-solid fa-trash mr-1"></i> Svuota Database</button>
+                <button onclick="navigate('dashboard')" class="text-xs text-slate-500 hover:text-slate-800 font-bold"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
         </section>
 
         <!-- TEST RUNNER VIEW -->
-        <section id="view-runner" class="hidden max-w-3xl mx-auto space-y-6 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
-            <div class="flex justify-between items-center border-b pb-4">
+        <section id="view-runner" class="hidden max-w-3xl mx-auto space-y-6 bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-200">
+            <div class="flex justify-between items-center border-b border-slate-100 pb-4">
                 <div>
-                    <span id="runner-category" class="text-xs font-bold text-indigo-600 uppercase">Sezione</span>
-                    <h3 id="runner-title" class="text-xl font-bold text-slate-800">Test in corso</h3>
+                    <span id="runner-category" class="text-[11px] font-black text-indigo-600 uppercase tracking-wider">Sezione</span>
+                    <h3 id="runner-title" class="text-xl font-black text-slate-900 mt-0.5">Test in corso</h3>
                 </div>
-                <div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg font-mono font-bold text-sm">
-                    <i class="fa-solid fa-stopwatch mr-1"></i> <span id="timer-display">00:00</span>
+                <div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-2xl font-mono font-bold text-sm border border-indigo-100 flex items-center">
+                    <i class="fa-solid fa-stopwatch mr-2 text-indigo-500"></i> <span id="timer-display">00:00</span>
                 </div>
             </div>
 
             <div class="space-y-4">
-                <div class="flex justify-between text-xs text-slate-400 font-semibold">
+                <div class="flex justify-between text-xs text-slate-400 font-bold">
                     <span id="question-progress">Domanda 1 di 10</span>
                 </div>
-                <p id="question-text" class="text-lg font-semibold text-slate-800">Caricamento...</p>
+                <p id="question-text" class="text-lg font-black text-slate-900 leading-snug">Caricamento...</p>
                 <div id="options-container" class="space-y-3 pt-2"></div>
             </div>
 
-            <div class="flex justify-between pt-4 border-t">
-                <button onclick="prevQuestion()" id="prev-btn" class="px-4 py-2 border rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-50 disabled:opacity-50" disabled>Indietro</button>
-                <button onclick="nextQuestion()" id="next-btn" class="bg-indigo-600 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition">Avanti</button>
+            <div class="flex justify-between pt-4 border-t border-slate-100">
+                <button onclick="prevQuestion()" id="prev-btn" class="px-5 py-2.5 border border-slate-200 rounded-2xl text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 transition">Indietro</button>
+                <button onclick="nextQuestion()" id="next-btn" class="gradient-bg text-white px-7 py-2.5 rounded-2xl text-xs font-bold hover:opacity-95 shadow-md shadow-indigo-500/25 transition">Avanti</button>
             </div>
         </section>
 
         <!-- RESULTS VIEW -->
-        <section id="view-results" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center space-y-6">
-            <div class="w-20 h-20 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto text-3xl">
+        <section id="view-results" class="hidden max-w-xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center space-y-6">
+            <div class="w-20 h-20 gradient-bg text-white rounded-3xl flex items-center justify-center mx-auto text-3xl shadow-lg shadow-indigo-500/30">
                 <i class="fa-solid fa-award"></i>
             </div>
             <div>
-                <h3 class="text-2xl font-bold text-slate-800">Test Completato!</h3>
+                <h3 class="text-2xl font-black text-slate-900">Test Completato!</h3>
+                <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance.</p>
             </div>
-            <div class="bg-slate-50 p-6 rounded-xl space-y-3">
+            <div class="bg-slate-50 p-6 rounded-2xl space-y-3 border border-slate-200">
                 <div>
-                    <p class="text-xs text-slate-400 uppercase font-bold">Punteggio Ponderato</p>
-                    <h4 id="result-score" class="text-3xl font-extrabold text-indigo-600">0.0</h4>
+                    <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato</p>
+                    <h4 id="result-score" class="text-4xl font-black text-indigo-600 mt-1">0.0</h4>
                 </div>
-                <div class="text-xs text-slate-500 font-medium" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
+                <div class="text-xs text-slate-600 font-bold pt-2 border-t border-slate-200/60" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
             </div>
-            <button onclick="navigate('dashboard')" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition text-sm">Torna alla Dashboard</button>
+            <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
         </section>
 
         <!-- STATS VIEW -->
-        <section id="view-stats" class="hidden space-y-6">
-            <div class="flex justify-between items-center">
-                <h3 class="text-2xl font-bold text-slate-800">Storico e Statistiche</h3>
-                <button onclick="navigate('dashboard')" class="text-sm text-indigo-600 font-bold hover:underline">Dashboard</button>
+        <section id="view-stats" class="hidden space-y-6 max-w-4xl mx-auto">
+            <div class="flex justify-between items-center bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
+                <div>
+                    <h3 class="text-xl font-black text-slate-900">Storico e Statistiche</h3>
+                    <p class="text-xs text-slate-500 font-medium">I tuoi progressi salvati nel tempo.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200">
                 <div id="history-container" class="divide-y divide-slate-100">
-                    <p class="text-sm text-slate-400 py-4 text-center">Nessun test completato.</p>
+                    <p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>
                 </div>
             </div>
         </section>
@@ -273,45 +297,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-        <p>&copy; 2026 TOLC LAB PRO. Tutti i diritti riservati.</p>
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 font-medium">
+        <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- SCRIPT GESTIONE BANCA DATI REALE -->
+    <!-- SCRIPT APPLICAZIONE -->
     <script>
-        // Banca dati di base con quesiti reali e strutturati
         let masterBank = {
             "Logica": [
-                { text: "Individua il numero che completa la serie logica: 3, 6, 11, 18, 27, ...", opts: ["38", "36", "35", "40"], correct: 0 },
-                { text: "Se è vero che 'Tutti gli ingegneri amano la matematica' e 'Alcuni matematici suonano la chitarra', quale deduzione è logicamente rigorosa?", opts: ["Esistono ingegneri che potrebbero suonare la chitarra", "Tutti gli ingegneri suonano la chitarra", "Nessun ingegnere ama la matematica", "Chi suona la chitarra è necessariamente un ingegnere"], correct: 0 },
-                { text: "Un negozio applica uno sconto del 20% su un articolo e successivamente un ulteriore 10% sul prezzo scontato. Qual è la percentuale di sconto totale rispetto al prezzo originario?", opts: ["28%", "30%", "25%", "22%"], correct: 0 },
-                { text: "Quale termine completa correttamente l'analogia: 'Orologio sta a Tempo come Termometro sta a...'", opts: ["Temperatura", "Calore", "Pressione", "Tempo"], correct: 0 }
+                { text: "Se tutti i mammiferi hanno i polmoni e le balene sono mammiferi, cosa si deduce logicamente?", opts: ["Le balene hanno i polmoni", "Le balene non respirano", "I pesci sono mammiferi", "Nessuna delle precedenti"], correct: 0 },
+                { text: "Individua il numero mancante nella serie: 2, 5, 10, 17, 26, ...", opts: ["37", "35", "33", "39"], correct: 0 }
             ],
             "Matematica": [
-                { text: "Qual è la soluzione dell'equazione esponenziale 2^(x+1) = 8?", opts: ["x = 2", "x = 3", "x = 1", "x = 4"], correct: 0 },
-                { text: "Calcola il limite per x che tende a 0 di (sin 3x) / x:", opts: ["3", "1", "0", "Non esiste"], correct: 0 },
-                { text: "In un triangolo rettangolo, i cateti misurano 6 cm e 8 cm. Quanto misura l'ipotenusa?", opts: ["10 cm", "14 cm", "12 cm", "7 cm"], correct: 0 }
+                { text: "Quanto vale la somma degli angoli interni di un triangolo euclideo?", opts: ["180 gradi", "360 gradi", "90 gradi", "270 gradi"], correct: 0 }
             ],
             "Biologia": [
-                { text: "Quale organulo cellulare è principalmente responsabile della sintesi delle proteine?", opts: ["Ribosoma", "Mitocondrio", "Apparato di Golgi", "Lisosoma"], correct: 0 },
-                { text: "Durante quale fase della mitosi i cromosomi si allineano sul piano equatoriale della cellula?", opts: ["Metafase", "Profase", "Anafase", "Telofase"], correct: 0 },
-                { text: "Qual è il principale pigmento responsabile dell'assorbimento della luce nella fotosintesi clorofilliana?", opts: ["Clorofilla", "Carotene", "Xantofilla", "Emoglobina"], correct: 0 }
-            ],
-            "Chimica": [
-                { text: "Qual è la configurazione elettronica dello zolfo (S, numero atomico 16)?", opts: ["1s² 2s² 2p⁶ 3s² 3p⁴", "1s² 2s² 2p⁶ 3s² 3p²", "1s² 2s² 2p⁶ 3s¹", "1s² 2s² 2p⁴"], correct: 0 },
-                { text: "In una soluzione acquosa a pH 3, qual è la concentrazione degli ioni idronio [H3O+]?", opts: ["10⁻³ M", "10⁻¹¹ M", "3 M", "10³ M"], correct: 0 }
-            ],
-            "Fisica": [
-                { text: "Un corpo di massa 2 kg si muove con accelerazione costante di 3 m/s². Qual è l'intensità della forza risultante applicata?", opts: ["6 N", "1,5 N", "5 N", "0,66 N"], correct: 0 },
-                { text: "Qual è l'unità di misura del flusso magnetico nel Sistema Internazionale?", opts: ["Weber", "Tesla", "Henry", "Coulomb"], correct: 0 }
-            ],
-            "Inglese": [
-                { text: "Choose the correct sentence:", opts: ["She has been living here for three years.", "She is living here since three years.", "She lives here since three years.", "She has living here for years."], correct: 0 },
-                { text: "What is the past participle of the verb 'to write'?", opts: ["Written", "Wrote", "Writen", "Writing"], correct: 0 }
-            ],
-            "Cultura": [
-                { text: "Chi ha scritto il romanzo 'I Promessi Sposi'?", opts: ["Alessandro Manzoni", "Giacomo Leopardi", "Dante Alighieri", "Giovanni Verga"], correct: 0 },
-                { text: "In quale anno è iniziata la Prima Guerra Mondiale?", opts: ["1914", "1915", "1939", "1918"], correct: 0 }
+                { text: "Quale organulo cellulare è sede della respirazione cellulare e produzione di ATP?", opts: ["Mitocondrio", "Ribosoma", "Lisosoma", "Apparato di Golgi"], correct: 0 }
             ]
         };
 
@@ -329,6 +330,7 @@
         let userAnswers = [];
         let timer = null;
         let seconds = 0;
+        let isPro = false;
 
         function init() {
             loadSavedDatabase();
@@ -336,7 +338,7 @@
             renderCustomCheckboxes();
             updateDbStats();
             
-            const saved = localStorage.getItem('tolclab_pro_user');
+            const saved = localStorage.getItem('tolclab_user');
             if (saved) {
                 currentUser = JSON.parse(saved);
                 renderSession();
@@ -346,12 +348,21 @@
             }
         }
 
+        function toggleEdition() {
+            isPro = !isPro;
+            document.getElementById('brand-edition').innerText = isPro ? "PRO Edition" : "Standard Edition";
+            document.getElementById('edition-btn').innerHTML = isPro 
+                ? `<i class="fa-solid fa-circle-check mr-2 text-emerald-300"></i> PRO Attivo` 
+                : `<i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i> Attiva PRO`;
+            alert(isPro ? "Modalità PRO attivata!" : "Modalità Standard ripristinata.");
+        }
+
         function loadSavedDatabase() {
-            const savedDb = localStorage.getItem('tolclab_custom_db');
+            const savedDb = localStorage.getItem('tolclab_db_unified');
             if (savedDb) {
                 try {
                     masterBank = JSON.parse(savedDb);
-                } catch(e) { console.error("Errore caricamento DB salvato"); }
+                } catch(e) { console.error("Errore caricamento DB"); }
             }
         }
 
@@ -359,12 +370,12 @@
             let total = 0;
             let html = '';
             Object.keys(masterBank).forEach(cat => {
-                let count = masterBank[cat].length;
+                let count = (masterBank[cat] || []).length;
                 total += count;
-                html += `<div class="flex justify-between"><span>${cat}:</span> <span class="font-bold">${count} quesiti</span></div>`;
+                html += `<div class="flex justify-between py-1"><span>${cat}:</span> <span class="font-bold text-slate-800">${count} quesiti</span></div>`;
             });
             document.getElementById('db-stats-list').innerHTML = html;
-            document.getElementById('db-status-text').innerText = `Totale: ${total} quesiti reali in memoria.`;
+            document.getElementById('db-status-text').innerText = `Totale: ${total} quesiti uniti in memoria.`;
         }
 
         function importDatabaseFile() {
@@ -378,32 +389,51 @@
             reader.onload = function(e) {
                 try {
                     const imported = JSON.parse(e.target.result);
-                    masterBank = imported;
-                    localStorage.setItem('tolclab_custom_db', JSON.stringify(masterBank));
+                    
+                    // Unione intelligente dei file JSON multipli
+                    Object.keys(imported).forEach(cat => {
+                        if (!masterBank[cat]) {
+                            masterBank[cat] = [];
+                        }
+                        masterBank[cat] = masterBank[cat].concat(imported[cat]);
+                    });
+
+                    localStorage.setItem('tolclab_db_unified', JSON.stringify(masterBank));
                     renderCustomCheckboxes();
                     updateDbStats();
-                    alert("Banca dati importata con successo!");
+                    fileInput.value = "";
+                    alert("File importato e unito con successo alla banca dati!");
                     navigate('dashboard');
                 } catch(err) {
-                    alert("Errore durante la lettura del file JSON. Assicurati che sia formattato correttamente.");
+                    alert("Errore nella lettura del file JSON. Formato non valido.");
                 }
             };
             reader.readAsText(file);
         }
 
+        function resetDatabase() {
+            if (confirm("Vuoi davvero svuotare l'intera banca dati salvata?")) {
+                localStorage.removeItem('tolclab_db_unified');
+                masterBank = { "Logica": [], "Matematica": [], "Biologia": [] };
+                renderCustomCheckboxes();
+                updateDbStats();
+                alert("Database svuotato.");
+            }
+        }
+
         function renderOfficialSelectorGrid() {
             const grid = document.getElementById('official-tests-grid');
             grid.innerHTML = officialTolcs.map(t => `
-                <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-3">
+                <div class="bg-white border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
                     <div>
-                        <span class="bg-indigo-50 text-indigo-700 text-xs px-2.5 py-1 rounded-full font-bold uppercase">${t.category}</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-2">${t.name}</h4>
+                        <span class="bg-indigo-50 text-indigo-700 text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-wider">${t.category}</span>
+                        <h4 class="text-lg font-black text-slate-900 mt-2.5">${t.name}</h4>
                     </div>
-                    <div class="text-xs text-slate-500 space-y-0.5 border-t pt-2">
-                        <p><i class="fa-solid fa-clock mr-1"></i> Durata: ${t.time} min</p>
-                        <p class="text-amber-600 font-semibold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
+                    <div class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3 font-medium">
+                        <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.time} min</p>
+                        <p class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
                     </div>
-                    <button onclick="startOfficialTest('${t.id}')" class="w-full bg-indigo-600 text-white font-bold py-2 rounded-xl hover:bg-indigo-700 transition text-xs">Avvia Simulazione</button>
+                    <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl hover:opacity-95 transition text-xs shadow-md shadow-indigo-500/20">Avvia Simulazione</button>
                 </div>
             `).join('');
         }
@@ -411,7 +441,7 @@
         function renderCustomCheckboxes() {
             const box = document.getElementById('custom-categories-checkboxes');
             box.innerHTML = Object.keys(masterBank).map(cat => `
-                <label class="flex items-center space-x-2.5 p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-indigo-50 hover:border-indigo-300 transition font-medium text-sm text-slate-700">
+                <label class="flex items-center space-x-2.5 p-3.5 border border-slate-200 rounded-2xl cursor-pointer hover:bg-indigo-50/50 hover:border-indigo-300 transition font-semibold text-xs text-slate-700 bg-slate-50">
                     <input type="checkbox" name="custom-cat" value="${cat}" class="text-indigo-600 rounded focus:ring-indigo-500 w-4 h-4">
                     <span>${cat}</span>
                 </label>
@@ -420,7 +450,7 @@
 
         function toggleAuthMode() {
             const isReg = document.getElementById('name-field').classList.toggle('hidden');
-            document.getElementById('auth-title').innerText = !isReg ? "Crea un account" : "Accedi al tuo account";
+            document.getElementById('auth-title').innerText = !isReg ? "Crea un account" : "Accesso Area Studio";
             document.getElementById('auth-submit-btn').innerText = !isReg ? "Registrati" : "Accedi";
             document.getElementById('auth-switch-text').innerHTML = !isReg 
                 ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
@@ -433,7 +463,7 @@
             const pass = document.getElementById('auth-password').value;
             const name = document.getElementById('auth-name').value.trim();
 
-            let users = JSON.parse(localStorage.getItem('tolclab_pro_users')) || [];
+            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
@@ -441,21 +471,21 @@
                 if (users.find(u => u.email === email)) { alert("Email già registrata"); return; }
                 currentUser = { name, email, pass, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
                 users.push(currentUser);
-                localStorage.setItem('tolclab_pro_users', JSON.stringify(users));
+                localStorage.setItem('tolclab_users', JSON.stringify(users));
             } else {
                 currentUser = users.find(u => u.email === email && u.pass === pass);
                 if (!currentUser) { alert("Credenziali non valide o utente inesistente"); return; }
             }
 
-            localStorage.setItem('tolclab_pro_user', JSON.stringify(currentUser));
+            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
             renderSession();
             navigate('dashboard');
         }
 
         function renderSession() {
             document.getElementById('user-menu').innerHTML = `
-                <span class="text-xs font-semibold bg-indigo-700 px-3 py-1.5 rounded-full"><i class="fa-solid fa-user mr-1"></i>${currentUser.name}</span>
-                <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <span class="text-xs font-bold bg-white/20 px-3 py-1.5 rounded-2xl"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.name}</span>
+                <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
             `;
             document.getElementById('welcome-username').innerText = currentUser.name;
             document.getElementById('stat-completed').innerText = currentUser.stats.completed;
@@ -464,19 +494,19 @@
             
             const historyContainer = document.getElementById('history-container');
             if (currentUser.history.length === 0) {
-                historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-4 text-center">Nessun test completato.</p>`;
+                historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>`;
             } else {
                 historyContainer.innerHTML = currentUser.history.map(h => `
-                    <div class="py-3 flex justify-between items-center text-sm">
-                        <span class="font-bold text-slate-700">${h.title}</span>
-                        <span class="bg-indigo-50 text-indigo-600 font-bold px-3 py-1 rounded-lg">${h.score} pt</span>
+                    <div class="py-3.5 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-800">${h.title}</span>
+                        <span class="bg-indigo-50 text-indigo-600 font-bold px-3 py-1 rounded-xl">${h.score} pt</span>
                     </div>
                 `).join('');
             }
         }
 
         function logout() {
-            localStorage.removeItem('tolclab_pro_user');
+            localStorage.removeItem('tolclab_user');
             currentUser = null;
             navigate('auth');
         }
@@ -497,7 +527,7 @@
 
             let allQuestions = [];
             config.structure.forEach(sec => {
-                let pool = masterBank[sec.cat] || masterBank["Logica"] || [];
+                let pool = masterBank[sec.cat] || [];
                 if (pool.length === 0) return;
                 let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, sec.count);
                 
@@ -517,7 +547,7 @@
             });
 
             if (allQuestions.length === 0) {
-                alert("La banca dati non contiene abbastanza quesiti per questo test.");
+                alert("La banca dati non contiene abbastanza quesiti per questo test. Importa prima un file JSON.");
                 return;
             }
 
@@ -535,7 +565,7 @@
             e.preventDefault();
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
             if (checkedBoxes.length === 0) {
-                alert("Seleziona almeno una materia per creare il TOLC personalizzato!");
+                alert("Seleziona almeno una materia per creare il test personalizzato!");
                 return;
             }
 
@@ -607,9 +637,9 @@
             document.getElementById('question-text').innerText = q.text;
 
             document.getElementById('options-container').innerHTML = q.opts.map((opt, i) => `
-                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-indigo-50 transition ${userAnswers[currentIdx] === i ? 'bg-indigo-50 border-indigo-500 ring-1 ring-indigo-500' : 'border-slate-200'}">
-                    <input type="radio" name="opt" value="${i}" ${userAnswers[currentIdx] === i ? 'checked' : ''} onchange="userAnswers[currentIdx]=${i}; loadQ();" class="mr-3">
-                    <span class="text-sm font-medium text-slate-700">${opt}</span>
+                <label class="flex items-center p-4 border rounded-2xl cursor-pointer hover:bg-indigo-50/60 transition ${userAnswers[currentIdx] === i ? 'bg-indigo-50 border-indigo-500 ring-2 ring-indigo-500/20' : 'border-slate-200 bg-white'}">
+                    <input type="radio" name="opt" value="${i}" ${userAnswers[currentIdx] === i ? 'checked' : ''} onchange="userAnswers[currentIdx]=${i}; loadQ();" class="mr-3.5 text-indigo-600 focus:ring-indigo-500 w-4 h-4">
+                    <span class="text-xs font-semibold text-slate-800">${opt}</span>
                 </label>
             `).join('');
 
@@ -656,11 +686,11 @@
             currentUser.stats.hours += 0.5;
             currentUser.history.unshift({ title: currentTest.title, score: score.toFixed(2), date: new Date().toLocaleDateString() });
             
-            localStorage.setItem('tolclab_pro_user', JSON.stringify(currentUser));
+            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
             
-            let users = JSON.parse(localStorage.getItem('tolclab_pro_users')) || [];
+            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
             let idx = users.findIndex(u => u.email === currentUser.email);
-            if (idx !== -1) { users[idx] = currentUser; localStorage.setItem('tolclab_pro_users', JSON.stringify(users)); }
+            if (idx !== -1) { users[idx] = currentUser; localStorage.setItem('tolclab_users', JSON.stringify(users)); }
 
             navigate('results');
         }
