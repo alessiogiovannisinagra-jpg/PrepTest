@@ -21,7 +21,6 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-black tracking-wider uppercase">TOLC LAB</h1>
-                    <span id="brand-edition" class="text-[10px] font-bold bg-white/20 px-2 py-0.5 rounded-full text-indigo-100 uppercase">Standard Edition</span>
                 </div>
             </div>
             
@@ -78,19 +77,12 @@
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <div class="space-y-3 mb-6 md:mb-0 z-10">
-                    <div class="inline-flex items-center space-x-2 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">
-                        <i class="fa-solid fa-circle-check text-emerald-400"></i>
-                        <span>Sistema di simulazione attivo</span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username" class="text-indigo-200">Studente</span>!</h2>
+                    <h2 class="text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
                     <p class="text-indigo-100 max-w-xl text-sm leading-relaxed font-medium">Allenati con i test ufficiali CISIA o crea simulazioni personalizzate unendo infinite banche dati in formato JSON.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
-                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 rounded-2xl shadow-md hover:bg-indigo-50 transition text-sm flex items-center justify-center">
-                        <i class="fa-solid fa-shield-halved mr-2"></i> Test Ufficiali
-                    </button>
-                    <button onclick="toggleEdition()" id="edition-btn" class="bg-indigo-900/40 border border-white/30 text-white font-bold px-4 py-3.5 rounded-2xl shadow-md hover:bg-indigo-900/60 transition text-sm flex items-center justify-center">
-                        <i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i> Attiva PRO
+                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-6 py-3.5 rounded-2xl shadow-md hover:bg-indigo-50 transition text-sm flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved mr-2"></i> Avvia Test Ufficiali
                     </button>
                 </div>
             </div>
@@ -211,7 +203,7 @@
                     <i class="fa-solid fa-database"></i>
                 </div>
                 <h3 class="text-2xl font-black text-slate-900">Gestione Banca Dati</h3>
-                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unirà automaticamente i quesiti.</p>
+                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unirà automaticamente i quesiti per tutti gli utenti.</p>
             </div>
 
             <div class="bg-slate-50 p-5 rounded-2xl space-y-3 border border-slate-200">
@@ -223,7 +215,7 @@
                 <label class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider">Aggiungi file banca dati (.json)</label>
                 <input type="file" id="json-file-input" accept=".json" class="w-full text-xs text-slate-500 file:mr-4 file:py-3 file:px-4 file:rounded-2xl file:border-0 file:text-xs file:font-bold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer border border-slate-200 rounded-2xl p-2 bg-slate-50">
                 <button onclick="importDatabaseFile()" class="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-2xl hover:bg-emerald-700 transition text-sm shadow-md shadow-emerald-500/20">
-                    <i class="fa-solid fa-file-arrow-up mr-2"></i> Unisci e Salva in Memoria
+                    <i class="fa-solid fa-file-arrow-up mr-2"></i> Unisci e Salva nel Database Globale
                 </button>
             </div>
 
@@ -303,18 +295,23 @@
 
     <!-- SCRIPT APPLICAZIONE -->
     <script>
-        let masterBank = {
-            "Logica": [
-                { text: "Se tutti i mammiferi hanno i polmoni e le balene sono mammiferi, cosa si deduce logicamente?", opts: ["Le balene hanno i polmoni", "Le balene non respirano", "I pesci sono mammiferi", "Nessuna delle precedenti"], correct: 0 },
-                { text: "Individua il numero mancante nella serie: 2, 5, 10, 17, 26, ...", opts: ["37", "35", "33", "39"], correct: 0 }
-            ],
-            "Matematica": [
-                { text: "Quanto vale la somma degli angoli interni di un triangolo euclideo?", opts: ["180 gradi", "360 gradi", "90 gradi", "270 gradi"], correct: 0 }
-            ],
-            "Biologia": [
-                { text: "Quale organulo cellulare è sede della respirazione cellulare e produzione di ATP?", opts: ["Mitocondrio", "Ribosoma", "Lisosoma", "Apparato di Golgi"], correct: 0 }
-            ]
-        };
+        // Funzione per ottenere la banca dati di base
+        function getDefaultBank() {
+            return {
+                "Logica": [
+                    { text: "Se tutti i mammiferi hanno i polmoni e le balene sono mammiferi, cosa si deduce logicamente?", opts: ["Le balene hanno i polmoni", "Le balene non respirano", "I pesci sono mammiferi", "Nessuna delle precedenti"], correct: 0 },
+                    { text: "Individua il numero mancante nella serie: 2, 5, 10, 17, 26, ...", opts: ["37", "35", "33", "39"], correct: 0 }
+                ],
+                "Matematica": [
+                    { text: "Quanto vale la somma degli angoli interni di un triangolo euclideo?", opts: ["180 gradi", "360 gradi", "90 gradi", "270 gradi"], correct: 0 }
+                ],
+                "Biologia": [
+                    { text: "Quale organulo cellulare è sede della respirazione cellulare e produzione di ATP?", opts: ["Mitocondrio", "Ribosoma", "Lisosoma", "Apparato di Golgi"], correct: 0 }
+                ]
+            };
+        }
+
+        let masterBank = getDefaultBank();
 
         const officialTolcs = [
             { id: 'MEDICINA', name: 'Medicina & Odontoiatria', category: 'Area Medica', time: 100, penalty: 0.40, correctPts: 1.5, structure: [{cat: 'Biologia', count: 3}, {cat: 'Chimica', count: 3}, {cat: 'Fisica', count: 2}, {cat: 'Logica', count: 2}] },
@@ -330,7 +327,6 @@
         let userAnswers = [];
         let timer = null;
         let seconds = 0;
-        let isPro = false;
 
         function init() {
             loadSavedDatabase();
@@ -348,21 +344,18 @@
             }
         }
 
-        function toggleEdition() {
-            isPro = !isPro;
-            document.getElementById('brand-edition').innerText = isPro ? "PRO Edition" : "Standard Edition";
-            document.getElementById('edition-btn').innerHTML = isPro 
-                ? `<i class="fa-solid fa-circle-check mr-2 text-emerald-300"></i> PRO Attivo` 
-                : `<i class="fa-solid fa-wand-magic-sparkles mr-2 text-amber-300"></i> Attiva PRO`;
-            alert(isPro ? "Modalità PRO attivata!" : "Modalità Standard ripristinata.");
-        }
-
+        // Carica la banca dati globale permanente
         function loadSavedDatabase() {
-            const savedDb = localStorage.getItem('tolclab_db_unified');
+            const savedDb = localStorage.getItem('tolclab_global_bank');
             if (savedDb) {
                 try {
                     masterBank = JSON.parse(savedDb);
-                } catch(e) { console.error("Errore caricamento DB"); }
+                } catch(e) { 
+                    console.error("Errore caricamento DB globale");
+                }
+            } else {
+                // Se non c'è, salva quella di default
+                localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
             }
         }
 
@@ -378,6 +371,7 @@
             document.getElementById('db-status-text').innerText = `Totale: ${total} quesiti uniti in memoria.`;
         }
 
+        // Importa e salva nella banca dati globale
         function importDatabaseFile() {
             const fileInput = document.getElementById('json-file-input');
             if (fileInput.files.length === 0) {
@@ -390,7 +384,7 @@
                 try {
                     const imported = JSON.parse(e.target.result);
                     
-                    // Unione intelligente dei file JSON multipli
+                    // Unione intelligente
                     Object.keys(imported).forEach(cat => {
                         if (!masterBank[cat]) {
                             masterBank[cat] = [];
@@ -398,11 +392,13 @@
                         masterBank[cat] = masterBank[cat].concat(imported[cat]);
                     });
 
-                    localStorage.setItem('tolclab_db_unified', JSON.stringify(masterBank));
+                    // Salva nella chiave GLOBALE condivisa
+                    localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
+                    
                     renderCustomCheckboxes();
                     updateDbStats();
                     fileInput.value = "";
-                    alert("File importato e unito con successo alla banca dati!");
+                    alert("File importato e unito con successo al database globale per tutti gli utenti!");
                     navigate('dashboard');
                 } catch(err) {
                     alert("Errore nella lettura del file JSON. Formato non valido.");
@@ -412,12 +408,13 @@
         }
 
         function resetDatabase() {
-            if (confirm("Vuoi davvero svuotare l'intera banca dati salvata?")) {
-                localStorage.removeItem('tolclab_db_unified');
-                masterBank = { "Logica": [], "Matematica": [], "Biologia": [] };
+            if (confirm("Vuoi davvero svuotare l'intera banca dati condivisa? Tutti gli utenti perderanno i nuovi quiz caricati.")) {
+                localStorage.removeItem('tolclab_global_bank');
+                masterBank = getDefaultBank();
+                localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
                 renderCustomCheckboxes();
                 updateDbStats();
-                alert("Database svuotato.");
+                alert("Database globale azzerato ai valori di default.");
             }
         }
 
