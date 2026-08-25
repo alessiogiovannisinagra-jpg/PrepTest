@@ -29,7 +29,7 @@
                 <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
                 <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
                 <a href="#" onclick="navigate('database-manager')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-database mr-1.5"></i>Banca Dati</a>
-                <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche</a>
+                <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche & Storico</a>
             </nav>
 
             <div id="user-menu" class="flex items-center space-x-3"></div>
@@ -252,22 +252,30 @@
         </section>
 
         <!-- RESULTS VIEW -->
-        <section id="view-results" class="hidden max-w-xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center space-y-6">
-            <div class="w-20 h-20 gradient-bg text-white rounded-3xl flex items-center justify-center mx-auto text-3xl shadow-lg shadow-indigo-500/30">
-                <i class="fa-solid fa-award"></i>
-            </div>
-            <div>
-                <h3 class="text-2xl font-black text-slate-900">Test Completato!</h3>
-                <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance.</p>
-            </div>
-            <div class="bg-slate-50 p-6 rounded-2xl space-y-3 border border-slate-200">
-                <div>
-                    <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato</p>
-                    <h4 id="result-score" class="text-4xl font-black text-indigo-600 mt-1">0.0</h4>
+        <section id="view-results" class="hidden max-w-2xl mx-auto space-y-6">
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center space-y-6">
+                <div class="w-20 h-20 gradient-bg text-white rounded-3xl flex items-center justify-center mx-auto text-3xl shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-award"></i>
                 </div>
-                <div class="text-xs text-slate-600 font-bold pt-2 border-t border-slate-200/60" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
+                <div>
+                    <h3 class="text-2xl font-black text-slate-900">Test Completato!</h3>
+                    <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl space-y-3 border border-slate-200">
+                    <div>
+                        <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato</p>
+                        <h4 id="result-score" class="text-4xl font-black text-indigo-600 mt-1">0.0</h4>
+                    </div>
+                    <div class="text-xs text-slate-600 font-bold pt-2 border-t border-slate-200/60" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
+                </div>
+                <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
             </div>
-            <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
+
+            <!-- DETAILED REVIEW ACCORDION / BOX -->
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+                <h4 class="text-lg font-black text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Riepilogo e Correzione Quesiti</h4>
+                <div id="results-review-container" class="space-y-4"></div>
+            </div>
         </section>
 
         <!-- STATS VIEW -->
@@ -275,7 +283,7 @@
             <div class="flex justify-between items-center bg-white p-6 rounded-3xl border border-slate-200 shadow-sm">
                 <div>
                     <h3 class="text-xl font-black text-slate-900">Storico e Statistiche</h3>
-                    <p class="text-xs text-slate-500 font-medium">I tuoi progressi salvati nel tempo.</p>
+                    <p class="text-xs text-slate-500 font-medium">I tuoi progressi e test salvati nel tempo.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
@@ -295,7 +303,6 @@
 
     <!-- SCRIPT APPLICAZIONE -->
     <script>
-        // Funzione per ottenere la banca dati di base
         function getDefaultBank() {
             return {
                 "Logica": [
@@ -344,17 +351,13 @@
             }
         }
 
-        // Carica la banca dati globale permanente
         function loadSavedDatabase() {
             const savedDb = localStorage.getItem('tolclab_global_bank');
             if (savedDb) {
                 try {
                     masterBank = JSON.parse(savedDb);
-                } catch(e) { 
-                    console.error("Errore caricamento DB globale");
-                }
+                } catch(e) { console.error("Errore DB"); }
             } else {
-                // Se non c'è, salva quella di default
                 localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
             }
         }
@@ -371,56 +374,44 @@
             document.getElementById('db-status-text').innerText = `Totale: ${total} quesiti uniti in memoria.`;
         }
 
-        // Importa e salva nella banca dati globale
         function importDatabaseFile() {
             const fileInput = document.getElementById('json-file-input');
-            if (fileInput.files.length === 0) {
-                alert("Seleziona prima un file JSON.");
-                return;
-            }
+            if (fileInput.files.length === 0) { alert("Seleziona prima un file JSON."); return; }
             const file = fileInput.files[0];
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
                     const imported = JSON.parse(e.target.result);
-                    
-                    // Unione intelligente
                     Object.keys(imported).forEach(cat => {
-                        if (!masterBank[cat]) {
-                            masterBank[cat] = [];
-                        }
+                        if (!masterBank[cat]) masterBank[cat] = [];
                         masterBank[cat] = masterBank[cat].concat(imported[cat]);
                     });
-
-                    // Salva nella chiave GLOBALE condivisa
                     localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
-                    
                     renderCustomCheckboxes();
                     updateDbStats();
                     fileInput.value = "";
-                    alert("File importato e unito con successo al database globale per tutti gli utenti!");
+                    alert("File importato e unito con successo!");
                     navigate('dashboard');
                 } catch(err) {
-                    alert("Errore nella lettura del file JSON. Formato non valido.");
+                    alert("Errore nella lettura del file JSON.");
                 }
             };
             reader.readAsText(file);
         }
 
         function resetDatabase() {
-            if (confirm("Vuoi davvero svuotare l'intera banca dati condivisa? Tutti gli utenti perderanno i nuovi quiz caricati.")) {
+            if (confirm("Vuoi azzerare il database globale?")) {
                 localStorage.removeItem('tolclab_global_bank');
                 masterBank = getDefaultBank();
                 localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
                 renderCustomCheckboxes();
                 updateDbStats();
-                alert("Database globale azzerato ai valori di default.");
+                alert("Database ripristinato.");
             }
         }
 
         function renderOfficialSelectorGrid() {
-            const grid = document.getElementById('official-tests-grid');
-            grid.innerHTML = officialTolcs.map(t => `
+            document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => `
                 <div class="bg-white border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
                     <div>
                         <span class="bg-indigo-50 text-indigo-700 text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-wider">${t.category}</span>
@@ -436,8 +427,7 @@
         }
 
         function renderCustomCheckboxes() {
-            const box = document.getElementById('custom-categories-checkboxes');
-            box.innerHTML = Object.keys(masterBank).map(cat => `
+            document.getElementById('custom-categories-checkboxes').innerHTML = Object.keys(masterBank).map(cat => `
                 <label class="flex items-center space-x-2.5 p-3.5 border border-slate-200 rounded-2xl cursor-pointer hover:bg-indigo-50/50 hover:border-indigo-300 transition font-semibold text-xs text-slate-700 bg-slate-50">
                     <input type="checkbox" name="custom-cat" value="${cat}" class="text-indigo-600 rounded focus:ring-indigo-500 w-4 h-4">
                     <span>${cat}</span>
@@ -471,7 +461,7 @@
                 localStorage.setItem('tolclab_users', JSON.stringify(users));
             } else {
                 currentUser = users.find(u => u.email === email && u.pass === pass);
-                if (!currentUser) { alert("Credenziali non valide o utente inesistente"); return; }
+                if (!currentUser) { alert("Credenziali non valide"); return; }
             }
 
             localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
@@ -490,13 +480,19 @@
             document.getElementById('stat-hours').innerText = currentUser.stats.hours.toFixed(1);
             
             const historyContainer = document.getElementById('history-container');
-            if (currentUser.history.length === 0) {
+            if (!currentUser.history || currentUser.history.length === 0) {
                 historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>`;
             } else {
-                historyContainer.innerHTML = currentUser.history.map(h => `
-                    <div class="py-3.5 flex justify-between items-center text-xs">
-                        <span class="font-bold text-slate-800">${h.title}</span>
-                        <span class="bg-indigo-50 text-indigo-600 font-bold px-3 py-1 rounded-xl">${h.score} pt</span>
+                historyContainer.innerHTML = currentUser.history.map((h, index) => `
+                    <div class="py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-2">
+                        <div>
+                            <span class="font-black text-slate-800 text-sm block">${h.title}</span>
+                            <span class="text-slate-400 text-[11px]">Completato il ${h.date}</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="bg-indigo-50 text-indigo-600 font-black px-3 py-1.5 rounded-xl text-sm">${h.score} pt</span>
+                            <button onclick="viewHistoryDetail(${index})" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-xl transition"><i class="fa-solid fa-eye mr-1"></i> Dettagli</button>
+                        </div>
                     </div>
                 `).join('');
             }
@@ -544,7 +540,7 @@
             });
 
             if (allQuestions.length === 0) {
-                alert("La banca dati non contiene abbastanza quesiti per questo test. Importa prima un file JSON.");
+                alert("La banca dati non contiene abbastanza quesiti per questo test.");
                 return;
             }
 
@@ -561,10 +557,7 @@
         function startCustomTest(e) {
             e.preventDefault();
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
-            if (checkedBoxes.length === 0) {
-                alert("Seleziona almeno una materia per creare il test personalizzato!");
-                return;
-            }
+            if (checkedBoxes.length === 0) { alert("Seleziona almeno una materia!"); return; }
 
             const countPerCat = parseInt(document.getElementById('custom-count-per-cat').value, 10);
             const penaltyVal = parseFloat(document.getElementById('custom-penalty').value);
@@ -591,10 +584,7 @@
                 });
             });
 
-            if (allQuestions.length === 0) {
-                alert("Nessun quesito disponibile per le materie selezionate.");
-                return;
-            }
+            if (allQuestions.length === 0) { alert("Nessun quesito disponibile."); return; }
 
             currentTest = {
                 title: `TOLC Personalizzato (${checkedBoxes.length} materie)`,
@@ -646,12 +636,8 @@
 
         function prevQuestion() { if (currentIdx > 0) { currentIdx--; loadQ(); } }
         function nextQuestion() {
-            if (currentIdx < currentTest.questions.length - 1) {
-                currentIdx++;
-                loadQ();
-            } else {
-                finishTest();
-            }
+            if (currentIdx < currentTest.questions.length - 1) { currentIdx++; loadQ(); } 
+            else { finishTest(); }
         }
 
         function finishTest() {
@@ -668,9 +654,7 @@
                     score += currentTest.correctPts;
                 } else {
                     wrong++;
-                    if (!q.isEnglish) {
-                        score -= currentTest.penalty;
-                    }
+                    if (!q.isEnglish) score -= currentTest.penalty;
                 }
             });
 
@@ -678,10 +662,21 @@
             document.getElementById('result-score').innerText = score.toFixed(2);
             document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
 
+            renderResultsReview(currentTest, userAnswers);
+
+            const testRecord = {
+                title: currentTest.title,
+                score: score.toFixed(2),
+                date: new Date().toLocaleDateString(),
+                questions: currentTest.questions,
+                userAnswers: [...userAnswers]
+            };
+
             currentUser.stats.completed += 1;
             currentUser.stats.scoreSum += score;
             currentUser.stats.hours += 0.5;
-            currentUser.history.unshift({ title: currentTest.title, score: score.toFixed(2), date: new Date().toLocaleDateString() });
+            if (!currentUser.history) currentUser.history = [];
+            currentUser.history.unshift(testRecord);
             
             localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
             
@@ -689,6 +684,56 @@
             let idx = users.findIndex(u => u.email === currentUser.email);
             if (idx !== -1) { users[idx] = currentUser; localStorage.setItem('tolclab_users', JSON.stringify(users)); }
 
+            navigate('results');
+        }
+
+        function renderResultsReview(testObj, answersArr) {
+            const container = document.getElementById('results-review-container');
+            container.innerHTML = testObj.questions.map((q, idx) => {
+                const userAns = answersArr[idx];
+                const isCorrect = userAns === q.correct;
+                const isOmitted = userAns === null;
+
+                let badge = isOmitted 
+                    ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>`
+                    : (isCorrect 
+                        ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>`
+                        : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`
+                    );
+
+                return `
+                    <div class="p-4 rounded-2xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/20' : (isOmitted ? 'border-amber-200 bg-amber-50/20' : 'border-rose-200 bg-rose-50/20')} space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>
+                            ${badge}
+                        </div>
+                        <p class="text-sm font-bold text-slate-900">${q.text}</p>
+                        <div class="space-y-1 pt-1 text-xs font-medium">
+                            ${q.opts.map((opt, oIdx) => {
+                                let style = "bg-white border-slate-200 text-slate-700";
+                                if (oIdx === q.correct) style = "bg-emerald-100 border-emerald-300 text-emerald-900 font-bold";
+                                else if (oIdx === userAns && !isCorrect) style = "bg-rose-100 border-rose-300 text-rose-900 font-bold line-through";
+                                return `<div class="p-2 border rounded-xl ${style}">${opt}</div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function viewHistoryDetail(historyIndex) {
+            const record = currentUser.history[historyIndex];
+            if (!record || !record.questions) return;
+
+            currentTest = {
+                title: record.title,
+                questions: record.questions
+            };
+            userAnswers = record.userAnswers;
+
+            document.getElementById('result-score').innerText = record.score;
+            document.getElementById('result-breakdown').innerText = `Storico salvato del ${record.date}`;
+            renderResultsReview(currentTest, userAnswers);
             navigate('results');
         }
 
