@@ -501,9 +501,7 @@
             "correct": 0
         }
     ],
-
-{ 
-    "Logica": [
+ "Logica": [
         {
             "text": "Se tutti i mammiferi hanno i polmoni e le balene sono mammiferi, cosa si deduce logicamente?",
             "opts": [
