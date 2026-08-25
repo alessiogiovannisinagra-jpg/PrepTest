@@ -203,7 +203,7 @@
                     <i class="fa-solid fa-database"></i>
                 </div>
                 <h3 class="text-2xl font-black text-slate-900">Gestione Banca Dati</h3>
-                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unisce automaticamente i quesiti in un unico database globale condiviso.</p>
+                <p class="text-xs text-slate-500 font-medium">Carica file JSON o esporta l'intero database unito in un unico file.</p>
             </div>
 
             <div class="bg-slate-50 p-5 rounded-2xl space-y-3 border border-slate-200">
@@ -216,6 +216,12 @@
                 <input type="file" id="json-file-input" accept=".json" class="w-full text-xs text-slate-500 file:mr-4 file:py-3 file:px-4 file:rounded-2xl file:border-0 file:text-xs file:font-bold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 cursor-pointer border border-slate-200 rounded-2xl p-2 bg-slate-50">
                 <button onclick="importDatabaseFile()" class="w-full bg-emerald-600 text-white font-bold py-3.5 rounded-2xl hover:bg-emerald-700 transition text-sm shadow-md shadow-emerald-500/20">
                     <i class="fa-solid fa-file-arrow-up mr-2"></i> Unisci e Salva nel Database Globale
+                </button>
+            </div>
+
+            <div class="pt-2 border-t border-slate-100">
+                <button onclick="exportTotalDatabase()" class="w-full bg-indigo-600 text-white font-bold py-3.5 rounded-2xl hover:bg-indigo-700 transition text-sm shadow-md shadow-indigo-500/20">
+                    <i class="fa-solid fa-file-arrow-down mr-2"></i> Esporta Database Totale (.json)
                 </button>
             </div>
 
@@ -421,7 +427,6 @@
             }
         }
 
-        // Banca dati globale permanente indipendente dai singoli utenti
         function loadSavedDatabase() {
             const savedDb = localStorage.getItem('tolclab_global_bank');
             if (savedDb) {
@@ -437,7 +442,7 @@
         }
 
         function updateDbStats() {
-            loadSavedDatabase(); // Ricarica sempre per sicurezza
+            loadSavedDatabase();
             let total = 0;
             let html = '';
             Object.keys(masterBank).forEach(cat => {
@@ -457,7 +462,7 @@
             reader.onload = function(e) {
                 try {
                     const imported = JSON.parse(e.target.result);
-                    loadSavedDatabase(); // Assicura di partire dall'ultimo stato globale
+                    loadSavedDatabase();
                     
                     Object.keys(imported).forEach(cat => {
                         if (!masterBank[cat]) masterBank[cat] = [];
@@ -468,13 +473,25 @@
                     renderCustomCheckboxes();
                     updateDbStats();
                     fileInput.value = "";
-                    alert("File importato e unito con successo al database globale condiviso!");
+                    alert("File importato e unito con successo al database!");
                     navigate('dashboard');
                 } catch(err) {
                     alert("Errore nella lettura del file JSON.");
                 }
             };
             reader.readAsText(file);
+        }
+
+        // Funzione per esportare tutto il database unito in un unico file JSON
+        function exportTotalDatabase() {
+            loadSavedDatabase();
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(masterBank, null, 4));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", "tolclab_full_database.json");
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
         }
 
         function resetDatabase() {
@@ -635,7 +652,7 @@
             });
 
             if (missingCategories.length > 0) {
-                alert(`Attenzione: nel database globale mancano quesiti per le seguenti categorie richieste: ${missingCategories.join(', ')}. Carica prima i file JSON relativi per avviare la simulazione.`);
+                alert(`Attenzione: nel database mancano quesiti per le seguenti categorie richieste: ${missingCategories.join(', ')}. Carica prima i file JSON relativi.`);
                 return;
             }
 
