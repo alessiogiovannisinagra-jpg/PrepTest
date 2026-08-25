@@ -111,7 +111,7 @@
                 </div>
             </div>
 
-            <!-- Hub Cards (2 Cards ora centrate e bilanciate) -->
+            <!-- Hub Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
@@ -366,10 +366,8 @@
             }
         }
 
-        // Carica automaticamente il database globale direttamente da GitHub
         async function loadSharedDatabaseFromGitHub() {
             try {
-                // Sostituisci 'tolclab_full_database.json' con il percorso esatto se lo metti in una cartella (es. 'database/tolclab_full_database.json')
                 const response = await fetch('tolclab_full_database.json');
                 if (!response.ok) throw new Error("File non trovato");
                 masterBank = await response.json();
