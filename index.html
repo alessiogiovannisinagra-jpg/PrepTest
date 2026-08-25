@@ -203,7 +203,7 @@
                     <i class="fa-solid fa-database"></i>
                 </div>
                 <h3 class="text-2xl font-black text-slate-900">Gestione Banca Dati</h3>
-                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unirà automaticamente i quesiti per tutti gli utenti.</p>
+                <p class="text-xs text-slate-500 font-medium">Carica più file JSON in sequenza: il sistema unisce automaticamente i quesiti in un unico database globale condiviso.</p>
             </div>
 
             <div class="bg-slate-50 p-5 rounded-2xl space-y-3 border border-slate-200">
@@ -320,7 +320,6 @@
 
         let masterBank = getDefaultBank();
 
-        // Configurazione reale dei test ufficiali CISIA e Ministeriali
         const officialTolcs = [
             { 
                 id: 'MEDICINA', 
@@ -422,18 +421,23 @@
             }
         }
 
+        // Banca dati globale permanente indipendente dai singoli utenti
         function loadSavedDatabase() {
             const savedDb = localStorage.getItem('tolclab_global_bank');
             if (savedDb) {
                 try {
                     masterBank = JSON.parse(savedDb);
-                } catch(e) { console.error("Errore DB"); }
+                } catch(e) { 
+                    masterBank = getDefaultBank();
+                }
             } else {
+                masterBank = getDefaultBank();
                 localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
             }
         }
 
         function updateDbStats() {
+            loadSavedDatabase(); // Ricarica sempre per sicurezza
             let total = 0;
             let html = '';
             Object.keys(masterBank).forEach(cat => {
@@ -453,15 +457,18 @@
             reader.onload = function(e) {
                 try {
                     const imported = JSON.parse(e.target.result);
+                    loadSavedDatabase(); // Assicura di partire dall'ultimo stato globale
+                    
                     Object.keys(imported).forEach(cat => {
                         if (!masterBank[cat]) masterBank[cat] = [];
                         masterBank[cat] = masterBank[cat].concat(imported[cat]);
                     });
+
                     localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
                     renderCustomCheckboxes();
                     updateDbStats();
                     fileInput.value = "";
-                    alert("File importato e unito con successo!");
+                    alert("File importato e unito con successo al database globale condiviso!");
                     navigate('dashboard');
                 } catch(err) {
                     alert("Errore nella lettura del file JSON.");
@@ -477,7 +484,7 @@
                 localStorage.setItem('tolclab_global_bank', JSON.stringify(masterBank));
                 renderCustomCheckboxes();
                 updateDbStats();
-                alert("Database ripristinato.");
+                alert("Database ripristinato ai valori di default.");
             }
         }
 
@@ -502,6 +509,7 @@
         }
 
         function renderCustomCheckboxes() {
+            loadSavedDatabase();
             document.getElementById('custom-categories-checkboxes').innerHTML = Object.keys(masterBank).map(cat => `
                 <label class="flex items-center space-x-2.5 p-3.5 border border-slate-200 rounded-2xl cursor-pointer hover:bg-indigo-50/50 hover:border-indigo-300 transition font-semibold text-xs text-slate-700 bg-slate-50">
                     <input type="checkbox" name="custom-cat" value="${cat}" class="text-indigo-600 rounded focus:ring-indigo-500 w-4 h-4">
@@ -586,10 +594,12 @@
             });
             if (view === 'dashboard') { renderSession(); updateDbStats(); }
             if (view === 'database-manager') { updateDbStats(); }
+            if (view === 'custom-builder') { renderCustomCheckboxes(); }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function startOfficialTest(tolcId) {
+            loadSavedDatabase();
             const config = officialTolcs.find(t => t.id === tolcId);
             if (!config) return;
 
@@ -602,7 +612,6 @@
                     missingCategories.push(sec.cat);
                     return;
                 }
-                // Se la banca dati ha meno quesiti di quelli richiesti, li prende tutti ciclando o mescolandoli
                 let shuffled = [...pool].sort(() => Math.random() - 0.5);
                 let selected = [];
                 while(selected.length < sec.count && shuffled.length > 0) {
@@ -626,7 +635,7 @@
             });
 
             if (missingCategories.length > 0) {
-                alert(`Attenzione: nel tuo database mancano quesiti per le seguenti categorie richieste dal test: ${missingCategories.join(', ')}. Carica prima file JSON completi per avviare la simulazione ufficiale al 100%.`);
+                alert(`Attenzione: nel database globale mancano quesiti per le seguenti categorie richieste: ${missingCategories.join(', ')}. Carica prima i file JSON relativi per avviare la simulazione.`);
                 return;
             }
 
@@ -642,6 +651,7 @@
 
         function startCustomTest(e) {
             e.preventDefault();
+            loadSavedDatabase();
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
             if (checkedBoxes.length === 0) { alert("Seleziona almeno una materia!"); return; }
 
