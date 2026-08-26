@@ -250,6 +250,262 @@
             "opts": ["Linea continua sottile", "Linea continua grossa", "Linea tratteggiata", "Linea mista"],
             "correct": 0
         }
+                {
+            "text": "Come si rappresenta l'intersezione (penetrazione) tra due solidi geometrici (es. un cilindro e un prisma) nelle proiezioni ortogonali?",
+            "opts": ["Con una linea continua sottile che delinea la curva spaziale d'intersezione tra le superfici", "Eliminando completamente i due corpi", "Con una linea tratteggiata di costruzione", "Tracciando solo il perimetro esterno d'ingombro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'sviluppo' di una superficie nel disegno tecnico e nella geometria descrittiva?",
+            "opts": ["La rappresentazione in piano (su un unico foglio bidimensionale) della superficie sviluppabile di un solido", "L'aumento in scala del progetto del 200%", "La modellazione 3D eseguita tramite software CAD parametrico", "Il calcolo del volume netto dell'oggetto"],
+            "correct": 0
+        },
+        {
+            "text": "Quali solidi geometrici ammettono uno 'sviluppo geometrico esatto' su un piano senza deformazioni o lacerazioni?",
+            "opts": ["I solidi policrici, i cilindri e i coni (superfici sviluppabili)", "Le sfere e i tori", "I paraboloidi ellittici", "Le superfici a doppia curvatura complessa"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema di quotatura in coordinate (o quotatura tabellare), come vengono indicate le quote dei vari centri di foratura?",
+            "opts": ["Tramite una tabella associata che riporta le coordinate X e Y rispetto a un'origine comune indicata sul disegno", "Scrivendo tutte le quote sovrapposte sui cerchi", "Utilizzando esclusivamente angoli sessagesimali", "Indicando solo il peso del pezzo lavorato"],
+            "correct": 0
+        },
+        {
+            "text": "Quale simbolo si utilizza nei disegni tecnici per indicare che una superficie deve essere lavorata (asportazione di truciolo)?",
+            "opts": ["Il simbolo grafico a V dissimmetrica (o completato da indicazioni di rugosità)", "Una croce rossa in campo bianco", "Un cerchio barrato", "La lettera 'L' maiuscola"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta il parametro 'Ra' associato alla finitura superficiale (rugosità)?",
+            "opts": ["La scostamento aritmetico medio del profilo di rugosità rispetto alla linea media", "Il raggio massimo di curvatura del pezzo", "La resistenza a trazione del materiale grezzo", "L'angolo di sformo della fusione"],
+            "correct": 0
+        },
+        {
+            "text": "Come viene indicato l'accoppiamento con 'gioco' tra un albero e un foro secondo le norme ISO tolleranze e accoppiamenti?",
+            "opts": ["Quando la zona di tolleranza del foro si trova interamente al di sopra di quella dell'albero", "Quando le due zone di tolleranza si sovrappongono parzialmente", "Quando l'albero è sempre più grande del foro", "Quando non esiste alcun movimento relativo tra le parti"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa caratterizza un accoppiamento con 'interferenza' (o con serraggio)?",
+            "opts": ["Il diametro effettivo dell'albero è sempre maggiore del foro, richiedendo forza per il montaggio", "Le parti scorrono liberamente l'una dentro l'altra", "Il gioco radiale è compreso tra 0.1 e 0.5 mm", "Si tratta di un collegamento filettato a passo grosso"],
+            "correct": 0
+        },
+        {
+            "text": "Come si indica in un disegno meccanico la presenza di una filettatura interna (es. in un foro cieco o passante)?",
+            "opts": ["Con una linea sottile per il diametro di nocciolo e una linea grossa per il diametro nominale esterno", "Disegnando manualmente ogni singola spira elicoidale interna", "Con un tratteggio fitto a rombi", "Usando solo una linea mista centrale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo principale dell'utilizzo di un 'dettaglio ingrandito' racchiuso in un cerchio con lettera di riferimento?",
+            "opts": ["Mostrare chiaramente zone di un pezzo molto piccole o ricche di particolari ravvicinati che in scala normale sarebbero illeggibili", "Aumentare il costo commerciale del progetto", "Sostituire la vista d'insieme principale", "Correggere errori di stampa del foglio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, data una retta generica nello spazio, cosa sono le sue 'proiezioni' sui piani principali?",
+            "opts": ["Due linee rette ottenute proiettando tutti i punti della retta spaziale ortogonalmente sui piani PO e PV", "Due punti isolati di intersezione", "Una singola curva parabolica", "Due archi di circonferenza"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la condizione geometrica per cui due rette nello spazio si dicono 'incidenti'?",
+            "opts": ["Le rette appartengono allo stesso piano e hanno un unico punto in comune", "Le rette non si incontrano mai in alcun punto", "Le proiezioni omonime sono parallele", "Le rette sono sghembe tra loro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'rette sghembe' nello spazio geometrico descrittivo?",
+            "opts": ["Due rette che non si intersecano e non appartengono allo stesso piano (non sono né parallele né incidenti)", "Due rette perfettamente parallele separate da una distanza costante", "Due rette che formano un angolo retto esatto", "Rette sovrapposte nello spazio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si individua univocamente un piano nello spazio di Monge?",
+            "opts": ["Tramite tre punti non allineati, oppure una retta e un punto esterno, o due rette incidenti o parallele", "Attraverso un singolo punto isolato", "Tramite la sua lunghezza e larghezza", "Specificando solo l'altezza dal piano orizzontale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'ribaltamento di un piano' nel metodo di Monge?",
+            "opts": ["La rotazione di un piano inclinato attorno a una sua traccia fino a farlo sovrapporre a un piano di proiezione parallelo per vederne la vera grandezza", "Il capovolgimento fisico del foglio da disegno", "La cancellazione delle linee di costruzione", "La trasformazione di una vista ortogonale in assonometria"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di macchine, qual è la funzione di una 'chiavetta' o di una 'linguetta' inserita in un albero motore?",
+            "opts": ["Realizzare un collegamento albero-mozzo per la trasmissione di momenti torcenti", "Tenere unito il coperchio del carter tramite tenuta ermetica", "Regolare il gioco assiale dei cuscinetti a sfera", "Ridurre l'attrito radiale dell'albero"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un cuscinetto a rotolamento (a sfere o a rulli) nei disegni d'insieme di complessivo?",
+            "opts": ["Solitamente con una rappresentazione semplificata unificata o sagoma rettangolare con una croce interna", "Disegnando singolarmente ogni singola sfera interna in scala reale", "Con una campitura a retino fitto", "Mediante una linea mista tratteggiata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'rettilineità' applicata su un asse cilindrico?",
+            "opts": ["La condizione in cui l'asse dell'elemento cilindrico deve trovarsi all'interno di un cilindro di tolleranza di diametro t", "La precisione del taglio longitudinale della sega", "La rugosità superficiale massima ammessa", "Il parallelismo rispetto alla base d'appoggio"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il simbolo di un cerchio racchiuso in un riquadro di tolleranza geometrica riferito a una superficie?",
+            "opts": ["Tolleranza di planarità o circolarità (a seconda del contesto)", "Tolleranza di concentricità", "Grado di durezza Brinell", "Coefficiente di dilatazione termica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di linea si utilizza per indicare i piani di simmetria o le posizioni limite di parti mobili in un disegno?",
+            "opts": ["Linea mista sottile a due tratti e punto", "Linea continua grossa", "Linea a tratti ravvicinati", "Linea a zig-zag continua"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto delle proiezioni ortogonali, cosa accade a un segmento perpendicolare al Piano Orizzontale (PO)?",
+            "opts": ["La sua proiezione sul PO si riduce a un punto, mentre sul PV appare in vera grandezza verticale", "La proiezione sul PV si riduce a un punto", "Entrambe le proiezioni scompaiono", "Il segmento risulta inclinato di 45 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una superficie di traslazione?",
+            "opts": ["Una superficie generata dal movimento di una linea (generatrice) che si mantiene parallela a se stessa lungo una linea direttrice", "Una superficie ottenuta per rotazione attorno a un asse centrale", "Una superficie sferica deformata", "Un piano inclinato privo di attrito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la regola fondamentale per la disposizione delle quote in un disegno tecnico affinché non si intersechino tra loro?",
+            "opts": ["Disporre le quote minori più vicine al profilo del pezzo e le quote maggiori (globali) all'esterno", "Mettere tutte le quote a caso purché siano leggibili", "Scrivere le quote esclusivamente all'interno della figura", "Evitare l'uso delle linee di riferimento"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'vista ausiliaria' (o proiezione ortogonale ortogonale ausiliaria)?",
+            - "Una vista proiettata su un piano di proiezione non parallelo ai piani principali, utile per mostrare in vera grandezza una faccia inclinata del pezzo",
+            "Una vista eseguita con l'ausilio dell'intelligenza artificiale",
+            "Una vista secondaria non quotata",
+            "Una copia fotostatica del disegno originale"],
+            "correct": 0
+        },
+        {
+            "text": "Come si indica la fine di una linea di misura secondo le norme UNI?",
+            "opts": ["Con frecce chiuse annerite (o sbarrette oblique a 45°, o punti)", "Con un cerchietto numerato", "Con una croce a X", "Senza alcun simbolo terminale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa significa la sigla 'CAD' applicata al settore del disegno e della progettazione?",
+            "opts": ["Computer-Aided Design (Progettazione assistita da calcolatore)", "Centralized Automatic Drawing", "Calculated Architectural Dimensioning", "Creative Artistic Display"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la principale differenza tra un disegno d'insieme e un disegno di dettaglio (o particolare)?",
+            "opts": ["Il disegno d'insieme mostra il montaggio completo di più componenti assemblati, mentre il disegno di dettaglio definisce un singolo pezzo con tutte le quote e tolleranze", "Il disegno d'insieme è sempre eseguito a mano libera", "Il disegno di dettaglio non riporta mai le quote", "Non c'è alcuna differenza pratica"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si indica con il termine 'distinta base' associata a un disegno d'insieme?",
+            "opts": ["La tabella numerata che elenca tutti i componenti, i codici, i materiali e le quantità dei pezzi che formano il gruppo meccanico", "La lista degli attrezzi necessari per la manutenzione", "L'elenco dei costi di spedizione", "Il registro delle presenze in officina"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, qual è la proprietà delle tracce di un piano generico?",
+            "opts": ["Le tracce sono le rette d'intersezione del piano con i piani di proiezione principali PO e PV", "Sono i punti di coordinate zero", "Rappresentano i centri di curvatura delle sezioni coniche", "Sono linee ausiliarie per il calcolo delle aree"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta l'intersezione di due piani paralleli nel metodo di Monge?",
+            "opts": ["Non si intersecano mai (l'intersezione è una retta impropria all'infinito)", "Formano un punto geometrico centrale", "Generano una retta perpendicolare all'asse di terra", "Si fondono in un unico piano"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'proiezioni convergenti' (o prospettiva)?",
+            - "Sistemi di proiezione in cui i raggi visuali partono da un punto di vista improprio o proprio e convergono verso un centro di vista (occhio dell'osservatore)",
+            "Proiezioni in cui i raggi sono rigorosamente paralleli tra loro",
+            "Sistemi privi di punto di fuga",
+            "Proiezioni ortogonali senza scala"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di assonometria presenta i tre angoli tra gli assi disuguali e tre coefficienti di riduzione differenti?",
+            "opts": ["Assonometria trimetrica", "Assonometria isometrica", "Assonometria dimetrica", "Assonometria ortogonale cavaliera"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'quota ausiliaria' (o di servizio) racchiusa tra parentesi in un disegno?",
+            "opts": ["Una quota indicata a solo scopo informativo o di controllo, che non concorre direttamente alla catena delle tolleranze di lavorazione", "La quota principale del pezzo", "Una quota errata da cancellare", "Il prezzo stimato del componente"],
+            "correct": 0
+        },
+        {
+            "text": "Come si comporta una retta generica perpendicolare al Piano Verticale (PV) nelle proiezioni ortogonali?",
+            "opts": ["La sua seconda proiezione sul PV si riduce a un punto, mentre la prima proiezione sul PO risulta perpendicolare all'asse di terra", "La prima proiezione sul PO diventa un punto", "Entrambe le proiezioni sono parallele all'asse di terra", "La retta scompare dal disegno"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il significato del simbolo di tolleranza geometrica di 'cilindricità'?",
+            "opts": ["Limita gli errori ammissibili di forma affinché la superficie cilindrica si mantenga all'interno di due cilindri coaxiali distanti t", "Garantisce che il foro sia perfettamente filettato", "Indica la massima velocità di rotazione dell'albero", "Misura l'arrotondamento degli spigoli vivi"],
+            "correct": 0
+        },
+        {
+            "text": "Come vengono denominate le sezioni che non si trovano allineate lungo l'asse principale di taglio ma vengono traslate?",
+            "opts": ["Sezioni ribaltate fuori vista (o sezioni successive)", "Sezioni nascoste o fantasma", "Semisezioni speculari", "Sezioni ideali non normate"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa regola la norma UNI EN ISO 128 per quanto riguarda le linee nel disegno tecnico?",
+            "opts": ["I tipi di linea, lo spessore e le regole generali di rappresentazione grafica", "I formati di esportazione dei file PDF", "I requisiti di sicurezza antincendio dei laboratori", "Le modalità di collaudo dei materiali metallici"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si indica con il termine 'sformo' nei disegni di pezzi ottenuti per fusione?",
+            "opts": ["La leggera inclinazione delle pareti verticali del modello per consentirne l'agevole estrazione dalla sabbia di fonderia", "Il difetto di deformazione termica del metallo", "La tolleranza di rugosità superficiale globale", "Il gioco radiale dei perni in rotazione"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, se un punto ha quota positiva e scarto (o allontanamento) positivo, in quale diedro (quadrante) si trova?",
+            "opts": ["Nel primo diedro (spazio sovrastante il PO e antistante il PV)", "Nel secondo diedro", "Nel terzo diedro", "Nel quarto diedro"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo dell'impiego delle 'linee d'interruzione' nei disegni tecnici di oggetti molto lunghi (es. profilati o tubi)?",
+            "opts": ["Rappresentare solo le estremità e la parte significativa del pezzo accorciandone la lunghezza visiva sul foglio", "Indicare un punto di rottura a fatica del materiale", "Separare le viste ortogonali principali dalle sezioni", "Indicare il passaggio dei cavi elettrici interni"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce geometricamente una superficie conica retta di rivoluzione?",
+            "opts": ["Una superficie generata dal movimento di una retta passante per un punto fisso (vertice) e appoggiata su una circonferenza di base", "Un solido limitato da sei facce piane quadrate", "Una superficie ottenuta per traslazione rettilinea", "Un paraboloide cavo"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'coassialità' in una tolleranza geometrica di posizione?",
+            "opts": ["La condizione in cui l'asse di un elemento cilindrico deve trovarsi all'interno di un cilindro di tolleranza avente lo stesso asse di riferimento", "L'intersezione ortogonale di due alberi", "La simmetria speculare di un blocco meccanico", "Il parallelismo tra due piani distanti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale simbolo si impiega comunemente per indicare il 'raggio' di un arco di raccordo nelle quote lineari?",
+            "opts": ["La lettera maiuscola 'R'", "La lettera 'D'", "Il simbolo 'Ø'", "La lettera 'S'"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema di quotatura in parallelo, perché le quote con valore minore si posizionano più vicine al profilo rispetto a quelle maggiori?",
+            "opts": ["Per evitare che le linee di misura e di riferimento si intersechino o si sovrappongano creando confusione di lettura", "Per rispettare una regola estetica non vincolante", "Per velocizzare la stampa cartacea del progetto", "Per ridurre il consumo di inchiostro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta una 'sezione parziale' in un disegno tecnico?",
+            "opts": ["Un taglio limitato a una piccolissima zona circoscritta dell'oggetto per metterne in luce un dettaglio interno senza sezionare tutto il pezzo", "Una sezione eseguita tagliando il 30% della lunghezza totale", "Un errore di rappresentazione grafica da correggere", "Una semisezione simmetrica"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta il filetto utile di una vite nei disegni tecnici costruttivi unificati?",
+            "opts": ["Con una linea continua grossa che delimita il diametro nominale esterno fino alla fine della parte filettata utile", "Disegnando tutte le singole spire in 3D wireframe", "Con una linea tratteggiata invisibile", "Con un tratteggio a retino fitto"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del cartiglio in merito alla 'scala' del disegno?",
+            "opts": ["Indicare il rapporto di riduzione o ingrandimento con cui sono state eseguite le proiezioni rispetto al reale", "Specificare la scala di durezza del materiale del pezzo", "Definire la scala numerica delle tolleranze geometriche", "Riportare la scala gerarchica dei progettisti dello studio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della geometria descrittiva, cosa individua l'intersezione di due piani non paralleli nello spazio?",
+            "opts": ["Una linea retta geometrica", "Un punto isolato", "Una superficie sferica", "Un piano parallelo all'infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale vantaggio dell'uso di una piattaforma web statica e di un database in formato JSON per la gestione dei test rispetto ai vecchi kit cartacei?",
+            "opts": ["Flessibilità totale, aggiornamento istantaneo, costi di gestione nulli e portabilità universale senza installazione di software pesanti", "L'obbligo di connessione a server dedicati costosi", "La necessità di ristampare i manuali ogni volta che cambia una norma", "La limitazione d'accesso a un solo utente alla volta"],
+            "correct": 0
+        },
+        {
+            "text": "Se un utente ricarica inaspettatamente la pagina (F5) durante una simulazione attiva su TOLC LAB, cosa garantisce la continuità della prova?",
+            "opts": ["Il salvataggio in tempo reale dello stato nel `localStorage` del browser e il prompt di ripristino automatico della sessione", "La perdita totale dei dati e la chiusura dell'account", "L'invio automatico dei risultati parziali alla segreteria universitaria", "Il blocco temporaneo della piattaforma per 24 ore"],
+            "correct": 0
+        }
     ],
     "Psicologia": [
         {
