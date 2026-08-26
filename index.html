@@ -50,7 +50,7 @@
                 <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
-            <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4">
+            <form id="auth-form" onsubmit="event.preventDefault(); handleAuth(event);" class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
                     <input type="text" id="auth-name" placeholder="Mario Rossi" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
@@ -358,7 +358,6 @@
             renderOfficialSelectorGrid();
             renderCustomCheckboxes();
             
-            // Controlla se l'utente è salvato nella sessione locale
             const savedUser = sessionStorage.getItem('tolc_user');
             if (savedUser) {
                 currentUser = JSON.parse(savedUser);
@@ -372,7 +371,6 @@
         async function fetchUserData() {
             if (!currentUser) return;
 
-            // Legge i dati aggiornati dalla tabella "utenti"
             let { data: userData, error } = await supabase
                 .from('utenti')
                 .select('*')
@@ -388,7 +386,6 @@
                 };
             }
 
-            // Carica lo storico dei test dell'utente
             let { data: history } = await supabase
                 .from('user_history')
                 .select('*')
@@ -444,59 +441,75 @@
         }
 
         function toggleAuthMode() {
-            const isReg = document.getElementById('name-field').classList.toggle('hidden');
-            document.getElementById('auth-title').innerText = !isReg ? "Crea un account" : "Accesso Area Studio";
-            document.getElementById('auth-submit-btn').innerText = !isReg ? "Registrati" : "Accedi";
-            document.getElementById('auth-switch-text').innerHTML = !isReg 
+            const nameFieldDiv = document.getElementById('name-field');
+            const isHidden = nameFieldDiv.classList.toggle('hidden');
+            
+            document.getElementById('auth-title').innerText = !isHidden ? "Crea un account" : "Accesso Area Studio";
+            document.getElementById('auth-submit-btn').innerText = !isHidden ? "Registrati" : "Accedi";
+            document.getElementById('auth-switch-text').innerHTML = !isHidden 
                 ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
                 : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
         }
 
+        // Funzione di Login e Registrazione unificata e robusta
         async function handleAuth(e) {
             e.preventDefault();
-            const email = document.getElementById('auth-email').value.trim();
-            const password = document.getElementById('auth-password').value;
-            const name = document.getElementById('auth-name').value.trim();
+            console.log("Inizio processo di autenticazione...");
+
+            const emailField = document.getElementById('auth-email').value.trim();
+            const passwordField = document.getElementById('auth-password').value;
+            const nameField = document.getElementById('auth-name').value.trim();
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
-                if (!name) { alert("Inserisci il nome e cognome"); return; }
+                // Registrazione
+                if (!nameField) { 
+                    alert("Inserisci il nome e cognome"); 
+                    return; 
+                }
                 
-                // Registrazione diretta sulla tabella "utenti"
+                console.log("Tentativo di registrazione per:", emailField);
                 const { error } = await supabase
                     .from('utenti')
-                    .insert([
-                        { 
-                            username: name, 
-                            email: email, 
-                            password_hash: password, 
-                            is_active: true,
-                            is_pro: false
-                        }
-                    ]);
+                    .insert([{ 
+                        username: nameField, 
+                        email: emailField, 
+                        password_hash: passwordField, 
+                        is_active: true,
+                        is_pro: false
+                    }]);
 
                 if (error) { 
-                    alert("Errore durante la registrazione: " + error.message); 
+                    alert("Errore durante la registrazione (forse l'email è già in uso?): " + error.message); 
+                    console.error(error);
                     return; 
                 }
 
                 alert("🎉 Registrazione completata con successo! Ora puoi effettuare l'accesso.");
                 toggleAuthMode();
+                document.getElementById('auth-form').reset();
             } else {
-                // Login diretto sulla tabella "utenti"
+                // Login
+                console.log("Tentativo di login per:", emailField);
                 const { data, error } = await supabase
                     .from('utenti')
                     .select('*')
-                    .eq('email', email)
-                    .single();
+                    .eq('email', emailField)
+                    .maybeSingle();
 
-                if (error || !data) {
-                    alert("Utente non trovato con questa email.");
+                if (error) {
+                    alert("Errore di connessione al database: " + error.message);
+                    console.error(error);
+                    return;
+                }
+
+                if (!data) {
+                    alert("⚠️ Nessun account associato a questa email. Clicca su 'Registrati gratis' per crearne uno in pochi secondi!");
                     return;
                 }
 
                 const storedPassword = data.password_hash || data.password;
-                if (storedPassword !== password) {
+                if (storedPassword !== passwordField) {
                     alert("Password errata!");
                     return;
                 }
@@ -506,6 +519,7 @@
                     return;
                 }
 
+                console.log("Login riuscito per l'utente:", data.username);
                 currentUser = data;
                 sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
                 await fetchUserData();
@@ -527,8 +541,6 @@
         async function sendPasswordReset() {
             const email = document.getElementById('forgot-email').value.trim();
             if (!email) { alert("Inserisci un'email valida."); return; }
-
-            // Avviso per reset manuale/personalizzato visto che usiamo la tabella "utenti"
             alert(`📧 Se la mail ${email} è registrata nella tabella utenti, contatta l'amministratore per reimpostare la password.`);
             closeForgotModal();
             document.getElementById('forgot-email').value = '';
