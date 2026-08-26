@@ -358,33 +358,43 @@
             renderOfficialSelectorGrid();
             renderCustomCheckboxes();
             
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                currentUser = session.user;
+            // Controlla se l'utente è salvato nella sessione locale
+            const savedUser = sessionStorage.getItem('tolc_user');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
                 await fetchUserData();
                 navigate('dashboard');
             } else {
                 navigate('auth');
             }
-
-            supabase.auth.onAuthStateChange(async (event, session) => {
-                if (session) {
-                    currentUser = session.user;
-                    await fetchUserData();
-                } else {
-                    currentUser = null;
-                    userProfile = null;
-                    userHistory = [];
-                }
-            });
         }
 
         async function fetchUserData() {
             if (!currentUser) return;
-            let { data: profile } = await supabase.from('profiles').select('*').eq('id', currentUser.id).single();
-            userProfile = profile || { name: currentUser.user_metadata?.full_name || 'Studente', is_pro: false };
 
-            let { data: history } = await supabase.from('user_history').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
+            // Legge i dati aggiornati dalla tabella "utenti"
+            let { data: userData, error } = await supabase
+                .from('utenti')
+                .select('*')
+                .eq('id', currentUser.id)
+                .single();
+
+            if (userData) {
+                currentUser = userData;
+                userProfile = { 
+                    name: userData.username || userData.name || 'Studente', 
+                    is_pro: userData.is_pro || false,
+                    pro_expires: userData.pro_expires
+                };
+            }
+
+            // Carica lo storico dei test dell'utente
+            let { data: history } = await supabase
+                .from('user_history')
+                .select('*')
+                .eq('user_id', currentUser.id)
+                .order('created_at', { ascending: false });
+
             userHistory = history || [];
             renderSession();
         }
@@ -452,44 +462,59 @@
             if (isReg) {
                 if (!name) { alert("Inserisci il nome e cognome"); return; }
                 
-                const { data, error } = await supabase.auth.signUp({
-                    email: email,
-                    password: password,
-                    options: { data: { full_name: name } }
-                });
+                // Registrazione diretta sulla tabella "utenti"
+                const { error } = await supabase
+                    .from('utenti')
+                    .insert([
+                        { 
+                            username: name, 
+                            email: email, 
+                            password_hash: password, 
+                            is_active: true,
+                            is_pro: false
+                        }
+                    ]);
 
                 if (error) { 
                     alert("Errore durante la registrazione: " + error.message); 
                     return; 
                 }
 
-                if (data.user) {
-                    await supabase.from('profiles').upsert([
-                        { id: data.user.id, name: name, is_pro: false }
-                    ]);
-                }
-
                 alert("🎉 Registrazione completata con successo! Ora puoi effettuare l'accesso.");
                 toggleAuthMode();
             } else {
-                const { data, error } = await supabase.auth.signInWithPassword({
-                    email: email,
-                    password: password
-                });
+                // Login diretto sulla tabella "utenti"
+                const { data, error } = await supabase
+                    .from('utenti')
+                    .select('*')
+                    .eq('email', email)
+                    .single();
 
-                if (error) { 
-                    alert("Credenziali non valide o email non confermata: " + error.message); 
-                    return; 
+                if (error || !data) {
+                    alert("Utente non trovato con questa email.");
+                    return;
                 }
 
-                currentUser = data.user;
+                const storedPassword = data.password_hash || data.password;
+                if (storedPassword !== password) {
+                    alert("Password errata!");
+                    return;
+                }
+
+                if (data.is_active === false) {
+                    alert("Questo account è stato disattivato.");
+                    return;
+                }
+
+                currentUser = data;
+                sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
                 await fetchUserData();
                 navigate('dashboard');
             }
         }
 
         async function logout() {
-            await supabase.auth.signOut();
+            sessionStorage.removeItem('tolc_user');
             currentUser = null;
             userProfile = null;
             userHistory = [];
@@ -503,14 +528,10 @@
             const email = document.getElementById('forgot-email').value.trim();
             if (!email) { alert("Inserisci un'email valida."); return; }
 
-            const { error } = await supabase.auth.resetPasswordForEmail(email);
-            if (error) {
-                alert("Errore: " + error.message);
-            } else {
-                alert(`📧 Ti abbiamo inviato un'email a ${email} con le istruzioni per reimpostare la password!`);
-                closeForgotModal();
-                document.getElementById('forgot-email').value = '';
-            }
+            // Avviso per reset manuale/personalizzato visto che usiamo la tabella "utenti"
+            alert(`📧 Se la mail ${email} è registrata nella tabella utenti, contatta l'amministratore per reimpostare la password.`);
+            closeForgotModal();
+            document.getElementById('forgot-email').value = '';
         }
 
         function renderSession() {
@@ -588,7 +609,7 @@
                 expireDate.setDate(expireDate.getDate() + 30);
 
                 const { error } = await supabase
-                    .from('profiles')
+                    .from('utenti')
                     .update({ is_pro: true, pro_expires: expireDate.toISOString() })
                     .eq('id', currentUser.id);
 
