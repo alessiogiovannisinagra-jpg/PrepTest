@@ -450,20 +450,22 @@
                 ] 
             },
             { 
-                id: 'FORMAZIONE-PRIMARIA', 
-                name: 'Scienze della Formazione Primaria', 
-                category: 'Formazione', 
-                timeMinutes: 150, 
-                penalty: 0.40, 
-                correctPts: 1.0, 
-                icon: 'fa-children',
-                bgIconColor: 'bg-pink-50 text-pink-600',
-                structure: [
-                    {cat: 'Competenza Linguistica e Logica', count: 40}, 
-                    {cat: 'Cultura Letteraria e Storico-Sociale', count: 20}, 
-                    {cat: 'Cultura Scientifico-Matematica', count: 20}
-                ] 
-            }
+    id: 'FORMAZIONE-PRIMARIA', 
+    name: 'Scienze della Formazione Primaria', 
+    category: 'Formazione', 
+    timeMinutes: 150, 
+    penalty: 0.40, 
+    correctPts: 1.0, 
+    icon: 'fa-children',
+    bgIconColor: 'bg-pink-50 text-pink-600',
+    structure: [
+        {cat: 'Comprensione Verbale', count: 25}, 
+        {cat: 'Logica', count: 15}, 
+        {cat: 'Cultura Generale', count: 20},
+        {cat: 'Matematica e Fisica', count: 20}
+    ] 
+}
+
         ];
 
         let currentUser = null;
