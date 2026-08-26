@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -643,11 +643,43 @@
             const userEmail = encodeURIComponent(currentUser.email);
 
             // TODO: SOSTITUISCI QUESTO LINK CON IL TUO PAYMENT LINK DI STRIPE!
-            // Es: https://buy.stripe.com/test_123456789...
             const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
 
             // Reindirizza l'utente alla pagina di pagamento sicura
             window.location.href = stripeCheckoutUrl;
+        }
+
+        function applyPromoCode() {
+            const inputElement = document.getElementById('promo-code-input');
+            const code = inputElement.value.trim().toUpperCase();
+            
+            // Codice promozionale segreto per sbloccare il PRO istantaneamente
+            const SECRET_PROMO_CODE = "TOLCLABPRO2026";
+
+            if (code === SECRET_PROMO_CODE) {
+                let expireDate = new Date();
+                expireDate.setDate(expireDate.getDate() + 30); // 30 giorni di PRO
+
+                currentUser.isPro = true;
+                currentUser.proExpires = expireDate.toISOString();
+
+                localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+                
+                let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+                let idx = users.findIndex(u => u.email === currentUser.email);
+                if (idx !== -1) {
+                    users[idx] = currentUser;
+                    localStorage.setItem('tolclab_users', JSON.stringify(users));
+                }
+
+                closePaywallModal();
+                alert("🎉 Codice valido! Abbonamento PRO sbloccato con successo per 30 giorni.");
+                renderSession();
+                inputElement.value = '';
+            } else {
+                alert("❌ Codice non valido o scaduto. Riprova.");
+                inputElement.value = '';
+            }
         }
 
         function startOfficialTest(tolcId) {
@@ -898,7 +930,7 @@
         window.onload = init;
     </script>
 
-    <!-- MODALE ABBONAMENTO PRO (COLLEGATO A STRIPE) -->
+    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
     <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
             <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
@@ -914,7 +946,14 @@
                 <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
             </div>
             <div class="space-y-3">
-                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 sm:py-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
+                
+                <!-- SEZIONE INSERIMENTO CODICE PROMO -->
+                <div class="pt-2 border-t border-slate-100 flex space-x-2">
+                    <input type="text" id="promo-code-input" placeholder="Inserisci codice promo..." class="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold tracking-wider text-center">
+                    <button onclick="applyPromoCode()" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-800 transition shrink-0">Riscatta</button>
+                </div>
+
                 <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
             </div>
         </div>
