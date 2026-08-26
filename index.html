@@ -50,7 +50,7 @@
                 <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
-            <!-- Form di autenticazione pulito senza blocchi nativi -->
+            <!-- Form di autenticazione -->
             <div class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
@@ -246,14 +246,25 @@
             { id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] }
         ];
 
+        // FUNZIONE AGGIUNTA: Gestisce l'apertura e la chiusura della schermata di registrazione al click
         function toggleAuthMode() {
             isRegistering = !isRegistering;
-            document.getElementById('name-field').classList.toggle('hidden', !isRegistering);
-            document.getElementById('auth-title').innerText = isRegistering ? "Crea un account" : "Accesso Area Studio";
-            document.getElementById('auth-submit-btn').innerText = isRegistering ? "Registrati" : "Accedi";
-            document.getElementById('auth-switch-text').innerHTML = isRegistering 
-                ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
-                : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+            const nameField = document.getElementById('name-field');
+            const authTitle = document.getElementById('auth-title');
+            const authSubmitBtn = document.getElementById('auth-submit-btn');
+            const authSwitchText = document.getElementById('auth-switch-text');
+
+            if (isRegistering) {
+                nameField.classList.remove('hidden');
+                authTitle.innerText = "Crea un account";
+                authSubmitBtn.innerText = "Registrati";
+                authSwitchText.innerHTML = `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`;
+            } else {
+                nameField.classList.add('hidden');
+                authTitle.innerText = "Accesso Area Studio";
+                authSubmitBtn.innerText = "Accedi";
+                authSwitchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+            }
         }
 
         async function handleAuthSubmit() {
