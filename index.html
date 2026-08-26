@@ -76,12 +76,18 @@
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <div class="space-y-2 sm:space-y-3 mb-6 md:mb-0 z-10 text-center md:text-left">
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Allenati con i test ufficiali CISIA conformi agli standard ministeriali o crea simulazioni personalizzate.</p>
+                    <div class="flex items-center justify-center md:justify-start gap-2">
+                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
+                        <span id="user-pro-badge" class="hidden bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fa-solid fa-crown mr-1"></i>PRO</span>
+                    </div>
+                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Allenati con i test ufficiali conformi agli standard ministeriali o crea simulazioni personalizzate.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
                     <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 sm:px-6 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
                         <i class="fa-solid fa-shield-halved mr-2"></i> Avvia Test Ufficiali
+                    </button>
+                    <button onclick="openPaywallModal()" class="bg-amber-400 text-slate-900 font-bold px-4 py-3.5 rounded-2xl shadow-md hover:bg-amber-300 transition text-xs sm:text-sm flex items-center justify-center">
+                        <i class="fa-solid fa-key mr-2"></i> Riscatta Codice
                     </button>
                 </div>
             </div>
@@ -261,6 +267,38 @@
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 font-medium">
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
+
+    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
+    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
+            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">TOLC LAB PRO</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio progressi.</p>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
+                <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
+                <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
+                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi.</p>
+            </div>
+            <div class="space-y-3">
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
+                
+                <!-- SEZIONE INSERIMENTO CODICE PROMO (BOX EVIDENZIATO) -->
+                <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-left space-y-2">
+                    <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wide block">Hai un codice promo?</label>
+                    <div class="flex space-x-2">
+                        <input type="text" id="promo-code-input" placeholder="TOLCLABPRO2026" onkeydown="if(event.key === 'Enter') applyPromoCode();" style="text-transform: uppercase;" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center tracking-wider">
+                        <button type="button" onclick="applyPromoCode()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shrink-0">Riscatta</button>
+                    </div>
+                </div>
+
+                <button type="button" onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Chiudi</button>
+            </div>
+        </div>
+    </div>
 
     <!-- SCRIPT APPLICAZIONE -->
     <script>
@@ -495,9 +533,9 @@
                 if (!response.ok) throw new Error("File non trovato");
                 masterBank = await response.json();
             } catch (err) {
-                console.warn("Impossibile caricare il database da GitHub, uso dati minimi di fallback.");
+                console.warn("Impossibile caricare il database da GitHub, uso fallback.");
                 masterBank = {
-                    "Logica": [{ text: "Domanda di test preliminare", opts: ["Risposta A", "Risposta B"], correct: 0 }]
+                    "Logica": [{ text: "Domanda di test", opts: ["A", "B", "C", "D", "E"], correct: 0 }]
                 };
             }
         }
@@ -557,7 +595,7 @@
             if (isReg) {
                 if (!name) { alert("Inserisci il nome"); return; }
                 if (users.find(u => u.email === email)) { alert("Email già registrata"); return; }
-                currentUser = { name, email, pass, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
+                currentUser = { name, email, pass, isPro: false, proExpires: null, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
                 users.push(currentUser);
                 localStorage.setItem('tolclab_users', JSON.stringify(users));
             } else {
@@ -571,14 +609,20 @@
         }
 
         function renderSession() {
+            const isPro = checkProAccess();
+            document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
+
             document.getElementById('user-menu').innerHTML = `
-                <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.name}</span>
+                <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none flex items-center">
+                    ${isPro ? '<i class="fa-solid fa-crown text-amber-300 mr-1.5"></i>' : '<i class="fa-solid fa-user mr-1.5"></i>'}
+                    ${currentUser.name}
+                </span>
                 <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-1.5 sm:px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
             `;
             document.getElementById('welcome-username').innerText = currentUser.name;
-            document.getElementById('stat-completed').innerText = currentUser.stats.completed;
-            document.getElementById('stat-avg').innerText = currentUser.stats.completed > 0 ? (currentUser.stats.scoreSum / currentUser.stats.completed).toFixed(1) : 0;
-            document.getElementById('stat-hours').innerText = currentUser.stats.hours.toFixed(1);
+            document.getElementById('stat-completed').innerText = currentUser.stats ? currentUser.stats.completed : 0;
+            document.getElementById('stat-avg').innerText = (currentUser.stats && currentUser.stats.completed > 0) ? (currentUser.stats.scoreSum / currentUser.stats.completed).toFixed(1) : 0;
+            document.getElementById('stat-hours').innerText = currentUser.stats ? currentUser.stats.hours.toFixed(1) : "0.0";
             
             const historyContainer = document.getElementById('history-container');
             if (!currentUser.history || currentUser.history.length === 0) {
@@ -617,14 +661,15 @@
 
         function checkProAccess() {
             if (!currentUser) return false;
-            // Controlla se ha l'abbonamento attivo e non scaduto
             if (currentUser.isPro && currentUser.proExpires) {
                 const expireDate = new Date(currentUser.proExpires);
-                if (expireDate > new Date()) {
-                    return true;
-                }
+                if (expireDate > new Date()) return true;
             }
             return false;
+        }
+
+        function openPaywallModal() {
+            document.getElementById('modal-paywall').classList.remove('hidden');
         }
 
         function closePaywallModal() {
@@ -638,17 +683,15 @@
                 closePaywallModal();
                 return;
             }
-
             const userEmail = encodeURIComponent(currentUser.email);
             const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
             window.location.href = stripeCheckoutUrl;
         }
 
-        // FUNZIONE PER RISCATTAre IL CODICE PROMO
         function applyPromoCode() {
             const inputElement = document.getElementById('promo-code-input');
             if (!inputElement) {
-                alert("Errore: campo input non trovato.");
+                alert("Errore interno.");
                 return;
             }
             
@@ -669,10 +712,8 @@
                 currentUser.isPro = true;
                 currentUser.proExpires = expireDate.toISOString();
 
-                // Salva sull'utente corrente
                 localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
                 
-                // Aggiorna anche nell'archivio globale degli utenti
                 let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
                 let idx = users.findIndex(u => u.email === currentUser.email);
                 if (idx !== -1) {
@@ -681,19 +722,18 @@
                 }
 
                 closePaywallModal();
-                alert("🎉 Codice valido! Abbonamento PRO sbloccato con successo per 30 giorni.");
+                alert("🎉 Codice valido! Abbonamento PRO attivato per 30 giorni.");
                 renderSession();
                 inputElement.value = '';
             } else {
-                alert("❌ Codice non valido. Riprova.");
+                alert("❌ Codice non valido. Inserisci TOLCLABPRO2026.");
                 inputElement.value = '';
             }
         }
 
         function startOfficialTest(tolcId) {
-            // BLOCCO PAYWALL: Se non è PRO, mostra il modale e blocca l'avvio
             if (!checkProAccess()) {
-                document.getElementById('modal-paywall').classList.remove('hidden');
+                openPaywallModal();
                 return;
             }
 
@@ -732,7 +772,7 @@
             });
 
             if (missingCategories.length > 0) {
-                alert(`Attenzione: nel database online mancano quesiti per le seguenti categorie: ${missingCategories.join(', ')}. Aggiorna il file JSON.`);
+                alert(`Attenzione: mancano quesiti per: ${missingCategories.join(', ')}.`);
                 return;
             }
 
@@ -870,6 +910,7 @@
                 userAnswers: [...userAnswers]
             };
 
+            currentUser.stats = currentUser.stats || { completed: 0, scoreSum: 0, hours: 0 };
             currentUser.stats.completed += 1;
             currentUser.stats.scoreSum += score;
             currentUser.stats.hours += (seconds / 3600);
@@ -937,35 +978,5 @@
 
         window.onload = init;
     </script>
-
-    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
-    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
-            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
-                <i class="fa-solid fa-crown"></i>
-            </div>
-            <div class="space-y-2">
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
-                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio dettagliato dei progressi.</p>
-            </div>
-            <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
-                <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
-                <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
-                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
-            </div>
-            <div class="space-y-3">
-                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
-                
-                <!-- SEZIONE INSERIMENTO CODICE PROMO -->
-                <div class="pt-2 border-t border-slate-100 flex space-x-2">
-                    <input type="text" id="promo-code-input" placeholder="Inserisci codice promo..." onkeydown="if(event.key === 'Enter') applyPromoCode();" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold tracking-wider text-center">
-                    <button onclick="applyPromoCode()" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-800 transition shrink-0">Riscatta</button>
-                </div>
-
-                <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
-            </div>
-        </div>
-    </div>
-
 </body>
 </html>
