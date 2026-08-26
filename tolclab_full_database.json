@@ -1,4 +1,1739 @@
 {
+        "Matematica e Fisica": [
+        {
+            "text": "Qual è il valore approssimato dell'accelerazione di gravità (g) standard sulla superficie terrestre?",
+            "opts": ["9.81 m/s²", "1 m/s²", "100 m/s²", "981 m/s²"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione canonica di una circonferenza nel piano cartesiano con centro nell'origine e raggio r?",
+            "opts": ["x² + y² = r²", "y = mx + q", "ax + by + c = 0", "x²/a² + y²/b² = 1"],
+            "correct": 0
+        },
+        {
+            "text": "In una trave appoggiata soggetta a un carico verticale, cosa rappresenta il 'momento flettente' in una sezione?",
+            "opts": ["La misura dell'effetto di flessione indotto dalle forze esterne sulla sezione della trave", "Il peso specifico del materiale isolante", "La velocità di deformazione plastica a caldo", "La resistenza all'attrito radente dei vincoli"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto misura la somma degli angoli interni di un triangolo in geometria euclidea?",
+            "opts": ["180 gradi (o π radianti)", "360 gradi", "90 gradi", "270 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Se un corpo rigido è in equilibrio statico, quale delle seguenti condizioni deve essere necessariamente soddisfatta per le forze?",
+            "opts": ["La risultante di tutte le forze applicate deve essere nulla", "La velocità del corpo deve essere pari a 10 m/s", "L'energia cinetica deve essere massima", "Il baricentro deve trovarsi all'infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il seno dell'angolo di 30 gradi (π/6 radianti)?",
+            "opts": ["1/2", "√3/2", "√2/2", "1"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa esprime il principio di Archimede per un corpo immerso in un fluido?",
+            "opts": ["Il corpo riceve una spinta verticale dal basso verso l'alto pari al peso del fluido spostato", "Il corpo affonda sempre indipendentemente dalla densità", "La pressione è inversamente proporzionale alla profondità", "Il volume del corpo aumenta del 50%"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata della funzione f(x) = sin(x)?",
+            "opts": ["cos(x)", "-sin(x)", "-cos(x)", "1/sin(x)"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema internazionale (SI), qual è l'unità di misura della pressione?",
+            "opts": ["Pascal (Pa)", "Newton (N)", "Joule (J)", "Watt (W)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la distanza tra i punti P1(1, 2) e P2(4, 6) nel piano cartesiano?",
+            "opts": ["5", "3", "7", "25"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la soluzione dell'equazione di primo grado 2x + 6 = 0?",
+            "opts": ["x = -3", "x = 3", "x = 2", "x = -2"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto vale la derivata della funzione esponenziale f(x) = e^x?",
+            "opts": ["e^x", "x * e^(x-1)", "1 / e^x", "ln(x)"],
+            "correct": 0
+        },
+        {
+            "text": "In cinematica, qual è la definizione di velocità media lungo una traiettoria?",
+            "opts": ["Il rapporto tra lo spazio totale percorso e l'impiego di tempo complessivo", "Il prodotto tra accelerazione e massa", "La derivata seconda dello spazio rispetto al tempo", "La forza applicata diviso il tempo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del logaritmo in base 10 di 1000 (log₁₀(1000))?",
+            "opts": ["3", "2", "10", "100"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti grandezze fisiche è uno scalare e non un vettore?",
+            "opts": ["La temperatura", "La forza", "La velocità", "L'accelerazione"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il coefficiente angolare (pendenza) della retta di equazione y = -3x + 5?",
+            "opts": ["-3", "5", "3", "-5"],
+            "correct": 0
+        },
+        {
+            "text": "Secondo il secondo principio della dinamica (Legge di Newton), cosa afferma la formula F = m * a?",
+            "opts": ["La forza impressa a un corpo è direttamente proporzionale alla sua massa e all'accelerazione prodotta", "La forza è inversamente proporzionale allo spazio", "La massa varia in base alla velocità della luce", "L'accelerazione è sempre costante e nulla"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'area di un cerchio di raggio R?",
+            "opts": ["π * R²", "2 * π * R", "4 * π * R²", "π * R"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta l'energia cinetica di un corpo in movimento?",
+            "opts": ["L'energia associata al movimento del corpo, pari a 1/2 * m * v²", "L'energia accumulata per effetto della quota altimetrica", "Il calore disperso per attrito viscoso", "Il lavoro compiuto dalla gravità"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula delle radici di un'equazione di secondo grado ax² + bx + c = 0?",
+            "opts": ["x = (-b ± √(b² - 4ac)) / (2a)", "x = -b / 2a", "x = (b ± √ac) / a", "x = (-a ± √b) / c"],
+            "correct": 0
+        },
+        {
+            "text": "Nel moto rettilineo uniforme, come varia la velocità nel tempo?",
+            "opts": ["La velocità è costante (accelerazione nulla)", "La velocità aumenta linearmente", "La velocità decresce esponenzialmente", "La velocità oscilla periodicamente"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di cos(0 radianti)?",
+            "opts": ["1", "0", "-1", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura dell'energia e del lavoro nel Sistema Internazionale?",
+            "opts": ["Joule (J)", "Watt (W)", "Newton (N)", "Volt (V)"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce il baricentro di un sistema materiale piano?",
+            "opts": ["Il punto geometrico di applicazione della risultante delle forze peso elementari del sistema", "Il centro della circonferenza inscritta", "Il punto di intersezione delle diagonali esterne", "Il punto di massima tensione meccanica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del limite per x che tende a 0 di sin(x) / x?",
+            "opts": ["1", "0", "Infinito", "Non esiste"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura della potenza nel Sistema Internazionale?",
+            "opts": ["Watt (W)", "Joule (J)", "Pascal (Pa)", "Ampere (A)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione generale di una retta passante per l'origine degli assi?",
+            "opts": ["y = mx", "y = mx + q", "x² + y² = r²", "y = ax² + bx + c"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce il principio di conservazione dell'energia meccanica?",
+            "opts": ["In un sistema conservativo, la somma dell'energia cinetica e potenziale si mantiene costante", "L'energia totale diminuisce sempre per attrito", "La potenza meccanica è indipendente dal tempo", "L'energia potenziale è sempre pari a zero"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore della base dei logaritmi naturali 'e' (numero di Eulero) approssimato alla seconda cifra decimale?",
+            "opts": ["2.72", "3.14", "1.41", "1.73"],
+            "correct": 0
+        },
+        {
+            "text": "In un triangolo rettangolo, come si definisce il Teorema di Pitagora?",
+            "opts": ["Il quadrato dell'ipotenusa è uguale alla somma dei quadrati dei cateti", "La somma dei cateti è uguale all'ipotenusa", "Il prodotto dei cateti è pari all'area", "L'ipotenusa è sempre doppia del cateto minore"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il momento di una forza rispetto a un polo?",
+            "opts": ["Il prodotto vettoriale tra il braccio (distanza dal polo) e la forza applicata", "Il rapporto tra la forza e la massa", "La somma algebrica delle accelerazioni", "Il lavoro compiuto nell'unità di tempo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'integrale indefinito della funzione f(x) = 2x?",
+            "opts": ["x² + C", "2x² + C", "x + C", "2 + C"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fenomeno descrive la legge di Ohm nei circuiti elettrici lineari?",
+            "opts": ["La tensione è direttamente proporzionale alla corrente elettrica e alla resistenza (V = R * I)", "La potenza è inversamente proporzionale al tempo", "La carica elettrica si disperde nel vuoto", "La resistenza azzera la corrente"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto misura la circonferenza di un cerchio di raggio R?",
+            "opts": ["2 * π * R", "π * R²", "4 * π * R", "π * R"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'lavoro' di una forza costante in fisica?",
+            "opts": ["Il prodotto scalare tra il vettore forza e il vettore spostamento (L = F * s * cos(θ))", "La forza moltiplicata per il tempo impiegato", "Il rapporto tra energia e potenza", "La variazione della sola temperatura"],
+            "correct": 0
+        },
+        {
+            "text": "Quali sono le coordinate del punto medio M di un segmento con estremi A(x₁, y₁) e B(x₂, y₂)?",
+            "opts": ["M = ((x₁ + x₂)/2, (y₁ + y₂)/2)", "M = (x₁ - x₂, y₁ - y₂)", "M = ((x₁ * x₂)/2, (y₁ * y₂)/2)", "M = (x₁ + y₁, x₂ + y₂)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la frequenza di un'onda il cui periodo T è pari a 0.5 secondi?",
+            "opts": ["2 Hz", "0.5 Hz", "1 Hz", "5 Hz"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di tan(0 radianti)?",
+            "opts": ["0", "1", "Non definito", "Infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma il primo principio della termodinamica?",
+            "opts": ["La variazione di energia interna di un sistema è pari al calore scambiato meno il lavoro compiuto (ΔU = Q - L)", "Il calore fluisce spontaneamente dai corpi freddi a quelli caldi", "L'entropia dell'universo tende a diminuire", "Il rendimento di una macchina termica può essere del 100%"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la disequazione associata a una parabola y > ax² + bx + c con a > 0 le cui soluzioni rappresentano la parte superiore?",
+            "opts": ["L'insieme dei punti situati al di sopra della curva parabolica", "L'asse di simmetria verticale", "Il vertice della parabola", "L'intersezione con l'asse delle ascisse"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti unità di misura corrisponde a un Coulomb al secondo (C/s)?",
+            "opts": ["Ampere (A)", "Volt (V)", "Ohm (Ω)", "Farad (F)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il volume di una sfera di raggio R?",
+            "opts": ["(4/3) * π * R³", "4 * π * R²", "(1/3) * π * R² * h", "2 * π * R³"],
+            "correct": 0
+        },
+        {
+            "text": "Nel moto circolare uniforme, come è diretta l'accelerazione centripeta?",
+            "opts": ["Sempre rivolta verso il centro della traiettoria circolare", "Tangente alla circonferenza nella direzione del moto", "Diretta verso l'esterno della curva", "Nulla"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata di f(x) = 3x² - 5x + 2?",
+            "opts": ["6x - 5", "3x - 5", "6x² - 5", "6x + 2"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa esprime il modulo di un vettore nel piano cartesiano v = (x, y)?",
+            "opts": ["La lunghezza geometrica del segmento orientato, pari a √(x² + y²)", "La somma delle coordinate x + y", "La pendenza rispetto all'asse y", "Il prodotto scalare per se stesso"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula del moto uniformemente accelerato per lo spazio percorso (partendo da fermo con accelerazione a)?",
+            "opts": ["s = 1/2 * a * t²", "s = v * t", "s = a * t", "s = v² / 2a"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del determinante di una matrice quadrata 2x2 [[a, b], [c, d]]?",
+            "opts": ["ad - bc", "ac - bd", "ab + cd", "a + d - b - c"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura della carica elettrica nel Sistema Internazionale?",
+            "opts": ["Coulomb (C)", "Ampere (A)", "Volt (V)", "Tesla (T)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'area di un triangolo di base b e altezza h?",
+            "opts": ["(b * h) / 2", "b * h", "2 * b * h", "b² + h²"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa misura il modulo di Young per un materiale elastico?",
+            "opts": ["Il rapporto tra lo sforzo normale applicato e la deformazione unitaria longitudinale nel regime elastico", "La temperatura di fusione della lega metallica", "La resistenza all'urto a freddo", "La densità volumetrica del solido"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di log₂(8)?",
+            "opts": ["3", "2", "8", "4"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula generale della forza di attrito radente statico o dinamico?",
+            "opts": ["F_attrito = μ * F_normale", "F_attrito = m * a", "F_attrito = G * (m1*m2)/r²", "F_attrito = q * E"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la pendenza (coefficiente angolare) di una retta perpendicolare a una retta di coefficiente m = 2?",
+            "opts": ["-1/2", "2", "-2", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma il principio di Pascal nei fluidi in equilibrio?",
+            "opts": ["La pressione esercitata su un fluido in equilibrio si trasmette in modo inalterato a ciascuna porzione del fluido e sulle pareti del recipiente", "Il volume di un gas è inversamente proporzionale alla pressione", "La spinta di galleggiamento è pari al peso del volume spostato", "La velocità di efflusso dipende dall'altezza del liquido"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata della funzione logaritmica naturale f(x) = ln(x)?",
+            "opts": ["1 / x", "e^x", "x", "1 / ln(x)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la condizione di parallelismo tra due rette nel piano cartesiano di equazioni y = m₁x + q₁ e y = m₂x + q₂?",
+            "opts": ["m₁ = m₂", "m₁ * m₂ = -1", "m₁ = -m₂", "q₁ = q₂"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura della resistenza elettrica nel Sistema Internazionale?",
+            "opts": ["Ohm (Ω)", "Volt (V)", "Watt (W)", "Siemens (S)"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto vale la somma degli angoli interni di un pentagono convesso?",
+            "opts": ["540 gradi", "360 gradi", "720 gradi", "180 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula della forza di attrazione gravitazionale universale tra due masse m₁ e m₂ poste a distanza r?",
+            "opts": ["F = G * (m₁ * m₂) / r²", "F = m₁ * m₂ * r", "F = G * (m₁ + m₂) / r", "F = m * g * h"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il risultato dell'operazione con le matrici o dei polinomi: (x + 2)²?",
+            "opts": ["x² + 4x + 4", "x² + 4", "x² + 2x + 4", "4x² + 4"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive la legge di Boyle-Mariotte per i gas perfetti a temperatura costante?",
+            "opts": ["Il prodotto tra la pressione e il volume del gas è costante (P * V = costante)", "La pressione è direttamente proporzionale alla temperatura", "Il volume è proporzionale al quadrato della temperatura", "La densità del gas si azzera"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata della funzione trigonometrica f(x) = cos(x)?",
+            "opts": ["-sin(x)", "sin(x)", "cos(x)", "-cos(x)"],
+            "correct": 0
+        },
+        {
+            "text": "Nel piano cartesiano, qual è l'equazione di una retta passante per un punto P(x₀, y₀) con coefficiente angolare m?",
+            "opts": ["y - y₀ = m * (x - x₀)", "y = mx + q", "ax + by = c", "y / y₀ = m * (x / x₀)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura del flusso magnetico nel Sistema Internazionale?",
+            "opts": ["Weber (Wb)", "Tesla (T)", "Henry (H)", "Coulomb (C)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il volume di un cilindro retto di raggio di base R e altezza h?",
+            "opts": ["π * R² * h", "2 * π * R * h", "(1/3) * π * R² * h", "4/3 * π * R³"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa misura l'impulso di una forza applicata a un corpo in un intervallo di tempo?",
+            "opts": ["La variazione della quantità di moto del corpo (I = F * Δt = Δp)", "La forza istantanea diviso la massa", "Il lavoro meccanico compiuto per unità di spazio", "La potenza termica dissipata"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto vale la radice quadrata di 144?",
+            "opts": ["12", "14", "16", "10"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la condizione di perpendicolarità tra due rette nel piano cartesiano di coefficienti angolari m₁ e m₂?",
+            "opts": ["m₁ * m₂ = -1", "m₁ = m₂", "m₁ + m₂ = 0", "m₁ * m₂ = 1"],
+            "correct": 0
+        },
+        {
+            "text": "Quale principio fisico spiega il volo degli aeroplani e il funzionamento del tubo di Venturi?",
+            "opts": ["Il principio di Bernoulli (conservazione dell'energia nei fluidi in movimento)", "Il principio di Arquimede", "La legge di Stevino", "Il secondo principio della termodinamica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore dell'angolo complementare a un angolo di 35 gradi?",
+            "opts": ["55 gradi", "145 gradi", "90 gradi", "180 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma la legge di Stevino riguardo alla pressione idrostatico nei liquidi?",
+            "opts": ["La pressione in un liquido aumenta linearmente con la profondità (P = P₀ + ρ * g * h)", "La pressione è costante ovunque nel liquido", "La pressione dipende unicamente dalla superficie del contenitore", "La pressione è nulla sul fondo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la scomposizione in fattori del binomio notevole x² - y² (differenza di quadrati)?",
+            "opts": ["(x - y) * (x + y)", "(x - y)²", "(x + y)²", "x * (x - y)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura della capacità elettrica nel Sistema Internazionale?",
+            "opts": ["Farad (F)", "Ohm (Ω)", "Henry (H)", "Coulomb (C)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del seno dell'angolo di 90 gradi (π/2 radianti)?",
+            "opts": ["1", "0", "-1", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "Nel moto armonico semplice, cosa rappresenta la pulsazione (ω)?",
+            "opts": ["La velocità angolare del moto circolare uniforme associato, legata al periodo T dalla formula ω = 2π/T", "L'ampiezza massima dell'oscillazione", "L'accelerazione di gravità locale", "La forza elastica della molla"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'integrale definito tra 0 e 1 della funzione f(x) = x?",
+            "opts": ["1/2", "1", "0", "2"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura dell'induttanza magnetica nel Sistema Internazionale?",
+            "opts": ["Henry (H)", "Weber (Wb)", "Tesla (T)", "Volt (V)"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto misura la diagonale di un quadrato avente lato di lunghezza L?",
+            "opts": ["L * √2", "L * √3", "2 * L", "L²"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive la legge di Coulomb per l'interazione elettrostatica tra due cariche puntiformi q₁ e q₂?",
+            "opts": ["La forza elettrostatica è direttamente proporzionale al prodotto delle cariche e inversamente proporzionale al quadrato della distanza", "La forza è indipendente dalla distanza", "Le cariche dello stesso segno si attraggono sempre", "Il campo elettrico è sempre nullo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del coseno di 180 gradi (π radianti)?",
+            "opts": ["-1", "1", "0", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "In un circuito RLC in corrente alternata, cos'è la 'risonanza'?",
+            "opts": ["La condizione in cui la reattanza induttiva e quella capacitiva si annullano a vicenda, massimizzando la corrente", "Il blocco totale della corrente alternata", "La fusione immediata del resistore", "La trasformazione della corrente in continua"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la soluzione della disequazione di secondo grado x² - 9 > 0?",
+            "opts": ["x < -3 oppure x > 3", "-3 < x < 3", "x > 9", "Nessuna soluzione"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura del campo magnetico nel Sistema Internazionale?",
+            "opts": ["Tesla (T)", "Weber (Wb)", "Gauss", "Volt/metro"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula per calcolare il perimetro di un rettangolo di base b e altezza h?",
+            "opts": ["2 * (b + h)", "b * h", "b² + h²", "4 * b * h"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma la legge dell'induzione elettromagnetica di Faraday-Neumann-Lenz?",
+            "opts": ["La variazione del flusso magnetico concatenato con un circuito induce una forza elettromotrice indotta nel circuito stesso", "La corrente elettrica genera sempre un campo gravitazionale", "La carica elettrica si conserva nei solenoidi", "La resistenza di un conduttore dipende dal campo magnetico"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto fa 2 alla quinta potenza (2⁵)?",
+            "opts": ["32", "16", "64", "10"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la definizione di 'potenza meccanica' erogata da una forza in fisica?",
+            "opts": ["Il lavoro compiuto nell'unità di tempo (P = L / t = F * v)", "Il prodotto tra forza e spazio", "La massa divisa per l'accelerazione", "L'energia potenziale totale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione di una parabola con asse di simmetria parallelo all'asse y e vertice nell'origine?",
+            "opts": ["y = ax²", "x = ay²", "x² + y² = r²", "y = mx + q"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa misura il calore specifico di una sostanza?",
+            "opts": ["La quantità di calore necessaria per innalzare di 1 Kelvin (o 1°C) la temperatura dell'unità di massa di quella sostanza", "La temperatura esatta di fusione del solido", "La quantità di energia accumulata in fase di quiete", "Il calore disperso nell'ambiente circostante"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del limite per x che tende a infinito di 1/x?",
+            "opts": ["0", "1", "Infinito", "Non esiste"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura della frequenza nel Sistema Internazionale?",
+            "opts": ["Hertz (Hz)", "Secondi (s)", "Metri al secondo (m/s)", "Decibel (dB)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il baricentro geometrico di un triangolo nel piano cartesiano rispetto ai vertici A(x₁,y₁), B(x₂,y₂), C(x₃,y₃)?",
+            "opts": ["Il punto con coordinate medie aritmetiche: ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)", "Il punto di intersezione delle altezze esterne", "La metà del lato maggiore", "L'origine degli assi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula dell'energia potenziale gravitazionale di una massa m posta a un'altezza h dal suolo?",
+            "opts": ["E_p = m * g * h", "E_p = 1/2 * m * v²", "E_p = F * s", "E_p = m * c²"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata della funzione f(x) = 4?",
+            "opts": ["0", "4", "1", "4x"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce il principio di conservazione della quantità di moto?",
+            "opts": ["In un sistema isolato (senza forze esterne risultanti), la quantità di moto totale si mantiene costante nel tempo", "L'energia cinetica raddoppia sempre negli urti anelastici", "La velocità dei corpi in collisione si azzera", "La massa si converte interamente in calore"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto fa l'espressione logaritmica log₂(32)?",
+            "opts": ["5", "4", "6", "32"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura del flusso luminoso nel Sistema Internazionale?",
+            "opts": ["Lumen (lm)", "Lux (lx)", "Candela (cd)", "Watt (W)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il perimetro di un cerchio di raggio R?",
+            "opts": ["2 * π * R", "π * R²", "4 * π * R", "π * R"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive la legge di Gay-Lussac per i gas perfetti a volume costante?",
+            "opts": ["La pressione di un gas è direttamente proporzionale alla sua temperatura assoluta (P / T = costante)", "Il volume è inversamente proporzionale alla pressione", "La densità è costante a ogni temperatura", "Il calore specifico non dipende dalla pressione"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la scomposizione del trinomio notevole x² + 5x + 6?",
+            "opts": ["(x + 2) * (x + 3)", "(x - 2) * (x - 3)", "(x + 1) * (x + 6)", "(x + 5) * (x + 1)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fenomeno ottico spiega la scomposizione della luce bianca in uno spettro di colori attraverso un prisma di vetro?",
+            "opts": ["La dispersione della luce (dovuta alla dipendenza dell'indice di rifrazione dalla lunghezza d'onda)", "La riflessione totale interna", "La polarizzazione lineare", "L'interferenza costruttiva"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula per calcolare il discriminante (Delta, Δ) di un'equazione di secondo grado ax² + bx + c = 0?",
+            "opts": ["Δ = b² - 4ac", "Δ = b - 4ac", "Δ = 4a² - bc", "Δ = a² + b² + c²"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa misura l'intensità di corrente elettrica in un conduttore?",
+            "opts": ["La quantità di carica elettrica che attraversa la sezione del conduttore nell'unità di tempo (I = Q / t)", "La velocità degli elettroni nel vuoto", "La resistenza totale del circuito", "Il potenziale elettrostatico accumulato"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto misura l'angolo acuto di un triangolo rettangolo isoscele?",
+            "opts": ["45 gradi (π/4 radianti)", "60 gradi", "30 gradi", "90 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la definizione di 'potenza termica' o flusso di calore trasmesso per conduzione (Legge di Fourier)?",
+            "opts": ["Il calore trasferito nell'unità di tempo, proporzionale alla conducibilità termica e al gradiente di temperatura", "Il rapporto tra la massa e il volume del solido", "L'energia cinetica delle molecole gassose", "La pressione esercitata dal vapore acqueo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di sin(30°) + cos(60°)?",
+            "opts": ["1", "0", "1/2", "√3"],
+            "correct": 0
+        },
+        {
+            "text": "Nel moto di un proiettile lanciato in aria con un angolo rispetto all'orizzontale (senza attrito dell'aria), quale componente della velocità rimane costante?",
+            "opts": ["La componente orizzontale della velocità (v_x)", "La componente verticale della velocità (v_y)", "La velocità totale in ogni istante", "L'accelerazione verticale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'area della superficie laterale di un cilindro di raggio R e altezza h?",
+            "opts": ["2 * π * R * h", "π * R² * h", "4 * π * R²", "π * R * h"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma il principio di conservazione della carica elettrica?",
+            "opts": ["In un sistema isolato, la carica elettrica totale algebrica si mantiene costante nel tempo", "Le cariche negative si annullano spontaneamente", "La carica elettrica dipende dalla velocità della luce", "Il campo elettrico crea nuova carica dal nulla"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il risultato di 3! (fattoriale di 3)?",
+            "opts": ["6", "9", "3", "12"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula della forza elastica esercitata da una molla ideale (Legge di Hooke)?",
+            "opts": ["F = -k * x", "F = m * a", "F = G * M * m / r²", "F = q * E"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata di f(x) = x³?",
+            "opts": ["3x²", "x²", "3x", "6x"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica l'indice di rifrazione assoluto di un mezzo trasparente (n)?",
+            "opts": ["Il rapporto tra la velocità della luce nel vuoto e la velocità della luce in quel mezzo (n = c / v)", "La densità ottica del materiale rispetto all'acqua", "Il coefficiente di assorbimento del calore", "L'angolo massimo di riflessione"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione di una circonferenza di centro C(1, 2) e raggio r = 3?",
+            "opts": ["(x - 1)² + (y - 2)² = 9", "(x + 1)² + (y + 2)² = 3", "x² + y² = 9", "(x - 1) + (y - 2) = 3"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grandezza fisica rappresenta la capacità di un corpo di immagazzinare energia potenziale elastica quando viene deformato?",
+            "opts": ["L'energia potenziale elastica immagazzinata pari a 1/2 * k * x²", "La quantità di moto lineare", "Il momento d'inerzia torsionale", "Il calore latente di fusione"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto vale la somma dei primi 10 numeri interi positivi (da 1 a 10)?",
+            "opts": ["55", "50", "45", "100"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma la legge di Coulomb per il campo elettrico generato da una carica puntiforme?",
+            "opts": ["Il campo elettrico generato è direttamente proporzionale alla carica sorgente e inversamente proporzionale al quadrato della distanza", "Il campo è costante a ogni distanza", "Il campo è indipendente dal segno della carica", "Il potenziale è sempre nullo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la soluzione dell'equazione esponenziale 2^x = 16?",
+            "opts": ["x = 4", "x = 8", "x = 2", "x = 5"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'unità di misura dell'illuminamento nel Sistema Internazionale?",
+            "opts": ["Lux (lx)", "Lumen (lm)", "Candela (cd)", "Watt/m²"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il volume di una piramide retta di area di base B e altezza h?",
+            "opts": ["(1/3) * B * h", "B * h", "(1/2) * B * h", "3 * B * h"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa esprime il rendimento di una macchina termica (secondo il secondo principio della termodinamica)?",
+            "opts": ["Il rapporto tra il lavoro utile prodotto e il calore assorbito dalla sorgente calda (η = L / Q₁ < 1)", "Il rapporto tra calore disperso e lavoro totale", "Il valore fisso del 100%", "L'efficienza energetica dei circuiti resistivi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di log₅(125)?",
+            "opts": ["3", "5", "25", "2"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grandezza fisica rappresenta la resistenza di un corpo a subire variazioni del proprio stato di moto (inerzia traslazionale)?",
+            "opts": ["La massa inerziale", "La forza peso", "La velocità istantanea", "Il momento torcente"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione canonica di un'ellisse centrata nell'origine con semiasse orizzontale a e semiasse verticale b?",
+            "opts": ["x²/a² + y²/b² = 1", "x² + y² = r²", "x²/a² - y²/b² = 1", "y = ax² + bx"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce la legge di Ampère-Laplace nell'elettromagnetismo?",
+            "opts": ["La forza magnetica elementare esercitata su un tratto di filo percorso da corrente immerso in un campo magnetico (dF = i * dl × B)", "La carica accumulata nei condensatori a barre", "La velocità di propagazione delle onde radio", "La perdita di potenza nei trasformatori"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore della pendenza (coefficiente angolare) di una retta parallela all'asse delle ascisse (asse x)?",
+            "opts": ["0", "1", "Infinito", "Non definita"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fenomeno ondulatorio descrive la flessione o curvatura delle onde quando incontrano un ostacolo o una fessura di dimensioni comparabili alla loro lunghezza d'onda?",
+            "opts": ["La diffrazione", "La riflessione speculare", "La rifrazione di Snell", "La polarizzazione trasversale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore della somma di una progressione geometrica infinita con ragione q tale che |q| < 1 e primo termine a₁?",
+            "opts": ["S = a₁ / (1 - q)", "S = a₁ * (1 - q)", "S = a₁ / q", "S = infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa esprime il principio di conservazione della quantità di moto angolare (o momento angolare)?",
+            "opts": ["Se il momento delle forze esterne applicate a un sistema è nullo, il momento angolare totale del sistema si conserva", "L'energia cinetica di rotazione raddoppia sempre", "La velocità angolare è inversamente proporzionale alla massa", "La frequenza delle oscillazioni aumenta"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore della tangente di 45 gradi (π/4 radianti)?",
+            "opts": ["1", "0", "√3", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il significato fisico del 'flusso del campo elettrico' attraverso una superficie chiusa (Teorema di Gauss)?",
+            "opts": ["Il flusso totale del campo elettrico attraverso una superficie chiusa è direttamente proporzionale alla carica totale interna racchiusa", "Il campo elettrico si annulla sempre all'interno della superficie", "La carica netta esterna determina il potenziale", "La corrente indotta nei circuiti chiusi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula per il calcolo delle combinazioni semplici di n elementi in gruppi di k (coefficiente binomiale)?",
+            "opts": ["C(n,k) = n! / (k! * (n - k)!)", "C(n,k) = n! / (n - k)!", "C(n,k) = n^k", "C(n,k) = k! / n!"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'corpo rigido' nella meccanica classica?",
+            "opts": ["Un sistema di punti materiali in cui la distanza tra ogni coppia di punti rimane assolutamente invariata nel tempo", "Un corpo che si deforma plasticamente sotto carico", "Un fluido privo di viscosità interna", "Un punto geometrico privo di massa"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la derivata della funzione f(x) = ln(3x)?",
+            "opts": ["1 / x", "3 / x", "3 / (3x²)", "1 / (3x)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legge termodinamica afferma che è impossibile raggiungere lo zero assoluto di temperatura in un numero finito di trasformazioni?",
+            "opts": ["Il terzo principio della termodinamica", "Il secondo principio della termodinamica", "Il primo principio della termodinamica", "Il principio zero della termodinamica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del polinomio x³ - 8 per x = 2?",
+            "opts": ["0", "8", "-8", "16"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grandezza fisica viene misurata in Volt nel Sistema Internazionale?",
+            "opts": ["Il potenziale elettrico o differenza di potenziale (tensione)", "La resistenza elettrica", "La corrente elettrica", "La carica elettrica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione canonica di un'iperbole equilatera riferita ai propri assi di simmetria nel piano cartesiano?",
+            "opts": ["x² - y² = a² (o xy = k)", "x² + y² = r²", "x²/a² + y²/b² = 1", "y = ax²"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive l'effetto Doppler acustico o elettromagnetico?",
+            "opts": ["La variazione della frequenza percepita di un'onda emessa da una sorgente in movimento rispetto all'osservatore", "L'aumento dell'intensità sonora in spazi chiusi", "La rifrazione della luce attraverso l'atmosfera", "La scomposizione delle frequenze nei prismi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore dell'espressione sin²(x) + cos²(x) per qualsiasi angolo reale x (Prima relazione fondamentale della trigonometria)?",
+            "opts": ["1", "0", "2", "1/2"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legge regola l'intensità della forza di interazione magnetica tra due cariche in movimento (forza di Lorentz su una carica in un campo magnetico)?",
+            "opts": ["F = q * (E + v × B)", "F = m * a", "F = G * m₁ * m₂ / r²", "F = i * L × B"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la somma delle soluzioni dell'equazione di secondo grado ax² + bx + c = 0 (quando Δ ≥ 0)?",
+            "opts": ["-b / a", "c / a", "b / a", "-c / a"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa esprime il 'teorema dell'energia cinetica' (o teorema delle forze vive)?",
+            "opts": ["Il lavoro totale compiuto da tutte le forze agenti su un punto materiale è pari alla variazione della sua energia cinetica (L_tot = ΔE_k)", "L'energia meccanica si dissipa sempre in calore", "La potenza è indipendente dal lavoro", "La forza elastica non compie lavoro"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il prodotto delle soluzioni dell'equazione di secondo grado ax² + bx + c = 0?",
+            "opts": ["c / a", "-b / a", "-c / a", "b / a"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti affermazioni descrive correttamente una trasformazione adiabatica per un gas perfetto?",
+            "opts": ["Una trasformazione termodinamica in cui non vi è alcuno scambio di calore con l'esterno (Q = 0)", "Una trasformazione a temperatura costante", "Una trasformazione a pressione costante", "Una trasformazione in cui l'energia interna non varia"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore di log₁₀(1)?",
+            "opts": ["0", "1", "10", "Non definito"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta il 'momento d'inerzia' di un corpo rigido in rotazione attorno a un asse?",
+            "opts": ["La misura dell'inerzia rotazionale del corpo, dipendente dalla distribuzione della massa rispetto all'asse di rotazione", "Il peso complessivo del corpo diviso per la velocità angolare", "La forza centripeta massima applicabile", "Il lavoro compiuto dall'attrito volvente"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'equazione della retta passante per i punti P₁(0, 2) e P₂(3, 5)?",
+            "opts": ["y = x + 2", "y = 2x + 1", "y = 3x - 1", "y = x + 3"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legge regola l'espansione termica lineare dei solidi al variare della temperatura?",
+            "opts": ["ΔL = L₀ * λ * ΔT", "V = V₀ * (1 + β * ΔT)", "P * V = n * R * T", "Q = m * c * ΔT"],
+            "correct": 0
+        },
+        {
+            "text": "Quanto vale la derivata della funzione f(x) = e^(2x)?",
+            "opts": ["2 * e^(2x)", "e^(2x)", "2x * e^(2x)", "1 / e^(2x)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il significato fisico del coefficiente di attrito statico (μ_s)?",
+            "opts": ["Il rapporto massimo tra la forza di attrito statico limite e la forza normale premente prima che inizi il movimento relativo", "La velocità massima di scivolamento del blocco", "La rugosità microscopica misurata in micron", "La forza di distacco istantanea"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il valore del limite per x che tende a 0 di (ln(1 + x)) / x?",
+            "opts": ["1", "0", "Infinito", "e"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa afferma il principio di conservazione del momento angolare in un sistema isolato da momenti esterni?",
+            "opts": ["Il momento angolare totale si mantiene costante, per cui se il momento d'inerzia diminuisce, la velocità angolare deve aumentare", "L'energia di rotazione si azzera sempre", "La velocità angolare è inversamente proporzionale alla massa", "Il corpo tende a fermarsi immediatamente"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la soluzione della disequazione fratta (x - 1) / (x + 2) ≥ 0?",
+            "opts": ["x < -2 oppure x ≥ 1", "-2 < x ≤ 1", "x ≥ 1", "x > -2"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grandezza fisica rappresenta il rapporto tra il flusso magnetico concatenato con un circuito e la corrente elettrica che lo genera?",
+            "opts": ["L'induttanza (L)", "La capacità (C)", "La resistenza (R)", "La reattanza (X)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è l'area del settore circolare di raggio R e angolo al centro di 90 gradi (π/2 radianti)?",
+            "opts": ["(π * R²) / 4", "(π * R²) / 2", "π * R²", "2 * π * R"],
+            "correct": 0
+        },
+    ],
+        "Scienze": [
+        {
+            "text": "Quale organulo cellulare è sede della respirazione cellulare e della produzione di ATP?",
+            "opts": ["Mitocondrio", "Ribosoma", "Lisosoma", "Apparato di Golgi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale strato dell'atmosfera terrestre è più vicino alla superficie?",
+            "opts": ["Troposfera", "Stratosfera", "Mesosfera", "Termosfera"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra i seguenti costituisce il principale gas responsabile dell'effetto serra naturale e antropico sulla Terra?",
+            "opts": ["Anidride carbonica (CO₂)", "Azoto (N₂)", "Ossigeno (O₂)", "Elio (He)"],
+            "correct": 0
+        },
+        {
+            "text": "Come si chiama il processo attraverso il quale le piante verdi producono glucosio e ossigeno sfruttando l'energia solare?",
+            "opts": ["Fotosintesi clorofilliana", "Respirazione cellulare", "Glicolisi", "Fermentazione alcolica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo strato più esterno della struttura della Terra?",
+            "opts": ["La litosfera / crosta terrestre", "Il nucleo interno", "Il mantello superiore", "L'astenosfera"],
+            "correct": 0
+        },
+        {
+            "text": "Quale particella subatomica possiede carica elettrica negativa?",
+            "opts": ["Elettrone", "Protone", "Neutrone", "Positrone"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scala viene comunemente utilizzata per misurare la magnitudo (l'energia rilasciata) di un terremoto?",
+            "opts": ["Scala Richter (o magnitudo momento)", "Scala Mercalli", "Scala Celsius", "Scala Beaufort"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la molecola depositaria dell'informazione genetica negli organismi eucarioti?",
+            "opts": ["DNA (Acido desossiribonucleico)", "RNA messaggero", "Proteina strutturale", "ATP"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di divisione cellulare produce cellule figlie geneticamente identiche e con lo stesso numero di cromosomi della cellula madre?",
+            "opts": ["Mitosi", "Meiosi", "Fissione binaria batterica", "Crossing-over"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organo del corpo umano è principalmente deputato alla depurazione del sangue e alla produzione di bile?",
+            "opts": ["Fegato", "Rene", "Milza", "Polmone"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce l'insieme di tutti gli organismi viventi e delle relazioni che intrattengono con l'ambiente fisico in una determinata area?",
+            "opts": ["Ecosistema", "Popolazione", "Nicchia ecologica", "Biosfera"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina viene sintetizzata dalla pelle umana per effetto dell'esposizione ai raggi solari ultravioletti (UV)?",
+            "opts": ["Vitamina D", "Vitamina C", "Vitamina B12", "Vitamina A"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il numero atomico dell'elemento Carbonio (C)?",
+            "opts": ["6", "8", "12", "14"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legame chimico unisce le due elenchi complementari del DNA (basi azotate opposte)?",
+            "opts": ["Legame a idrogeno", "Legame covalente forte", "Legame ionico", "Legame peptidico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ghiandola endocrina è comunemente definita 'ghiandola maestra' perché controlla l'attività di molte altre ghiandole?",
+            "opts": ["Ipofisi", "Tiroide", "Surrene", "Pancreas"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas è il più abbondante nell'atmosfera terrestre a livello del suolo?",
+            "opts": ["Azoto (N₂)", "Ossigeno (O₂)", "Argon (Ar)", "Anidride carbonica (CO₂)"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'crossing-over' durante la meiosi?",
+            "opts": ["Lo scambio di segmenti di DNA tra cromosomi omologhi che genera variabilità genetica", "La duplicazione anomala del nucleo cellulare", "La separazione dei cromatidi fratelli nell'anafase II", "La sintesi delle proteine ribosomiali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di rocce si forma per raffreddamento e solidificazione di magma o lava?",
+            "opts": ["Rocce magmatiche (o ignee)", "Rocce sedimentarie", "Rocce metamorfiche", "Rocce calcaree"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la principale funzione dei globuli rossi (eritrociti) nel sangue umano?",
+            "opts": ["Trasportare l'ossigeno dai polmoni ai tessuti periferici grazie all'emoglobina", "Difendere l'organismo contro i patogeni e i batteri", "Permettere la coagulazione del sangue in caso di ferite", "Regolare la pressione osmotica plasmatica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato ha formulato la teoria dell'evoluzione per selezione naturale?",
+            "opts": ["Charles Darwin", "Gregor Mendel", "Louis Pasteur", "Jean-Baptiste Lamarck"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il pH di una soluzione acquosa neutra a temperatura ambiente (25 °C)?",
+            "opts": ["7", "0", "14", "5"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del sistema nervoso centrale coordina l'equilibrio, la postura e i movimenti motori volontari?",
+            "opts": ["Cervelletto", "Bulbo rachitico", "Ipotalamo", "Corteccia visiva"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo vegetale contiene la clorofilla ed è sede della fotosintesi?",
+            "opts": ["Cloroplasto", "Mitocondrio", "Vacuolo centrale", "Parete cellulare"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una mutazione genetica in cui viene inserito o eliminato un singolo nucleotide, alterando l'intera sequenza di lettura (reading frame)?",
+            "opts": ["Mutazione da frammentazione o scorrimento (frameshift)", "Mutazione puntiforme silente", "Mutazione cromosomica di traslocazione", "Inversione pericentrica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico si forma tra due atomi con grande differenza di elettronegatività, con trasferimento completo di elettroni?",
+            "opts": ["Legame ionico", "Legame covalente apolare", "Legame covalente polare", "Forze di London"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dal pancreas regola l'abbassamento della glicemia nel sangue facilitando l'ingresso del glucosio nelle cellule?",
+            "opts": ["Insulina", "Glucagone", "Adrenalina", "Cortisolo"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il termine 'fenotipo' in genetica?",
+            "opts": ["L'insieme dei caratteri osservabili e manifesti di un organismo, determinati dall'interazione tra genotipo e ambiente", "La sequenza esatta del DNA nucleare", "Il numero totale dei cromosomi somatici", "La mappa genetica dei cromosomi omologhi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale unità geologica di tempo rappresenta l'era attuale in cui viviamo?",
+            "opts": ["Cenozoico (o Era Terziaria/Quaternaria)", "Mesozoico", "Paleozoico", "Precambriano"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale organo di escrezione e regolazione dell'equilibrio idro-salino nei vertebrati?",
+            "opts": ["Il rene", "Il fegato", "L'intestino tenue", "La pelle"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato è considerato il padre della genetica grazie ai suoi esperimenti di fecondazione incrociata sulle piante di pisello?",
+            "opts": ["Gregor Mendel", "James Watson", "Francis Crick", "Thomas Hunt Morgan"],
+            "correct": 0
+        },
+        {
+            "text": "Quale composto chimico è il solvente universale per eccellenza grazie alla sua spiccata polarità molecolare?",
+            "opts": ["L'acqua (H₂O)", "Il benzene", "L'esano", "Il tetracloruro di carbonio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si chiama la membrana sierosa che riveste i polmoni e la cavità toracica?",
+            "opts": ["Pleura", "Pericardio", "Peritoneo", "Meninge"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di batterio o microrganismo vive in simbiosi mutualistica sulle radici delle piante leguminose fissando l'azoto atmosferico?",
+            "opts": ["Batteri azotofissatori (es. Rhizobium)", "Batteri denitrificanti", "Batteri lattici", "Lieviti saccaromiceti"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula chimica dell'acido solforico?",
+            "opts": ["H₂SO₄", "HCl", "HNO₃", "H₃PO₄"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'biodiversità' in ecologia?",
+            "opts": ["La varietà di organismi viventi a tutti i livelli, dai geni agli ecosistemi", "Il numero totale dei soli mammiferi terrestri", "La quantità di biomassa vegetale prodotta annualmente", "La velocità di estinzione delle specie fossili"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vascolarizzazione trasporta la linfa e i nutrienti assorbiti dall'intestino verso il fegato prima della circolazione generale?",
+            "opts": ["Sistema della vena porta epatica", "Circolazione coronarica", "Circolazione polmonare", "Sistema linfatico toracico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo cellulare è una fitta rete di membrane responsabile della sintesi dei lipidi e della detossificazione cellulare (reticolo endoplasmatico liscio)?",
+            "opts": ["Reticolo endoplasmatico liscio", "Apparato di Golgi", "Nucleolo", "Centrosole"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legge della termodinamica chimica stabilisce che l'aumento dell'entropia totale dell'universo è la condizione per i processi spontanei?",
+            "opts": ["Il secondo principio della termodinamica", "Il principio di conservazione della massa", "La legge di Lavoisier", "La legge delle proporzioni definite"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di roccia sedimentaria si forma per precipitazione chimica o accumulo di resti scheletrici calcarei di organismi marini?",
+            "opts": ["Roccia calcarea (sedimentaria)", "Arenaria quarzosa", "Basalto colonnare", "Ardesia scistosa"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone è responsabile della stimolazione della produzione di globuli rossi nel midollo osseo in risposta all'ipossia?",
+            "opts": ["Eritropoietina (EPO)", "Tiroxina", "Insulina", "Somatotropina (GH)"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione principale del tessuto epiteliale nel corpo umano?",
+            "opts": ["Rivestire le superfici esterne, le cavità interne e formare ghiandole con funzioni protettive e secretive", "Contrarre i muscoli e generare movimento", "Trasmettere impulsi nervosi elettrici", "Fornire sostegno strutturale e connettivo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato propose il modello atomico a 'panettone' (plum pudding), successivamente smentito dall'esperimento di Rutherford?",
+            "opts": ["Joseph John Thomson", "Niels Bohr", "John Dalton", "Erwin Schrödinger"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fase della meiosi prevede la separazione dei cromosomi omologhi verso i poli opposti del fuso mitotico?",
+            "opts": ["Anafase I", "Metafase II", "Telofase I", "Profase I"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'nicchia ecologica' di una specie?",
+            "opts": ["Il ruolo funzionale che la specie riveste nell'ecosistema, compresi l'uso delle risorse, la dieta e le interazioni con gli altri organismi", "L'habitat geografico esatto in cui risiede", "La tana o il nido costruito per la riproduzione", "La densità di popolazione massima tollerata"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas è il principale responsabile della riduzione dello strato di ozono nella stratosfera (buchi dell'ozono)?",
+            "opts": ["I clorofluorocarburi (CFC)", "Il monossido di carbonio", "Il metano", "Il vapore acqueo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte dell'occhio umano contiene i fotorecettori (coni e bastoncelli) deputati alla trasduzione della luce in impulsi nervosi?",
+            "opts": ["La retina", "La cornea", "Il cristallino", "L'iride"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legame chimico tiene uniti gli amminoacidi successivi all'interno di una catena polipeptidica (proteina)?",
+            "opts": ["Legame peptidico", "Legame estere", "Legame fosfodiesterico", "Ponte di idrogeno"],
+            "correct": 0
+        },
+        {
+            "text": "Come si chiama lo strumento matematico e grafico ideato da Reginald Punnett per prevedere le frequenze genotipiche di un incrocio?",
+            "opts": ["Quadrato di Punnett", "Diagramma di Hardy-Weinberg", "Albero genealogico tassonomico", "Matrice di transizione genetica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gruppo funzionale caratterizza la classe chimica degli alcoli?",
+            "opts": ["Il gruppo idrossile (-OH)", "Il gruppo carbonilico (=O)", "Il gruppo carbossilico (-COOH)", "Il gruppo amminico (-NH₂)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura anatomica separa la cavità toracica dalla cavità addominale nei mammiferi ed è il principale muscolo della respirazione?",
+            "opts": ["Il diaframma", "Il pericardio", "Il mediastino", "La pleura parietale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria geologica ha rivoluzionato le scienze della terra nel XX secolo spiegando la dinamica dei continenti e dei terremoti?",
+            "opts": ["La tettonica delle placche", "La teoria della contrazione termica", "Il fissismo geologico", "La deriva dei continenti senza espansione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di immunità viene conferita a un individuo mediante la somministrazione di un vaccino contenente antigeni attenuati o inattivati?",
+            "opts": ["Immunità attiva artificiale", "Immunità passiva naturale", "Immunità passiva artificiale", "Immunità innata aspecifica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enzima è responsabile della duplicazione del DNA sintetizzando i nuovi filamenti complementari?",
+            "opts": ["DNA polimerasi", "RNA polimerasi", "Elicasi", "Ligasi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale catione intracellulare nei fluidi corporei umani?",
+            "opts": ["Potassio (K⁺)", "Sodio (Na⁺)", "Calcio (Ca²⁺)", "Cloruro (Cl⁻)"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'suolo fertile' dal punto di vista ecologico e agrario?",
+            "opts": ["Uno strato superficiale composto da minerali, materia organica in decomposizione (humus), acqua e microrganismi che supporta la vita vegetale", "Una roccia ignea completamente polverizzata", "Uno strato di argilla pura impermeabile", "Un terreno sterile privo di batteri"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti molecole biologiche NON è un polimero composto da monomeri?",
+            "opts": ["Lipide semplice (es. trigliceride)", "Proteina", "Acido nucleico (DNA/RNA)", "Polisaccaride (es. amido)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ghiandola produce l'ormone calcitonina che regola i livelli di calcio nel sangue abbassandone la concentrazione?",
+            "opts": ["Tiroide", "Paratiroidi", "Surrene", "Ipofisi anteriore"],
+            "correct": 0
+        },
+        {
+            "text": "Quale processo geologico trasforma una roccia sedimentaria o magmatica in una roccia metamorfica?",
+            "opts": ["Elevate pressioni e temperature senza raggiungere la fusione completa", "Fusione totale del magma seguita da raffreddamento rapido", "Erosione meccanica e sedimentazione eolica", "Dissoluzione chimica in acqua piovana"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome dell'enzima gastrico secreto nello stomaco che inizia la digestione delle proteine in ambiente fortemente acido?",
+            "opts": ["Pepsina", "Amilasi salivare", "Lipasi pancreatica", "Tripsina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria cellulare fondamentale è stata formulata da Schleiden e Schwann nel XIX secolo?",
+            "opts": ["Tutti gli organismi viventi sono costituiti da una o più cellule, e la cellula è l'unità fondamentale della vita", "Le cellule possono generarsi spontaneamente dalla materia inanimata", "Il DNA è l'unica molecola presente in tutte le cellule", "I mitocondri derivano da batteri estranei non digeriti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina è essenziale per la normale coagulazione del sangue ed è prodotta in parte dai batteri intestinali?",
+            "opts": ["Vitamina K", "Vitamina C", "Vitamina A", "Vitamina B1"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce un atomo o un gruppo di atomi che possiede uno o più elettroni spaiati nell'orbitale esterno, risultando altamente reattivo?",
+            "opts": ["Radicale libero", "Ione zwitterione", "Isotopo radioattivo", "Composto di coordinazione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra i seguenti vasi sanguigni trasporta sangue ricco di ossigeno dai polmoni verso l'atrio sinistro del cuore?",
+            "opts": ["Vena polmonare", "Arteria polmonare", "Vena cava inferiore", "Aorta discendente"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'successione ecologica' in un ecosistema?",
+            "opts": ["Il processo graduale e progressivo di cambiamento della composizione delle specie in un'area dopo un disturbo o dal nulla", "La migrazione stagionale degli uccelli migratori", "La catena alimentare lineare dei predatori apicali", "La riproduzione ciclica delle piante annuali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organo linfioide secondario filtra il sangue, distruggendo i globuli rossi vecchi e attivando la risposta immunitaria?",
+            "opts": ["La milza", "Il timo", "Le tonsille palatine", "I linfonodi inguinali"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula generale degli alcheni (idrocarburi insaturi con un doppio legame carbonio-carbonio)?",
+            "opts": ["C_n H_{2n}", "C_n H_{2n+2}", "C_n H_{2n-2}", "C_n H_{n}"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del neurone conduce l'impulso nervoso elettrico in allontanamento dal corpo cellulare verso altre cellule?",
+            "opts": ["L'assone", "I dendriti", "La guaina mielinica", "I nodi di Ranvier"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di interazione ecologica descrive una relazione in cui entrambe le specie traggono vantaggio reciproco (es. api e fiori)?",
+            "opts": ["Mutualismo (o simbiosi mutualistica)", "Parassitismo", "Commensalismo", "Competizione intraspecifica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone steroideo secreto dalla corteccia surrenale è noto come l'ormone dello stress e regola il metabolismo del glucosio?",
+            "opts": ["Cortisolo", "Aldosterone", "Testosterone", "Melatonina"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome del ciclo biochimico mitocondriale che ossida i gruppi acetilici producendo CO₂, NADH e FADH₂ (Ciclo dell'acido citrico)?",
+            "opts": ["Ciclo di Krebs", "Ciclo di Calvin", "Ciclo dell'urea", "Glicolisi anaerobica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale minerale è il principale costituzionale delle rocce calcaree ed è composto da carbonato di calcio (CaCO₃)?",
+            "opts": ["Calcite", "Quarzo", "Feldspato potassico", "Olivina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di globuli bianchi (leucociti) è responsabile della produzione specifica di anticorpi e dell'immunità adattativa?",
+            "opts": ["Linfociti (B e T)", "Neutrofili", "Eosinofili", "Basofili"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione principale del tessuto connettivo nel corpo umano?",
+            "opts": ["Fornire supporto strutturale, protezione, riempire spazi e collegare tessuti e organi diversi", "Rivestire la superficie corporea esterna", "Generare la contrazione meccanica volontaria", "Condurre segnali elettrochimici rapidi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas è il principale sottoprodotto della fotosintesi clorofilliana rilasciato nell'atmosfera?",
+            "opts": ["Ossigeno (O₂)", "Anidride carbonica (CO₂)", "Monossido di carbonio", "Azoto gassoso"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'pressione osmotica' in biologia cellulare?",
+            "opts": ["La pressione idrostatica necessaria per bloccare il flusso netto di solvente attraverso una membrana semipermeabile", "La pressione sanguigna esercitata dai capillari", "La forza di adesione molecolare nelle pareti cellulari", "La pressione esercitata dai gas disciolti nel citoplasma"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato scoprì la penicillina, il primo antibiotico naturale, nel 1928?",
+            "opts": ["Alexander Fleming", "Robert Koch", "Edward Jenner", "Gregor Mendel"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gruppo funzionale caratterizza gli acidi carbossilici organici?",
+            "opts": ["Il gruppo carbossilico (-COOH)", "Il gruppo amminico (-NH₂)", "Il gruppo aldeidico (-CHO)", "Il gruppo etere (-O-)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura dell'orecchio interno è responsabile della percezione uditiva e della conversione delle onde sonore in segnali nervosi?",
+            "opts": ["La coclea (o chiocciola)", "I canali semicircolari", "L'incudine e il martello", "La membrana timpanica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di riproduzione biologica non prevede la fusione di gameti e genera cloni geneticamente identici del genitore?",
+            "opts": ["Riproduzione asessuata (o agamica)", "Riproduzione sessuata meiotica", "Fecondazione incrociata", "Anfimissi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome della catena montuosa sottomarina più lunga del mondo, situata al centro dell'Oceano Atlantico e legata all'espansione dei fondali?",
+            "opts": ["Dorsale medio-atlantica", "Fossa delle Marianne", "Fossa di Puerto Rico", "Cordigliera delle Ande sottomarina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina è nota anche come acido ascorbico e la sua carenza prolungata causa lo scorbuto?",
+            "opts": ["Vitamina C", "Vitamina B12", "Vitamina D", "Vitamina E"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definiscono gli organismi che ottengono energia e carbonio organico consumando altri organismi viventi (consumatori)?",
+            "opts": ["Eterotrofi", "Autotrofi fotosintetici", "Chemiosintetici primari", "Produttori litotrofi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale molecola biologica funge da principale trasportatore di energia immediatamente utilizzabile per il lavoro cellulare?",
+            "opts": ["ATP (Adenosina trifosfato)", "Glucosio", "Glicogeno", "Colesterolo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organoide cellulare è deputato alla digestione intracellulare di macromolecole, detriti e organuli danneggiati grazie a enzimi idrolitici?",
+            "opts": ["Lisosoma", "Perossisoma", "Ribosoma libero", "Nucleolo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome del processo geologico e climatico che descrive il continuo movimento dell'acqua sulla Terra attraverso evaporazione, condensazione e precipitazione?",
+            "opts": ["Ciclo idrologico (o ciclo dell'acqua)", "Ciclo del carbonio", "Ciclo biogeochimico dell'azoto", "Eustatismo marino"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dalla midollare del surrene prepara l'organismo alla risposta rapida di 'attacco o fuga'?",
+            "opts": ["Adrenalina (epinefrina)", "Insulina", "Calcitonina", "Progesterone"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico intermolecolare è responsabile delle proprietà anomale dell'acqua, come l'alto punto di ebollizione e la tensione superficiale?",
+            "opts": ["Legame a idrogeno", "Legame ionico", "Forze di dispersione di London", "Legame covalente apolare"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del nefrone renale è il principale sito in cui avviene il riassorbimento di acqua, glucosio e sali minerali filtrati dal glomerulo?",
+            "opts": ["Tubulo contorto prossimale", "Capsula di Bowman", "Glomerulo di Malpighi", "Tubulo collettore distale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'speciazione' in biologia evolutiva?",
+            "opts": ["Il processo evolutivo attraverso cui si formano nuove specie distinte a partire da popolazioni preesistenti", "L'estinzione definitiva di una famiglia tassonomica", "La mutazione casuale di un singolo gene", "La migrazione di massa stagionale di una popolazione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enzima della saliva inizia la digestione chimica dell'amido scindendolo in zuccheri più semplici (maltosio)?",
+            "opts": ["Amilasi salivare (ptialina)", "Pepsina", "Lipasi linguale", "Maltasi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale elemento chimico è alla base della chimica organica e della vita terrestre grazie alla sua capacità di formare quattro legami covalenti stabili?",
+            "opts": ["Carbonio (C)", "Azoto (N)", "Ossigeno (O)", "Silicio (Si)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura anatomica collega l'orecchio medio con la faringe, permettendo di equalizzare la pressione dell'aria sui due lati del timpano?",
+            "opts": ["Tuba di Eustachio", "Canale uditivo esterno", "Coclea", "Labirinto membranoso"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in genetica per 'allele dominante'?",
+            "opts": ["Un allele che manifesta il proprio fenotipo anche se presente in singola copia (allo stato eterozigote)", "Un allele che si esprime solo in condizioni di omozigosi", "Un gene recessivo mutato non funzionale", "Un cromosoma sessuale soprannumerario"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas è il principale responsabile del riscaldamento globale antropico derivante dall'allevamento intensivo e dai combustibili fossili?",
+            "opts": ["Anidride carbonica (e metano)", "Elio", "Argon", "Ozono stratosferico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tessuto muscolare costituisce la parete del cuore (miocardio) ed è caratterizzato da contrazioni involontarie e cellule ramificate con dischi intercalari?",
+            "opts": ["Tessuto muscolare cardiaco", "Tessuto muscolare scheletrico striato", "Tessuto muscolare liscio viscerale", "Tessuto epiteliale ghiandolare"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula generale degli alchini (idrocarburi insaturi con un triplo legame carbonio-carbonio)?",
+            "opts": ["C_n H_{2n-2}", "C_n H_{2n}", "C_n H_{2n+2}", "C_n H_{n}"],
+            "correct": 0
+        },
+        {
+            "text": "Quale processo metabolico anaerobico trasforma il glucosio in acido lattico nel muscolo scheletrico in carenza di ossigeno?",
+            "opts": ["Fermentazione lattica", "Ciclo di Krebs", "Fosforilazione ossidativa", "Beta-ossidazione lipidica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome dello strato roccioso fuso situato nel mantello terrestre superiore che consente il movimento delle placche litosferiche?",
+            "opts": ["L'astenosfera", "La mesosfera", "Il nucleo esterno", "La crosta oceanica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone rilasciato dalla neuroipofisi stimola il riassorbimento dell'acqua nei tubuli renali riducendo il volume dell'urina (ormone antidiuretico)?",
+            "opts": ["Vasopressina (ADH)", "Ossitocina", "Prolattina", "Aldosterone"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico unisce i nucleotidi successivi lungo lo scheletro di un acido nucleico (DNA/RNA)?",
+            "opts": ["Legame fosfodiesterico", "Legame peptidico", "Ponte a idrogeno", "Legame estere lipidico"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'popolazione' in ecologia?",
+            "opts": ["Un gruppo di individui appartenenti alla stessa specie che vivono nella stessa area geografica nello stesso momento", "L'insieme di tutte le specie animali di un continente", "Tutti gli organismi eterotrofi di un bioma", "Il totale delle biomasse vegetali marine"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina è nota anche come retinolo ed è fondamentale per la salute della vista e dei tessuti epiteliali?",
+            "opts": ["Vitamina A", "Vitamina C", "Vitamina D", "Vitamina B12"],
+            "correct": 0
+        },
+        {
+            "text": "Quale componente del sangue umano è costituito da frammenti cellulari privi di nucleo ed è essenziale per l'emostasi e la coagulazione?",
+            "opts": ["Piastrine (trombociti)", "Globuli rossi", "Globuli bianchi neutrofili", "Monociti plasmatici"],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria biologica spiega l'origine degli organuli cellulari come i mitocondri e i cloroplasti derivati da batteri ancestrali inglobati?",
+            "opts": ["Teoria endosimbiontica", "Teoria della generazione spontanea", "Teoria cromosomica dell'ereditarietà", "Teoria sintetica dell'evoluzione"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale organo del sistema digerente umano in cui avviene l'assorbimento della maggior parte dei nutrienti e dell'acqua?",
+            "opts": ["Intestino tenue", "Stomaco", "Crasso (colon)", "Esofago"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome del processo chimico mediante il quale i grassi e gli oli vengono convertiti in saponi per azione di una base forte (es. idrossido di sodio)?",
+            "opts": ["Saponificazione", "Idrogenazione catalitica", "Esterificazione di Fischer", "Condensazione aldolica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dal corpo luteo e dalla placenta prepara l'utero all'impianto dell'ovulo fecondato e mantiene la gravidanza?",
+            "opts": ["Progesterone", "Estrogeno", "Ossitocina", "FSH"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di rocce si forma per accumulo, compattazione e cementazione di frammenti derivanti dall'erosione di altre rocce?",
+            "opts": ["Rocce sedimentarie", "Rocce magmatiche intrusive", "Rocce metamorfiche regionali", "Rocce basaltiche oceaniche"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione dei ribosomi all'interno della cellula eucariota o procariota?",
+            "opts": ["Sintesi delle proteine traducendo le informazioni dell'RNA messaggero", "Duplicazione del DNA nucleare", "Produzione di molecole di ATP", "Demolizione delle scorie metaboliche"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'capacità portante' (carrying capacity) di un ambiente in ecologia?",
+            "opts": ["Il numero massimo di individui di una popolazione che un determinato ambiente può sostenere indefinitamente senza degrado", "Il peso massimo trasportabile dagli animali da soma", "La quantità di pioggia annua stimata in un bioma", "La massima produzione di ossigeno forestale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura del sistema nervoso autonomo stimola le risposte di 'riposo e digestione' (parasimpatico)?",
+            "opts": ["Il nervo vago (e il sistema parasimpatico)", "Il sistema ortosimpatico toracico", "La corteccia motoria primaria", "I gangli spinali dorsali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale elemento chimico è il componente metallico liquido a temperatura ambiente più noto?",
+            "opts": ["Mercurio (Hg)", "Gallio", "Bromo", "Cesio"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fase della mitosi vede l'allineamento dei cromosomi sul piano equatoriale della cellula?",
+            "opts": ["Metafase", "Profase", "Anafase", "Telofase"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce la prima legge di Mendel (Legge della dominanza)?",
+            "opts": ["Incrociando due individui omozigoti per caratteri alternativi, la progenie della prima generazione (F1) manifesta il carattere dominante", "I caratteri segregano indipendentemente", "Il genotipo coincide sempre con il fenotipo", "I geni associati non si separano mai"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vascolarizzazione del cuore pompa il sangue povero di ossigeno verso i polmoni per l'ossigenazione?",
+            "opts": ["Circolazione polmonare (o piccola circolazione)", "Circolazione sistemica (o grande circolazione)", "Circolazione coronarica", "Circolazione portale epatica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di reazione chimica comporta il trasferimento di elettroni tra specie chimiche con variazione dei numeri di ossidazione?",
+            "opts": ["Reazione di ossidoriduzione (redox)", "Reazione di neutralizzazione acido-base", "Reazione di precipitazione salina", "Reazione di idrolisi neutra"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del cervello umano regola le funzioni vegetative vitali come la frequenza cardiaca, la pressione sanguigna e il respiro?",
+            "opts": ["Il tronco encefalico (bulbo e ponte)", "Il cervelletto", "Il talamo", "I lobi occipitali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale termine ecologico descrive la posizione occupata da un organismo all'interno di una catena o rete alimentare?",
+            "opts": ["Livello trofico", "Tassonomia cladistica", "Densità di popolazione", "Zona bentonica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del citoscheletro all'interno della cellula eucariota?",
+            "opts": ["Fornire supporto strutturale, mantenere la forma cellulare, consentire il movimento e il trasporto intracellulare", "Sintetizzare i lipidi di membrana", "Conservare il codice genetico ereditario", "Produrre molecole energetiche di riserva"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas tossico viene emesso durante le eruzioni vulcaniche ed è caratterizzato da un forte odore di uova marce?",
+            "opts": ["Acido solfidrico (H₂S)", "Monossido di carbonio", "Cloruro di idrogeno", "Metano puro"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina, la cui carenza provoca il rachitismo nei bambini, è fondamentale per l'assorbimento intestinale del calcio?",
+            "opts": ["Vitamina D", "Vitamina C", "Vitamina K", "Vitamina A"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in genetica per 'codone'?",
+            "opts": ["Una sequenza di tre nucleotidi consecutivi nell'mRNA che specifica un amminoacido o un segnale di stop", "Un gene localizzato sui cromosomi sessuali", "Una proteina strutturale del ribosoma", "Una sequenza ripetuta di DNA non codificante"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organo linfatico primario è deputato alla maturazione dei linfociti T provenienti dal midollo osseo?",
+            "opts": ["Il timo", "La milza", "I linfonodi ascellari", "Le tonsille linguali"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la formula minima o molecolare del glucosio, principale zucchero energetico utilizzato dalle cellule?",
+            "opts": ["C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "CH₂O", "C₂H₅OH"],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria scientifica spiega l'origine e l'evoluzione dell'Universo a partire da un punto di densità e temperatura infinite circa 13.8 miliardi di anni fa?",
+            "opts": ["La teoria del Big Bang", "La teoria dello stato stazionario", "La teoria dell'universo oscillante", "La cosmologia quantistica ciclica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone ipofisario stimola l'ovulazione nella donna e la produzione di testosterone nei testicoli dell'uomo?",
+            "opts": ["Ormone luteinizzante (LH)", "Ormone follicolostimolante (FSH)", "Prolattina", "Ossitocina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico interatomico si forma mediante la condivisione di coppie di elettroni tra atomi non metallici?",
+            "opts": ["Legame covalente", "Legame ionico", "Legame metallico", "Forze di van der Waals"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del nefrone renale è responsabile della filtrazione iniziale del sangue proveniente dall'arteriola glomerulare?",
+            "opts": ["Il corpuscolo renale (glomerulo e capsula di Bowman)", "L'ansa di Henle discendente", "Il tubulo contorto distale", "Il dotto collettore midollare"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'specie endemica' in biogeografia?",
+            "opts": ["Una specie ecologicamente ristretta e nativa di una sola e specifica area geografica circoscritta", "Una specie diffusa globalmente in tutti i continenti", "Un organismo parassita patogeno obbligato", "Una specie estinta in epoca preistorica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enzima srotola e separa i due filamenti di DNA durante il processo di duplicazione cellulare?",
+            "opts": ["Elicasi", "DNA polimerasi", "DNA ligasi", "Topoisomerasi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas dell'atmosfera terrestre filtra e assorbe la maggior parte delle radiazioni ultraviolette solari nocive (UV-B e UV-C)?",
+            "opts": ["Ozono (O₃)", "Anidride carbonica", "Metano", "Vapore acqueo"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del tessuto muscolare liscio nell'organismo umano?",
+            "opts": ["Garantire movimenti involontari negli organi interni (es. pareti dei vasi sanguigni e del tratto gastrointestinale)", "Contrarre lo scheletro osseo volontariamente", "Pompare il sangue ritmicamente nel miocardio", "Generare impulsi elettrici cerebrali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato formulò le leggi della trasmissione ereditaria dei caratteri (segregazione e assortimento indipendente) basate sulla statistica?",
+            "opts": ["Gregor Mendel", "Charles Darwin", "Thomas Hunt Morgan", "Rosalind Franklin"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome della struttura di transizione tra un neurone e un altro in cui avviene la trasmissione chimica tramite neurotrasmettitori?",
+            "opts": ["Sinapsi", "Nodo di Ranvier", "Placca motrice", "Assone terminale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di reazione chimica avviene tra un acido e una base con formazione di un sale e acqua?",
+            "opts": ["Reazione di neutralizzazione", "Reazione di combustione completa", "Reazione di ossidazione radicalica", "Reazione di sintesi catalitica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ghiandola endocrina regola il metabolismo basale corporeo mediante la secrezione di ormoni contenenti iodio (tiroxina)?",
+            "opts": ["La tiroide", "Il pancreas esocrino", "Le ghiandole surrenali", "La ghiandola pineale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il termine 'nicchia fondamentale' in ecologia rispetto alla 'nicchia realizzata'?",
+            "opts": ["L'insieme di tutte le condizioni ambientali e risorse teoricamente sfruttabili da una specie in assenza di competizione", "L'habitat effettivo occupato a causa dei predatori", "La zona geografica più fredda del pianeta", "La biomassa totale prodotta dai produttori primari"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo cellulare è costituito da sacculi membranosi appiattiti (cisterne) ed è deputato alla modificazione e smistamento delle proteine?",
+            "opts": ["Apparato di Golgi", "Reticolo endoplasmatico rugoso", "Lisosoma primario", "Perossisoma"],
+            "correct": 0
+        },
+        {
+            "text": "Quale processo geodinamico descrive lo scivolamento di una placca litosferica oceanica sotto un'altra placca nel mantello terrestre?",
+            "opts": ["Subduzione", "Orogenesi collisionale", "Rifting continentale", "Espansione oceanica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina è nota anche come tiamina e la sua grave carenza provoca la malattia del beri-beri?",
+            "opts": ["Vitamina B1", "Vitamina C", "Vitamina D", "Vitamina B12"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di acido nucleico (RNA) trasporta i singoli amminoacidi specifici verso il ribosoma durante la sintesi proteica?",
+            "opts": ["tRNA (RNA di trasferimento)", "mRNA (RNA messaggero)", "rRNA (RNA ribosomiale)", "snRNA nucleare"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas nobile è il più leggero dopo l'idrogeno e non è infiammabile, rendendolo ideale per gonfiare i palloni aerostatici moderni?",
+            "opts": ["Elio (He)", "Neon", "Argon", "Kripton"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del sistema circolatorio umano raccoglie la linfa dai tessuti e la reimmette nel sistema venoso generale?",
+            "opts": ["Il sistema linfatico (dotto toracico e vena succlavia)", "Il circolo coronarico cardiaco", "La vena porta epatica", "I capillari sinusoidi epatici"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'capacità tampone' di una soluzione acquosa biologica (es. sangue)?",
+            "opts": ["La capacità di opporsi a variazioni repentine del pH in seguito all'aggiunta di acidi o basi forti", "La capacità di sciogliere grandi quantità di sali minerali", "La resistenza alla pressione idrostatica dei vasi", "La velocità di filtrazione renale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura cellulare impedisce la lisi osmotica nelle cellule vegetali, batteriche e fungine immerse in soluzioni ipotoniche?",
+            "opts": ["Parete cellulare rigida", "Membrana plasmatica fosfolipidica", "Capsula polisaccaridica esterna", "Involucro nucleare poroso"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scienziato dimostrò sperimentalmente nel 1953 (esperimento di Miller-Urey) che le molecole organiche fondamentali della vita potevano formarsi da precursori inorganici semplici?",
+            "opts": ["Stanley Miller e Harold Urey", "James Watson e Francis Crick", "Alexander Oparin e John Haldane", "Louis Pasteur e Robert Koch"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone ipotalamico-ipofisario stimola le contrazioni uterine durante il travaglio del parto e l'eiezione del latte materno?",
+            "opts": ["Ossitocina", "Prolattina", "Vasopressina", "Insulina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico interatomico si forma tra atomi metallici mediante un 'mare' di elettroni mobili delocalizzati?",
+            "opts": ["Legame metallico", "Legame covalente polare", "Legame ionico", "Legame a idrogeno"],
+            "correct": 0
+        },
+        {
+            "text": "Quale regione anatomica del rene raccoglie l'urina definitiva prodotta dai nefroni prima di convogliarla nell'uretere?",
+            "opts": ["La pelvi renale (o bacinetto renale)", "La corticale renale", "Le piramidi del Malpighi", "La capsula fibrosa esterna"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'deriva genetica' in biologia evolutiva?",
+            "opts": ["La variazione casuale delle frequenze alleliche in una popolazione da una generazione all'altra, particolarmente evidente nei piccoli gruppi", "La migrazione direzionale di una specie verso nuovi territori", "La selezione naturale esercitata dai predatori", "La mutazione indotta da agenti mutageni chimici"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enzima unisce i frammenti di Okazaki durante la replicazione del filamento ritardato del DNA?",
+            "opts": ["DNA ligasi", "DNA polimerasi III", "Elicasi batterica", "Primasi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome della scala geologica utilizzata per suddividere la storia della Terra in Eoni, Ere, Periodi ed Epoche?",
+            "opts": ["Scala dei tempi geologici (stratigrafica)", "Tabella periodica degli elementi", "Scala cronologica archeologica", "Scala altimetrica batimetrica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina, la cui grave carenza provoca la pellagra, è nota come niacina o vitamina B3?",
+            "opts": ["Vitamina B3", "Vitamina B1", "Vitamina C", "Vitamina B12"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive il principio di esclusione competitiva di Gause in ecologia?",
+            "opts": ["Due specie che competono esattamente per le stesse risorse limitate non possono coesistere indefinitamente nello stesso habitat", "La competizione tra specie diverse aumenta sempre la biodiversità", "I predatori eliminano completamente le prede senza estinguersi", "Il mutualismo prevale sempre sulla competizione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo cellulare è sede della sintesi dei lipidi complessi e degli ormoni steroidei nelle cellule animali?",
+            "opts": ["Reticolo endoplasmatico liscio", "Reticolo endoplasmatico rugoso", "Ribosoma libero", "Nucleolo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale processo geodinamico causa la formazione di catene montuose imponenti (orogenesi) in seguito allo scontro tra due placche continentali?",
+            "opts": ["Orogenesi da collisione continentale (es. catena dell'Himalaya o delle Alpi)", "Subduzione oceanica profonda", "Espansione dei fondali oceanici", "Sprofondamento per faglie dirette"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dalle paratiroidi aumenta la concentrazione di calcio nel sangue stimolando il riassorbimento osseo?",
+            "opts": ["Paratormone (PTH)", "Calcitonina", "Insulina", "Tiroxina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di acido nucleico (RNA) costituisce l'impalcatura strutturale e catalitica fondamentale dei ribosomi?",
+            "opts": ["rRNA (RNA ribosomiale)", "mRNA", "tRNA", "miRNA"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il nome del composto chimico organico più semplice, costituito da un atomo di carbonio legato a quattro atomi di idrogeno (idrocarburo saturo)?",
+            "opts": ["Metano (CH₄)", "Etano", "Etene", "Acetilene"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del sistema circolatorio umano impedisce il reflusso del sangue dall'atrio destro al ventricolo destro?",
+            "opts": ["La valvola tricuspide", "La valvola mitrale (bicuspide)", "La valvola aortica semilunare", "La valvola polmonare"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in ecologia per 'specie chiave' (keystone species)?",
+            "opts": ["Una specie che esercita un effetto sproporzionato e fondamentale sulla struttura ecologica della comunità rispetto alla sua abbondanza", "La specie più numerosa in termini di biomassa totale", "Un organismo autotrofo primario produttore", "Una specie vegetale invasiva allogena"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fase della meiosi si caratterizza per il crossing-over e l'appaiamento dei cromosomi omologhi?",
+            "opts": ["Profase I", "Metafase I", "Anafase II", "Telofase I"],
+            "correct": 0
+        },
+        {
+            "text": "Quale minerale appartiene alla classe dei silicati ed è uno dei costituenti più comuni e resistenti delle rocce continentali (es. graniti e sabbie)?",
+            "opts": ["Quarzo", "Halite (salgemma)", "Calcite", "Gesso"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina, nota come cobalamina, è essenziale per la produzione dei globuli rossi e il sistema nervoso, e si trova principalmente nei cibi di origine animale?",
+            "opts": ["Vitamina B12", "Vitamina C", "Vitamina D", "Vitamina K"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce la seconda legge di Mendel (Legge della segregazione)?",
+            "opts": ["Durante la formazione dei gameti, i due alleli di un gene si separano (segregano) in modo che ciascun gamete riceva un solo allele", "I caratteri ereditari si trasmettono sempre fusi e mescolati", "I geni localizzati sullo stesso cromosoma ereditano insieme", "Il carattere recessivo scompare per sempre nella F2"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dal pancreas stimola la glicogenolisi e l'innalzamento della glicemia nel sangue in condizioni di digiuno?",
+            "opts": ["Glucagone", "Insulina", "Somatostatina", "Adrenalina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di legame chimico intermolecolare si stabilisce tra molecole polari aventi atomi di idrogeno legati a elementi molto elettronegativi (F, O, N)?",
+            "opts": ["Legame a idrogeno", "Legame ionico forte", "Legame covalente dativo", "Forze di London istantanee"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura dell'apparato digerente umano produce enzimi digestivi e bicarbonato riversati nel duodeno per neutralizzare l'acidità gastrica?",
+            "opts": ["Il pancreas esocrino", "Il fegato", "La cistifellea", "La milza"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in biologia evolutiva per 'radiazione adattativa'?",
+            "opts": ["La rapida diversificazione di un gruppo ancestrale di organismi in molte nuove specie che occupano nicchie ecologiche differenti", "L'irradiazione termica corporea degli animali omeotermi", "L'estinzione di massa causata da radiazioni cosmiche", "La mutazione indotta da raggi X nel DNA"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo cellulare contiene enzimi ossidativi per la demolizione dei perossidi e degli acidi grassi a catena molto lunga?",
+            "opts": ["Perossisoma", "Lisosoma", "Mitocondrio", "Centriolo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di rocce metamorfiche presenta una tipica struttura a bande o scistosità orientata per effetto di pressioni direzionali elevate?",
+            "opts": ["Rocce metamorfiche scistose / gneiss", "Rocce magmatiche intrusive granitiche", "Rocce sedimentarie calcaree pure", "Rocce basaltiche vulcaniche"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina, nota come acido folico o vitamina B9, è fondamentale per la sintesi del DNA e la prevenzione dei difetti del tubo neurale embrionale?",
+            "opts": ["Vitamina B9 (acido folico)", "Vitamina C", "Vitamina B12", "Vitamina K"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa stabilisce la terza legge di Mendel (Legge dell'assortimento indipendente)?",
+            "opts": ["Durante la formazione dei gameti, gli alleli di geni diversi si distribuiscono nei gameti in modo indipendente l'uno dall'altro (se localizzati su cromosomi non omologhi)", "I geni dello stesso cromosoma non si separano mai", "Il carattere dominante prevale sempre sul recessivo", "I fenotipi parentali si conservano inalterati nella progenie"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ormone secreto dalla tiroide regola l'aumento dell'escrezione renale di calcio e la riduzione della calcemia?",
+            "opts": ["Calcitonina", "Paratormone", "Tiroxina", "Cortisolo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di reazione chimica organica converte un alchene in un alcano mediante l'aggiunta di idrogeno molecolare in presenza di un catalizzatore metallico?",
+            "opts": ["Reazione di idrogenazione (addizione)", "Reazione di sostituzione radicalica", "Reazione di eliminazione di Zaitsev", "Reazione di condensazione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale struttura anatomica del cuore umano impedisce il reflusso del sangue dal ventricolo sinistro all'aorta durante la diastole?",
+            "opts": ["La valvola semilunare aortica", "La valvola mitrale", "La valvola tricuspide", "La valvola semilunare polmonare"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in ecologia per 'bioma'?",
+            "opts": ["Una vasta comunità biologica geografica caratterizzata da particolari condizioni climatiche e tipi di vegetazione dominante (es. tundra, deserto)", "La quantità totale di materia vivente in un lago", "Il codice genetico condiviso da una specie", "L'insieme dei batteri simbionti intestinali"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enzima sintetizza molecole di RNA utilizzando un filamento di DNA come stampo durante la trascrizione genica?",
+            "opts": ["RNA polimerasi", "DNA polimerasi", "Elicasi", "Ribozima"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gas vulcanico e atmosferico primordiale era quasi del tutto assente nell'atmosfera terrestre originaria e fu prodotto principalmente dalla fotosintesi?",
+            "opts": ["Ossigeno libero (O₂)", "Anidride carbonica (CO₂)", "Azoto (N₂)", "Vapore acqueo (H₂O)"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina, detta anche tocoferolo, agisce come potente antiossidante biologico proteggendo le membrane cellulari dai radicali liberi?",
+            "opts": ["Vitamina E", "Vitamina C", "Vitamina D", "Vitamina K"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa descrive il modello di Watson e Crick della struttura del DNA?",
+            "opts": ["Una doppia elica destrorsa con scheletro zucchero-fosfato esterno e basi azotate appaiate internamente per complementarità (A-T, G-C)", "Un filamento singolo lineare proteico", "Una tripla elica con legami ionici esterni", "Un anello circolare privo di proteine istoniche"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ghiandola endocrina produce la melatonina, l'ormone che regola i ritmi circadiani e il ciclo sonno-veglia?",
+            "opts": ["La ghiandola pineale (epifisi)", "L'ipofisi posteriore", "La tiroide", "Il timo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale legame chimico covalente si forma tra il gruppo carbossilico di un amminoacido e il gruppo amminico di un altro?",
+            "opts": ["Legame peptidico", "Legame estere", "Legame glicosidico", "Legame fosfodiesterico"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la principale funzione della cistifellea (colecisti) nel sistema digerente umano?",
+            "opts": ["Immagazzinare e concentrare la bile prodotta dal fegato prima di rilasciarla nel duodeno", "Produrre insulina e glucagone endocrino", "Sintetizzare i succhi gastrici acidi", "Assorbire i sali minerali disciolti"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in biologia per 'epistasi'?",
+            "opts": ["Un'interazione genetica in cui un gene maschera o inibisce l'espressione fenotipica di un altro gene non allelico", "La mutazione spontanea di un cromosoma sessuale", "La duplicazione integrale del genoma diploide", "La dominanza incompleta tra due alleli"],
+            "correct": 0
+        },
+        {
+            "text": "Quale organulo cellulare è particolarmente sviluppato nelle cellule secretorie ed è responsabile della sintesi delle proteine destinate all'esportazione?",
+            "opts": ["Reticolo endoplasmatico rugoso (ricoperto di ribosomi)", "Reticolo endoplasmatico liscio", "Mitocondrio crestato", "Perossisoma catalase"],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria geologica passata, sostenuta da Cuvier, ipotizzava che la storia della Terra fosse segnata da grandi catastrofi naturali che sterminavano le faune?",
+            "opts": ["Il catastrofismo", "L'attualismo (o uniformismo)", "Il fissismo scientifico", "La tettonica globale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale vitamina è nota come biotina o vitamina H ed è un coenzima fondamentale nel metabolismo degli acidi grassi e degli aminoacidi?",
+            "opts": ["Vitamina B7 (o biotina)", "Vitamina C", "Vitamina A", "Vitamina B12"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'rimozione o splicing dell'RNA' (RNA splicing) negli eucarioti?",
+            "opts": ["La rimozione dei tratti non codificanti (introni) e la saldatura dei tratti codificanti (esoni) nell'mRNA immaturo", "La duplicazione ciclica del DNA mitocondriale", "La distruzione completa dell'mRNA nel citoplasma", "L'aggiunta del cappuccio protettivo di guanina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale parte del sistema nervoso periferico controlla le funzioni involontarie degli organi interni e delle ghiandole?",
+            "opts": ["Il sistema nervoso autonomo (vegetativo)", "Il sistema nervoso somatico volontario", "La corteccia motoria piramidale", "Il midollo spinale dorsale"],
+            "correct": 0
+        }
+        ],
+
     "Disegno e Rappresentazione": [
         {
             "text": "Nel metodo delle proiezioni ortogonali di Gaspard Monge, quali sono i due piani di proiezione principali ortogonali tra loro?",
