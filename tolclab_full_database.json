@@ -622,7 +622,7 @@
         },
         {
             "text": "Cosa sono le 'proiezioni convergenti' (o prospettiva)?",
-            - "Sistemi di proiezione in cui i raggi visuali partono da un punto di vista improprio o proprio e convergono verso un centro di vista (occhio dell'osservatore)",
+            "opts": ["Sistemi di proiezione in cui i raggi visuali partono da un punto di vista improprio o proprio e convergono verso un centro di vista (occhio dell'osservatore)",
             "Proiezioni in cui i raggi sono rigorosamente paralleli tra loro",
             "Sistemi privi di punto di fuga",
             "Proiezioni ortogonali senza scala"],
