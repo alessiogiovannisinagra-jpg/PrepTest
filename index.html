@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +6,8 @@
     <title>TOLC LAB - Piattaforma Ufficiale di Simulazione Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Supabase JS Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
     </style>
@@ -60,6 +62,9 @@
                 <div class="space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Password</label>
                     <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
+                    <div class="text-right pt-1">
+                        <button type="button" onclick="openForgotModal()" class="text-[11px] font-bold text-indigo-600 hover:underline">Password dimenticata?</button>
+                    </div>
                 </div>
                 <button type="submit" id="auth-submit-btn" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Accedi</button>
             </form>
@@ -80,7 +85,7 @@
                         <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
                         <span id="user-pro-badge" class="hidden bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fa-solid fa-crown mr-1"></i>PRO</span>
                     </div>
-                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Esercitati liberamente con i test personalizzati o sblocca le simulazioni ufficiali ministeriali.</p>
+                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium"><span id="free-passes-text">Esercizi personalizzati sempre gratuiti</span> o simulazioni ufficiali ministeriali.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
                     <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 sm:px-6 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
@@ -238,7 +243,6 @@
                 <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
             </div>
 
-            <!-- DETAILED REVIEW ACCORDION / BOX -->
             <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
                 <h4 class="text-base sm:text-lg font-black text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Riepilogo e Correzione Quesiti</h4>
                 <div id="results-review-container" class="space-y-4"></div>
@@ -268,15 +272,15 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
+    <!-- MODALE ABBONAMENTO PRO -->
     <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
             <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
                 <i class="fa-solid fa-crown"></i>
             </div>
             <div class="space-y-2">
-                <h3 id="paywall-title" class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
-                <p id="paywall-desc" class="text-xs text-slate-500 font-medium leading-relaxed">Le simulazioni ufficiali con struttura e penalità ministeriali reali sono riservate agli utenti PRO.</p>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Le simulazioni ufficiali con struttura e penalità ministeriali reali sono riservate agli utenti PRO.</p>
             </div>
             <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
                 <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
@@ -286,7 +290,6 @@
             <div class="space-y-3">
                 <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
                 
-                <!-- SEZIONE INSERIMENTO CODICE PROMO (PULITO E SICURO) -->
                 <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-left space-y-2">
                     <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wide block">Hai un codice promo?</label>
                     <div class="flex space-x-2">
@@ -300,212 +303,50 @@
         </div>
     </div>
 
-    <!-- SCRIPT APPLICAZIONE -->
-    <script>
-        let masterBank = {};
+    <!-- MODALE RECUPERO PASSWORD -->
+    <div id="modal-forgot" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
+            <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
+                <i class="fa-solid fa-key"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl font-black text-slate-900">Recupero Password</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Inserisci l'email del tuo account. Ti invieremo un link sicuro per reimpostare la password.</p>
+            </div>
+            <div class="space-y-3">
+                <input type="email" id="forgot-email" placeholder="studente@esempio.it" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium text-center">
+                <button type="button" onclick="sendPasswordReset()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Invia Link di Reset</button>
+                <button type="button" onclick="closeForgotModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Torna all'accesso</button>
+            </div>
+        </div>
+    </div>
 
+    <!-- SCRIPT SUPABASE & APPLICAZIONE -->
+    <script>
+        // CONFIGURAZIONE SUPABASE
+        const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        let masterBank = {};
         const officialTolcs = [
-            { 
-                id: 'SANITARIE', 
-                name: 'Professioni Sanitarie', 
-                category: 'Area Sanitaria', 
-                timeMinutes: 100, 
-                penalty: 0.40, 
-                correctPts: 1.5, 
-                icon: 'fa-user-nurse',
-                bgIconColor: 'bg-emerald-50 text-emerald-600',
-                structure: [
-                    {cat: 'Biologia', count: 23}, 
-                    {cat: 'Chimica', count: 15}, 
-                    {cat: 'Fisica', count: 7}, 
-                    {cat: 'Matematica', count: 6}, 
-                    {cat: 'Logica', count: 9}
-                ] 
-            },
-            { 
-                id: 'TOLC-I', 
-                name: 'TOLC-I (Ingegneria / STEM)', 
-                category: 'Ingegneria', 
-                timeMinutes: 110, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-gears',
-                bgIconColor: 'bg-blue-50 text-blue-600',
-                structure: [
-                    {cat: 'Matematica', count: 20}, 
-                    {cat: 'Logica', count: 10}, 
-                    {cat: 'Fisica', count: 10}, 
-                    {cat: 'Comprensione Verbale', count: 10},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-E', 
-                name: 'TOLC-E (Economia)', 
-                category: 'Economia', 
-                timeMinutes: 90, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-chart-line',
-                bgIconColor: 'bg-indigo-50 text-indigo-600',
-                structure: [
-                    {cat: 'Logica', count: 13}, 
-                    {cat: 'Comprensione Verbale', count: 10}, 
-                    {cat: 'Matematica', count: 13},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-F', 
-                name: 'TOLC-F (Farmacia / Biotecnologie)', 
-                category: 'Farmaceutica', 
-                timeMinutes: 110, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-flask',
-                bgIconColor: 'bg-teal-50 text-teal-600',
-                structure: [
-                    {cat: 'Biologia', count: 15}, 
-                    {cat: 'Chimica', count: 15}, 
-                    {cat: 'Matematica', count: 7}, 
-                    {cat: 'Fisica', count: 7}, 
-                    {cat: 'Logica', count: 6},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-PSI', 
-                name: 'TOLC-PSI (Psicologia)', 
-                category: 'Psicologia', 
-                timeMinutes: 85, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-brain',
-                bgIconColor: 'bg-purple-50 text-purple-600',
-                structure: [
-                    {cat: 'Psicologia', count: 20}, 
-                    {cat: 'Logica', count: 10}, 
-                    {cat: 'Matematica', count: 10}, 
-                    {cat: 'Comprensione Verbale', count: 10}, 
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-SU', 
-                name: 'TOLC-SU (Scienze Umanistiche)', 
-                category: 'Umanistica', 
-                timeMinutes: 100, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-book-open',
-                bgIconColor: 'bg-amber-50 text-amber-600',
-                structure: [
-                    {cat: 'Comprensione Verbale', count: 30}, 
-                    {cat: 'Cultura Generale', count: 10}, 
-                    {cat: 'Logica', count: 10},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-SPS', 
-                name: 'TOLC-SPS (Scienze Politiche e Sociali)', 
-                category: 'Sociale', 
-                timeMinutes: 100, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-scale-balanced',
-                bgIconColor: 'bg-rose-50 text-rose-600',
-                structure: [
-                    {cat: 'Comprensione Verbale', count: 30}, 
-                    {cat: 'Logica', count: 20}, 
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-S', 
-                name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', 
-                category: 'Scienze', 
-                timeMinutes: 115, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-atom',
-                bgIconColor: 'bg-cyan-50 text-cyan-600',
-                structure: [
-                    {cat: 'Matematica', count: 20}, 
-                    {cat: 'Logica', count: 10}, 
-                    {cat: 'Scienze', count: 20},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-AV', 
-                name: 'TOLC-AV (Agraria & Veterinaria)', 
-                category: 'Agraria', 
-                timeMinutes: 90, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-seedling',
-                bgIconColor: 'bg-lime-50 text-lime-700',
-                structure: [
-                    {cat: 'Biologia', count: 10}, 
-                    {cat: 'Chimica', count: 10}, 
-                    {cat: 'Matematica', count: 10}, 
-                    {cat: 'Fisica', count: 10}, 
-                    {cat: 'Logica', count: 6},
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'TOLC-LP', 
-                name: 'TOLC-LP (Lauree Professionalizzanti)', 
-                category: 'Professionalizzante', 
-                timeMinutes: 90, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
-                icon: 'fa-screwdriver-wrench',
-                bgIconColor: 'bg-orange-50 text-orange-600',
-                structure: [
-                    {cat: 'Matematica', count: 12}, 
-                    {cat: 'Logica', count: 12}, 
-                    {cat: 'Comprensione Verbale', count: 12}, 
-                    {cat: 'Inglese', count: 30}
-                ] 
-            },
-            { 
-                id: 'ARCHITETTURA', 
-                name: 'Test Architettura / Ingegneria Edile', 
-                category: 'Design & Architettura', 
-                timeMinutes: 100, 
-                penalty: 0.40, 
-                correctPts: 1.5, 
-                icon: 'fa-compass-drafting',
-                bgIconColor: 'bg-violet-50 text-violet-600',
-                structure: [
-                    {cat: 'Logica', count: 10}, 
-                    {cat: 'Storia dell’Arte', count: 10}, 
-                    {cat: 'Disegno e Rappresentazione', count: 10}, 
-                    {cat: 'Matematica e Fisica', count: 10}
-                ] 
-            },
-            { 
-                id: 'FORMAZIONE-PRIMARIA', 
-                name: 'Scienze della Formazione Primaria', 
-                category: 'Formazione', 
-                timeMinutes: 150, 
-                penalty: 0.40, 
-                correctPts: 1.0, 
-                icon: 'fa-children',
-                bgIconColor: 'bg-pink-50 text-pink-600',
-                structure: [
-                    {cat: 'Comprensione Verbale', count: 25}, 
-                    {cat: 'Logica', count: 15}, 
-                    {cat: 'Cultura Generale', count: 20},
-                    {cat: 'Matematica e Fisica', count: 20}
-                ] 
-            }
+            { id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 100, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600', structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] },
+            { id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, icon: 'fa-gears', bgIconColor: 'bg-blue-50 text-blue-600', structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-E', name: 'TOLC-E (Economia)', category: 'Economia', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-chart-line', bgIconColor: 'bg-indigo-50 text-indigo-600', structure: [{cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-F', name: 'TOLC-F (Farmacia / Biotecnologie)', category: 'Farmaceutica', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', bgIconColor: 'bg-teal-50 text-teal-600', structure: [{cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 15}, {cat: 'Matematica', count: 7}, {cat: 'Fisica', count: 7}, {cat: 'Logica', count: 6}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-PSI', name: 'TOLC-PSI (Psicologia)', category: 'Psicologia', timeMinutes: 85, penalty: 0.25, correctPts: 1.0, icon: 'fa-brain', bgIconColor: 'bg-purple-50 text-purple-600', structure: [{cat: 'Psicologia', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-SU', name: 'TOLC-SU (Scienze Umanistiche)', category: 'Umanistica', timeMinutes: 100, penalty: 0.25, correctPts: 1.0, icon: 'fa-book-open', bgIconColor: 'bg-amber-50 text-amber-600', structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-SPS', name: 'TOLC-SPS (Scienze Politiche e Sociali)', category: 'Sociale', timeMinutes: 100, penalty: 0.25, correctPts: 1.0, icon: 'fa-scale-balanced', bgIconColor: 'bg-rose-50 text-rose-600', structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Logica', count: 20}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-S', name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', category: 'Scienze', timeMinutes: 115, penalty: 0.25, correctPts: 1.0, icon: 'fa-atom', bgIconColor: 'bg-cyan-50 text-cyan-600', structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 20}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-AV', name: 'TOLC-AV (Agraria & Veterinaria)', category: 'Agraria', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-seedling', bgIconColor: 'bg-lime-50 text-lime-700', structure: [{cat: 'Biologia', count: 10}, {cat: 'Chimica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Logica', count: 6}, {cat: 'Inglese', count: 30}] },
+            { id: 'TOLC-LP', name: 'TOLC-LP (Lauree Professionalizzanti)', category: 'Professionalizzante', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-screwdriver-wrench', bgIconColor: 'bg-orange-50 text-orange-600', structure: [{cat: 'Matematica', count: 12}, {cat: 'Logica', count: 12}, {cat: 'Comprensione Verbale', count: 12}, {cat: 'Inglese', count: 30}] },
+            { id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Design & Architettura', timeMinutes: 100, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600', structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica e Fisica', count: 10}] },
+            { id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 150, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600', structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica e Fisica', count: 20}] }
         ];
 
         let currentUser = null;
+        let userProfile = null;
+        let userHistory = [];
         let currentTest = null;
         let currentIdx = 0;
         let userAnswers = [];
@@ -517,14 +358,35 @@
             renderOfficialSelectorGrid();
             renderCustomCheckboxes();
             
-            const saved = localStorage.getItem('tolclab_user');
-            if (saved) {
-                currentUser = JSON.parse(saved);
-                renderSession();
+            const { data: { session } } = await supabase.auth.getSession();
+            if (session) {
+                currentUser = session.user;
+                await fetchUserData();
                 navigate('dashboard');
             } else {
                 navigate('auth');
             }
+
+            supabase.auth.onAuthStateChange(async (event, session) => {
+                if (session) {
+                    currentUser = session.user;
+                    await fetchUserData();
+                } else {
+                    currentUser = null;
+                    userProfile = null;
+                    userHistory = [];
+                }
+            });
+        }
+
+        async function fetchUserData() {
+            if (!currentUser) return;
+            let { data: profile } = await supabase.from('profiles').select('*').eq('id', currentUser.id).single();
+            userProfile = profile || { name: currentUser.user_metadata?.full_name || 'Studente', is_pro: false };
+
+            let { data: history } = await supabase.from('user_history').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
+            userHistory = history || [];
+            renderSession();
         }
 
         async function loadSharedDatabaseFromGitHub() {
@@ -533,10 +395,7 @@
                 if (!response.ok) throw new Error("File non trovato");
                 masterBank = await response.json();
             } catch (err) {
-                console.warn("Impossibile caricare il database da GitHub, uso fallback.");
-                masterBank = {
-                    "Logica": [{ text: "Domanda di test", opts: ["A", "B", "C", "D", "E"], correct: 0 }]
-                };
+                masterBank = { "Logica": [{ text: "Domanda di test", opts: ["A", "B", "C", "D", "E"], correct: 0 }] };
             }
         }
 
@@ -583,55 +442,87 @@
                 : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
         }
 
-        function handleAuth(e) {
+        async function handleAuth(e) {
             e.preventDefault();
             const email = document.getElementById('auth-email').value.trim();
-            const pass = document.getElementById('auth-password').value;
+            const password = document.getElementById('auth-password').value;
             const name = document.getElementById('auth-name').value.trim();
-
-            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
                 if (!name) { alert("Inserisci il nome"); return; }
-                if (users.find(u => u.email === email)) { alert("Email già registrata"); return; }
-                currentUser = { name, email, pass, isPro: false, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
-                users.push(currentUser);
-                localStorage.setItem('tolclab_users', JSON.stringify(users));
-            } else {
-                currentUser = users.find(u => u.email === email && u.pass === pass);
-                if (!currentUser) { alert("Credenziali non valide"); return; }
-            }
+                const { data, error } = await supabase.auth.signUp({
+                    email,
+                    password,
+                    options: { data: { full_name: name } }
+                });
+                if (error) { alert("Errore registrazione: " + error.message); return; }
+                
+                // Inserimento manuale preventivo nel profilo Supabase se il trigger non è attivo
+                if (data.user) {
+                    await supabase.from('profiles').upsert([{ id: data.user.id, name: name, is_pro: false }]);
+                }
 
-            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
-            renderSession();
-            navigate('dashboard');
+                alert("🎉 Registrazione completata con successo! Effettua l'accesso.");
+                toggleAuthMode();
+            } else {
+                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+                if (error) { alert("Errore di accesso: " + error.message); return; }
+                currentUser = data.user;
+                await fetchUserData();
+                navigate('dashboard');
+            }
+        }
+
+        async function logout() {
+            await supabase.auth.signOut();
+            currentUser = null;
+            userProfile = null;
+            userHistory = [];
+            navigate('auth');
+        }
+
+        function openForgotModal() { document.getElementById('modal-forgot').classList.remove('hidden'); }
+        function closeForgotModal() { document.getElementById('modal-forgot').classList.add('hidden'); }
+
+        async function sendPasswordReset() {
+            const email = document.getElementById('forgot-email').value.trim();
+            if (!email) { alert("Inserisci un'email valida."); return; }
+
+            const { error } = await supabase.auth.resetPasswordForEmail(email);
+            if (error) {
+                alert("Errore: " + error.message);
+            } else {
+                alert(`📧 Ti abbiamo inviato un'email a ${email} con le istruzioni per reimpostare la password!`);
+                closeForgotModal();
+                document.getElementById('forgot-email').value = '';
+            }
         }
 
         function renderSession() {
             const isPro = checkProAccess();
             document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
 
-            let freeTextMsg = isPro ? '<span class="text-amber-300 font-bold">Account PRO Illimitato 👑</span>' : `Esercizi personalizzati <span class="font-bold underline text-emerald-300">Sempre Gratuiti</span>`;
-            document.getElementById('free-passes-text').innerHTML = freeTextMsg;
-
             document.getElementById('user-menu').innerHTML = `
                 <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none flex items-center">
                     ${isPro ? '<i class="fa-solid fa-crown text-amber-300 mr-1.5"></i>' : '<i class="fa-solid fa-user mr-1.5"></i>'}
-                    ${currentUser.name}
+                    ${userProfile?.name || 'Studente'}
                 </span>
                 <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-1.5 sm:px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
             `;
-            document.getElementById('welcome-username').innerText = currentUser.name;
-            document.getElementById('stat-completed').innerText = currentUser.stats ? currentUser.stats.completed : 0;
-            document.getElementById('stat-avg').innerText = (currentUser.stats && currentUser.stats.completed > 0) ? (currentUser.stats.scoreSum / currentUser.stats.completed).toFixed(1) : 0;
-            document.getElementById('stat-hours').innerText = currentUser.stats ? currentUser.stats.hours.toFixed(1) : "0.0";
+            document.getElementById('welcome-username').innerText = userProfile?.name || 'Studente';
+            
+            const completedCount = userHistory.length;
+            const scoreSum = userHistory.reduce((acc, h) => acc + Number(h.score), 0);
+            document.getElementById('stat-completed').innerText = completedCount;
+            document.getElementById('stat-avg').innerText = completedCount > 0 ? (scoreSum / completedCount).toFixed(1) : 0;
+            document.getElementById('stat-hours').innerText = (completedCount * 1.5).toFixed(1);
             
             const historyContainer = document.getElementById('history-container');
-            if (!currentUser.history || currentUser.history.length === 0) {
+            if (userHistory.length === 0) {
                 historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>`;
             } else {
-                historyContainer.innerHTML = currentUser.history.map((h, index) => `
+                historyContainer.innerHTML = userHistory.map((h, index) => `
                     <div class="py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-3">
                         <div>
                             <span class="font-black text-slate-800 text-sm block">${h.title}</span>
@@ -646,12 +537,6 @@
             }
         }
 
-        function logout() {
-            localStorage.removeItem('tolclab_user');
-            currentUser = null;
-            navigate('auth');
-        }
-
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
             ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats'].forEach(v => {
@@ -663,65 +548,46 @@
         }
 
         function checkProAccess() {
-            if (!currentUser) return false;
-            if (currentUser.isPro === true) return true;
-            if (currentUser.proExpires) {
-                const expireDate = new Date(currentUser.proExpires);
-                if (expireDate > new Date()) return true;
+            if (!userProfile) return false;
+            if (userProfile.is_pro === true) return true;
+            if (userProfile.pro_expires) {
+                if (new Date(userProfile.pro_expires) > new Date()) return true;
             }
             return false;
         }
 
-        function openPaywallModal() {
-            document.getElementById('modal-paywall').classList.remove('hidden');
-        }
-
-        function closePaywallModal() {
-            document.getElementById('modal-paywall').classList.add('hidden');
-        }
+        function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
+        function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
 
         function redirectToStripeCheckout() {
-            if (!currentUser) {
-                alert("Effettua l'accesso prima di procedere.");
-                navigate('auth');
-                closePaywallModal();
-                return;
-            }
             const userEmail = encodeURIComponent(currentUser.email);
-            const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
-            window.location.href = stripeCheckoutUrl;
+            window.location.href = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
         }
 
-        function applyPromoCode() {
+        async function applyPromoCode() {
             const inputElement = document.getElementById('promo-code-input');
-            if (!inputElement) return;
-            
             const code = inputElement.value.trim().toUpperCase();
-            const SECRET_PROMO_CODE = "TOLCLABPRO2026"; // Il tuo codice segreto
+            const SECRET_PROMO_CODE = "TOLCLABPRO2026";
 
             if (code === SECRET_PROMO_CODE) {
-                if (!currentUser) {
-                    alert("Prima devi effettuare l'accesso!");
-                    navigate('auth');
+                let expireDate = new Date();
+                expireDate.setDate(expireDate.getDate() + 30);
+
+                const { error } = await supabase
+                    .from('profiles')
+                    .update({ is_pro: true, pro_expires: expireDate.toISOString() })
+                    .eq('id', currentUser.id);
+
+                if (error) {
+                    alert("Errore attivazione PRO: " + error.message);
+                } else {
+                    userProfile.is_pro = true;
+                    userProfile.pro_expires = expireDate.toISOString();
                     closePaywallModal();
-                    return;
+                    alert("🎉 Codice valido! Abbonamento PRO attivato per 30 giorni.");
+                    renderSession();
+                    inputElement.value = '';
                 }
-
-                currentUser.isPro = true;
-
-                localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
-                
-                let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
-                let idx = users.findIndex(u => u.email === currentUser.email);
-                if (idx !== -1) {
-                    users[idx] = currentUser;
-                    localStorage.setItem('tolclab_users', JSON.stringify(users));
-                }
-
-                closePaywallModal();
-                alert("🎉 Codice valido! Versione PRO illimitata sbloccata.");
-                renderSession();
-                inputElement.value = '';
             } else {
                 alert("❌ Codice non valido.");
                 inputElement.value = '';
@@ -729,7 +595,6 @@
         }
 
         function startOfficialTest(tolcId) {
-            // Le simulazioni ufficiali richiedono lo stato PRO
             if (!checkProAccess()) {
                 openPaywallModal();
                 return;
@@ -743,44 +608,22 @@
 
             config.structure.forEach(sec => {
                 let pool = masterBank[sec.cat] || [];
-                if (pool.length === 0) {
-                    missingCategories.push(sec.cat);
-                    return;
-                }
+                if (pool.length === 0) { missingCategories.push(sec.cat); return; }
                 let shuffled = [...pool].sort(() => Math.random() - 0.5);
-                let selected = [];
-                while(selected.length < sec.count && shuffled.length > 0) {
-                    selected.push(...shuffled);
-                }
-                selected = selected.slice(0, sec.count);
+                let selected = shuffled.slice(0, sec.count);
+                while(selected.length < sec.count && shuffled.length > 0) { selected.push(shuffled[0]); }
                 
                 selected.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-                    
-                    allQuestions.push({
-                        cat: sec.cat,
-                        text: q.text,
-                        opts: rawOpts,
-                        correct: rawOpts.indexOf(correctText),
-                        isEnglish: sec.cat === 'Inglese'
-                    });
+                    allQuestions.push({ cat: sec.cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: sec.cat === 'Inglese' });
                 });
             });
 
-            if (missingCategories.length > 0) {
-                alert(`Attenzione: mancano quesiti per: ${missingCategories.join(', ')}.`);
-                return;
-            }
+            if (missingCategories.length > 0) { alert(`Mancano quesiti per: ${missingCategories.join(', ')}.`); return; }
 
-            currentTest = {
-                title: `Simulazione Ufficiale ${config.name}`,
-                correctPts: config.correctPts,
-                penalty: config.penalty,
-                questions: allQuestions
-            };
-
+            currentTest = { title: `Simulazione Ufficiale ${config.name}`, correctPts: config.correctPts, penalty: config.penalty, questions: allQuestions };
             setupTestSession();
         }
 
@@ -791,44 +634,22 @@
 
             const countPerCat = parseInt(document.getElementById('custom-count-per-cat').value, 10);
             const penaltyVal = parseFloat(document.getElementById('custom-penalty').value);
-
             let allQuestions = [];
-            checkedBoxes.forEach(box => {
-                const cat = box.value;
-                let pool = masterBank[cat] || [];
-                if (pool.length === 0) return;
-                
-                let shuffled = [...pool].sort(() => Math.random() - 0.5);
-                let selected = [];
-                while(selected.length < countPerCat && shuffled.length > 0) {
-                    selected.push(...shuffled);
-                }
-                selected = selected.slice(0, countPerCat);
 
-                selected.forEach(q => {
+            checkedBoxes.forEach(box => {
+                let pool = masterBank[box.value] || [];
+                if (pool.length === 0) return;
+                let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, countPerCat);
+                shuffled.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-
-                    allQuestions.push({
-                        cat: cat,
-                        text: q.text,
-                        opts: rawOpts,
-                        correct: rawOpts.indexOf(correctText),
-                        isEnglish: cat === 'Inglese'
-                    });
+                    allQuestions.push({ cat: box.value, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: box.value === 'Inglese' });
                 });
             });
 
-            if (allQuestions.length === 0) { alert("Nessun quesito disponibile per le materie selezionate."); return; }
-
-            currentTest = {
-                title: `TOLC Personalizzato (${checkedBoxes.length} materie)`,
-                correctPts: 1.0,
-                penalty: penaltyVal,
-                questions: allQuestions
-            };
-
+            if (allQuestions.length === 0) { alert("Nessun quesito disponibile."); return; }
+            currentTest = { title: `TOLC Personalizzato (${checkedBoxes.length} materie)`, correctPts: 1.0, penalty: penaltyVal, questions: allQuestions };
             setupTestSession();
         }
 
@@ -836,7 +657,6 @@
             currentIdx = 0;
             userAnswers = new Array(currentTest.questions.length).fill(null);
             seconds = 0;
-
             navigate('runner');
             loadQ();
             startTimer();
@@ -876,51 +696,34 @@
             else { finishTest(); }
         }
 
-        function finishTest() {
+        async function finishTest() {
             clearInterval(timer);
-            let correct = 0, wrong = 0, omitted = 0;
-            let score = 0;
+            let correct = 0, wrong = 0, omitted = 0, score = 0;
 
             currentTest.questions.forEach((q, i) => {
                 const ans = userAnswers[i];
-                if (ans === null) {
-                    omitted++;
-                } else if (ans === q.correct) {
-                    correct++;
-                    score += currentTest.correctPts;
-                } else {
-                    wrong++;
-                    if (!q.isEnglish) score -= currentTest.penalty;
-                }
+                if (ans === null) omitted++;
+                else if (ans === q.correct) { correct++; score += currentTest.correctPts; }
+                else { wrong++; if (!q.isEnglish) score -= currentTest.penalty; }
             });
 
-            score = Math.max(0, score);
-            document.getElementById('result-score').innerText = score.toFixed(2);
+            score = Math.max(0, score).toFixed(2);
+            document.getElementById('result-score').innerText = score;
             document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
-
             renderResultsReview(currentTest, userAnswers);
 
             const testRecord = {
+                user_id: currentUser.id,
                 title: currentTest.title,
-                score: score.toFixed(2),
+                score: score,
                 date: new Date().toLocaleDateString(),
-                questions: currentTest.questions,
-                userAnswers: [...userAnswers]
+                test_data: { questions: currentTest.questions, userAnswers: [...userAnswers] }
             };
 
-            currentUser.stats = currentUser.stats || { completed: 0, scoreSum: 0, hours: 0 };
-            currentUser.stats.completed += 1;
-            currentUser.stats.scoreSum += score;
-            currentUser.stats.hours += (seconds / 3600);
-            if (!currentUser.history) currentUser.history = [];
-            currentUser.history.unshift(testRecord);
-            
-            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
-            
-            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
-            let idx = users.findIndex(u => u.email === currentUser.email);
-            if (idx !== -1) { users[idx] = currentUser; localStorage.setItem('tolclab_users', JSON.stringify(users)); }
+            const { error } = await supabase.from('user_history').insert([testRecord]);
+            if (error) console.error("Errore salvataggio storico:", error.message);
 
+            await fetchUserData();
             navigate('results');
         }
 
@@ -930,20 +733,11 @@
                 const userAns = answersArr[idx];
                 const isCorrect = userAns === q.correct;
                 const isOmitted = userAns === null;
-
-                let badge = isOmitted 
-                    ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>`
-                    : (isCorrect 
-                        ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>`
-                        : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`
-                    );
+                let badge = isOmitted ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>` : (isCorrect ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>` : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`);
 
                 return `
                     <div class="p-4 rounded-2xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/20' : (isOmitted ? 'border-amber-200 bg-amber-50/20' : 'border-rose-200 bg-rose-50/20')} space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>
-                            ${badge}
-                        </div>
+                        <div class="flex justify-between items-center"><span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>${badge}</div>
                         <p class="text-xs sm:text-sm font-bold text-slate-900">${q.text}</p>
                         <div class="space-y-1 pt-1 text-xs font-medium">
                             ${q.opts.map((opt, oIdx) => {
@@ -959,17 +753,14 @@
         }
 
         function viewHistoryDetail(historyIndex) {
-            const record = currentUser.history[historyIndex];
-            if (!record || !record.questions) return;
+            const record = userHistory[historyIndex];
+            if (!record || !record.test_data) return;
 
-            currentTest = {
-                title: record.title,
-                questions: record.questions
-            };
-            userAnswers = record.userAnswers;
+            currentTest = { title: record.title, questions: record.test_data.questions };
+            userAnswers = record.test_data.userAnswers;
 
             document.getElementById('result-score').innerText = record.score;
-            document.getElementById('result-breakdown').innerText = `Storico salvato del ${record.date}`;
+            document.getElementById('result-breakdown').innerText = `Salvato il ${record.date}`;
             renderResultsReview(currentTest, userAnswers);
             navigate('results');
         }
