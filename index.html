@@ -440,7 +440,7 @@
             `).join('');
         }
 
-        // Funzione per alternare Accesso e Registrazione
+        // Funzione per alternare Accesso e Registrazione al 100% fluida
         function toggleAuthMode() {
             const nameFieldDiv = document.getElementById('name-field');
             const authTitle = document.getElementById('auth-title');
@@ -461,13 +461,14 @@
             } else {
                 nameFieldDiv.classList.add('hidden');
                 nameInput.required = false;
+                nameInput.value = "";
                 authTitle.innerText = "Accesso Area Studio";
                 authSubmitBtn.innerText = "Accedi";
                 authSwitchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
             }
         }
 
-        // Gestione Login / Registrazione con Supabase
+        // Gestione Login / Registrazione
         async function handleAuth(e) {
             e.preventDefault();
 
