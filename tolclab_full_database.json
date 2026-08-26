@@ -1,4 +1,1464 @@
 {
+    {
+    "Disegno e Rappresentazione": [
+        {
+            "text": "Nel metodo delle proiezioni ortogonali di Gaspard Monge, quali sono i due piani di proiezione principali ortogonali tra loro?",
+            "opts": ["Piano Orizzontale (PO) e Piano Verticale (PV)", "Piano Cartesiano e Piano Polare", "Piano Assonometrico e Piano Quotato", "Piano di Sezione e Piano di Ribaltamento"],
+            "correct": 0
+        },
+        {
+            "text": "A cosa serve l'introduzione del Terzo Piano di Proiezione (o Piano Laterale - PL) nel sistema di Monge?",
+            "opts": ["A evitare ambiguità nella rappresentazione della profondità e completare le viste ortogonali (pianta, prospetto, fianco)", "A calcolare l'area superficiale del pezzo", "A eliminare la necessità delle sezioni", "A convertire il disegno in formato 3D vettoriale"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un ingranaggio cilindrico a denti dritti nei disegni d'insieme unificati?",
+            "opts": ["Con una linea continua grossa per la circonferenza di testa e una linea mista (tratto e punto) per la circonferenza primitiva", "Disegnando singolarmente ogni singolo dente in 3D dettagliato", "Con un tratteggio fitto a retino romboidale", "Utilizzando esclusivamente una linea tratteggiata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica la designazione 'M20 x 1.5' in una filettatura metrica indicata su un disegno costruttivo?",
+            "opts": ["Filettatura metrica a profilo triangolare normalizzato, diametro nominale 20 mm e passo fine di 1.5 mm", "Filettatura con diametro di 1.5 mm e lunghezza 20 metri", "Filettatura Whitworth in pollici con tolleranza di 20 micron", "Diametro del foro di nocciolo pari a 20.15 mm"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la differenza fondamentale tra una filettatura a 'passo grosso' e una a 'passo fine' a parità di diametro nominale?",
+            "opts": ["Il passo fine ha un'altezza di spira minore e un numero maggiore di filetti per unità di lunghezza, offrendo maggiore resistenza allo svitamento sotto vibrazioni", "Il passo fine è utilizzato esclusivamente per tubi idraulici in plastica", "Il passo grosso è vietato dalle normative UNI correnti", "Non c'è alcuna differenza meccanica funzionale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'tolleranza dimensionale' in un disegno meccanico?",
+            "opts": ["La differenza ammessa tra la dimensione massima e la dimensione minima tollerata (scostamento tra i limiti ammissibili)", "La tolleranza sul peso specifico del materiale", "L'errore massimo di stampa del foglio CAD", "Il costo di tolleranza di produzione del pezzo"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce lo 'scostamento superiore' in un sistema di tolleranze dimensionali per un albero?",
+            "opts": ["La differenza algebrica tra la dimensione limite massima e la dimensione nominale", "La differenza tra la dimensione minima e lo zero assoluto", "Il valore massimo della rugosità superficiale", "La distanza tra l'asse dell'albero e il piano di riscontro"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema ISO, come viene identificata una tolleranza standard (grado di precisione, es. IT6, IT7, IT8)?",
+            "opts": ["Con la sigla 'IT' (International Tolerance) seguita da un numero progressivo che indica la qualità della lavorazione", "Con una lettera alfabetica maiuscola da A a Z", "Con la percentuale di errore tollerata sul volume", "Con il codice fiscale del responsabile di officina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di saldatura viene comunemente indicata nei disegni tecnici mediante specifici simboli unificati (freccia e linea di riferimento)?",
+            "opts": ["Saldatura a elettrodo rivestito, MIG/MAG, TIG o a resistenza", "Saldatura chimica con colle epossidiche", "Unione meccanica a freddo con rivetti in rame", "Giunzione a incastro in legno compensato"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il simbolo grafico di una 'freccia con linea spezzata' associata a una saldatura nei disegni costruttivi?",
+            "opts": ["Che la linea di riferimento punta direttamente sulla faccia del giunto da saldare secondo le specifiche normative UNI EN ISO 2553", "Che la saldatura è difettosa e da rifare", "Che il pezzo non deve essere saldato", "Che la temperatura di fusione è superiore a 3000 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, data una retta e un punto esterno a essa, come si determina il piano passante per il punto e ortogonale alla retta?",
+            "opts": ["Conducendo dal punto le proiezioni ortogonali delle rette perpendicolari alle proiezioni omonime della retta data", "Tracciando un cerchio di raggio infinito", "Intersecando la retta con l'asse di terra", "Moltiplicando le coordinate cartesiane per due"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'intersezione di una superficie conica con un piano secante parallelo a una sola generatrice'?",
+            "opts": ["Una parabola", "Un'ellisse chiusa", "Un'iperbole a due rami", "Una circonferenza perfetta"],
+            "correct": 0
+        },
+        {
+            "text": "Quale curva geometrica si ottiene intersecando una superficie cilindrica retta con un piano obliquo rispetto all'asse che taglia tutte le generatrici?",
+            "opts": ["Un'ellisse", "Una parabola", "Una retta parallela", "Una linea spezzata"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della rappresentazione di un assieme meccanico, cosa significa l'operazione di 'esploso' (disegno esploso)?",
+            "opts": ["La rappresentazione tridimensionale in cui i componenti del gruppo sono distanziati lungo gli assi di montaggio per evidenziare la sequenza di assemblaggio", "La distruzione fisica del prototipo in laboratorio", "Il calcolo della pressione di scoppio del serbatoio", "Una simulazione termica agli elementi finiti"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo delle 'linee sottili a tratto e punto' doppie utilizzate in alcuni disegni di assieme?",
+            "opts": ["Indicare i contorni di pezzi adiacenti o le posizioni limite di parti mobili", "Delimitare l'area di stampa del plotter", "Segnare il percorso dei tubi dell'acqua", "Rappresentare gli assi di simmetria principali"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un foro cieco filettato nelle viste ortogonali?",
+            "opts": ["Indicando con due profondità distinte la fine del foro di fondo (punta elicoidale della sega) e la profondità utile della filettatura", "Disegnando il foro passante da parte a parte", "Utilizzando una linea continua grossa per tutto il percorso", "Omettendo la quota della profondità"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'parallelismo' applicata a una superficie rispetto a un piano di riferimento (datum)?",
+            "opts": ["Che la superficie considerata deve trovarsi compresa tra due piani paralleli distanti t e orientati parallelamente al piano di riferimento", "Che i due piani devono intersecarsi a 90 gradi", "Che la rugosità superficiale è nulla", "Che lo spessore del materiale è costante ovunque"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, come si rappresenta la traccia di un piano parallelo al Piano Orizzontale (PO)?",
+            "opts": ["Il piano possiede solo la traccia verticale sul PV, mentre la traccia orizzontale è impropria (all'infinito)", "Possiede entrambe le tracce parallele all'asse di terra", "Le tracce coincidono con l'origine degli assi", "Il piano non ha alcuna rappresentazione geometrica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale comando o funzione nei moderni software CAD 3D parametrico corrisponde al concetto di 'rivoluzione' di un profilo 2D?",
+            "opts": ["Revolve (o Rivoluzione di un profilo attorno a un asse centrale)", "Extrude (Estrusione lineare)", "Loft (Unione di sezioni)", "Fillet (Raccordo di spigoli)"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'estrusione' nella modellazione solida parametrica?",
+            "opts": ["La generazione di un volume solido muovendo una sezione piana bidimensionale lungo una direzione ortogonale al piano del profilo", "La rotazione del profilo attorno a un punto focale", "Il taglio superficiale laser del metallo", "La compressione plastica a caldo di una barra"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del 'raccordo' (arrotondamento degli spigoli vivi interni ed esterni) in un componente meccanico progettato?",
+            "opts": ["Evitare l'innesco di tensioni concentrate (tension concentrations) e prevenire la rottura a fatica del materiale", "Migliorare esclusivamente l'aspetto estetico commerciale del pezzo", "Ridurre il peso complessivo del componente del 50%", "Aumentare la rugosità superficiale dell'acciaio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di carpenteria metallica, come vengono rappresentati i profilati normalizzati (es. travi a doppio T o profilati a U)?",
+            "opts": ["Mediante tabelle di designazione normalizzata e viste semplificate in scala secondo le norme UNI EN", "Disegnando a mano libera ogni singola imperfezione di laminazione", "Con linee tratteggiate di colore blu", "Utilizzando esclusivamente schemi elettrici di flusso"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta la sigla 'H7/g6' in un accoppiamento albero-foro?",
+            "opts": ["Un accoppiamento con gioco raccomandato dal sistema ISO (foro con tolleranza fondamentale H7 e albero g6)", "Un accoppiamento con interferenza forzata a caldo", "Una filettatura metrica di precisione estrema", "La classe di resistenza a trazione dell'acciaio legato"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema ISO dei fori base, qual è la caratteristica della lettera maiuscola 'H' associata alla tolleranza del foro?",
+            "opts": ["Lo scostamento inferiore è pari a zero, per cui la zona di tolleranza si estende interamente verso i valori positivi (sopra la linea nominale)", "Lo scostamento superiore è sempre negativo", "Il foro ha diametro fisso senza alcuna tolleranza", "Il foro è filettato a passo metrico fine"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di sezione viene impiegata per rappresentare oggetti simmetrici di grandi dimensioni risparmiando spazio sul foglio?",
+            "opts": ["La semisezione (o mezza sezione)", "La sezione ribaltata in loco", "La sezione con piani paralleli successivi", "La vista ausiliaria ribaltata"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, qual è la posizione della proiezione di un punto appartenente alla prima bisettrice dei quadranti (1° e 3°)?",
+            "opts": ["La prima e la seconda proiezione del punto sono equidistanti dall'asse di terra e si trovano in posizioni opposte rispetto ad esso", "Le proiezioni coincidono perfettamente sull'asse di terra", "La proiezione sul PV si trova sempre all'infinito", "Il punto non appartiene allo spazio tridimensionale"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una superficie rigata?",
+            "opts": ["Una superficie generata dal movimento continuo di una linea retta (generatrice) nello spazio", "Una superficie ottenuta esclusivamente per rotazione di cerchi perfetti", "Un piano geometrico perfettamente liscio senza asperità", "Una superficie sferica cava"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti è una superficie rigata non sviluppabile?",
+            "opts": ["Un iperboloide a una falda o un cono obliquo complesso (in generale superfici a doppia curvatura o coniche non sviluppabili)", "Un cilindro retto", "Un cono circolare retto", "Un piano inclinato"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'quota funzionale d'accoppiamento'?",
+            "opts": ["Una quota che condiziona direttamente il montaggio e il corretto funzionamento cinematico di due organi in contatto", "Una quota di puro cartiglio amministrativo", "La quota del peso totale in grammi del componente", "La quota stimata per il magazzino ricambi"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della rappresentazione grafica, cosa indica l'acronimo 'UNI'?",
+            "opts": ["Ente Nazionale Italiano di Unificazione", "Unione Navale Italiana", "Unificazione Numerica Industriale", "Ufficio Normative Internazionali"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo dell'impiego dei 'simboli di finitura superficiale' estesi secondo le norme ISO 1302?",
+            "opts": ["Specificare chiaramente i requisiti di lavorazione e rugosità di una faccia meccanica lavorata", "Indicare il colore della vernice protettiva anticorrosione", "Definire la marca commerciale dell'utensile di tornitura", "Stabilire la durezza Rockwell dell'acciaio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta l'intersezione tra due cilindri ortogonali di ugual diametro nelle viste ortogonali?",
+            "opts": ["Con linee curve che formano una sorta di 'sella di cavallo' (intersezione geometrica spaziale)", "Con una linea retta diagonale a 45 gradi", "Eliminando il punto di contatto", "Con un cerchio perfetto tracciato al centro"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, cosa rappresenta l'asse di terra (LT)?",
+            "opts": ["La retta d'intersezione tra il Piano Orizzontale (PO) e il Piano Verticale (PV)", "Il bordo inferiore fisico del foglio da disegno A4", "L'asse di simmetria longitudinale del pezzo meccanico", "La linea di riferimento per il calcolo delle scale di riduzione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di proiezione viene impiegata nei disegni tecnici industriali per garantire che le dimensioni misurate sul disegno siano direttamente proporzionali alla realtà senza distorsioni prospettiche?",
+            "opts": ["Proiezioni parallele ortogonali o assonometriche", "Prospettiva centrale a tre punti di fuga", "Prospettiva accidentale grandangolare", "Proiezione conica convergente"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'asimmetria' nella rappresentazione di un dettaglio in sezione?",
+            "opts": ["Una configurazione in cui la parte destra e la parte sinistra dell'oggetto non sono speculari, impedendo l'uso della semisezione simmetrica", "Un errore di esecuzione del disegno CAD", "L'uso di una scala di riduzione errata", "La mancanza delle linee di asse"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il formato di file standard universale utilizzato per l'interscambio di modelli geometrici 3D solidi destinati alla stampa o alla prototipazione rapida?",
+            "opts": ["Formato STL o STEP", "Formato di testo TXT", "Formato bitmap PNG", "Formato audio MP3"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'perpendicolarità' tra due piani?",
+            "opts": ["Che il piano considerato deve trovarsi compreso tra due piani paralleli distanti t e orientati ortogonalmente al piano di riferimento", "Che i due piani formano un angolo esatto di 180 gradi", "Che la rugosità è inferiore a 0.1 micron", "Che non esiste alcun vincolo di orientamento"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, come si comporta la proiezione di una retta perpendicolare al Piano Orizzontale (PO)?",
+            "opts": ["La sua proiezione sul PO è un punto, mentre la proiezione sul PV è un segmento parallelo alle linee di richiamo verticali", "La proiezione sul PV è un punto", "Entrambe le proiezioni sono orizzontali", "La retta non può essere tracciata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'quote di coordinata' in un disegno meccanico di precisione?",
+            "opts": ["Quote riferite a un sistema di assi cartesiani locali o globali stabilito sul pezzo, ideali per centri di lavoro a controllo numerico (CNC)", "Quote inserite a caso lungo i bordi", "Quote relative unicamente al costo orario della macchina", "Le coordinate geografiche dell'officina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale linea si utilizza per delimitare una vista parziale o locale interrotta da uno strappo?",
+            "opts": ["Linea sottile continua a mano libera o con zig-zag", "Linea grossa continua", "Linea mista a tratti", "Linea tratteggiata fitta"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di macchine, qual è la funzione principale di una copiglia o di un coprigiunto elastico inserito in un perno?",
+            "opts": ["Impedire lo sfilamento accidentale assiale di perni o dadi sottoposti a vibrazioni", "Trasmettere la potenza motrice principale", "Sigillare hermeticamente i fluidi in pressione", "Ridurre l'attrito radiale dell'albero"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'sviluppo geometrico di un tronco di cono retto'?",
+            "opts": ["Una porzione di corona circolare ottenuta sottraendo lo sviluppo del conetto superiore troncato dal cono intero", "Un rettangolo perfetto", "Un triangolo equilatero", "Una superficie sferica piana"],
+            "correct": 0
+        },
+        {
+            "text": "Quale norma ISO definisce i principi generali di quotatura e tolleramento nei disegni tecnici industriali?",
+            "opts": ["ISO 129", "ISO 9001", "ISO 14001", "ISO/IEC 27001"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un foro lamato (foro con un allargamento cilindrico superiore per alloggiare la testa di una vite a brugola) nelle viste ortogonali?",
+            "opts": ["Con due diametri concentrici nella vista dall'alto e con il profilo a gradino nella sezione o vista frontale", "Disegnando un unico foro cilindrico semplice", "Utilizzando una linea tratteggiata obliqua", "Omettendo la rappresentazione dell'allargamento"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della geometria descrittiva, cosa si intende per 'ribaltamento di un punto' appartenente a un piano inclinato?",
+            "opts": ["La determinazione della posizione del punto sul piano di proiezione dopo aver ruotato il piano giacitura fino a farlo sovrapporre al piano principale", "La cancellazione del punto dal foglio", "Il calcolo della velocità del punto nello spazio", "La proiezione ortogonale sul piano laterale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il vantaggio principale di una piattaforma EdTech come TOLC LAB basata su web app rispetto ai vecchi corsi in presenza?",
+            "opts": ["Accessibilità h24 da qualsiasi dispositivo, autonomia totale dello studente, tracciamento analitico dei progressi e zero costi logistici", "L'obbligo di frequentare aule fisiche con orari rigidi", "Il pagamento anticipato obbligatorio di quote annuali elevate", "L'impossibilità di aggiornare i contenuti didattici"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa garantisce l'architettura tecnica di TOLC LAB in termini di persistenza e sicurezza dei dati dello studente?",
+            "opts": ["L'uso combinato del `localStorage` del browser per la continuità offline/refresh e la sincronizzazione della banca dati tramite file JSON strutturati", "L'archiviazione dei dati su server cartacei fisici", "L'invio obbligatorio delle credenziali via email", "La cancellazione automatica di ogni storico a ogni chiusura di scheda"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce un'assonometria ortogonale in cui i tre coefficienti di riduzione sugli assi sono uguali e gli angoli tra gli assi sono di 120°?",
+            "opts": ["Assonometria isometrica", "Assonometria cavaliera", "Assonometria dimetrica", "Assonometria trimetrica"],
+            "correct": 0
+        },
+        {
+            "text": "Nell'assonometria cavaliera (che appartiene alle proiezioni parallele oblique), qual è la posizione tipica del piano del quadro rispetto agli assi cartesiani?",
+            "opts": ["Il piano del quadro è parallelo a uno dei piani coordinati (solitamente il piano verticale XZ)", "Il piano del quadro è perpendicolare a tutti e tre gli assi", "Il piano del quadro è obliquo rispetto a tutti i piani principali", "Il quadro coincide con il piano orizzontale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di linea viene impiegata nel disegno tecnico per rappresentare gli spigoli e i contorni nascosti di un oggetto?",
+            "opts": ["Linea a tratti (interrotta)", "Linea continua grossa", "Linea mista (tratto e punto)", "Linea sottile a mano libera"],
+            "correct": 0
+        },
+        {
+            "text": "A cosa serve la linea mista sottile (tratto e punto) secondo le norme unificate?",
+            "opts": ["A indicare assi di simmetria e tracce di piani di sezione", "A delimitare le linee di quota", "A evidenziare i contorni visibili", "A tracciare le linee di costruzione geometrica"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il 'cartiglio' (o targa) posizionato nell'angolo inferiore destro del foglio di disegno tecnico?",
+            "opts": ["Le informazioni amministrative: titolo del disegno, autore, scala, ente, norma di riferimento e data", "La distinta base dei componenti elettronici", "Le istruzioni di montaggio per l'operatore", "La lista delle tolleranze geometriche globali"],
+            "correct": 0
+        },
+        {
+            "text": "Quali sono le tre viste principali ortogonali disposte secondo il metodo europeo (metodo E)?",
+            "opts": ["Vista dall'alto (pianta), vista di fronte (prospetto), vista da sinistra (fianco)", "Vista dal basso, vista di fronte, vista da destra", "Prospettiva centrale, cavaliera, isometrica", "Sezione longitudinale, trasversale, assonometrica"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo europeo di disposizione delle viste, la vista dall'alto (pianta) dove viene posizionata rispetto al prospetto principale?",
+            "opts": ["Sotto il prospetto", "Sopra il prospetto", "A destra del prospetto", "A sinistra del prospetto"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo americano di disposizione delle viste (metodo A), la vista dall'alto dove si trova rispetto al prospetto?",
+            "opts": ["Sopra il prospetto", "Sotto il prospetto", "A destra", "Non viene mai rappresentata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'vista locale o parziale' in un disegno tecnico?",
+            "opts": ["La rappresentazione di un solo dettaglio circoscritto di un oggetto anziché dell'intera vista", "Una vista ingrandita 10 volte tramite microscopio", "Una proiezione eseguita senza rispettare le norme unificate", "Una sezione obliqua del pezzo"],
+            "correct": 0
+        },
+        {
+            "text": "A cosa serve il 'ribaltamento' di una parte di oggetto direttamente sul piano del disegno (sezione ribaltata in loco)?",
+            "opts": ["A mostrare la forma della sezione di un elemento (es. bracci, nervature, sezioni sottili) senza spostarla dalla vista principale", "A ribaltare l'intero solido nello spazio tridimensionale", "A calcolare il baricentro della figura", "A eliminare le linee nascoste"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una scala di rappresentazione pari a 1:2?",
+            "opts": ["Scala di riduzione: il disegno è la metà delle dimensioni reali dell'oggetto", "Scala d'ingrandimento: il disegno è doppio rispetto al reale", "Scala al vero: le dimensioni coincidono", "La tolleranza geometrica del pezzo"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una scala di rappresentazione pari a 2:1?",
+            "opts": ["Scala d'ingrandimento: il disegno è il doppio delle dimensioni reali", "Scala di riduzione: il disegno è dimezzato", "Scala al vero", "Rapporto percentuale di errore"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo principale della 'campitura' (tratteggio con linee sottili parallele a 45°) in una sezione?",
+            "opts": ["Distinguere visivamente le parti piene dell'oggetto che sono state tagliate dal piano secante", "Rendere il disegno esteticamente più gradevole", "Coprire eventuali errori di tracciamento dello spigolo", "Indicare la rugosità superficiale"],
+            "correct": 0
+        },
+        {
+            "text": "Quali elementi strutturali, pur intersecati dal piano di sezione longitudinale, NON si campiscono mai per convenzione normativa?",
+            "opts": ["Viti, bulloni, perni, chiavette, alberi pieni e sfere di cuscinetti", "I corpi cilindrici cavi", "Le fusioni in ghisa di grandi dimensioni", "I profilati metallici a 'L' o a 'T'"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una sezione ottenuta mediante l'intersezione dell'oggetto con due o più piani paralleli tra loro?",
+            "opts": ["Sezione con piani paralleli", "Sezione con piani concorrenti", "Semisezione", "Sezione successiva"],
+            "correct": 0
+        },
+        {
+            "text": "Cos'è una 'semisezione'?",
+            "opts": ["La rappresentazione unita di metà vista esterna e metà vista in sezione, divisa da un asse di simmetria", "Una sezione eseguita tagliando esattamente metà oggetto in senso obliquo", "Una sezione incompleta a causa della mancanza di dati", "Un taglio parziale del 50% dello spessore"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'quote funzionali' in un disegno tecnico?",
+            "opts": ["Quote essenziali per il funzionamento dell'accoppiamento o della funzione meccanica del pezzo", "Quote inserite solo per comodità di disegno", "Quote utilizzate esclusivamente in fase di collaudo finale", "Quote decorative senza valore metrologico"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una quotatura in cui le quote sono disposte una di seguito all'altra lungo la stessa linea?",
+            "opts": ["Quotatura in serie", "Quotatura in parallelo", "Quotatura in coordinate", "Quotatura combinata"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale difetto della quotatura in serie?",
+            "opts": ["L'accumulo degli errori di tolleranza di lavorazione da un elemento all'altro", "L'impossibilità di leggerla sui disegni cartacei", "Il costo eccessivo di stampa", "La violazione delle norme ISO"],
+            "correct": 0
+        },
+        {
+            "text": "Nella quotatura in parallelo, da dove partono tutte le linee di misura?",
+            "opts": ["Da un unico elemento di riferimento comune (origine o superfice di riscontro)", "Casualmente lungo il perimetro del pezzo", "Dal centro geometrico del foglio", "Dall'ultima quota inserita in serie"],
+            "correct": 0
+        },
+        {
+            "text": "Cos'è una superficie di rivoluzione?",
+            "opts": ["Una superficie generata dalla rotazione di una linea (generatrice) attorno a un asse fisso", "Una superficie piana infinita", "Una superficie ottenuta per traslazione rettilinea", "Un piano inclinato di 45 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti è una classica superficie di rotazione geometrica?",
+            "opts": ["Cilindro, cono e sfera", "Prisma a base quadrangolare", "Tetraedro regolare", "Parallelepipedo rettangolo"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta la proiezione di una retta parallela a uno dei piani di proiezione principali?",
+            "opts": ["La proiezione sul piano parallelo mantiene in vera grandezza la lunghezza del segmento", "La proiezione si riduce a un singolo punto", "La retta diventa sempre perpendicolare a tutti i piani", "La retta non può essere rappresentata nel metodo di Monge"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'proiezioni quotate'?",
+            "opts": ["Un metodo di rappresentazione in cui gli enti geometrici sul piano orizzontale sono accompagnati da un numero che indica la loro quota altimetrica", "Le proiezioni ortogonali tradizionali con tutte le quote meccaniche", "Un sistema di calcolo numerico delle aree", "La rappresentazione assonometrica quotata in scala 1:10"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto delle proiezioni ortogonali, come si proietta un punto appartenente al Piano Verticale (PV)?",
+            "opts": ["La sua seconda proiezione coincide con il punto stesso sul PV, mentre la prima proiezione si trova sull'asse di terra (LT)", "Il punto non ha proiezione sul piano orizzontale", "La prima proiezione giace nel quarto quadrante", "Il punto si trova all'infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione delle linee di riferimento (o di estensione) nella quotatura?",
+            "opts": ["Delimitare l'estensione geometrica della misura distaccandola dal profilo dell'oggetto", "Indicare il centro di un cerchio", "Rappresentare gli assi di simmetria", "Segnare il percorso del piano di taglio"],
+            "correct": 0
+        },
+        {
+            "text": "Come devono essere posizionati i numeri delle quote rispetto alle linee di misura secondo le norme UNI?",
+            "opts": ["In modo da poter essere letti dal basso o ruotando il foglio di 90 gradi in senso orario (orientamento leggibile)", "Sempre disposti in verticale assoluto", "Capovolti nella parte superiore del disegno", "Scritti esclusivamente in lettere romane"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il simbolo del diametro (Ø) antecipato a una quota?",
+            "opts": ["Che la quota si riferisce a una sezione o foro circolare cilindrico", "Che il pezzo è sferico al 100%", "Che si tratta di un raggio di raccordo", "Che la tolleranza è di tipo filettato"],
+            "correct": 0
+        },
+        {
+            "text": "Quando si utilizza il simbolo della lettera 'R' davanti a una quota lineare?",
+            "opts": ["Per indicare il raggio di un arco o di un raccordo", "Per indicare la rugosità superficiale", "Per indicare il numero di rivoluzioni dell'albero", "Per indicare una filettatura metrica fine"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'quote di posizione' in un disegno tecnico?",
+            "opts": ["Quote che definiscono la posizione reciproca di elementi geometrici (es. distanza tra i centri di due fori)", "Quote che indicano le dimensioni d'ingombro esterne", "Quote di collaudo finale non modificabili", "Quote riferite unicamente al cartiglio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce un'intersezione tra due piani geometrici nello spazio di Monge?",
+            "opts": ["Una linea retta", "Un punto geometrico isolato", "Un piano parallelo all'infinito", "Una superficie curva complessa"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la condizione di parallelismo tra due rette nelle proiezioni ortogonali?",
+            "opts": ["Le proiezioni omonime delle due rette devono essere parallele tra loro in ciascun piano di proiezione", "Le rette devono intersecarsi sull'asse di terra", "I loro punti di vista devono coincidere", "Le pendenze rispetto al piano orizzontale devono essere nulle"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'traccia' di una retta nel metodo di Monge?",
+            "opts": ["Il punto d'intersezione della retta con uno dei piani di proiezione (PO o PV)", "La linea tratteggiata che indica una parte nascosta", "Il segno lasciato dalla matita sul foglio lucido", "Il centro di simmetria del segmento"],
+            "correct": 0
+        },
+        {
+            "text": "In un'assonometria ortogonale monometrica (o isometrica), qual è la riduzione approssimativa da applicare alle misure reali lungo gli assi?",
+            "opts": ["Nessuna riduzione (si usano le grandezze in scala 1:1, sfruttando il fattore di scala isometrico)", "Riduzione del 50% esatto", "Ingrandimento del 20%", "Riduzione del 15% sul solo asse Z"],
+            "correct": 0
+        },
+        {
+            "text": "Quale ente geometrico genera una superficie cilindrica retta?",
+            "opts": ["Una retta (generatrice) che si muove parallelamente a se stessa appoggiandosi su una linea curva chiusa (direttrice)", "Un punto che ruota attorno a un asse fisso", "Due piani incidenti nello spazio", "Una circonferenza che cambia raggio con continuità"],
+            "correct": 0
+        },
+        {
+            "text": "Come viene rappresentata una filettatura esterna (es. su una vite) nelle viste ortogonali unificate?",
+            "opts": ["Con una linea continua grossa per il diametro esterno e una linea sottile (a tre quarti di cerchio) per il fondo del filetto", "Disegnando singolarmente ogni singolo filetto elicoidale in 3D", "Con una linea tratteggiata mista", "Con una campitura a retino fitto"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'quote tecnologiche'?",
+            "opts": ["Quote funzionali ai cicli di lavorazione e alle operazioni di macchina utensile necessarie per realizzare il pezzo", "Quote puramente estetiche per i cataloghi commerciali", "Quote calcolate tramite intelligenza artificiale", "Quote di ingombro massimo per il trasporto"],
+            "correct": 0
+        },
+        {
+            "text": "Quale norma internazionale (ISO/UNI) regola la designazione generale dei formati dei fogli da disegno (es. serie A4, A3, A2)?",
+            "opts": ["ISO 5457 (e serie UNI EN ISO)", "ISO 9001", "ISO 14001", "ANSI B.1"],
+            "correct": 0
+        },
+        {
+            "text": "Quali sono le dimensioni approssimative in millimetri di un foglio di formato UNI A4?",
+            "opts": ["210 x 297 mm", "297 x 420 mm", "420 x 594 mm", "148 x 210 mm"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'tolleranza geometrica' in un disegno tecnico industriale?",
+            "opts": ["La zona di tolleranza che limita gli errori ammissibili di forma, orientamento, posizione o oscillazione di un elemento", "La tolleranza sul colore della vernice del componente", "Il margine di guadagno economico sulla produzione", "La tolleranza termica del materiale ferroso"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un asse di simmetria nei disegni tecnici complessi?",
+            "opts": ["Con una linea asse (tratto e punto) sottile, sporgente leggermente dai contorni dell'oggetto", "Con una linea continua spessa di colore rosso", "Con una doppia linea tratteggiata", "Non viene mai rappresentato"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una sezione 'successiva' o 'ribaltata fuori vista'?",
+            "opts": ["Una sezione estratta dalla vista principale e posizionata in un'area libera del foglio, circondata da una linea sottile continua", "Una sezione eseguita dopo il collaudo del pezzo", "Un taglio effettuato con sega a nastro", "Una proiezione assonometrica esplosa"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, se un punto si trova nel primo quadrante (o diedro), dove si proietteranno la sua prima e seconda proiezione rispetto all'asse di terra?",
+            "opts": ["La prima proiezione (sul PO) si trova sotto l'asse di terra, la seconda proiezione (sul PV) si trova sopra l'asse di terra", "Entrambe sopra l'asse di terra", "Entrambe sotto l'asse di terra", "Sul piano bisettrizzante esattamente a quota zero"],
+            "correct": 0
+        },
+        {
+            "text": "A cosa serve l'impiego di una 'spezzata' (linea sottile a mano libera o con zIG-zAG) nei disegni tecnici?",
+            "opts": ["A delimitare un'interruzione di vista per pezzi lunghi o per rappresentare viste parziali", "A indicare un guasto meccanico del componente", "A tracciare le quote angolari", "A separare il cartiglio dal corpo del disegno"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo delle norme UNI nel disegno tecnico?",
+            "opts": ["Unificare i criteri di rappresentazione grafica per garantire l'univocità e la comprensione universale dei documenti tecnici", "Imporre tasse sui brevetti industriali", "Stabilire il prezzo di vendita dei componenti meccanici", "Sostituire completamente la geometria descrittiva classica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale superficie geometrica si ottiene facendo ruotare una parabola attorno al suo asse di simmetria?",
+            "opts": ["Un paraboloide di rivoluzione", "Un ellissoide", "Un cono circolare retto", "Un iperboloide a una falda"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si definisce 'quota di collaudo'?",
+            "opts": ["Quota verificata dal reparto qualità prima dell'accettazione definitiva del lotto di produzione", "Quota stimata in fase di preventivo economico", "Quota inserita a titolo informativo per il cliente", "La quota del peso totale del pezzo grezzo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di tratto viene rigorosamente utilizzato per tracciare le linee di misura e le frecce terminali?",
+            "opts": ["Linea continua sottile", "Linea continua grossa", "Linea tratteggiata", "Linea mista"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta l'intersezione (penetrazione) tra due solidi geometrici (es. un cilindro e un prisma) nelle proiezioni ortogonali?",
+            "opts": ["Con una linea continua sottile che delinea la curva spaziale d'intersezione tra le superfici", "Eliminando completamente i due corpi", "Con una linea tratteggiata di costruzione", "Tracciando solo il perimetro esterno d'ingombro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'sviluppo' di una superficie nel disegno tecnico e nella geometria descrittiva?",
+            "opts": ["La rappresentazione in piano (su un unico foglio bidimensionale) della superficie sviluppabile di un solido", "L'aumento in scala del progetto del 200%", "La modellazione 3D eseguita tramite software CAD parametrico", "Il calcolo del volume netto dell'oggetto"],
+            "correct": 0
+        },
+        {
+            "text": "Quali solidi geometrici ammettono uno 'sviluppo geometrico esatto' su un piano senza deformazioni o lacerazioni?",
+            "opts": ["I solidi policrici, i cilindri e i coni (superfici sviluppabili)", "Le sfere e i tori", "I paraboloidi ellittici", "Le superfici a doppia curvatura complessa"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema di quotatura in coordinate (o quotatura tabellare), come vengono indicate le quote dei vari centri di foratura?",
+            "opts": ["Tramite una tabella associata che riporta le coordinate X e Y rispetto a un'origine comune indicata sul disegno", "Scrivendo tutte le quote sovrapposte sui cerchi", "Utilizzando esclusivamente angoli sessagesimali", "Indicando solo il peso del pezzo lavorato"],
+            "correct": 0
+        },
+        {
+            "text": "Quale simbolo si utilizza nei disegni tecnici per indicare che una superficie deve essere lavorata (asportazione di truciolo)?",
+            "opts": ["Il simbolo grafico a V dissimmetrica (o completato da indicazioni di rugosità)", "Una croce rossa in campo bianco", "Un cerchio barrato", "La lettera 'L' maiuscola"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta il parametro 'Ra' associato alla finitura superficiale (rugosità)?",
+            "opts": ["La scostamento aritmetico medio del profilo di rugosità rispetto alla linea media", "Il raggio massimo di curvatura del pezzo", "La resistenza a trazione del materiale grezzo", "L'angolo di sformo della fusione"],
+            "correct": 0
+        },
+        {
+            "text": "Come viene indicato l'accoppiamento con 'gioco' tra un albero e un foro secondo le norme ISO tolleranze e accoppiamenti?",
+            "opts": ["Quando la zona di tolleranza del foro si trova interamente al di sopra di quella dell'albero", "Quando le due zone di tolleranza si sovrappongono parzialmente", "Quando l'albero è sempre più grande del foro", "Quando non esiste alcun movimento relativo tra le parti"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa caratterizza un accoppiamento con 'interferenza' (o con serraggio)?",
+            "opts": ["Il diametro effettivo dell'albero è sempre maggiore del foro, richiedendo forza per il montaggio", "Le parti scorrono liberamente l'una dentro l'altra", "Il gioco radiale è compreso tra 0.1 e 0.5 mm", "Si tratta di un collegamento filettato a passo grosso"],
+            "correct": 0
+        },
+        {
+            "text": "Come si indica in un disegno meccanico la presenza di una filettatura interna (es. in un foro cieco o passante)?",
+            "opts": ["Con una linea sottile per il diametro di nocciolo e una linea grossa per il diametro nominale esterno", "Disegnando manualmente ogni singola spira elicoidale interna", "Con un tratteggio fitto a rombi", "Usando solo una linea mista centrale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo principale dell'utilizzo di un 'dettaglio ingrandito' racchiuso in un cerchio con lettera di riferimento?",
+            "opts": ["Mostrare chiaramente zone di un pezzo molto piccole o ricche di particolari ravvicinati che in scala normale sarebbero illeggibili", "Aumentare il costo commerciale del progetto", "Sostituire la vista d'insieme principale", "Correggere errori di stampa del foglio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, data una retta generica nello spazio, cosa sono le sue 'proiezioni' sui piani principali?",
+            "opts": ["Due linee rette ottenute proiettando tutti i punti della retta spaziale ortogonalmente sui piani PO e PV", "Due punti isolati di intersezione", "Una singola curva parabolica", "Due archi di circonferenza"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la condizione geometrica per cui due rette nello spazio si dicono 'incidenti'?",
+            "opts": ["Le rette appartengono allo stesso piano e hanno un unico punto in comune", "Le rette non si incontrano mai in alcun punto", "Le proiezioni omonime sono parallele", "Le rette sono sghembe tra loro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'rette sghembe' nello spazio geometrico descrittivo?",
+            "opts": ["Due rette che non si intersecano e non appartengono allo stesso piano (non sono né parallele né incidenti)", "Due rette perfettamente parallele separate da una distanza costante", "Due rette che formano un angolo retto esatto", "Rette sovrapposte nello spazio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si individua univocamente un piano nello spazio di Monge?",
+            "opts": ["Tramite tre punti non allineati, oppure una retta e un punto esterno, o due rette incidenti o parallele", "Attraverso un singolo punto isolato", "Tramite la sua lunghezza e larghezza", "Specificando solo l'altezza dal piano orizzontale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'ribaltamento di un piano' nel metodo di Monge?",
+            "opts": ["La rotazione di un piano inclinato attorno a una sua traccia fino a farlo sovrapporre a un piano di proiezione parallelo per vederne la vera grandezza", "Il capovolgimento fisico del foglio da disegno", "La cancellazione delle linee di costruzione", "La trasformazione di una vista ortogonale in assonometria"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di macchine, qual è la funzione di una 'chiavetta' o di una 'linguetta' inserita in un albero motore?",
+            "opts": ["Realizzare un collegamento albero-mozzo per la trasmissione di momenti torcenti", "Tenere unito il coperchio del carter tramite tenuta ermetica", "Regolare il gioco assiale dei cuscinetti a sfera", "Ridurre l'attrito radiale dell'albero"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un cuscinetto a rotolamento (a sfere o a rulli) nei disegni d'insieme di complessivo?",
+            "opts": ["Solitamente con una rappresentazione semplificata unificata o sagoma rettangolare con una croce interna", "Disegnando singolarmente ogni singola sfera interna in scala reale", "Con una campitura a retino fitto", "Mediante una linea mista tratteggiata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'rettilineità' applicata su un asse cilindrico?",
+            "opts": ["La condizione in cui l'asse dell'elemento cilindrico deve trovarsi all'interno di un cilindro di tolleranza di diametro t", "La precisione del taglio longitudinale della sega", "La rugosità superficiale massima ammessa", "Il parallelismo rispetto alla base d'appoggio"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il simbolo di un cerchio racchiuso in un riquadro di tolleranza geometrica riferito a una superficie?",
+            "opts": ["Tolleranza di planarità o circolarità (a seconda del contesto)", "Tolleranza di concentricità", "Grado di durezza Brinell", "Coefficiente di dilatazione termica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di linea si utilizza per indicare i piani di simmetria o le posizioni limite di parti mobili in un disegno?",
+            "opts": ["Linea mista sottile a due tratti e punto", "Linea continua grossa", "Linea a tratti ravvicinati", "Linea a zig-zag continua"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto delle proiezioni ortogonali, cosa accade a un segmento perpendicolare al Piano Orizzontale (PO)?",
+            "opts": ["La sua proiezione sul PO si riduce a un punto, mentre sul PV appare in vera grandezza verticale", "La proiezione sul PV si riduce a un punto", "Entrambe le proiezioni scompaiono", "Il segmento risulta inclinato di 45 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una superficie di traslazione?",
+            "opts": ["Una superficie generata dal movimento di una linea (generatrice) che si mantiene parallela a se stessa lungo una linea direttrice", "Una superficie ottenuta per rotazione attorno a un asse centrale", "Una superficie sferica deformata", "Un piano inclinato privo di attrito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la regola fondamentale per la disposizione delle quote in un disegno tecnico affinché non si intersechino tra loro?",
+            "opts": ["Disporre le quote minori più vicine al profilo del pezzo e le quote maggiori (globali) all'esterno", "Mettere tutte le quote a caso purché siano leggibili", "Scrivere le quote esclusivamente all'interno della figura", "Evitare l'uso delle linee di riferimento"],
+            "correct": 0
+        },
+        {
+            "text": "Come si indica la fine di una linea di misura secondo le norme UNI?",
+            "opts": ["Con frecce chiuse annerite (o sbarrette oblique a 45°, o punti)", "Con un cerchietto numerato", "Con una croce a X", "Senza alcun simbolo terminale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa significa la sigla 'CAD' applicata al settore del disegno e della progettazione?",
+            "opts": ["Computer-Aided Design (Progettazione assistita da calcolatore)", "Centralized Automatic Drawing", "Calculated Architectural Dimensioning", "Creative Artistic Display"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la principale differenza tra un disegno d'insieme e un disegno di dettaglio (o particolare)?",
+            "opts": ["Il disegno d'insieme mostra il montaggio completo di più componenti assemblati, mentre il disegno di dettaglio definisce un singolo pezzo con tutte le quote e tolleranze", "Il disegno d'insieme è sempre eseguito a mano libera", "Il disegno di dettaglio non riporta mai le quote", "Non c'è alcuna differenza pratica"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si indica con il termine 'distinta base' associata a un disegno d'insieme?",
+            "opts": ["La tabella numerata che elenca tutti i componenti, i codici, i materiali e le quantità dei pezzi che formano il gruppo meccanico", "La lista degli attrezzi necessari per la manutenzione", "L'elenco dei costi di spedizione", "Il registro delle presenze in officina"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, qual è la proprietà delle tracce di un piano generico?",
+            "opts": ["Le tracce sono le rette d'intersezione del piano con i piani di proiezione principali PO e PV", "Sono i punti di coordinate zero", "Rappresentano i centri di curvatura delle sezioni coniche", "Sono linee ausiliarie per il calcolo delle aree"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta l'intersezione di due piani paralleli nel metodo di Monge?",
+            "opts": ["Non si intersecano mai (l'intersezione è una retta impropria all'infinito)", "Formano un punto geometrico centrale", "Generano una retta perpendicolare all'asse di terra", "Si fondono in un unico piano"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'proiezioni convergenti' (o prospettiva)?",
+            "opts": ["Sistemi di proiezione in cui i raggi visuali partono da un punto di vista improprio o proprio e convergono verso un centro di vista (occhio dell'osservatore)", "Proiezioni in cui i raggi sono rigorosamente paralleli tra loro", "Sistemi privi di punto di fuga", "Proiezioni ortogonali senza scala"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di assonometria presenta i tre angoli tra gli assi disuguali e tre coefficienti di riduzione differenti?",
+            "opts": ["Assonometria trimetrica", "Assonometria isometrica", "Assonometria dimetrica", "Assonometria ortogonale cavaliera"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'quota ausiliaria' (o di servizio) racchiusa tra parentesi in un disegno?",
+            "opts": ["Una quota indicata a solo scopo informativo o di controllo, che non concorre direttamente alla catena delle tolleranze di lavorazione", "La quota principale del pezzo", "Una quota errata da cancellare", "Il prezzo stimato del componente"],
+            "correct": 0
+        },
+        {
+            "text": "Come si comporta una retta generica perpendicolare al Piano Verticale (PV) nelle proiezioni ortogonali?",
+            "opts": ["La sua seconda proiezione sul PV si riduce a un punto, mentre la prima proiezione sul PO risulta perpendicolare all'asse di terra", "La prima proiezione sul PO diventa un punto", "Entrambe le proiezioni sono parallele all'asse di terra", "La retta scompare dal disegno"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il significato del simbolo di tolleranza geometrica di 'cilindricità'?",
+            "opts": ["Limita gli errori ammissibili di forma affinché la superficie cilindrica si mantenga all'interno di due cilindri coaxiali distanti t", "Garantisce che il foro sia perfettamente filettato", "Indica la massima velocità di rotazione dell'albero", "Misura l'arrotondamento degli spigoli vivi"],
+            "correct": 0
+        },
+        {
+            "text": "Come vengono denominate le sezioni che non si trovano allineate lungo l'asse principale di taglio ma vengono traslate?",
+            "opts": ["Sezioni ribaltate fuori vista (o sezioni successive)", "Sezioni nascoste o fantasma", "Semisezioni speculari", "Sezioni ideali non normate"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa regola la norma UNI EN ISO 128 per quanto riguarda le linee nel disegno tecnico?",
+            "opts": ["I tipi di linea, lo spessore e le regole generali di rappresentazione grafica", "I formati di esportazione dei file PDF", "I requisiti di sicurezza antincendio dei laboratori", "Le modalità di collaudo dei materiali metallici"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si indica con il termine 'sformo' nei disegni di pezzi ottenuti per fusione?",
+            "opts": ["La leggera inclinazione delle pareti verticali del modello per consentirne l'agevole estrazione dalla sabbia di fonderia", "Il difetto di deformazione termica del metallo", "La tolleranza di rugosità superficiale globale", "Il gioco radiale dei perni in rotazione"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, se un punto ha quota positiva e scarto (o allontanamento) positivo, in quale diedro (quadrante) si trova?",
+            "opts": ["Nel primo diedro (spazio sovrastante il PO e antistante il PV)", "Nel secondo diedro", "Nel terzo diedro", "Nel quarto diedro"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo dell'impiego delle 'linee d'interruzione' nei disegni tecnici di oggetti molto lunghi (es. profilati o tubi)?",
+            "opts": ["Rappresentare solo le estremità e la parte significativa del pezzo accorciandone la lunghezza visiva sul foglio", "Indicare un punto di rottura a fatica del materiale", "Separare le viste ortogonali principali dalle sezioni", "Indicare il passaggio dei cavi elettrici interni"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce geometricamente una superficie conica retta di rivoluzione?",
+            "opts": ["Una superficie generata dal movimento di una retta passante per un punto fisso (vertice) e appoggiata su una circonferenza di base", "Un solido limitato da sei facce piane quadrate", "Una superficie ottenuta per traslazione rettilinea", "Un paraboloide cavo"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'coassialità' in una tolleranza geometrica di posizione?",
+            "opts": ["La condizione in cui l'asse di un elemento cilindrico deve trovarsi all'interno di un cilindro di tolleranza avente lo stesso asse di riferimento", "L'intersezione ortogonale di due alberi", "La simmetria speculare di un blocco meccanico", "Il parallelismo tra due piani distanti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale simbolo si impiega comunemente per indicare il 'raggio' di un arco di raccordo nelle quote lineari?",
+            "opts": ["La lettera maiuscola 'R'", "La lettera 'D'", "Il simbolo 'Ø'", "La lettera 'S'"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema di quotatura in parallelo, perché le quote con valore minore si posizionano più vicine al profilo rispetto a quelle maggiori?",
+            "opts": ["Per evitare che le linee di misura e di riferimento si intersechino o si sovrappongano creando confusione di lettura", "Per rispettare una regola estetica non vincolante", "Per velocizzare la stampa cartacea del progetto", "Per ridurre il consumo di inchiostro"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta una 'sezione parziale' in un disegno tecnico?",
+            "opts": ["Un taglio limitato a una piccolissima zona circoscritta dell'oggetto per metterne in luce un dettaglio interno senza sezionare tutto il pezzo", "Una sezione eseguita tagliando il 30% della lunghezza totale", "Un errore di rappresentazione grafica da correggere", "Una semisezione simmetrica"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta il filetto utile di una vite nei disegni tecnici costruttivi unificati?",
+            "opts": ["Con una linea continua grossa che delimita il diametro nominale esterno fino alla fine della parte filettata utile", "Disegnando tutte le singole spire in 3D wireframe", "Con una linea tratteggiata invisibile", "Con un tratteggio a retino fitto"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del cartiglio in merito alla 'scala' del disegno?",
+            "opts": ["Indicare il rapporto di riduzione o ingrandimento con cui sono state eseguite le proiezioni rispetto al reale", "Specificare la scala di durezza del materiale del pezzo", "Definire la scala numerica delle tolleranze geometriche", "Riportare la scala gerarchica dei progettisti dello studio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della geometria descrittiva, cosa individua l'intersezione di due piani non paralleli nello spazio?",
+            "opts": ["Una linea retta geometrica", "Un punto isolato", "Una superficie sferica", "Un piano parallelo all'infinito"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale vantaggio dell'uso di una piattaforma web statica e di un database in formato JSON per la gestione dei test rispetto ai vecchi kit cartacei?",
+            "opts": ["Flessibilità totale, aggiornamento istantaneo, costi di gestione nulli e portabilità universale senza installazione di software pesanti", "L'obbligo di connessione a server dedicati costosi", "La necessità di ristampare i manuali ogni volta che cambia una norma", "La limitazione d'accesso a un solo utente alla volta"],
+            "correct": 0
+        },
+        {
+            "text": "Se un utente ricarica inaspettatamente la pagina (F5) durante una simulazione attiva su TOLC LAB, cosa garantisce la continuità della prova?",
+            "opts": ["Il salvataggio in tempo reale dello stato nel `localStorage` del browser e il prompt di ripristino automatico della sessione", "La perdita totale dei dati e la chiusura dell'account", "L'invio automatico dei risultati parziali alla segreteria universitaria", "Il blocco temporaneo della piattaforma per 24 ore"],
+            "correct": 0
+        }
+    ],
+        "Storia dell’Arte": [
+        {
+            "text": "Chi è considerato il pioniere della pittura italiana e della moderna concezione dello spazio pittorico, autore degli affreschi nella Cappella degli Scrovegni a Padova?",
+            "opts": ["Giotto di Bondone", "Cimabue", "Duccio di Buoninsegna", "Simone Martini"],
+            "correct": 0
+        },
+        {
+            "text": "In quale secolo è universalmente collocato l'inizio del movimento artistico e culturale del Rinascimento in Italia (specialmente a Firenze)?",
+            "opts": ["Quindicesimo secolo (XV secolo - il Quattrocento)", "Tredicesimo secolo (XIII secolo)", "Diciassettesimo secolo (XVII secolo)", "Decimo secolo (X secolo)"],
+            "correct": 0
+        },
+        {
+            "text": "A chi si deve la formulazione geometrica e matematica della prospettiva lineare centrica nel primo Quattrocento a Firenze?",
+            "opts": ["Filippo Brunelleschi", "Donotto di Niccolò di Betto Bardi (Donatello)", "Masaccio", "Leon Battista Alberti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre trattato teorico scrisse Leon Battista Alberti nel 1435, codificando per la prima volta le regole della prospettiva e della pittura rinascimentale?",
+            "opts": ["De Pictura", "Le Vite de' più eccellenti pittori", "Trattato della pittura", "De Re Aedificatoria"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista è l'autore del celebre affresco 'La Trinità' in Santa Maria Novella a Firenze, capolavoro della pittura prospettica quattrocentesca?",
+            "opts": ["Masaccio (Tommaso di Ser Giovanni di Mone Cassai)", "Sandro Botticelli", "Beato Angelico", "Paolo Uccello"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti opere NON è stata dipinta da Sandro Botticelli?",
+            "opts": ["La Gioconda", "La Nascita di Venere", "La Primavera", "L'Adorazione dei Magi (1475)"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'architetto che progettò e portò a termine la maestosa Cupola di Santa Maria del Fiore a Firenze senza l'ausilio di normali centerie di sostegno?",
+            "opts": ["Filippo Brunelleschi", "Arnolfo di Cambio", "Leon Battista Alberti", "Michelozzo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale papa commissionò a Michelangelo Buonarroti la decorazione della volta della Cappella Sistina?",
+            "opts": ["Giulio II (Giuliano della Rovere)", "Leone X", "Sisto IV", "Paolo III"],
+            "correct": 0
+        },
+        {
+            "text": "In quale anno fu completata la decorazione della volta della Cappella Sistina dipinta da Michelangelo?",
+            "opts": ["1512", "1503", "1520", "1541"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre dipinto parietale di Leonardo da Vinci si trova nel refettorio del convento di Santa Maria delle Grazie a Milano?",
+            "opts": ["L'Ultima Cena (Il Cenacolo)", "La Battaglia di Anghiari", "La Vergine delle Rocce", "Sant'Anna, la Vergine e il Bambino"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tecnica pittorica innovativa, caratterizzata da trapassi di luce morbidi e sfumati senza contorni netti, fu perfezionata da Leonardo da Vinci?",
+            "opts": ["Lo sfumato", "Il chiaroscuro caravaggesco", "Il puntinismo", "La tempera all'uovo"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore della celebre scultura del 'David' in marmo conservata alla Galleria dell'Accademia di Firenze, simbolo degli ideali repubblicani?",
+            "opts": ["Michelangelo Buonarroti", "Donatello", "Gian Lorenzo Bernini", "Benvenuto Cellini"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista rinascimentale è l'autore degli affreschi delle 'Stanze vaticane' (tra cui spicca 'La Scuola di Atene')?",
+            "opts": ["Raffaello Sanzio", "Tiziano Vecellio", "Correggio", "Pinturicchio"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta filosoficamente e culturalmente il dipinto 'La Scuola di Atene' di Raffaello Sanzio?",
+            "opts": ["La celebrazione della filosofia, della ragione e del sapere classico attraverso i grandi pensatori dell'antichità", "Il trionfo della Chiesa cattolica sulla riforma protestante", "La genealogia della famiglia Medici a Firenze", "Le vicende mitologiche della fondazione di Roma"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico fiorì in Italia tra il finire del primo Rinascimento e la fine del Cinquecento, caratterizzato da licenze formali, figure allungate e complessi artifici compositivi?",
+            "opts": ["Il Manierismo", "Il Barocco", "Il Rococò", "Il Neoclassicismo"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il massimo esponente della pittura veneziana del Cinquecento, celebre per il colore acceso, la pennellata sciolta e capolavori come 'L'Assunta'?",
+            "opts": ["Tiziano Vecellio", "Giorgione", "Tintoretto", "Paolo Veronese"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto e teorico del Cinquecento scrisse i 'Quattro Libri dell'Architettura' (1570) e progettò la Villa Almerico Capra (detta 'La Rotonda') a Vicenza?",
+            "opts": ["Andrea Palladio", "Donato Bramante", "Jacopo Sansovino", "Vincenzo Scamozzi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale elemento innovativo introdotto da Caravaggio (Michelangelo Merisi) nella pittura tra la fine del XVI e l'inizio del XVII secolo?",
+            "opts": ["Il violento contrasto di luce e ombra (il tenebrismo / chiaroscuro drammatico) e il realismo crudo dei soggetti", "L'uso rigoroso della prospettiva geometrica di Brunelleschi", "La pittura a fresco all'aperto (plein air)", "L'astrazione geometrica delle forme"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'artista universale considerato il massimo genio della scultura e dell'architettura barocca a Roma, autore del Baldonchino di San Pietro e del Colonnato?",
+            "opts": ["Gian Lorenzo Bernini", "Francesco Borromini", "Pietro da Cortona", "Carlo Maderno"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre chiesa romana progettata da Francesco Borromini è famosa per la sua pianta mista e l'andamento sinuoso e dinamico della facciata?",
+            "opts": ["San Carlo alle Quattro Fontane (la Carlino)", "Il Gesù", "Sant'Ignazio di Loyola", "Santa Maria della Pace"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico europeo si sviluppò nel XVIII secolo in reazione agli eccessi decorativi del Barocco, ispirandosi rigorosamente ai canoni dell'arte greca e romana antica?",
+            "opts": ["Il Neoclassicismo", "Il Romanticismo", "Il Realismo", "Il Futurismo"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il massimo scultore neoclassico internazionale, autore di capolavori come 'Amore e Psiche' e 'Le Grazie'?",
+            "opts": ["Antonio Canova", "Bertel Thorvaldsen", "Jean-Antoine Houdon", "John Flaxman"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore francese fu il massimo interprete visivo della Rivoluzione francese e dell'Impero napoleonico, autore del 'Giuramento degli Orazi'?",
+            "opts": ["Jacques-Louis David", "Eugène Delacroix", "Jean-Auguste-Dominique Ingres", "Théodore Géricault"],
+            "correct": 0
+        },
+        {
+            "text": "Quale dipinto di Théodore Géricault (1819) segna la nascita del Romanticismo pittorico francese, raffigurando un drammatico evento di cronaca marittima?",
+            "opts": ["La zattera della Medusa", "La Libertà che guida il popolo", "Il 3 maggio 1808 a Madrid", "Il naufragio dell'Hope"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista francese dipinse 'La Libertà che guida il popolo' (1830), celebrando le barricate parigine?",
+            "opts": ["Eugène Delacroix", "Gustave Courbet", "Jean-François Millet", "Camille Corot"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il movimento pittorico nato in Francia intorno al 1860-1870 che rifiutava l'accademismo per dipingere all'aperto (plein air), catturando le impressioni fuggevoli della luce?",
+            "opts": ["L'Impressionismo", "Il Macchiaiolo", "Il Cubismo", "Il Divisionismo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale dipinto di Claude Monet, presentato alla prima esposizione impressionista del 1874, diede inaspettatamente il nome all'intero movimento?",
+            "opts": ["Impression, soleil levant (Impressione, levar del sole)", "Stazione Saint-Lazare", "I papaveri", "Ninfee, armonia verde"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gruppo di artisti italiani operò in Toscana a partire dal 1855, anticipando per certi versi l'Impressionismo grazie all'uso di macchie di colore e contrasti di chiaroscuro?",
+            "opts": ["I Macchiaioli (es. Fattori, Signorini, Lega)", "I Futuristi", "I Nazareni", "I Preraffaelliti"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è il celebre pittore olandese post-impressionista autore de 'La Notte Stellata', noto per la pennellata vorticosa e carica di materia?",
+            "opts": ["Vincent van Gogh", "Paul Gauguin", "Paul Cézanne", "Edvard Munch"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista è considerato il padre del Cubismo insieme a Georges Braque, autore del rivoluzionario dipinto 'Les Demoiselles d'Avignon' (1907)?",
+            "opts": ["Pablo Picasso", "Henri Matisse", "Amedeo Modigliani", "Wassily Kandinsky"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento d'avanguardia storico italiano fondato da Filippo Tommaso Marinetti nel 1909 esaltava la velocità, la modernità, le macchine e l'energia industriale?",
+            "opts": ["Il Futurismo", "Il Dadaismo", "Il Surrealismo", "La Metafisica"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore della celebre scultura futurista in bronzo 'Forme uniche della continuità nello spazio' (1913)?",
+            "opts": ["Umberto Boccioni", "Giacomo Balla", "Carlo Carrà", "Marcel Duchamp"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista italiano, insieme a Giorgio de Chirico, fondò la pittura metafisica, caratterizzata da piazze deserte, statue silenziose e atmosfere oniriche?",
+            "opts": ["Carlo Carrà", "Giorgio Morandi", "Filippo De Pisis", "Mario Sironi"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il movimento artistico e letterario nato a Zurigo nel 1916 in polemica con la razionalità della Prima Guerra Mondiale, basato sul caso, sull'ironia e sulla dissacrazione totale dell'arte?",
+            "opts": ["Il Dadaismo", "Il Surrealismo", "Il Costruttivismo", "L'Espressionismo astratto"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è il fondatore del Surrealismo, movimento nato a Parigi nel 1924 che esplorava l'inconscio, il sogno e il flusso psichico?",
+            "opts": ["André Breton", "Salvador Dalí", "René Magritte", "Max Ernst"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto tedesco fu il fondatore nel 1919 della celeberrima scuola del 'Bauhaus', che rivoluzionò il design e l'architettura moderna?",
+            "opts": ["Walter Gropius", "Ludwig Mies van der Rohe", "Le Corbusier", "Frank Lloyd Wright"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è il celebre architetto del Movimento Moderno autore della celebre 'Villa Savoye' e ideatore del 'Modulor' basato sulle proporzioni umane?",
+            "opts": ["Le Corbusier (Charles-Édouard Jeanneret)", "Alvar Aalto", "Oscar Niemeyer", "Frank Gehry"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto americano progettò la celebre 'Casa sulla cascata' (Fallingwater) in Pennsylvania, integrando perfettamente l'architettura con la natura circostante?",
+            "opts": ["Frank Lloyd Wright", "Louis Sullivan", "Richard Neutra", "Philip Johnson"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tecnica d'intonaco e pittura murale, utilizzata ampiamente nel Medioevo e nel Rinascimento, prevede la stesura dei colori su intonaco fresco?",
+            "opts": ["Affresco (buon fresco)", "Tempera su tavola", "Pittura a olio su tela", "Encausto"],
+            "correct": 0
+        },
+        {
+            "text": "Cos'è l'ordine architettonico 'dorico' nei templi greci classici?",
+            "opts": ["L'ordine più antico e robusto, caratterizzato da colonne prive di base, fusto scanalato con spigoli vivi e capitello semplice a echino e abaco", "L'ordine decorato con volute a spirale sul capitello", "L'ordine caratterizzato da capitelli fogliati d'acanto", "L'ordine leggero utilizzato solo per i teatri romani"],
+            "correct": 0
+        },
+        {
+            "text": "Quale elemento caratterizza specificamente il capitello dell'ordine architettonico 'ionico'?",
+            "opts": ["La presenza di due grandi volute a spirale contrapposte", "La decorazione con foglie di acanto stilizzate", "La totale assenza di decorazioni geometriche", "La forma sferica del collarino"],
+            "correct": 0
+        },
+        {
+            "text": "A quale ordine architettonico classico appartiene il capitello ornato da foglie di acanto e caulicoli?",
+            "opts": ["Ordine Corinzio", "Ordine Dorico", "Ordine Ionico", "Ordine Tuscanico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale innovazione costruttiva e strutturale caratterizza in modo decisivo l'architettura dell'antica Roma rispetto a quella greca?",
+            "opts": ["L'uso sistematico dell'arco a tutto sesto, della volta e della cupola in opus caementicium (calcestruzzo romano)", "L'esclusivo utilizzo del sistema architravato con travi in legno di quercia", "L'eliminazione totale delle colonne portanti", "L'uso di strutture in ferro battuto"],
+            "correct": 0
+        },
+        {
+            "text": "Quale stile architettonico ed artistico fiorì in Europa tra l'XI e il XII secolo, caratterizzato da edifici religiosi massicci, muri spessi, archi a tutto sesto e portali strombati?",
+            "opts": ["Stile Romanico", "Stile Gotico", "Stile Barocco", "Stile Neoclassicismo"],
+            "correct": 0
+        },
+        {
+            "text": "Quali sono le caratteristiche formali fondamentali dell'architettura Gotica nata in Francia nel XII secolo?",
+            "opts": ["L'arco a sesto acuto (ogiva), la volta costolonata e l'arco rampante che permisero di alleggerire i muri e inserire grandi vetrate policrome", "Muri massicci in pietra e assenza di finestre per motivi difensivi", "Cupole emisferiche ribassate in mattoni rossi", "Facciate simmetriche con timpano triangolare classico"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore del famoso dipinto 'Guernica' (1937), drammatica denuncia della violenza e della guerra moderna?",
+            "opts": ["Pablo Picasso", "Joan Miró", "Marc Chagall", "Salvador Dalí"],
+            "correct": 0
+        },
+        {
+            "text": "Quale corrente artistica americana del secondo dopoguerra (anni '50), con esponenti come Jackson Pollock e Willem de Kooning, si basava sul gesto pittorico impulsivo (action painting)?",
+            "opts": ["Espressionismo Astratto", "Pop Art", "Minimalismo", "Arte Povera"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico degli anni '60, nato tra Stati Uniti e Regno Unito (con artisti come Andy Warhol e Roy Lichtenstein), espose i prodotti, i miti e le icone della società dei consumi di massa?",
+            "opts": ["Pop Art", "Op Art", "Land Art", "Fluxus"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'Land Art' (o Earth Art), movimento affermatosi alla fine degli anni '60?",
+            "opts": ["Interventi artistici realizzati direttamente sul paesaggio naturale, utilizzando terra, rocce e materiali organici", "La pittura di paesaggi tradizionali su tela con colori a olio", "La progettazione di giardini pensili urbani nei musei", "La scultura in bronzo di monumenti equestri"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il principale vantaggio della digitalizzazione e dell'inserimento di banche dati tematiche come Storia dell'Arte all'interno di una piattaforma web come TOLC LAB?",
+            "opts": ["Permettere allo studente di esercitarsi su un archivio sterminato e verificabile in qualsiasi momento, ottimizzando la preparazione ai test d'ammissione", "Ridurre la necessità di studiare sui libri scolastici ufficiali", "Sostituire la visita fisica ai musei", "Imporre un unico metodo di insegnamento standardizzato"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto manierista progettò il Palazzo Te a Mantova, celebre per le sue architetture illusionistiche e la 'Sala dei Giganti'?",
+            "opts": ["Giulio Romano", "Baldassarre Peruzzi", "Bartolomeo Ammannati", "Michele Sanmicheli"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore della celebre statua bronzea di 'Perseo con la testa di Medusa', capolavoro del manierismo fiorentino in Loggia dei Lanzi?",
+            "opts": ["Benvenuto Cellini", "Giambologna", "Baccio Bandinelli", "Bartolomeo Ammannati"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore fiammingo del Seicento è considerato il massimo esponente della pittura barocca nordica, celebre per il dinamismo e la sensualità delle sue figure ('Lo sbarco di Maria de' Medici')?",
+            "opts": ["Peter Paul Rubens", "Rembrandt van Rijn", "Johannes Vermeer", "Anthonis van Dyck"],
+            "correct": 0
+        },
+        {
+            "text": "Quale maestro olandese del Seicento è celebre per l'uso magistrale della luce dorata e soffusa in interni domestici intimi come 'La ragazza col turbante' (o 'La ragazza con l'orecchino di perla')?",
+            "opts": ["Johannes Vermeer", "Frans Hals", "Jan Steen", "Pieter de Hooch"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre pittore spagnolo del Seicento fu il pittore di corte di Filippo IV e dipinse capolavori assoluti come 'Las Meninas'?",
+            "opts": ["Diego Velázquez", "Francisco Goya", "El Greco", "Bartolomé Esteban Murillo"],
+            "correct": 0
+        },
+        {
+            "text": "Con quale termine viene definito lo stile pittorico di El Greco (Domenikos Theotokopoulos), caratterizzato da figure fortemente allungate e spiritualizzate?",
+            "opts": ["Manierismo visionario / espressionismo ante litteram", "Realismo barocco", "Neoclassicismo rigoroso", "Impressionismo fiammingo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grande ciclo di affreschi illusionistici barocchi realizzò Andrea Pozzo nella volta della Chiesa di Sant'Ignazio a Roma?",
+            "opts": ["La finta cupola e l'apoteosi di Sant'Ignazio con i quattro continenti", "Il giudizio universale", "La creazione del mondo", "Le storie di San Francesco"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il principale esponente della pittura rococò veneziana del Settecento, celebre per i suoi luminosi affreschi e vedute (es. a Würzburg e a Venezia)?",
+            "opts": ["Giovanni Battista Tiepolo (e il Canaletto per le vedute)", "Francesco Guardi", "Pietro Longhi", "Sebastiano Ricci"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore veneziano del Settecento fu il maestro incontrastato del genere pittorico del 'vedutismo' (es. le vedute di Venezia e Londra)?",
+            "opts": ["Canaletto (Giovanni Antonio Canal)", "Bernardo Bellotto", "Luca Carlevarijs", "Giuseppe Zais"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre pittore spagnolo del periodo di transizione tra Settecento e Ottocento è autore delle 'Pitture Nere' e della drammatica opera 'Il 3 maggio 1808'?",
+            "opts": ["Francisco Goya", "Joaquín Sorolla", "Mariano Fortuny", "Diego Velázquez"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa caratterizza la poetica artistica del Romanticismo rispetto al Neoclassicismo?",
+            "opts": ["L'esaltazione del sentimento, dell'irrazionale, del sublime, della storia nazionale e del legame drammatico con la natura", "Il primato assoluto della ragione, delle regole geometriche e dell'equilibrio classico", "La ricerca della perfezione anatomica priva di emozioni", "L'esclusiva celebrazione della tecnologia industriale"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è il celebre pittore romantico tedesco autore del celebre dipinto 'Viandante sul mare di nebbia', icona del concetto di 'sublime'?",
+            "opts": ["Caspar David Friedrich", "Karl Friedrich Schinkel", "Philipp Otto Runge", "Johann Heinrich Füssli"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore inglese romantico anticipò l'impressionismo con le sue atmosfere nebbiose, i giochi di luce violenti e opere come 'Pioggia, vapore e velocità'?",
+            "opts": ["William Turner (J.M.W. Turner)", "John Constable", "William Blake", "Thomas Gainsborough"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento pittorico francese della metà dell'Ottocento, guidato da Gustave Courbet, rifiutava sia il neoclassicismo che il romanticismo per rappresentare la realtà sociale quotidiana senza idealizzazioni?",
+            "opts": ["Il Realismo", "Il Divisionismo", "Il Puntinismo", "Il Simbolismo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre dipinto di Gustave Courbet (1849), oggi purtroppo distrutto ma noto attraverso copie, scandalizzò il Salon per aver raffigurato due umili lavoratori stradali con la stessa dignità di un dipinto storico?",
+            "opts": ["Gli spaccapietre", "L'atelier del pittore", "Un funerale a Ornans", "Le bagnanti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore impressionista francese dedicò intere serie di tele allo studio della luce mutevole sugli stessi soggetti, come la Cattedrale di Rouen o i covoni di fieno?",
+            "opts": ["Claude Monet", "Edgar Degas", "Pierre-Auguste Renoir", "Camille Pissarro"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista impressionista si concentrò in modo ossessivo sulla rappresentazione del corpo umano in movimento, in particolare ballerine di danza classica e corse di cavalli?",
+            "opts": ["Edgar Degas", "Édouard Manet", "Paul Cézanne", "Alfred Sisley"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il pittore considerato il 'ponte' fondamentale tra l'Impressionismo e il Cubismo, celebre per la sua scomposizione geometrica dei volumi della natura (es. la Montagna Sainte-Victoire)?",
+            "opts": ["Paul Cézanne", "Georges Seurat", "Paul Gauguin", "Odilon Redon"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tecnica pittorica scientifica fu inventata da Georges Seurat e Paul Signac, basata sull'accostamento di piccoli tocchi di colore puro non mescolato sulla tavolozza?",
+            "opts": ["Il Divisionismo (o Puntinismo)", "Il Chiaroscuro tonale", "Lo sfumato leonardesco", "La pittura a spatola materica"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore della celebre opera simbolista 'Il grido' (1893), icona universale dell'angoscia e dell'alienazione esistenziale moderna?",
+            "opts": ["Edvard Munch", "Gustav Klimt", "Egon Schiele", "James Ensor"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore austriaco fu il massimo esponente del Simbolismo e della Secessione Viennese, celebre per l'uso sfarzoso dell'oro nel cosiddetto 'Periodo d'oro' (es. 'Il Bacio')?",
+            "opts": ["Gustav Klimt", "Oskar Kokoschka", "Koloman Moser", "Alfons Mucha"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento d'avanguardia storico tedesco del primo Novecento (es. Ernst Ludwig Kirchner, Wassily Kandinsky con il 'Cavaliere Azzurro') enfatizzava la violenza cromatica e l'espressione interiore dei sentimenti?",
+            "opts": ["L'Espressionismo", "Il Futurismo", "Il Neoplasticismo", "Il Realismo Magico"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è considerato il pioniere assoluto della pittura astratta, autore del primo acquerello astratto nel 1910 e del trattato 'Lo spirituale nell'arte'?",
+            "opts": ["Wassily Kandinsky", "Piet Mondrian", "Kazimir Malevich", "Paul Klee"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico olandese (De Stijl), fondato da Piet Mondrian e Theo van Doesburg, riduceva la pittura a linee rette ortogonali e colori primari?",
+            "opts": ["Il Neoplasticismo", "Il Costruttivismo russo", "Il Suprematismo", "Il Dadaismo geometrico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista russo fu il fondatore del Suprematismo, celebre per l'opera radicale 'Quadrato nero su fondo bianco' (1915)?",
+            "opts": ["Kazimir Malevich", "Vladimir Tatlin", "El Lissitzky", "Aleksandr Rodchenko"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'ready-made' nell'arte contemporanea, introdotto da Marcel Duchamp (es. 'Fontana', un orinatoio rovesciato)?",
+            "opts": ["Un oggetto d'uso comune decontestualizzato e elevato al rango di opera d'arte per scelta dell'artista", "Un dipinto realizzato in serie in fabbrica", "Una scultura in marmo antico restaurata", "Un'architettura prefabbricata in cemento"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scultore romeno naturalizzato francese rivoluzionò la scultura del Novecento cercando l'essenza assoluta delle forme e la leggerezza ascensionale (es. 'Uccello nello spazio')?",
+            "opts": ["Constantin Brâncuși", "Henry Moore", "Alberto Giacometti", "Alexander Calder"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore delle celebri sculture filiformi, allungate e solitarie che esprimono la fragilità e l'esistenzialismo del dopoguerra ('L'uomo che cammina')?",
+            "opts": ["Alberto Giacometti", "Marino Marini", "Giacomo Manzù", "Lucio Fontana"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista italiano fondò lo 'Spazialismo' negli anni '40/50, celebre per i tagli e i buchi inferti direttamente sulle tele per superare la bidimensionalità?",
+            "opts": ["Lucio Fontana", "Enrico Castellani", "Piero Manzoni", "Alberto Burri"],
+            "correct": 0
+        },
+        {
+            "text": "Quale maestro dell'arte informale italiana utilizzava materiali poveri e di scarto come sacchi di juta logori, catrame, plastiche bruciate e ferri arrugginiti (es. 'Sacco')?",
+            "opts": ["Alberto Burri", "Jannis Kounellis", "Michelangelo Pistoletto", "Mario Merz"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico italiano nato alla fine degli anni '60 (con Germano Celant) valorizzava materiali non convenzionali, naturali o di recupero (stracci, terra, neon, metalli poveri)?",
+            "opts": ["L'Arte Povera", "L'Arte Concettuale", "La Transavanguardia", "Il Minimalismo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore e scultore italiano fu il principale esponente della 'Transavanguardia' negli anni '80, movimento del ritorno alla pittura e al colore figurativo?",
+            "opts": ["Francesco Clemente", "Enrico Baj", "Mimmo Rotella", "Emilio Vedova"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto spagnolo modernista (Art Nouveau / Catalan Modernisme) progettò la Sagrada Família, Parco Güell e Casa Batlló a Barcellona?",
+            "opts": ["Antoni Gaudí", "Lluís Domènech i Montaner", "Josep Puig i Cadafalch", "Santiago Calatrava"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'architetto contemporaneo celebre per il suo stile 'decostruttivista' e per aver progettato il Museo Guggenheim di Bilbao e la Walt Disney Concert Hall?",
+            "opts": ["Frank Gehry", "Zaha Hadid", "Renzo Piano", "Norman Foster"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto italiano ha progettato, insieme a Richard Rogers, il Centre Georges Pompidou a Parigi e opere iconiche come lo Shard a Londra?",
+            "opts": ["Renzo Piano", "Massimiliano Fuksas", "Gae Aulenti", "Aldo Rossi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto iracheno-britannica è stata la prima donna a vincere il prestigioso Premio Pritzker, famosa per le sue forme fluide e futuristiche (es. MAXXI a Roma)?",
+            "opts": ["Zaha Hadid", "Kazuyo Sejima", "Amanda Levete", "Odile Decq"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'ordine tuscanico' nell'architettura classica e rinascimentale?",
+            "opts": ["Una variante semplificata dell'ordine dorico, caratterizzata da colonne lisce con base e capitello di proporzioni tozze e robuste", "L'ordine decorato con colonnine tortili barocche", "Un ordine inventato in età moderna senza alcuna base teorica", "Il sistema costruttivo degli archi trionfali romani"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di volta è ottenuta dall'intersezione di due volte a botte ortogonali tra loro di uguale ampiezza?",
+            "opts": ["Volta a crociera", "Volta a padiglione", "Volta a botte lunettata", "Cupola emisferica"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la principale caratteristica geometrica e strutturale di una 'volta a padiglione'?",
+            "opts": ["Una volta formata da quattro falde triangolari convergenti verso il vertice o colmo superiore, impostata sul perimetro della stanza", "Una volta cilindrica continua senza interruzioni", "Una struttura piana sospesa con tiranti in ferro", "Una cupola a pianta rigorosamente ellittica"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresentano i 'pennacchi sferici' nell'architettura monumentale (es. nelle chiese bizantine o rinascimentali)?",
+            "opts": ["I raccordi curvi a forma di triangolo sferico che permettono di passare da una pianta quadrata alla base circolare di una cupola", "Le decorazioni in stucco dorato delle finestre", "I contrafforti esterni di sostegno delle pareti gotiche", "Le lastre di marmo colorato del pavimento"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre trattato di architettura scritto da Vitruvio in epoca romana ha codificato le tre virtù fondamentali dell'architettura ('Firmitas, Utilitas, Venustas')?",
+            "opts": ["De Architectura (I dieci libri)", "De Re Aedificatoria", "I Quattro Libri dell'Architettura", "Trattato della pittura"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indicano esattamente i tre termini vitruviani 'Firmitas, Utilitas, Venustas' applicati a un'opera architettonica?",
+            "opts": ["Solidità strutturale (resistenza), funzionalità (utilità pratica) e bellezza estetica (piacevolezza visiva)", "Economia di spesa, velocità di cantiere e altezza massima", "Luce naturale, ventilazione e isolamento termico", "Simmetria, colore e decorazione barocca"],
+            "correct": 0
+        },
+        {
+            "text": "Quale papa commissionò a Gian Lorenzo Bernini la realizzazione del monumentale Colonnato di Piazza San Pietro a Roma?",
+            "opts": ["Alessandro VII (Fabio Chigi)", "Urbano VIII", "Innocenzo X", "Sisto V"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore impressionista francese è famoso per le sue scene di vita parigina e i caffè all'aperto, caratterizzate da una luce vibrante e festosa ('Il ballo al Moulin de la Galette')?",
+            "opts": ["Pierre-Auguste Renoir", "Camille Pissarro", "Alfred Sisley", "Mary Cassatt"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre dipinto di Edouard Manet (1863), ispirato a modelli classici del Rinascimento ma ambientato nella contemporaneità borghese, scandalizzò il pubblico parigino per la presenza di una donna nuda a fianco di uomini vestiti?",
+            "opts": ["Le Déjeuner sur l'herbe (La colazione sull'erba)", "Olympia", "Un bar alle Folies-Bergère", "Il pifferaio"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista italiano del Novecento dipinse decine di variazioni ossessive sulla stessa natura morta con bottiglie e scatole, cercando l'essenza geometrica della forma ('Natura morta con bottiglia e scatola')?",
+            "opts": ["Giorgio Morandi", "Filippo De Pisis", "Mario Sironi", "Felice Casorati"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scultore e pittore italiano fu uno dei massimi esponenti del Futurismo pittorico e plastico, autore anche di importanti studi sulla scomposizione della luce?",
+            "opts": ["Umberto Boccioni", "Giacomo Balla", "Fortunato Depero", "Enrico Prampolini"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto barocco romano progettò la maestosa Piazza Navona e la fontana dei Quattro Fiumi, in rivalità artistica con Borromini?",
+            "opts": ["Gian Lorenzo Bernini", "Carlo Maderno", "Pietro da Cortona", "Ferdinando Fuga"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore fiammingo del Quattrocento è celebre per l'invenzione e il perfezionamento della tecnica della pittura a olio e per capolavori come 'I coniugi Arnolfini'?",
+            "opts": ["Jan van Eyck", "Rogier van der Weyden", "Hieronymus Bosch", "Hans Memling"],
+            "correct": 0
+        },
+        {
+            "text": "Quale enigmatico pittore fiammingo di fine Quattrocento / inizio Cinquecento dipinse visioni fantastiche, allegorie e mostri come nel trittico 'Il giardino delle delizie'?",
+            "opts": ["Hieronymus Bosch", "Pieter Bruegel il Vecchio", "Lucas van Leyden", "Albrecht Dürer"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il più grande artista del Rinascimento tedesco, universalmente celebre per le sue incisioni su rame e xilografie come 'Melencolia I' e 'Cavaliere, la Morte e il Diavolo'?",
+            "opts": ["Albrecht Dürer", "Lucas Cranach il Vecchio", "Hans Holbein il Giovane", "Matthias Grünewald"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grandioso altare dipinse Matthias Grünewald per il convento di Isenheim, caratterizzato da un forte espressionismo drammatico e visioni mistiche?",
+            "opts": ["L'Altare di Isenheim", "L'Altare di Gand", "L'Altare di San Bavo", "Il Polittico dell'Agnello Mistico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore veneziano del Cinquecento, noto come il Tintoretto, dipinse la vastissima 'Crocifissione' nella Scuola Grande di San Rocco a Venezia?",
+            "opts": ["Jacopo Robusti (detto il Tintoretto)", "Paolo Caliari (detto il Veronese)", "Jacopo Bassano", "Cima da Conegliano"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa caratterizza lo stile pittorico di Paolo Veronese (Paolo Caliari) all'interno del Rinascimento veneziano?",
+            "opts": ["La sfarzosa rappresentazione di banchetti e scene di festa monumentali ambientate in scenografie architettoniche classiche e luminose", "Il tenebrismo cupo e drammatico", "Il linearismo gotico fiammingo", "L'astrazione geometrica pura"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto del Cinquecento progettò la Biblioteca Marciana e la Zecca di Venezia, definendo il linguaggio classico nella laguna?",
+            "opts": ["Jacopo Sansovino", "Andrea Palladio", "Michele Sanmicheli", "Vincenzo Scamozzi"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico francese dei primi del Novecento, guidato da Henri Matisse, fu ribattezzato 'Fauves' (le fiere) a causa dell'uso violento e antinaturalistico del colore puro?",
+            "opts": ["Il Fauvismo", "Il Cubismo analitico", "Il Futurismo", "L'Orfismo"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore del celebre dipinto fauve 'La stanza rossa' (Armonia in rosso) del 1908?",
+            "opts": ["Henri Matisse", "André Derain", "Maurice de Vlaminck", "Raoul Dufy"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la differenza principale tra il 'Cubismo analitico' e il 'Cubismo sintetico' nelle opere di Picasso e Braque?",
+            "opts": ["Il cubismo analitico scompone l'oggetto in frammenti monocromatici complessi da molteplici punti di vista; quello sintetico introduce collage, colori vivaci e forme più immediate", "Il cubismo sintetico usa solo sculture in marmo", "Il cubismo analitico è successivo al 1920", "Non esiste alcuna distinzione formale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scultore italiano del primo Novecento, associato al Futurismo e al movimento dei 'Valori Plastici', creò busti e figure ispirate all'arte etrusca e geometrica (es. 'Guerriero')?",
+            "opts": ["Arturo Martini", "Medardo Rosso", "Adolfo Wildt", "Giacomo Manzù"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il pioniere della scultura moderna impressionista, capace di catturare la luce e la dissoluzione dei volumi nella cera e nel bronzo ('L'età del bronzo', 'Il portinaio') prima di Rodin?",
+            "opts": ["Medardo Rosso", "Auguste Rodin", "Antoine Bourdelle", "Aristide Maillol"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre scultore francese ottocentesco è autore del monumento 'I borghesi di Calais' e de 'Il pensatore'?",
+            "opts": ["Auguste Rodin", "Jean-Baptiste Carpeaux", "François Rude", "Antoine-Louis Barye"],
+            "correct": 0
+        },
+        {
+            "text": "Quale stile architettonico ed artistico fiorì in Europa tra il 1890 e il 1914, noto in Italia come 'Stile Liberty' o 'Floreale', caratterizzato da linee sinuose ispirate alla natura?",
+            "opts": ["Art Nouveau (Liberty / Jugendstil / Modernisme)", "Barocco", "Neoclassicismo", "Rococò"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu il massimo esponente del Liberty architettonico in Italia, autore di edifici celebri come Palazzo Montecitorio a Roma (facciata) e varie opere a Torino?",
+            "opts": ["Raimondo D'Aronco", "Ernesto Basile", "Giuseppe Sommaruga", "Pietro Fenoglio"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto belga è considerato il pioniere dell'Art Nouveau nell'architettura grazie a edifici come Casa Tassel a Bruxelles?",
+            "opts": ["Victor Horta", "Henry van de Velde", "Paul Hankar", "Hector Guimard"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto francese progettò le celebri edicole d'ingresso della metropolitana di Parigi in stile Art Nouveau ferro e vetro?",
+            "opts": ["Hector Guimard", "Gustave Eiffel", "Charles Garnier", "Henri Labrouste"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta l'opera 'La persistenza della memoria' (1931) del pittore surrealista Salvador Dalí?",
+            "opts": ["I celebri orologi molli adagiati in un paesaggio marino deserto, simbolo della relatività del tempo e del sogno", "La scomposizione cubista di una città industriale", "Un ritratto accademico neoclassico", "Una scena di battaglia risorgimentale"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore surrealista belga è celebre per le sue immagini enigmatiche e paradossali, come il dipinto di una pipa con la scritta 'Ceci n'est pas une pipe'?",
+            "opts": ["René Magritte", "Max Ernst", "Joan Miró", "Yves Tanguy"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista catalano, esponente del Surrealismo, utilizzava colori primari brillanti, segni infantili e forme biomorfe oniriche (es. 'Il carnevale di Arlecchino')?",
+            "opts": ["Joan Miró", "Salvador Dalí", "Pablo Picasso", "Antoni Tàpies"],
+            "correct": 0
+        },
+        {
+            "text": "Quale movimento artistico americano del dopoguerra, guidato da artisti come Donald Judd e Sol LeWitt, riduceva la scultura a forme geometriche elementari e industriali prive di espressività personale?",
+            "opts": ["Il Minimalismo (Minimal Art)", "L'Espressionismo astratto", "La Pop Art", "L'Action Painting"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista concettuale italiano è celebre per l'opera 'Merda d'artista' (1961), una serie di scatolette sigillate vendute al prezzo dell'oro?",
+            "opts": ["Piero Manzoni", "Maurizio Cattelan", "Alighiero Boetti", "Michelangelo Pistoletto"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore della celebre e provocatoria installazione 'La Nona Ora' (1999) che raffigura Papa Giovanni Paolo II colpito da un meteorite?",
+            "opts": ["Maurizio Cattelan", "Damien Hirst", "Jeff Koons", "Marina Abramović"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista britannico contemporaneo è noto per le sue sculture di animali immersi in formaldeide in teche di vetro (es. 'The Physical Impossibility of Death in the Mind of Someone Living')?",
+            "opts": ["Damien Hirst", "Anish Kapoor", "Tracey Emin", "Richard Long"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scultore britannico-indiano contemporaneo è celebre per monumentali opere pubbliche specchianti e concave, come 'Cloud Gate' a Chicago e il 'Marsyas'?",
+            "opts": ["Anish Kapoor", "Anthony Caro", "Richard Serra", "Tony Cragg"],
+            "correct": 0
+        },
+        {
+            "text": "Quale scultore minimalista americano è famoso per le sue enormi lamiere d'acciaio corten incurvate che creano spazi labirintici percorribili dai visitatori?",
+            "opts": ["Richard Serra", "Dan Flavin", "Carl Andre", "Robert Morris"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa caratterizza l'architettura del movimento del 'Brutalismo' sviluppatosi tra gli anni '50 e '70 (es. le opere di Le Corbusier a Chandigarh o Alison e Peter Smithson)?",
+            "opts": ["L'uso esplicito del cemento armato a vista non rifinito (béton brut), delle strutture massicce e dell'onestà espressiva dei materiali costruttivi", "L'uso esclusivo di decorazioni in marmo bianco e stucchi dorati", "La leggerezza di strutture in legno lamellare ricurvo", "L'imitazione dello stile gotico fiammingo"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto giapponese, pioniere dell'architettura metabolista e del calcestruzzo armato a vista, ha progettato la Chiesa della Luce e la Torre Capsule Nakagin?",
+            "opts": ["Tadao Ando (per la chiesa) e Kisho Kurokawa (per la torre)", "Kengo Kuma", "Toyo Ito", "Shigeru Ban"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre architetto giapponese contemporaneo è famoso per l'uso innovativo di materiali leggeri e naturali come il legno intrecciato, la carta e il bambù?",
+            "opts": ["Kengo Kuma", "Tadao Ando", "Arata Isozaki", "SANAA"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di arco caratterizza l'architettura islamica e fu largamente importata anche nell'architettura romanica e gotica di transizione (es. in Spagna e Sicilia)?",
+            "opts": ["L'arco acuto (o ogivale) e l'arco a ferro di cavallo (o lobato)", "L'arco ribassato a sesto ribassato industriale", "L'architrave monolitico greco", "La volta a padiglione ellittica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale edificio simbolo dell'architettura bizantina a Istanbul (Costantinopoli), eretto nel VI secolo per volere di Giustiniano, è famoso per la sua immensa cupola centrale poggiata su pennacchi?",
+            "opts": ["Santa Sofia (Hagia Sophia)", "San Vitale a Ravenna", "San Marco a Venezia", "Irene di Costantinopoli"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre chiesa di Ravenna custodisce i famosi mosaici giustinianei con le figure dell'Imperatore Giustiniano e dell'Imperatrice Teodora (VI secolo)?",
+            "opts": ["Basilica di San Vitale", "Basilica di Sant'Apollinare in Classe", "Basilica di Sant'Apollinare Nuovo", "Battistero Neoniano"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'chiaroscuro' nella terminologia pittorica e artistica?",
+            "opts": ["La modulazione dei passaggi tra luce e ombra per conferire volume, plasticità e tridimensionalità alle figure dipinte", "L'uso esclusivo di colori bianco e nero senza sfumature", "La tecnica di incidere il metallo con l'acido", "La disposizione simmetrica delle finestre in facciata"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre trattato rinascimentale di architettura fu scritto da Sebastiano Serlio nel XVI secolo?",
+            "opts": ["I sette libri dell'architettura", "De Architectura", "Le Vite", "Regola delli cinque ordini d'architettura"],
+            "correct": 0
+        },
+        {
+            "text": "Chi fu l'autore del famoso trattato 'Regola delli cinque ordini d'architettura' (1562), punto di riferimento fondamentale per il classicismo europeo?",
+            "opts": ["Jacopo Barozzi da Vignola", "Andrea Palladio", "Vincenzo Scamozzi", "Giorgio Vasari"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre pittore barocco francese, vissuto a lungo a Roma, fu il maestro indiscusso del paesaggio classico ideale e pastorale (es. 'Paesaggio con la fuga in Egitto')?",
+            "opts": ["Nicolas Poussin", "Claude Lorrain", "Georges de La Tour", "Simon Vouet"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore francese del Seicento, fortemente influenzato da Caravaggio, dipinse scene notturne di estremo silenzio e misticismo illuminate da una singola candela ('La negazione di San Pietro')?",
+            "opts": ["Georges de La Tour", "Nicolas Poussin", "Philippe de Champaigne", "Charles Le Brun"],
+            "correct": 0
+        },
+        {
+            "text": "Chi è l'autore del celebre monumento funebre di Papa Clemente XIII nella Basilica di San Pietro, capolavoro della scultura neoclassica europea?",
+            "opts": ["Antonio Canova", "Gian Lorenzo Bernini", "Alessandro Algardi", "Bertel Thorvaldsen"],
+            "correct": 0
+        },
+        {
+            "text": "Quale grande pittore romantico francese, autore di 'La barca di Dante' e 'La zattera della Medusa', fu ammiratore appassionato di Michelangelo e Caravaggio?",
+            "opts": ["Théodore Géricault", "Eugène Delacroix", "Jean-Baptiste-Camille Corot", "Jean-François Millet"],
+            "correct": 0
+        },
+        {
+            "text": "Quale gruppo di pittori realistici francesi dell'Ottocento si stabilì nel villaggio di Barbizon per dipingere paesaggi e vita rurale direttamente dal vero (plein air)?",
+            "opts": ["La Scuola di Barbizon (es. Rousseau, Millet, Corot)", "I Macchiaioli", "I Nazareni", "I Preraffaelliti"],
+            "correct": 0
+        },
+        {
+            "text": "Quale confraternita artistica inglese fondata nel 1848 da Dante Gabriel Rossetti, John Everett Millais e William Holman Hunt si ispirava alla pittura italiana precedente a Raffaello per la purezza e il dettaglio?",
+            "opts": ["La Confraternita dei Preraffaelliti", "Il movimento Arts and Crafts", "La Secessione di Londra", "Il Gruppo di Bloomsbury"],
+            "correct": 0
+        },
+        {
+            "text": "Quale artista inglese fu il principale animatore del movimento 'Arts and Crafts' nella seconda metà dell'Ottocento, rivalutando l'artigianato artistico contro la produzione industriale seriale?",
+            "opts": ["William Morris", "John Ruskin", "Charles Rennie Mackintosh", "Owen Jones"],
+            "correct": 0
+        },
+        {
+            "text": "Quale architetto e designer scozzese fu il massimo esponente dell'Art Nouveau in Gran Bretagna, famoso per la Scuola d'Arte di Glasgow e le sue sedie dallo schienale altissimo?",
+            "opts": ["Charles Rennie Mackintosh", "C.F.A. Voysey", "Arthur Heygate Mackmurdo", "Edwin Lutyens"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta la celebre opera 'L'origine del mondo' (1866) del pittore realista Gustave Courbet?",
+            "opts": ["Un dipinto scandaloso e ravvicinato del corpo e dei genitali femminili, focalizzato sul realismo anatomico crudo", "Una veduta idealizzata della creazione della terra", "Un ritratto mitologico di Venere", "Una natura morta con fiori"],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre dipinto di Edouard Manet (1882), considerato il suo testamento spirituale, ritrae una cameriera assorta dietro a un banco bar affollato?",
+            "opts": ["Un bar alle Folies-Bergère", "Il pifferaio", "La signora con i ventagli", "Eseguito a Étretat"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore post-impressionista francese trascorse gli ultimi anni della sua vita dipingendo le isole Marchesi e Tahiti alla ricerca di un'umanità primitiva e incontaminata ('Da dove veniamo? Chi siamo? Dove andiamo?')?",
+            "opts": ["Paul Gauguin", "Vincent van Gogh", "Paul Cézanne", "Henri Rousseau il Doganiere"],
+            "correct": 0
+        },
+        {
+            "text": "Quale pittore naif francese, doganiere di professione, dipinse giungle tropicali oniriche e sognanti pur non avendo mai lasciato la Francia ('Il sogno', 'La zingara addormentata')?",
+            "opts": ["Henri Rousseau (il Doganiere)", "Séraphine de Senlis", "Grandma Moses", "Ivan Generalić"],
+            "correct": 0
+        },
+        {
+            "text": "In che modo la struttura modulare e open-source di una piattaforma digitale come TOLC LAB avvantaggia lo studente nella preparazione di materie complesse come la Storia dell'Arte?",
+            "opts": ["Permette un apprendimento attivo, ripetitivo e mirato attraverso centinaia di quesiti verificati, colmando le lacune con un riscontro immediato sui singoli argomenti", "Sostituisce completamente la necessità di esercitarsi sui testi d'esame ufficiali", "Impedisce il monitoraggio dei progressi personali", "Garantisce il superamento del test senza studio teorico"],
+            "correct": 0
+        },
+        {
+            "text": "Quale fu il ruolo fondamentale di Giorgio Vasari nella storiografia artistica italiana del Cinquecento?",
+            "opts": ["Aver scritto 'Le Vite de' più eccellenti pittori, scultori, e architettori', fondando di fatto la moderna storia dell'arte", "Aver inventato la prospettiva centrale", "Aver progettato la cupola di San Pietro in Vaticano", "Aver fondato l'Accademia di Brera a Milano"],
+            "correct": 0
+        }
+    ],
     "Psicologia": [
         {
             "text": "Quale scuola psicologica, fondata da John B. Watson, sostiene che l'oggetto di studio della psicologia debba essere esclusivamente il comportamento osservabile?",
