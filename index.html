@@ -28,6 +28,7 @@
                 <a href="#" onclick="navigate('dashboard')" class="hover:text-indigo-200 transition">Dashboard</a>
                 <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
                 <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
+                <a href="#" onclick="navigate('study-hub')" class="hover:text-indigo-200 transition"><i class="fa-solid fa-book-open mr-1"></i>Studio</a>
                 <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche & Storico</a>
             </nav>
 
@@ -92,12 +93,12 @@
                 </div>
             </div>
 
-            <!-- Stats Overview (Cliccabili per Storico / Ore di Studio) -->
+            <!-- Stats Overview (Test Svolti porta allo Storico) -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div onclick="navigate('stats')" class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4 cursor-pointer hover:border-indigo-500 transition">
                     <div class="bg-blue-50 text-blue-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-file-lines"></i></div>
                     <div>
-                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Test Svolti</p>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Test Svolti (Storico)</p>
                         <h3 class="text-xl sm:text-2xl font-black text-slate-800" id="stat-completed">0</h3>
                     </div>
                 </div>
@@ -190,6 +191,27 @@
 
                 <button type="submit" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Avvia Test Personalizzato</button>
             </form>
+        </section>
+
+        <!-- STUDY HUB VIEW (AREA STUDIO) -->
+        <section id="view-study-hub" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Area Studio & Formule Rapide</h3>
+                    <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
+                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-square-root-variable text-blue-600 mr-2"></i> Matematica</h4>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3 rounded-xl border border-slate-100">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
+                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-atom text-amber-600 mr-2"></i> Fisica</h4>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3 rounded-xl border border-slate-100">Cinematica, dinamica ($F=ma$) ed energia cinetica.</p>
+                </div>
+            </div>
         </section>
 
         <!-- TEST RUNNER VIEW -->
@@ -670,7 +692,7 @@
 
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
-            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats'].forEach(v => {
+            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
             });
             if (view === 'dashboard') { renderSession(); }
@@ -790,7 +812,6 @@
                 return;
             }
 
-            // Rimuove eventuali duplicati e mescola
             errorQuestions = [...new Set(errorQuestions)].sort(() => Math.random() - 0.5);
 
             currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, questions: errorQuestions };
