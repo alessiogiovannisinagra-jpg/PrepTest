@@ -1343,14 +1343,6 @@
             "correct": 0
         },
         {
-            "text": "Cosa si intende per 'vista ausiliaria' (o proiezione ortogonale ortogonale ausiliaria)?",
-            - "Una vista proiettata su un piano di proiezione non parallelo ai piani principali, utile per mostrare in vera grandezza una faccia inclinata del pezzo",
-            "Una vista eseguita con l'ausilio dell'intelligenza artificiale",
-            "Una vista secondaria non quotata",
-            "Una copia fotostatica del disegno originale"
-            "correct": 0
-        },
-        {
             "text": "Come si indica la fine di una linea di misura secondo le norme UNI?",
             "opts": ["Con frecce chiuse annerite (o sbarrette oblique a 45°, o punti)", "Con un cerchietto numerato", "Con una croce a X", "Senza alcun simbolo terminale"],
             "correct": 0
