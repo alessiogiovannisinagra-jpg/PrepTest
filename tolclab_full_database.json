@@ -1,4 +1,206 @@
 {
+    "Psicologia": [
+        {
+            "text": "Quale scuola psicologica, fondata da John B. Watson, sostiene che l'oggetto di studio della psicologia debba essere esclusivamente il comportamento osservabile?",
+            "opts": [
+                "Comportamentismo",
+                "Psicoanalisi",
+                "Gestalt",
+                "Cognitivismo"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Chi è considerato il padre della psicoanalisi e l'ideatore del metodo delle libere associazioni?",
+            "opts": [
+                "Sigmund Freud",
+                "Carl Gustav Jung",
+                "Jean Piaget",
+                "Wilhelm Wundt"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Secondo il modello strutturale della personalità di Sigmund Freud, quale istanza psichica opera secondo il 'principio di piacere'?",
+            "opts": [
+                "Es",
+                "Io",
+                "Super-Io",
+                "Inconscio collettivo"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "In quale fase dello sviluppo psicosessuale secondo Freud si colloca tipicamente il complesso di Edipo?",
+            "opts": [
+                "Fase fallica",
+                "Fase anale",
+                "Fase orale",
+                "Fase genitale"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre psicologo svizzero ha formulato la teoria dello sviluppo cognitivo infantile basata su quattro stadi (sensomotorio, preoperatorio, operatorio concreto, operatorio formale)?",
+            "opts": [
+                "Jean Piaget",
+                "Lev Vygotskij",
+                "John Bowlby",
+                "Erik Erikson"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Come si chiama il noto esperimento sul condizionamento classico condotto da Ivan Pavlov in cui i cani associavano il suono di un campanello alla somministrazione del cibo?",
+            "opts": [
+                "Riflesso condizionato",
+                "Condizionamento operante",
+                "Apprendimento per insight",
+                "Desensibilizzazione sistematica"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale autore ha introdotto il concetto di 'condizionamento operante' attraverso la famosa 'Skinner box'?",
+            "opts": [
+                "Burrhus Frederic Skinner",
+                "Edward Thorndike",
+                "Albert Bandura",
+                "John Watson"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Che cos'è l'apprendimento sociale o osservativo teorizzato da Albert Bandura?",
+            "opts": [
+                "Un apprendimento che avviene osservando il comportamento di altri modelli e le conseguenze delle loro azioni",
+                "Un apprendimento basato unicamente su premi e punizioni dirette",
+                "Un processo di maturazione biologica indipendente dall'ambiente",
+                "L'acquisizione di riflessi incondizionati"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale teoria dello sviluppo affettivo infantile, ideata da John Bowlby, descrive il legame profondo e duraturo che si stabilisce tra il bambino e il caregiver?",
+            "opts": [
+                "Teoria dell'attaccamento",
+                "Teoria dell'apprendimento sociale",
+                "Teoria dello sviluppo psicosociale",
+                "Teoria dell'intelligenza emotiva"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale dei seguenti stili di attaccamento, individuati tramite la procedura della 'Strange Situation' di Mary Ainsworth, si caratterizza per l'indifferenza del bambino alla separazione e al ricongiungimento con la madre?",
+            "opts": [
+                "Attaccamento insicuro-evitante",
+                "Attaccamento sicuro",
+                "Attaccamento insicuro-resistente (o ambivalente)",
+                "Attaccamento disorganizzato"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Cosa studia la psicologia della Gestalt?",
+            "opts": [
+                "I processi di percezione e organizzazione mentale, secondo il principio per cui 'il tutto è diverso dalla somma delle parti'",
+                "Esclusivamente i riflessi condizionati e gli stimoli ambientali",
+                "La struttura chimica dei neurotransmettitori cerebrali",
+                "Lo sviluppo morale nei bambini"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Chi è stato il fondatore del primo laboratorio di psicologia sperimentale a Lipsia nel 1879, segnando la nascita della psicologia come scienza autonoma?",
+            "opts": [
+                "Wilhelm Wundt",
+                "William James",
+                "Sigmund Freud",
+                "Max Wertheimer"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale termine indica, nella teoria di Jean Piaget, il processo mediante il quale un individuo adatta i propri schemi mentali in seguito all'acquisizione di nuove informazioni che non possono essere assimilate?",
+            "opts": [
+                "Accomodamento",
+                "Assimilazione",
+                "Conservazione",
+                "Egocentrismo"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale autore ha proposto la teoria dello sviluppo psicosociale articolata in otto stadi che coprono l'intero arco della vita?",
+            "opts": [
+                "Erik Erikson",
+                "Sigmund Freud",
+                "Lev Vygotskij",
+                "Carl Rogers"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "In psicologia clinica e della personalità, cosa misura il reattivo di Rorschach (test delle macchie d'inchiostro)?",
+            "opts": [
+                "La personalità, le dinamiche inconsce e i meccanismi di difesa attraverso la proiezione",
+                "Il quoziente intellettivo (QI) generale",
+                "Le attitudini specifiche per la logica matematica",
+                "La memoria a breve termine"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale approccio terapeutico, facente capo a Carl Rogers e Abraham Maslow, pone al centro la tendenza attualizzante dell'individuo e l'empatia?",
+            "opts": [
+                "Psicologia Umanistica (o Centrata sulla Persona)",
+                "Psicoanalisi ortodossa",
+                "Comportamentismo radicale",
+                "Cognitivismo computazionale"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende in psicologia sociale con il termine 'dissonanza cognitiva' (teoria di Leon Festinger)?",
+            "opts": [
+                "Lo stato di tensione psicologica generato dalla coesistenza di credenze, idee o comportamenti incoerenti tra loro",
+                "La difficoltà di memorizzare sequenze numeriche complesse",
+                "Un disturbo neurologico dell'emisfero sinistro",
+                "La tendenza a conformarsi al giudizio della maggioranza"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale celebre esperimento condotto da Stanley Milgram negli anni '60 indagava i fattori psicologici legati all'obbedienza all'autorità?",
+            "opts": [
+                "L'esperimento delle scosse elettriche (Milgram obedience experiment)",
+                "L'esperimento carcerario di Stanford",
+                "Il test della palude di marshmallow",
+                "L'esperimento della bambola Bobo"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Quale emisfero cerebrale è tradizionalmente associato in modo prevalente alle funzioni del linguaggio, del calcolo logico e del pensiero analitico nella maggior parte dei soggetti destrimani?",
+            "opts": [
+                "Emisfero sinistro",
+                "Emisfero destro",
+                "Cervelletto",
+                "Lobo occipitale"
+            ],
+            "correct": 0
+        },
+        {
+            "text": "Come viene definita la memoria a lungo termine che immagazzina ricordi di eventi ed esperienze personali collocati in un preciso contesto temporale e spaziale?",
+            "opts": [
+                "Memoria episodica",
+                "Memoria semantica",
+                "Memoria procedurale",
+                "Memoria iconica"
+            ],
+            "correct": 0
+        }
+    ],
     "Chimica": [
         {
             "text": "Qual è il numero atomico (Z) dell'elemento chimico Carbonio?",
