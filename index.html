@@ -1,5 +1,3 @@
-Apposto
-questo è il codice nativo
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,8 +6,6 @@ questo è il codice nativo
     <title>TOLC LAB - Piattaforma Ufficiale di Simulazione Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Supabase JS Client Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
     </style>
@@ -52,7 +48,7 @@ questo è il codice nativo
                 <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
-            <form id="auth-form" onsubmit="event.preventDefault(); handleAuth(event);" class="space-y-4">
+            <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
                     <input type="text" id="auth-name" placeholder="Mario Rossi" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
@@ -64,9 +60,6 @@ questo è il codice nativo
                 <div class="space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Password</label>
                     <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
-                    <div class="text-right pt-1">
-                        <button type="button" onclick="openForgotModal()" class="text-[11px] font-bold text-indigo-600 hover:underline">Password dimenticata?</button>
-                    </div>
                 </div>
                 <button type="submit" id="auth-submit-btn" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Accedi</button>
             </form>
@@ -83,18 +76,12 @@ questo è il codice nativo
                     <i class="fa-solid fa-brain"></i>
                 </div>
                 <div class="space-y-2 sm:space-y-3 mb-6 md:mb-0 z-10 text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-2">
-                        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
-                        <span id="user-pro-badge" class="hidden bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fa-solid fa-crown mr-1"></i>PRO</span>
-                    </div>
-                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium"><span id="free-passes-text">Esercizi personalizzati sempre gratuiti</span> o simulazioni ufficiali ministeriali.</p>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
+                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Allenati con i test ufficiali CISIA conformi agli standard ministeriali o crea simulazioni personalizzate.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
                     <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 sm:px-6 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
                         <i class="fa-solid fa-shield-halved mr-2"></i> Avvia Test Ufficiali
-                    </button>
-                    <button onclick="openPaywallModal()" class="bg-amber-400 text-slate-900 font-bold px-4 py-3.5 rounded-2xl shadow-md hover:bg-amber-300 transition text-xs sm:text-sm flex items-center justify-center">
-                        <i class="fa-solid fa-key mr-2"></i> Riscatta Codice
                     </button>
                 </div>
             </div>
@@ -129,7 +116,7 @@ questo è il codice nativo
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
                         <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali <span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold ml-1">PRO</span></h3>
+                        <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali</h3>
                         <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Struttura, numero di quesiti e penalità conformi agli standard ministeriali e CISIA.</p>
                     </div>
                     <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-2xl hover:bg-indigo-700 transition text-xs shadow-md shadow-indigo-500/20">Avvia Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
@@ -138,7 +125,7 @@ questo è il codice nativo
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-violet-500 transition group">
                     <div>
                         <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-sliders"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold ml-1">Gratis</span></h3>
+                        <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato</h3>
                         <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta il numero di quesiti e decidi la penalità.</p>
                     </div>
                     <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 transition text-xs shadow-md shadow-violet-500/20">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
@@ -245,6 +232,7 @@ questo è il codice nativo
                 <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
             </div>
 
+            <!-- DETAILED REVIEW ACCORDION / BOX -->
             <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
                 <h4 class="text-base sm:text-lg font-black text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Riepilogo e Correzione Quesiti</h4>
                 <div id="results-review-container" class="space-y-4"></div>
@@ -274,81 +262,212 @@ questo è il codice nativo
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- MODALE ABBONAMENTO PRO -->
-    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
-            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
-                <i class="fa-solid fa-crown"></i>
-            </div>
-            <div class="space-y-2">
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
-                <p class="text-xs text-slate-500 font-medium leading-relaxed">Le simulazioni ufficiali con struttura e penalità ministeriali reali sono riservate agli utenti PRO.</p>
-            </div>
-            <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
-                <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
-                <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
-                <p class="text-[11px] text-slate-600 font-medium">Accesso illimitato, disdici quando vuoi.</p>
-            </div>
-            <div class="space-y-3">
-                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
-                
-                <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-left space-y-2">
-                    <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wide block">Hai un codice promo?</label>
-                    <div class="flex space-x-2">
-                        <input type="text" id="promo-code-input" placeholder="••••••••••••" onkeydown="if(event.key === 'Enter') applyPromoCode();" style="text-transform: uppercase;" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center tracking-wider">
-                        <button type="button" onclick="applyPromoCode()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shrink-0">Riscatta</button>
-                    </div>
-                </div>
-
-                <button type="button" onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Chiudi</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODALE RECUPERO PASSWORD -->
-    <div id="modal-forgot" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
-            <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
-                <i class="fa-solid fa-key"></i>
-            </div>
-            <div class="space-y-2">
-                <h3 class="text-xl font-black text-slate-900">Recupero Password</h3>
-                <p class="text-xs text-slate-500 font-medium leading-relaxed">Inserisci l'email del tuo account. Ti invieremo un link sicuro per reimpostare la password.</p>
-            </div>
-            <div class="space-y-3">
-                <input type="email" id="forgot-email" placeholder="studente@esempio.it" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium text-center">
-                <button type="button" onclick="sendPasswordReset()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Invia Link di Reset</button>
-                <button type="button" onclick="closeForgotModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Torna all'accesso</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT SUPABASE & APPLICAZIONE -->
+    <!-- SCRIPT APPLICAZIONE -->
     <script>
-        // CONFIGURAZIONE SUPABASE
-        const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
         let masterBank = {};
+
         const officialTolcs = [
-            { id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 100, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600', structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] },
-            { id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, icon: 'fa-gears', bgIconColor: 'bg-blue-50 text-blue-600', structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-E', name: 'TOLC-E (Economia)', category: 'Economia', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-chart-line', bgIconColor: 'bg-indigo-50 text-indigo-600', structure: [{cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-F', name: 'TOLC-F (Farmacia / Biotecnologie)', category: 'Farmaceutica', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', bgIconColor: 'bg-teal-50 text-teal-600', structure: [{cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 15}, {cat: 'Matematica', count: 7}, {cat: 'Fisica', count: 7}, {cat: 'Logica', count: 6}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-PSI', name: 'TOLC-PSI (Psicologia)', category: 'Psicologia', timeMinutes: 85, penalty: 0.25, correctPts: 1.0, icon: 'fa-brain', bgIconColor: 'bg-purple-50 text-purple-600', structure: [{cat: 'Psicologia', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-SU', name: 'TOLC-SU (Scienze Umanistiche)', category: 'Umanistica', timeMinutes: 100, penalty: 0.25, correctPts: 1.0, icon: 'fa-book-open', bgIconColor: 'bg-amber-50 text-amber-600', structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-SPS', name: 'TOLC-SPS (Scienze Politiche e Sociali)', category: 'Sociale', timeMinutes: 100, penalty: 0.25, correctPts: 1.0, icon: 'fa-scale-balanced', bgIconColor: 'bg-rose-50 text-rose-600', structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Logica', count: 20}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-S', name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', category: 'Scienze', timeMinutes: 115, penalty: 0.25, correctPts: 1.0, icon: 'fa-atom', bgIconColor: 'bg-cyan-50 text-cyan-600', structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 20}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-AV', name: 'TOLC-AV (Agraria & Veterinaria)', category: 'Agraria', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-seedling', bgIconColor: 'bg-lime-50 text-lime-700', structure: [{cat: 'Biologia', count: 10}, {cat: 'Chimica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Logica', count: 6}, {cat: 'Inglese', count: 30}] },
-            { id: 'TOLC-LP', name: 'TOLC-LP (Lauree Professionalizzanti)', category: 'Professionalizzante', timeMinutes: 90, penalty: 0.25, correctPts: 1.0, icon: 'fa-screwdriver-wrench', bgIconColor: 'bg-orange-50 text-orange-600', structure: [{cat: 'Matematica', count: 12}, {cat: 'Logica', count: 12}, {cat: 'Comprensione Verbale', count: 12}, {cat: 'Inglese', count: 30}] },
-            { id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Design & Architettura', timeMinutes: 100, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600', structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica e Fisica', count: 10}] },
-            { id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 150, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600', structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica e Fisica', count: 20}] }
+            { 
+                id: 'SANITARIE', 
+                name: 'Professioni Sanitarie', 
+                category: 'Area Sanitaria', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-user-nurse',
+                bgIconColor: 'bg-emerald-50 text-emerald-600',
+                structure: [
+                    {cat: 'Biologia', count: 23}, 
+                    {cat: 'Chimica', count: 15}, 
+                    {cat: 'Fisica', count: 7}, 
+                    {cat: 'Matematica', count: 6}, 
+                    {cat: 'Logica', count: 9}
+                ] 
+            },
+            { 
+                id: 'TOLC-I', 
+                name: 'TOLC-I (Ingegneria / STEM)', 
+                category: 'Ingegneria', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-gears',
+                bgIconColor: 'bg-blue-50 text-blue-600',
+                structure: [
+                    {cat: 'Matematica', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Fisica', count: 10}, 
+                    {cat: 'Comprensione Verbale', count: 10},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-E', 
+                name: 'TOLC-E (Economia)', 
+                category: 'Economia', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-chart-line',
+                bgIconColor: 'bg-indigo-50 text-indigo-600',
+                structure: [
+                    {cat: 'Logica', count: 13}, 
+                    {cat: 'Comprensione Verbale', count: 10}, 
+                    {cat: 'Matematica', count: 13},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-F', 
+                name: 'TOLC-F (Farmacia / Biotecnologie)', 
+                category: 'Farmaceutica', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-flask',
+                bgIconColor: 'bg-teal-50 text-teal-600',
+                structure: [
+                    {cat: 'Biologia', count: 15}, 
+                    {cat: 'Chimica', count: 15}, 
+                    {cat: 'Matematica', count: 7}, 
+                    {cat: 'Fisica', count: 7}, 
+                    {cat: 'Logica', count: 6},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-PSI', 
+                name: 'TOLC-PSI (Psicologia)', 
+                category: 'Psicologia', 
+                timeMinutes: 85, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-brain',
+                bgIconColor: 'bg-purple-50 text-purple-600',
+                structure: [
+                    {cat: 'Psicologia', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Comprensione Verbale', count: 10}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU', 
+                name: 'TOLC-SU (Scienze Umanistiche)', 
+                category: 'Umanistica', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-book-open',
+                bgIconColor: 'bg-amber-50 text-amber-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Cultura Generale', count: 10}, 
+                    {cat: 'Logica', count: 10},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SPS', 
+                name: 'TOLC-SPS (Scienze Politiche e Sociali)', 
+                category: 'Sociale', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-scale-balanced',
+                bgIconColor: 'bg-rose-50 text-rose-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Logica', count: 20}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-S', 
+                name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', 
+                category: 'Scienze', 
+                timeMinutes: 115, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-atom',
+                bgIconColor: 'bg-cyan-50 text-cyan-600',
+                structure: [
+                    {cat: 'Matematica', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Scienze', count: 20},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-AV', 
+                name: 'TOLC-AV (Agraria & Veterinaria)', 
+                category: 'Agraria', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-seedling',
+                bgIconColor: 'bg-lime-50 text-lime-700',
+                structure: [
+                    {cat: 'Biologia', count: 10}, 
+                    {cat: 'Chimica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Fisica', count: 10}, 
+                    {cat: 'Logica', count: 6},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-LP', 
+                name: 'TOLC-LP (Lauree Professionalizzanti)', 
+                category: 'Professionalizzante', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-screwdriver-wrench',
+                bgIconColor: 'bg-orange-50 text-orange-600',
+                structure: [
+                    {cat: 'Matematica', count: 12}, 
+                    {cat: 'Logica', count: 12}, 
+                    {cat: 'Comprensione Verbale', count: 12}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'ARCHITETTURA', 
+                name: 'Test Architettura / Ingegneria Edile', 
+                category: 'Design & Architettura', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-compass-drafting',
+                bgIconColor: 'bg-violet-50 text-violet-600',
+                structure: [
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Storia dell’Arte', count: 10}, 
+                    {cat: 'Disegno e Rappresentazione', count: 10}, 
+                    {cat: 'Matematica e Fisica', count: 10}
+                ] 
+            },
+            { 
+                id: 'FORMAZIONE-PRIMARIA', 
+                name: 'Scienze della Formazione Primaria', 
+                category: 'Formazione', 
+                timeMinutes: 150, 
+                penalty: 0.40, 
+                correctPts: 1.0, 
+                icon: 'fa-children',
+                bgIconColor: 'bg-pink-50 text-pink-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 25}, 
+                    {cat: 'Logica', count: 15}, 
+                    {cat: 'Cultura Generale', count: 20},
+                    {cat: 'Matematica e Fisica', count: 20}
+                ] 
+            }
         ];
 
         let currentUser = null;
-        let userProfile = null;
-        let userHistory = [];
         let currentTest = null;
         let currentIdx = 0;
         let userAnswers = [];
@@ -360,42 +479,14 @@ questo è il codice nativo
             renderOfficialSelectorGrid();
             renderCustomCheckboxes();
             
-            const savedUser = sessionStorage.getItem('tolc_user');
-            if (savedUser) {
-                currentUser = JSON.parse(savedUser);
-                await fetchUserData();
+            const saved = localStorage.getItem('tolclab_user');
+            if (saved) {
+                currentUser = JSON.parse(saved);
+                renderSession();
                 navigate('dashboard');
             } else {
                 navigate('auth');
             }
-        }
-
-        async function fetchUserData() {
-            if (!currentUser) return;
-
-            let { data: userData, error } = await supabase
-                .from('utenti')
-                .select('*')
-                .eq('id', currentUser.id)
-                .single();
-
-            if (userData) {
-                currentUser = userData;
-                userProfile = { 
-                    name: userData.username || userData.name || 'Studente', 
-                    is_pro: userData.is_pro || false,
-                    pro_expires: userData.pro_expires
-                };
-            }
-
-            let { data: history } = await supabase
-                .from('user_history')
-                .select('*')
-                .eq('user_id', currentUser.id)
-                .order('created_at', { ascending: false });
-
-            userHistory = history || [];
-            renderSession();
         }
 
         async function loadSharedDatabaseFromGitHub() {
@@ -404,7 +495,10 @@ questo è il codice nativo
                 if (!response.ok) throw new Error("File non trovato");
                 masterBank = await response.json();
             } catch (err) {
-                masterBank = { "Logica": [{ text: "Domanda di test", opts: ["A", "B", "C", "D", "E"], correct: 0 }] };
+                console.warn("Impossibile caricare il database da GitHub, uso dati minimi di fallback.");
+                masterBank = {
+                    "Logica": [{ text: "Domanda di test preliminare", opts: ["Risposta A", "Risposta B"], correct: 0 }]
+                };
             }
         }
 
@@ -427,7 +521,7 @@ questo è il codice nativo
                             <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.timeMinutes} min</p>
                             <p class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
                         </div>
-                        <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl hover:opacity-95 transition text-xs shadow-md shadow-indigo-500/20">Avvia Simulazione Ufficiale <i class="fa-solid fa-crown ml-1 text-amber-300"></i></button>
+                        <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl hover:opacity-95 transition text-xs shadow-md shadow-indigo-500/20">Avvia Simulazione</button>
                     </div>
                 `;
             }).join('');
@@ -443,142 +537,54 @@ questo è il codice nativo
         }
 
         function toggleAuthMode() {
-            const nameFieldDiv = document.getElementById('name-field');
-            const authTitle = document.getElementById('auth-title');
-            const authSubmitBtn = document.getElementById('auth-submit-btn');
-            const authSwitchText = document.getElementById('auth-switch-text');
-            const nameInput = document.getElementById('auth-name');
-
-            if (!nameFieldDiv) return;
-
-            const isHidden = nameFieldDiv.classList.contains('hidden');
-
-            if (isHidden) {
-                nameFieldDiv.classList.remove('hidden');
-                nameInput.required = true;
-                authTitle.innerText = "Crea un account";
-                authSubmitBtn.innerText = "Registrati";
-                authSwitchText.innerHTML = `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`;
-            } else {
-                nameFieldDiv.classList.add('hidden');
-                nameInput.required = false;
-                nameInput.value = "";
-                authTitle.innerText = "Accesso Area Studio";
-                authSubmitBtn.innerText = "Accedi";
-                authSwitchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
-            }
+            const isReg = document.getElementById('name-field').classList.toggle('hidden');
+            document.getElementById('auth-title').innerText = !isReg ? "Crea un account" : "Accesso Area Studio";
+            document.getElementById('auth-submit-btn').innerText = !isReg ? "Registrati" : "Accedi";
+            document.getElementById('auth-switch-text').innerHTML = !isReg 
+                ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
+                : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
         }
 
-        async function handleAuth(e) {
+        function handleAuth(e) {
             e.preventDefault();
+            const email = document.getElementById('auth-email').value.trim();
+            const pass = document.getElementById('auth-password').value;
+            const name = document.getElementById('auth-name').value.trim();
 
-            const emailField = document.getElementById('auth-email').value.trim();
-            const passwordField = document.getElementById('auth-password').value;
-            const nameField = document.getElementById('auth-name').value.trim();
+            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
-                if (!nameField) { 
-                    alert("Inserisci il nome e cognome"); 
-                    return; 
-                }
-                
-                const { error } = await supabase
-                    .from('utenti')
-                    .insert([{ 
-                        username: nameField, 
-                        email: emailField, 
-                        password_hash: passwordField, 
-                        is_active: true,
-                        is_pro: false
-                    }]);
-
-                if (error) { 
-                    alert("Errore durante la registrazione: " + error.message); 
-                    return; 
-                }
-
-                alert("🎉 Registrazione completata con successo! Ora puoi effettuare l'accesso.");
-                toggleAuthMode();
-                document.getElementById('auth-form').reset();
+                if (!name) { alert("Inserisci il nome"); return; }
+                if (users.find(u => u.email === email)) { alert("Email già registrata"); return; }
+                currentUser = { name, email, pass, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
+                users.push(currentUser);
+                localStorage.setItem('tolclab_users', JSON.stringify(users));
             } else {
-                const { data, error } = await supabase
-                    .from('utenti')
-                    .select('*')
-                    .eq('email', emailField)
-                    .maybeSingle();
-
-                if (error) {
-                    alert("Errore di connessione al database: " + error.message);
-                    return;
-                }
-
-                if (!data) {
-                    alert("⚠️ Nessun account associato a questa email. Clicca su 'Registrati gratis' qui sotto per crearne uno!");
-                    return;
-                }
-
-                const storedPassword = data.password_hash || data.password;
-                if (storedPassword !== passwordField) {
-                    alert("Password errata!");
-                    return;
-                }
-
-                if (data.is_active === false) {
-                    alert("Questo account è stato disattivato.");
-                    return;
-                }
-
-                currentUser = data;
-                sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
-                await fetchUserData();
-                navigate('dashboard');
+                currentUser = users.find(u => u.email === email && u.pass === pass);
+                if (!currentUser) { alert("Credenziali non valide"); return; }
             }
-        }
 
-        async function logout() {
-            sessionStorage.removeItem('tolc_user');
-            currentUser = null;
-            userProfile = null;
-            userHistory = [];
-            navigate('auth');
-        }
-
-        function openForgotModal() { document.getElementById('modal-forgot').classList.remove('hidden'); }
-        function closeForgotModal() { document.getElementById('modal-forgot').classList.add('hidden'); }
-
-        async function sendPasswordReset() {
-            const email = document.getElementById('forgot-email').value.trim();
-            if (!email) { alert("Inserisci un'email valida."); return; }
-            alert(`📧 Se la mail ${email} è registrata nella tabella utenti, contatta l'amministratore per reimpostare la password.`);
-            closeForgotModal();
-            document.getElementById('forgot-email').value = '';
+            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+            renderSession();
+            navigate('dashboard');
         }
 
         function renderSession() {
-            const isPro = checkProAccess();
-            document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
-
             document.getElementById('user-menu').innerHTML = `
-                <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none flex items-center">
-                    ${isPro ? '<i class="fa-solid fa-crown text-amber-300 mr-1.5"></i>' : '<i class="fa-solid fa-user mr-1.5"></i>'}
-                    ${userProfile?.name || 'Studente'}
-                </span>
+                <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.name}</span>
                 <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-1.5 sm:px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
             `;
-            document.getElementById('welcome-username').innerText = userProfile?.name || 'Studente';
-            
-            const completedCount = userHistory.length;
-            const scoreSum = userHistory.reduce((acc, h) => acc + Number(h.score), 0);
-            document.getElementById('stat-completed').innerText = completedCount;
-            document.getElementById('stat-avg').innerText = completedCount > 0 ? (scoreSum / completedCount).toFixed(1) : 0;
-            document.getElementById('stat-hours').innerText = (completedCount * 1.5).toFixed(1);
+            document.getElementById('welcome-username').innerText = currentUser.name;
+            document.getElementById('stat-completed').innerText = currentUser.stats.completed;
+            document.getElementById('stat-avg').innerText = currentUser.stats.completed > 0 ? (currentUser.stats.scoreSum / currentUser.stats.completed).toFixed(1) : 0;
+            document.getElementById('stat-hours').innerText = currentUser.stats.hours.toFixed(1);
             
             const historyContainer = document.getElementById('history-container');
-            if (userHistory.length === 0) {
+            if (!currentUser.history || currentUser.history.length === 0) {
                 historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>`;
             } else {
-                historyContainer.innerHTML = userHistory.map((h, index) => `
+                historyContainer.innerHTML = currentUser.history.map((h, index) => `
                     <div class="py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-3">
                         <div>
                             <span class="font-black text-slate-800 text-sm block">${h.title}</span>
@@ -593,6 +599,12 @@ questo è il codice nativo
             }
         }
 
+        function logout() {
+            localStorage.removeItem('tolclab_user');
+            currentUser = null;
+            navigate('auth');
+        }
+
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
             ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats'].forEach(v => {
@@ -604,55 +616,84 @@ questo è il codice nativo
         }
 
         function checkProAccess() {
-            if (!userProfile) return false;
-            if (userProfile.is_pro === true) return true;
-            if (userProfile.pro_expires) {
-                if (new Date(userProfile.pro_expires) > new Date()) return true;
+            if (!currentUser) return false;
+            // Controlla se ha l'abbonamento attivo e non scaduto
+            if (currentUser.isPro && currentUser.proExpires) {
+                const expireDate = new Date(currentUser.proExpires);
+                if (expireDate > new Date()) {
+                    return true;
+                }
             }
             return false;
         }
 
-        function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
-        function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
-
-        function redirectToStripeCheckout() {
-            const userEmail = encodeURIComponent(currentUser.email);
-            window.location.href = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
+        function closePaywallModal() {
+            document.getElementById('modal-paywall').classList.add('hidden');
         }
 
-        async function applyPromoCode() {
+        function redirectToStripeCheckout() {
+            if (!currentUser) {
+                alert("Effettua l'accesso prima di procedere con l'abbonamento.");
+                navigate('auth');
+                closePaywallModal();
+                return;
+            }
+
+            const userEmail = encodeURIComponent(currentUser.email);
+            const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
+            window.location.href = stripeCheckoutUrl;
+        }
+
+        // FUNZIONE PER RISCATTAre IL CODICE PROMO
+        function applyPromoCode() {
             const inputElement = document.getElementById('promo-code-input');
+            if (!inputElement) {
+                alert("Errore: campo input non trovato.");
+                return;
+            }
+            
             const code = inputElement.value.trim().toUpperCase();
             const SECRET_PROMO_CODE = "TOLCLABPRO2026";
 
             if (code === SECRET_PROMO_CODE) {
-                let expireDate = new Date();
-                expireDate.setDate(expireDate.getDate() + 30);
-
-                const { error } = await supabase
-                    .from('utenti')
-                    .update({ is_pro: true, pro_expires: expireDate.toISOString() })
-                    .eq('id', currentUser.id);
-
-                if (error) {
-                    alert("Errore attivazione PRO: " + error.message);
-                } else {
-                    userProfile.is_pro = true;
-                    userProfile.pro_expires = expireDate.toISOString();
+                if (!currentUser) {
+                    alert("Prima devi effettuare l'accesso!");
+                    navigate('auth');
                     closePaywallModal();
-                    alert("🎉 Codice valido! Abbonamento PRO attivato per 30 giorni.");
-                    renderSession();
-                    inputElement.value = '';
+                    return;
                 }
+
+                let expireDate = new Date();
+                expireDate.setDate(expireDate.getDate() + 30); // 30 giorni di PRO
+
+                currentUser.isPro = true;
+                currentUser.proExpires = expireDate.toISOString();
+
+                // Salva sull'utente corrente
+                localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+                
+                // Aggiorna anche nell'archivio globale degli utenti
+                let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+                let idx = users.findIndex(u => u.email === currentUser.email);
+                if (idx !== -1) {
+                    users[idx] = currentUser;
+                    localStorage.setItem('tolclab_users', JSON.stringify(users));
+                }
+
+                closePaywallModal();
+                alert("🎉 Codice valido! Abbonamento PRO sbloccato con successo per 30 giorni.");
+                renderSession();
+                inputElement.value = '';
             } else {
-                alert("❌ Codice non valido.");
+                alert("❌ Codice non valido. Riprova.");
                 inputElement.value = '';
             }
         }
 
         function startOfficialTest(tolcId) {
+            // BLOCCO PAYWALL: Se non è PRO, mostra il modale e blocca l'avvio
             if (!checkProAccess()) {
-                openPaywallModal();
+                document.getElementById('modal-paywall').classList.remove('hidden');
                 return;
             }
 
@@ -664,22 +705,44 @@ questo è il codice nativo
 
             config.structure.forEach(sec => {
                 let pool = masterBank[sec.cat] || [];
-                if (pool.length === 0) { missingCategories.push(sec.cat); return; }
+                if (pool.length === 0) {
+                    missingCategories.push(sec.cat);
+                    return;
+                }
                 let shuffled = [...pool].sort(() => Math.random() - 0.5);
-                let selected = shuffled.slice(0, sec.count);
-                while(selected.length < sec.count && shuffled.length > 0) { selected.push(shuffled[0]); }
+                let selected = [];
+                while(selected.length < sec.count && shuffled.length > 0) {
+                    selected.push(...shuffled);
+                }
+                selected = selected.slice(0, sec.count);
                 
                 selected.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-                    allQuestions.push({ cat: sec.cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: sec.cat === 'Inglese' });
+                    
+                    allQuestions.push({
+                        cat: sec.cat,
+                        text: q.text,
+                        opts: rawOpts,
+                        correct: rawOpts.indexOf(correctText),
+                        isEnglish: sec.cat === 'Inglese'
+                    });
                 });
             });
 
-            if (missingCategories.length > 0) { alert(`Mancano quesiti per: ${missingCategories.join(', ')}.`); return; }
+            if (missingCategories.length > 0) {
+                alert(`Attenzione: nel database online mancano quesiti per le seguenti categorie: ${missingCategories.join(', ')}. Aggiorna il file JSON.`);
+                return;
+            }
 
-            currentTest = { title: `Simulazione Ufficiale ${config.name}`, correctPts: config.correctPts, penalty: config.penalty, questions: allQuestions };
+            currentTest = {
+                title: `Simulazione Ufficiale ${config.name}`,
+                correctPts: config.correctPts,
+                penalty: config.penalty,
+                questions: allQuestions
+            };
+
             setupTestSession();
         }
 
@@ -690,22 +753,44 @@ questo è il codice nativo
 
             const countPerCat = parseInt(document.getElementById('custom-count-per-cat').value, 10);
             const penaltyVal = parseFloat(document.getElementById('custom-penalty').value);
-            let allQuestions = [];
 
+            let allQuestions = [];
             checkedBoxes.forEach(box => {
-                let pool = masterBank[box.value] || [];
+                const cat = box.value;
+                let pool = masterBank[cat] || [];
                 if (pool.length === 0) return;
-                let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, countPerCat);
-                shuffled.forEach(q => {
+                
+                let shuffled = [...pool].sort(() => Math.random() - 0.5);
+                let selected = [];
+                while(selected.length < countPerCat && shuffled.length > 0) {
+                    selected.push(...shuffled);
+                }
+                selected = selected.slice(0, countPerCat);
+
+                selected.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-                    allQuestions.push({ cat: box.value, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: box.value === 'Inglese' });
+
+                    allQuestions.push({
+                        cat: cat,
+                        text: q.text,
+                        opts: rawOpts,
+                        correct: rawOpts.indexOf(correctText),
+                        isEnglish: cat === 'Inglese'
+                    });
                 });
             });
 
-            if (allQuestions.length === 0) { alert("Nessun quesito disponibile."); return; }
-            currentTest = { title: `TOLC Personalizzato (${checkedBoxes.length} materie)`, correctPts: 1.0, penalty: penaltyVal, questions: allQuestions };
+            if (allQuestions.length === 0) { alert("Nessun quesito disponibile per le materie selezionate."); return; }
+
+            currentTest = {
+                title: `TOLC Personalizzato (${checkedBoxes.length} materie)`,
+                correctPts: 1.0,
+                penalty: penaltyVal,
+                questions: allQuestions
+            };
+
             setupTestSession();
         }
 
@@ -713,6 +798,7 @@ questo è il codice nativo
             currentIdx = 0;
             userAnswers = new Array(currentTest.questions.length).fill(null);
             seconds = 0;
+
             navigate('runner');
             loadQ();
             startTimer();
@@ -752,32 +838,50 @@ questo è il codice nativo
             else { finishTest(); }
         }
 
-        async function finishTest() {
+        function finishTest() {
             clearInterval(timer);
-            let correct = 0, wrong = 0, omitted = 0, score = 0;
+            let correct = 0, wrong = 0, omitted = 0;
+            let score = 0;
 
             currentTest.questions.forEach((q, i) => {
                 const ans = userAnswers[i];
-                if (ans === null) omitted++;
-                else if (ans === q.correct) { correct++; score += currentTest.correctPts; }
-                else { wrong++; if (!q.isEnglish) score -= currentTest.penalty; }
+                if (ans === null) {
+                    omitted++;
+                } else if (ans === q.correct) {
+                    correct++;
+                    score += currentTest.correctPts;
+                } else {
+                    wrong++;
+                    if (!q.isEnglish) score -= currentTest.penalty;
+                }
             });
 
-            score = Math.max(0, score).toFixed(2);
-            document.getElementById('result-score').innerText = score;
+            score = Math.max(0, score);
+            document.getElementById('result-score').innerText = score.toFixed(2);
             document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
+
             renderResultsReview(currentTest, userAnswers);
 
             const testRecord = {
-                user_id: currentUser.id,
                 title: currentTest.title,
-                score: score,
+                score: score.toFixed(2),
                 date: new Date().toLocaleDateString(),
-                test_data: { questions: currentTest.questions, userAnswers: [...userAnswers] }
+                questions: currentTest.questions,
+                userAnswers: [...userAnswers]
             };
 
-            await supabase.from('user_history').insert([testRecord]);
-            await fetchUserData();
+            currentUser.stats.completed += 1;
+            currentUser.stats.scoreSum += score;
+            currentUser.stats.hours += (seconds / 3600);
+            if (!currentUser.history) currentUser.history = [];
+            currentUser.history.unshift(testRecord);
+            
+            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+            
+            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+            let idx = users.findIndex(u => u.email === currentUser.email);
+            if (idx !== -1) { users[idx] = currentUser; localStorage.setItem('tolclab_users', JSON.stringify(users)); }
+
             navigate('results');
         }
 
@@ -787,11 +891,20 @@ questo è il codice nativo
                 const userAns = answersArr[idx];
                 const isCorrect = userAns === q.correct;
                 const isOmitted = userAns === null;
-                let badge = isOmitted ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>` : (isCorrect ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>` : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`);
+
+                let badge = isOmitted 
+                    ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>`
+                    : (isCorrect 
+                        ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>`
+                        : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`
+                    );
 
                 return `
                     <div class="p-4 rounded-2xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/20' : (isOmitted ? 'border-amber-200 bg-amber-50/20' : 'border-rose-200 bg-rose-50/20')} space-y-2">
-                        <div class="flex justify-between items-center"><span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>${badge}</div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>
+                            ${badge}
+                        </div>
                         <p class="text-xs sm:text-sm font-bold text-slate-900">${q.text}</p>
                         <div class="space-y-1 pt-1 text-xs font-medium">
                             ${q.opts.map((opt, oIdx) => {
@@ -807,19 +920,52 @@ questo è il codice nativo
         }
 
         function viewHistoryDetail(historyIndex) {
-            const record = userHistory[historyIndex];
-            if (!record || !record.test_data) return;
+            const record = currentUser.history[historyIndex];
+            if (!record || !record.questions) return;
 
-            currentTest = { title: record.title, questions: record.test_data.questions };
-            userAnswers = record.test_data.userAnswers;
+            currentTest = {
+                title: record.title,
+                questions: record.questions
+            };
+            userAnswers = record.userAnswers;
 
             document.getElementById('result-score').innerText = record.score;
-            document.getElementById('result-breakdown').innerText = `Salvato il ${record.date}`;
+            document.getElementById('result-breakdown').innerText = `Storico salvato del ${record.date}`;
             renderResultsReview(currentTest, userAnswers);
             navigate('results');
         }
 
         window.onload = init;
     </script>
+
+    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
+    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
+            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio dettagliato dei progressi.</p>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
+                <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
+                <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
+                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
+            </div>
+            <div class="space-y-3">
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
+                
+                <!-- SEZIONE INSERIMENTO CODICE PROMO -->
+                <div class="pt-2 border-t border-slate-100 flex space-x-2">
+                    <input type="text" id="promo-code-input" placeholder="Inserisci codice promo..." onkeydown="if(event.key === 'Enter') applyPromoCode();" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold tracking-wider text-center">
+                    <button onclick="applyPromoCode()" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-800 transition shrink-0">Riscatta</button>
+                </div>
+
+                <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
