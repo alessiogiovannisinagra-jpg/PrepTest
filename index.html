@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -617,6 +617,7 @@
 
         function checkProAccess() {
             if (!currentUser) return false;
+            // Controlla se ha l'abbonamento attivo e non scaduto
             if (currentUser.isPro && currentUser.proExpires) {
                 const expireDate = new Date(currentUser.proExpires);
                 if (expireDate > new Date()) {
@@ -630,27 +631,27 @@
             document.getElementById('modal-paywall').classList.add('hidden');
         }
 
-        function simulateUpgradePayment() {
-            let expireDate = new Date();
-            expireDate.setDate(expireDate.getDate() + 30);
-
-            currentUser.isPro = true;
-            currentUser.proExpires = expireDate.toISOString();
-
-            localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
-            let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
-            let idx = users.findIndex(u => u.email === currentUser.email);
-            if (idx !== -1) {
-                users[idx] = currentUser;
-                localStorage.setItem('tolclab_users', JSON.stringify(users));
+        function redirectToStripeCheckout() {
+            if (!currentUser) {
+                alert("Effettua l'accesso prima di procedere con l'abbonamento.");
+                navigate('auth');
+                closePaywallModal();
+                return;
             }
 
-            closePaywallModal();
-            alert("Congratulazioni! Abbonamento PRO attivato con successo per 30 giorni.");
-            renderSession();
+            // Codifica l'email dell'utente per precompilare il campo su Stripe
+            const userEmail = encodeURIComponent(currentUser.email);
+
+            // TODO: SOSTITUISCI QUESTO LINK CON IL TUO PAYMENT LINK DI STRIPE!
+            // Es: https://buy.stripe.com/test_123456789...
+            const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${userEmail}`;
+
+            // Reindirizza l'utente alla pagina di pagamento sicura
+            window.location.href = stripeCheckoutUrl;
         }
 
         function startOfficialTest(tolcId) {
+            // BLOCCO PAYWALL: Se non è PRO, mostra il modale e blocca l'avvio
             if (!checkProAccess()) {
                 document.getElementById('modal-paywall').classList.remove('hidden');
                 return;
@@ -691,7 +692,7 @@
             });
 
             if (missingCategories.length > 0) {
-                alert(`Attenzione: nel database online mancano quesiti per le seguenti categorie: ${missingCategories.join(', ')}. Aggiorna il file JSON su GitHub.`);
+                alert(`Attenzione: nel database online mancano quesiti per le seguenti categorie: ${missingCategories.join(', ')}. Aggiorna il file JSON.`);
                 return;
             }
 
@@ -897,7 +898,7 @@
         window.onload = init;
     </script>
 
-    <!-- MODALE ABBONAMENTO PRO -->
+    <!-- MODALE ABBONAMENTO PRO (COLLEGATO A STRIPE) -->
     <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
             <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
@@ -910,10 +911,10 @@
             <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
                 <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
                 <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
-                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi.</p>
+                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
             </div>
             <div class="space-y-3">
-                <button onclick="simulateUpgradePayment()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Attiva Abbonamento (Simula Pagamento)</button>
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 sm:py-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
                 <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
             </div>
         </div>
