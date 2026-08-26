@@ -12,8 +12,8 @@
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- HEADER DELL'APPLICAZIONE -->
-    <header id="main-header" class="hidden gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3.5 sm:py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 sm:space-x-3 cursor-pointer" onclick="navigate('dashboard')">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 rounded-xl flex items-center justify-center text-lg sm:text-xl shadow-inner">
@@ -24,7 +24,7 @@
                 </div>
             </div>
             
-            <nav class="hidden md:flex space-x-4 lg:space-x-5 text-sm font-semibold items-center">
+            <nav id="nav-links" class="hidden md:flex space-x-4 lg:space-x-5 text-sm font-semibold items-center">
                 <a href="#" onclick="navigate('dashboard')" class="hover:text-indigo-200 transition">Dashboard</a>
                 <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
                 <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
@@ -35,52 +35,55 @@
         </div>
     </header>
 
-    <!-- MAIN CONTAINER -->
-    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col justify-center">
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
         
-        <!-- 1. SCHERMATA AUTENTICAZIONE -->
-        <section id="view-auth" class="max-w-md mx-auto w-full bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+        <!-- AUTH VIEW -->
+        <section id="view-auth" class="max-w-md mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6 my-4 sm:my-8">
             <div class="text-center space-y-2">
-                <div class="w-16 h-16 gradient-bg text-white rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md mb-2">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 gradient-bg text-white rounded-2xl flex items-center justify-center mx-auto text-xl sm:text-2xl shadow-md mb-2">
                     <i class="fa-solid fa-user-lock"></i>
                 </div>
                 <h3 id="auth-title" class="text-xl sm:text-2xl font-black text-slate-900">Accesso Area Studio</h3>
                 <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
-            <div class="space-y-4">
+            <form id="auth-form" onsubmit="handleAuth(event)" class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
                     <input type="text" id="auth-name" placeholder="Mario Rossi" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
                 <div class="space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Email</label>
-                    <input type="email" id="auth-email" placeholder="studente@esempio.it" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
+                    <input type="email" id="auth-email" required placeholder="studente@esempio.it" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
                 <div class="space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Password</label>
-                    <input type="password" id="auth-password" placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
+                    <input type="password" id="auth-password" required placeholder="••••••••" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
                 </div>
-                <button type="button" id="auth-submit-btn" onclick="handleAuthSubmit()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Accedi</button>
-            </div>
+                <button type="submit" id="auth-submit-btn" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Accedi</button>
+            </form>
 
             <div class="text-center text-xs text-slate-500 pt-2 border-t border-slate-100">
                 <p id="auth-switch-text">Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button></p>
             </div>
         </section>
 
-        <!-- 2. DASHBOARD VIEW -->
+        <!-- DASHBOARD VIEW -->
         <section id="view-dashboard" class="hidden space-y-6 sm:space-y-8">
             <div class="gradient-bg rounded-3xl p-6 sm:p-8 md:p-10 text-white shadow-xl flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 opacity-10 transform translate-x-8 translate-y-8 text-8xl sm:text-9xl pointer-events-none">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
                 <div class="space-y-2 sm:space-y-3 mb-6 md:mb-0 z-10 text-center md:text-left">
                     <div class="flex items-center justify-center md:justify-start gap-2">
                         <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
                         <span id="user-pro-badge" class="hidden bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fa-solid fa-crown mr-1"></i>PRO</span>
                     </div>
-                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm font-medium">Esercizi personalizzati gratuiti o simulazioni ufficiali.</p>
+                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Allenati con i test ufficiali CISIA conformi agli standard ministeriali o crea simulazioni personalizzate.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
-                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
+                    <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 sm:px-6 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
                         <i class="fa-solid fa-shield-halved mr-2"></i> Avvia Test Ufficiali
                     </button>
                     <button onclick="openPaywallModal()" class="bg-amber-400 text-slate-900 font-bold px-4 py-3.5 rounded-2xl shadow-md hover:bg-amber-300 transition text-xs sm:text-sm flex items-center justify-center">
@@ -91,142 +94,185 @@
 
             <!-- Stats Overview -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200 flex items-center space-x-4">
-                    <div class="bg-blue-50 text-blue-600 p-4 rounded-2xl text-xl"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-blue-50 text-blue-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-file-lines"></i></div>
                     <div>
-                        <p class="text-[11px] text-slate-400 font-bold uppercase">Test Svolti</p>
-                        <h3 class="text-2xl font-black text-slate-800" id="stat-completed">0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Test Svolti</p>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-800" id="stat-completed">0</h3>
                     </div>
                 </div>
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200 flex items-center space-x-4">
-                    <div class="bg-emerald-50 text-emerald-600 p-4 rounded-2xl text-xl"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-emerald-50 text-emerald-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-bullseye"></i></div>
                     <div>
-                        <p class="text-[11px] text-slate-400 font-bold uppercase">Media Punteggi</p>
-                        <h3 class="text-2xl font-black text-slate-800" id="stat-avg">0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Media Punteggi</p>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-800" id="stat-avg">0</h3>
                     </div>
                 </div>
-                <div class="bg-white p-5 rounded-3xl shadow-sm border border-slate-200 flex items-center space-x-4">
-                    <div class="bg-amber-50 text-amber-600 p-4 rounded-2xl text-xl"><i class="fa-solid fa-clock"></i></div>
+                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                    <div class="bg-amber-50 text-amber-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-clock"></i></div>
                     <div>
-                        <p class="text-[11px] text-slate-400 font-bold uppercase">Ore di Studio</p>
-                        <h3 class="text-2xl font-black text-slate-800" id="stat-hours">0.0</h3>
+                        <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Ore di Studio</p>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-800" id="stat-hours">0.0</h3>
                     </div>
                 </div>
             </div>
 
             <!-- Hub Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-file-shield"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali <span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded-full font-bold">PRO</span></h3>
-                        <p class="text-xs text-slate-500 mt-1">Struttura e penalità conformi agli standard ministeriali e CISIA.</p>
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Struttura, numero di quesiti e penalità conformi agli standard ministeriali e CISIA.</p>
                     </div>
-                    <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-2xl hover:bg-indigo-700 text-xs">Avvia Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-2xl hover:bg-indigo-700 transition text-xs shadow-md shadow-indigo-500/20">Avvia Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
 
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 flex flex-col justify-between space-y-4 hover:border-violet-500 transition">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-violet-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-2xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-sliders"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full font-bold">Gratis</span></h3>
-                        <p class="text-xs text-slate-500 mt-1">Scegli le materie, imposta i quesiti e decidi la penalità.</p>
+                        <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-sliders"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta il numero di quesiti e decidi la penalità.</p>
                     </div>
-                    <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 text-xs">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 transition text-xs shadow-md shadow-violet-500/20">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
             </div>
         </section>
 
-        <!-- 3. OFFICIAL TOLC SELECTOR VIEW -->
-        <section id="view-official-selector" class="hidden max-w-6xl mx-auto space-y-5">
-            <div class="flex justify-between items-center bg-white p-5 rounded-3xl border border-slate-200 shadow-sm">
-                <h3 class="text-lg font-black text-slate-900">Simulazioni TOLC Ufficiali</h3>
-                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+        <!-- OFFICIAL TOLC SELECTOR VIEW -->
+        <section id="view-official-selector" class="hidden max-w-6xl mx-auto space-y-5 sm:space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Simulazioni TOLC e Test Ufficiali</h3>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5">Seleziona il test d'ammissione specifico con la struttura e la durata reali.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="official-tests-grid"></div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" id="official-tests-grid"></div>
         </section>
 
-        <!-- 4. CUSTOM TOLC BUILDER VIEW -->
-        <section id="view-custom-builder" class="hidden max-w-2xl mx-auto bg-white p-6 rounded-3xl shadow-xl border border-slate-200 space-y-6">
-            <div class="text-center">
-                <h3 class="text-xl font-black text-slate-900">Crea TOLC Personalizzato</h3>
+        <!-- CUSTOM TOLC BUILDER VIEW -->
+        <section id="view-custom-builder" class="hidden max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+            <div class="text-center space-y-1">
+                <div class="w-12 h-12 bg-violet-100 text-violet-600 rounded-2xl flex items-center justify-center mx-auto text-xl mb-2">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Crea TOLC Personalizzato</h3>
+                <p class="text-xs text-slate-500 font-medium">Personalizza ogni parametro attingendo dalla banca dati online.</p>
             </div>
+
             <form onsubmit="startCustomTest(event)" class="space-y-6">
                 <div class="space-y-3">
-                    <label class="text-[11px] font-bold text-slate-600 uppercase">Seleziona Materie</label>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5" id="custom-categories-checkboxes"></div>
+                    <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Seleziona Materie (almeno una)</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3" id="custom-categories-checkboxes"></div>
                 </div>
-                <button type="submit" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold text-sm">Avvia Test Personalizzato</button>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Domande per Materia</label>
+                        <select id="custom-count-per-cat" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-semibold text-slate-700">
+                            <option value="3">3 Domande (Rapido)</option>
+                            <option value="5" selected>5 Domande (Standard)</option>
+                            <option value="10">10 Domande (Approfondito)</option>
+                            <option value="20">20 Domande (Master)</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Penalità Errata</label>
+                        <select id="custom-penalty" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-semibold text-slate-700">
+                            <option value="0.25" selected>Standard CISIA (-0.25)</option>
+                            <option value="0.40">Area Medica (-0.40)</option>
+                            <option value="0.0">Nessuna Penalità (0.0)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Avvia Test Personalizzato</button>
             </form>
         </section>
 
-        <!-- 5. TEST RUNNER VIEW -->
-        <section id="view-runner" class="hidden max-w-3xl mx-auto space-y-6 bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
-            <div class="flex justify-between items-center border-b pb-4">
+        <!-- TEST RUNNER VIEW -->
+        <section id="view-runner" class="hidden max-w-3xl mx-auto space-y-6 bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-3">
                 <div>
-                    <span id="runner-category" class="text-[11px] font-black text-indigo-600 uppercase">Sezione</span>
-                    <h3 id="runner-title" class="text-xl font-black text-slate-900">Test in corso</h3>
+                    <span id="runner-category" class="text-[11px] font-black text-indigo-600 uppercase tracking-wider">Sezione</span>
+                    <h3 id="runner-title" class="text-lg sm:text-xl font-black text-slate-900 mt-0.5">Test in corso</h3>
                 </div>
-                <div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-2xl font-mono font-bold text-sm">
-                    <i class="fa-solid fa-stopwatch mr-2"></i> <span id="timer-display">00:00</span>
+                <div class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-2xl font-mono font-bold text-sm border border-indigo-100 flex items-center w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-stopwatch mr-2 text-indigo-500"></i> <span id="timer-display">00:00</span>
                 </div>
             </div>
+
             <div class="space-y-4">
-                <span id="question-progress" class="text-xs text-slate-400 font-bold"></span>
-                <p id="question-text" class="text-lg font-black text-slate-900">Caricamento...</p>
-                <div id="options-container" class="space-y-3"></div>
+                <div class="flex justify-between text-xs text-slate-400 font-bold">
+                    <span id="question-progress">Domanda 1 di 10</span>
+                </div>
+                <p id="question-text" class="text-base sm:text-lg font-black text-slate-900 leading-snug">Caricamento...</p>
+                <div id="options-container" class="space-y-3 pt-2"></div>
             </div>
-            <div class="flex justify-between pt-4 border-t">
-                <button onclick="prevQuestion()" id="prev-btn" class="px-5 py-2.5 border rounded-2xl text-xs font-bold text-slate-600">Indietro</button>
-                <button onclick="nextQuestion()" id="next-btn" class="gradient-bg text-white px-7 py-2.5 rounded-2xl text-xs font-bold">Avanti</button>
+
+            <div class="flex flex-col sm:flex-row justify-between pt-4 border-t border-slate-100 gap-3">
+                <button onclick="prevQuestion()" id="prev-btn" class="w-full sm:w-auto px-5 py-3 sm:py-2.5 border border-slate-200 rounded-2xl text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 transition order-2 sm:order-1">Indietro</button>
+                <button onclick="nextQuestion()" id="next-btn" class="w-full sm:w-auto gradient-bg text-white px-7 py-3 sm:py-2.5 rounded-2xl text-xs font-bold hover:opacity-95 shadow-md shadow-indigo-500/25 transition order-1 sm:order-2">Avanti</button>
             </div>
         </section>
 
-        <!-- 6. RESULTS VIEW -->
+        <!-- RESULTS VIEW -->
         <section id="view-results" class="hidden max-w-2xl mx-auto space-y-6">
-            <div class="bg-white p-8 rounded-3xl shadow-xl border text-center space-y-6">
-                <h3 class="text-2xl font-black text-slate-900">Test Completato!</h3>
-                <div class="bg-slate-50 p-5 rounded-2xl border">
-                    <p class="text-[11px] text-slate-400 uppercase font-bold">Punteggio</p>
-                    <h4 id="result-score" class="text-4xl font-black text-indigo-600 mt-1">0.0</h4>
-                    <div class="text-xs text-slate-600 font-bold mt-2" id="result-breakdown"></div>
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 text-center space-y-6">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 gradient-bg text-white rounded-3xl flex items-center justify-center mx-auto text-2xl sm:text-3xl shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-award"></i>
                 </div>
-                <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold text-sm">Torna alla Dashboard</button>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900">Test Completato!</h3>
+                    <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance.</p>
+                </div>
+                <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl space-y-3 border border-slate-200">
+                    <div>
+                        <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato</p>
+                        <h4 id="result-score" class="text-3xl sm:text-4xl font-black text-indigo-600 mt-1">0.0</h4>
+                    </div>
+                    <div class="text-xs text-slate-600 font-bold pt-2 border-t border-slate-200/60" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
+                </div>
+                <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
             </div>
-            <div class="bg-white p-8 rounded-3xl shadow-xl border space-y-4">
-                <h4 class="text-lg font-black text-slate-900 border-b pb-3">Correzione Quesiti</h4>
+
+            <!-- DETAILED REVIEW ACCORDION / BOX -->
+            <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
+                <h4 class="text-base sm:text-lg font-black text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Riepilogo e Correzione Quesiti</h4>
                 <div id="results-review-container" class="space-y-4"></div>
             </div>
         </section>
 
-        <!-- 7. STATS VIEW -->
-        <section id="view-stats" class="hidden max-w-4xl mx-auto space-y-4">
-            <div class="flex justify-between items-center bg-white p-6 rounded-3xl border shadow-sm">
-                <h3 class="text-xl font-black text-slate-900">Storico e Statistiche</h3>
-                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl">Dashboard</button>
+        <!-- STATS VIEW -->
+        <section id="view-stats" class="hidden space-y-4 max-w-4xl mx-auto">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Storico e Statistiche</h3>
+                    <p class="text-xs text-slate-500 font-medium">I tuoi progressi e test salvati nel tempo.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
-            <div class="bg-white p-6 rounded-3xl border">
-                <div id="history-container" class="divide-y"></div>
+            <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200">
+                <div id="history-container" class="divide-y divide-slate-100">
+                    <p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>
+                </div>
             </div>
         </section>
+
     </main>
 
-    <!-- MODALE PRO -->
-    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/65 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-        <div class="bg-white max-w-md w-full p-8 rounded-3xl shadow-2xl border text-center space-y-6">
-            <h3 class="text-2xl font-black text-slate-900">Passa a PRO</h3>
-            <p class="text-xs text-slate-500">Inserisci il codice promo per sbloccare le simulazioni ufficiali.</p>
-            <input type="text" id="promo-code-input" placeholder="TOLCLABPRO2026" class="w-full px-4 py-3 border rounded-2xl text-center text-xs font-bold uppercase">
-            <button onclick="applyPromoCode()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold text-sm">Riscatta Codice</button>
-            <button onclick="closePaywallModal()" class="w-full text-slate-400 text-xs py-2">Chiudi</button>
-        </div>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 font-medium">
+        <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
+    </footer>
 
-    <!-- SCRIPT CON CHIAMATE REST DIRETTE E CHIAVE ANON CORRETTA -->
+    <!-- SCRIPT CON SUPABASE REST API INTEGRATA -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
 
-        // Funzione REST centralizzata
         async function supabaseFetch(endpoint, method = 'GET', body = null, extraHeaders = {}) {
             const headers = {
                 'apikey': SUPABASE_ANON_KEY,
@@ -251,183 +297,427 @@
             }
         }
 
-        let currentUser = null;
-        let userProfile = null;
-        let userHistory = [];
         let masterBank = {};
-        let isRegistering = false;
+
+        const officialTolcs = [
+            { 
+                id: 'SANITARIE', 
+                name: 'Professioni Sanitarie', 
+                category: 'Area Sanitaria', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-user-nurse',
+                bgIconColor: 'bg-emerald-50 text-emerald-600',
+                structure: [
+                    {cat: 'Biologia', count: 23}, 
+                    {cat: 'Chimica', count: 15}, 
+                    {cat: 'Fisica', count: 7}, 
+                    {cat: 'Matematica', count: 6}, 
+                    {cat: 'Logica', count: 9}
+                ] 
+            },
+            { 
+                id: 'TOLC-I', 
+                name: 'TOLC-I (Ingegneria / STEM)', 
+                category: 'Ingegneria', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-gears',
+                bgIconColor: 'bg-blue-50 text-blue-600',
+                structure: [
+                    {cat: 'Matematica', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Fisica', count: 10}, 
+                    {cat: 'Comprensione Verbale', count: 10},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-E', 
+                name: 'TOLC-E (Economia)', 
+                category: 'Economia', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-chart-line',
+                bgIconColor: 'bg-indigo-50 text-indigo-600',
+                structure: [
+                    {cat: 'Logica', count: 13}, 
+                    {cat: 'Comprensione Verbale', count: 10}, 
+                    {cat: 'Matematica', count: 13},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-F', 
+                name: 'TOLC-F (Farmacia / Biotecnologie)', 
+                category: 'Farmaceutica', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-flask',
+                bgIconColor: 'bg-teal-50 text-teal-600',
+                structure: [
+                    {cat: 'Biologia', count: 15}, 
+                    {cat: 'Chimica', count: 15}, 
+                    {cat: 'Matematica', count: 7}, 
+                    {cat: 'Fisica', count: 7}, 
+                    {cat: 'Logica', count: 6},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-PSI', 
+                name: 'TOLC-PSI (Psicologia)', 
+                category: 'Psicologia', 
+                timeMinutes: 85, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-brain',
+                bgIconColor: 'bg-purple-50 text-purple-600',
+                structure: [
+                    {cat: 'Psicologia', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Comprensione Verbale', count: 10}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU', 
+                name: 'TOLC-SU (Scienze Umanistiche)', 
+                category: 'Umanistica', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-book-open',
+                bgIconColor: 'bg-amber-50 text-amber-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Cultura Generale', count: 10}, 
+                    {cat: 'Logica', count: 10},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SPS', 
+                name: 'TOLC-SPS (Scienze Politiche e Sociali)', 
+                category: 'Sociale', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-scale-balanced',
+                bgIconColor: 'bg-rose-50 text-rose-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Logica', count: 20}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-S', 
+                name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', 
+                category: 'Scienze', 
+                timeMinutes: 115, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-atom',
+                bgIconColor: 'bg-cyan-50 text-cyan-600',
+                structure: [
+                    {cat: 'Matematica', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Scienze', count: 20},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-AV', 
+                name: 'TOLC-AV (Agraria & Veterinaria)', 
+                category: 'Agraria', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-seedling',
+                bgIconColor: 'bg-lime-50 text-lime-700',
+                structure: [
+                    {cat: 'Biologia', count: 10}, 
+                    {cat: 'Chimica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Fisica', count: 10}, 
+                    {cat: 'Logica', count: 6},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-LP', 
+                name: 'TOLC-LP (Lauree Professionalizzanti)', 
+                category: 'Professionalizzante', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-screwdriver-wrench',
+                bgIconColor: 'bg-orange-50 text-orange-600',
+                structure: [
+                    {cat: 'Matematica', count: 12}, 
+                    {cat: 'Logica', count: 12}, 
+                    {cat: 'Comprensione Verbale', count: 12}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'ARCHITETTURA', 
+                name: 'Test Architettura / Ingegneria Edile', 
+                category: 'Design & Architettura', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-compass-drafting',
+                bgIconColor: 'bg-violet-50 text-violet-600',
+                structure: [
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Storia dell’Arte', count: 10}, 
+                    {cat: 'Disegno e Rappresentazione', count: 10}, 
+                    {cat: 'Matematica e Fisica', count: 10}
+                ] 
+            },
+            { 
+                id: 'FORMAZIONE-PRIMARIA', 
+                name: 'Scienze della Formazione Primaria', 
+                category: 'Formazione', 
+                timeMinutes: 150, 
+                penalty: 0.40, 
+                correctPts: 1.0, 
+                icon: 'fa-children',
+                bgIconColor: 'bg-pink-50 text-pink-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 25}, 
+                    {cat: 'Logica', count: 15}, 
+                    {cat: 'Cultura Generale', count: 20},
+                    {cat: 'Matematica e Fisica', count: 20}
+                ] 
+            }
+        ];
+
+        let currentUser = null;
+        let userHistory = [];
         let currentTest = null;
         let currentIdx = 0;
         let userAnswers = [];
         let timer = null;
         let seconds = 0;
 
-        const officialTolcs = [
-            { id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 100, penalty: 0.40, correctPts: 1.5, structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] },
-            { id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] }
-        ];
-
-        function toggleAuthMode() {
-            isRegistering = !isRegistering;
-            const nameField = document.getElementById('name-field');
-            const authTitle = document.getElementById('auth-title');
-            const authSubmitBtn = document.getElementById('auth-submit-btn');
-            const authSwitchText = document.getElementById('auth-switch-text');
-
-            if (isRegistering) {
-                nameField.classList.remove('hidden');
-                authTitle.innerText = "Crea un account";
-                authSubmitBtn.innerText = "Registrati";
-                authSwitchText.innerHTML = `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`;
+        async function init() {
+            await loadSharedDatabaseFromGitHub();
+            renderOfficialSelectorGrid();
+            renderCustomCheckboxes();
+            
+            const saved = sessionStorage.getItem('tolclab_user');
+            if (saved) {
+                currentUser = JSON.parse(saved);
+                await fetchCloudData();
+                renderSession();
+                navigate('dashboard');
             } else {
-                nameField.classList.add('hidden');
-                authTitle.innerText = "Accesso Area Studio";
-                authSubmitBtn.innerText = "Accedi";
-                authSwitchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+                navigate('auth');
             }
         }
 
-        async function handleAuthSubmit() {
-            const email = document.getElementById('auth-email').value.trim();
-            const password = document.getElementById('auth-password').value;
-            const name = document.getElementById('auth-name').value.trim();
-
-            if (!email || !password) {
-                alert("Inserisci email e password.");
-                return;
+        async function loadSharedDatabaseFromGitHub() {
+            try {
+                const response = await fetch('tolclab_full_database.json');
+                if (!response.ok) throw new Error("File non trovato");
+                masterBank = await response.json();
+            } catch (err) {
+                console.warn("Impossibile caricare il database da GitHub, uso dati minimi di fallback.");
+                masterBank = {
+                    "Logica": [{ text: "Domanda di test preliminare", opts: ["Risposta A", "Risposta B"], correct: 0 }]
+                };
             }
+        }
+
+        async function fetchCloudData() {
+            if (!currentUser) return;
+            try {
+                const users = await supabaseFetch(`utenti?id=eq.${currentUser.id}&select=*`, 'GET');
+                if (users && users.length > 0) {
+                    currentUser.name = users[0].username;
+                    currentUser.is_pro = users[0].is_pro;
+                    currentUser.pro_expires = users[0].pro_expires;
+                }
+                const hist = await supabaseFetch(`user_history?user_id=eq.${currentUser.id}&order=created_at.desc&select=*`, 'GET');
+                userHistory = hist || [];
+            } catch (e) {
+                console.error("Errore recupero dati cloud:", e);
+            }
+        }
+
+        function renderOfficialSelectorGrid() {
+            document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => {
+                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0);
+                return `
+                    <div class="bg-white border border-slate-200/80 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
+                        <div>
+                            <div class="flex justify-between items-start mb-3">
+                                <span class="bg-indigo-50 text-indigo-700 text-[10px] px-3 py-1 rounded-full font-black uppercase tracking-wider">${t.category}</span>
+                                <div class="w-10 h-10 ${t.bgIconColor || 'bg-indigo-50 text-indigo-600'} rounded-2xl flex items-center justify-center text-lg shadow-sm shrink-0">
+                                    <i class="fa-solid ${t.icon || 'fa-graduation-cap'}"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-base sm:text-lg font-black text-slate-900">${t.name}</h4>
+                        </div>
+                        <div class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3 font-medium">
+                            <p><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> Quesiti totali: <b>${totalQ}</b></p>
+                            <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.timeMinutes} min</p>
+                            <p class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
+                        </div>
+                        <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl hover:opacity-95 transition text-xs shadow-md shadow-indigo-500/20">Avvia Simulazione</button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderCustomCheckboxes() {
+            document.getElementById('custom-categories-checkboxes').innerHTML = Object.keys(masterBank).map(cat => `
+                <label class="flex items-center space-x-2.5 p-3 sm:p-3.5 border border-slate-200 rounded-2xl cursor-pointer hover:bg-indigo-50/50 hover:border-indigo-300 transition font-semibold text-xs text-slate-700 bg-slate-50">
+                    <input type="checkbox" name="custom-cat" value="${cat}" class="text-indigo-600 rounded focus:ring-indigo-500 w-4 h-4 shrink-0">
+                    <span class="truncate">${cat}</span>
+                </label>
+            `).join('');
+        }
+
+        function toggleAuthMode() {
+            const isReg = document.getElementById('name-field').classList.toggle('hidden');
+            document.getElementById('auth-title').innerText = !isReg ? "Crea un account" : "Accesso Area Studio";
+            document.getElementById('auth-submit-btn').innerText = !isReg ? "Registrati" : "Accedi";
+            document.getElementById('auth-switch-text').innerHTML = !isReg 
+                ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
+                : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+        }
+
+        async function handleAuth(e) {
+            e.preventDefault();
+            const email = document.getElementById('auth-email').value.trim();
+            const pass = document.getElementById('auth-password').value;
+            const name = document.getElementById('auth-name').value.trim();
+            const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             try {
-                if (isRegistering) {
-                    if (!name) { alert("Inserisci nome e cognome."); return; }
-                    await supabaseFetch('utenti', 'POST', { username: name, email: email, password_hash: password });
+                if (isReg) {
+                    if (!name) { alert("Inserisci il nome"); return; }
+                    await supabaseFetch('utenti', 'POST', { username: name, email: email, password_hash: pass });
                     alert("🎉 Registrazione completata! Ora puoi accedere.");
                     toggleAuthMode();
                 } else {
                     const data = await supabaseFetch(`utenti?email=eq.${encodeURIComponent(email)}&select=*`, 'GET');
                     if (!data || data.length === 0) { alert("Utente non trovato o email errata."); return; }
-                    
                     const user = data[0];
-                    if (user.password_hash !== password) { alert("Password errata!"); return; }
+                    if (user.password_hash !== pass) { alert("Password errata!"); return; }
 
                     currentUser = user;
-                    sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
-                    await enterApp();
+                    sessionStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+                    await fetchCloudData();
+                    renderSession();
+                    navigate('dashboard');
                 }
             } catch (err) {
-                alert("Errore di autenticazione: " + err.message);
+                alert("Errore: " + err.message);
             }
         }
 
-        async function enterApp() {
-            document.getElementById('main-header').classList.remove('hidden');
-            await loadDatabase();
-            renderOfficialSelectorGrid();
-            renderCustomCheckboxes();
-            await fetchUserData();
-            navigate('dashboard');
-        }
-
-        async function fetchUserData() {
-            if (!currentUser) return;
-            try {
-                const data = await supabaseFetch(`utenti?id=eq.${currentUser.id}&select=*`, 'GET');
-                if (data && data.length > 0) {
-                    userProfile = { name: data[0].username, is_pro: data[0].is_pro, pro_expires: data[0].pro_expires };
-                }
-
-                const hist = await supabaseFetch(`user_history?user_id=eq.${currentUser.id}&order=created_at.desc&select=*`, 'GET');
-                userHistory = hist || [];
-            } catch (e) {
-                console.error("Errore recupero dati utente:", e);
-            }
-            
+        function renderSession() {
             const isPro = checkProAccess();
             document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
             document.getElementById('user-menu').innerHTML = `
-                <span class="text-xs font-bold bg-white/20 px-3 py-1.5 rounded-2xl flex items-center">
-                    ${isPro ? '<i class="fa-solid fa-crown text-amber-300 mr-1.5"></i>' : '<i class="fa-solid fa-user mr-1.5"></i>'}
-                    ${userProfile?.name || 'Studente'}
-                </span>
-                <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none"><i class="fa-solid fa-user mr-1.5"></i>${currentUser.username || currentUser.name}</span>
+                <button onclick="logout()" class="text-indigo-200 hover:text-white text-sm px-1.5 sm:px-2"><i class="fa-solid fa-right-from-bracket"></i></button>
             `;
+            document.getElementById('welcome-username').innerText = currentUser.username || currentUser.name;
             document.getElementById('stat-completed').innerText = userHistory.length;
             const scoreSum = userHistory.reduce((acc, h) => acc + Number(h.score), 0);
             document.getElementById('stat-avg').innerText = userHistory.length > 0 ? (scoreSum / userHistory.length).toFixed(1) : 0;
             document.getElementById('stat-hours').innerText = (userHistory.length * 1.5).toFixed(1);
-        }
-
-        async function loadDatabase() {
-            try {
-                const res = await fetch('tolclab_full_database.json');
-                masterBank = await res.json();
-            } catch (err) {
-                masterBank = { "Logica": [{ text: "Domanda di test", opts: ["A", "B", "C", "D"], correct: 0 }] };
+            
+            const historyContainer = document.getElementById('history-container');
+            if (!userHistory || userHistory.length === 0) {
+                historyContainer.innerHTML = `<p class="text-sm text-slate-400 py-6 text-center font-medium">Nessun test completato.</p>`;
+            } else {
+                historyContainer.innerHTML = userHistory.map((h, index) => `
+                    <div class="py-4 flex flex-col sm:flex-row justify-between items-start sm:items-center text-xs gap-3">
+                        <div>
+                            <span class="font-black text-slate-800 text-sm block">${h.title}</span>
+                            <span class="text-slate-400 text-[11px]">Completato il ${h.date}</span>
+                        </div>
+                        <div class="flex items-center space-x-3 w-full sm:w-auto justify-between sm:justify-start">
+                            <span class="bg-indigo-50 text-indigo-600 font-black px-3 py-1.5 rounded-xl text-sm">${h.score} pt</span>
+                            <button onclick="viewHistoryDetail(${index})" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-xl transition"><i class="fa-solid fa-eye mr-1"></i> Dettagli</button>
+                        </div>
+                    </div>
+                `).join('');
             }
         }
 
-        function renderOfficialSelectorGrid() {
-            document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => `
-                <div class="bg-white border rounded-3xl p-6 flex flex-col justify-between space-y-4 shadow-sm">
-                    <h4 class="text-lg font-black">${t.name}</h4>
-                    <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl text-xs">Avvia Simulazione</button>
-                </div>
-            `).join('');
-        }
-
-        function renderCustomCheckboxes() {
-            document.getElementById('custom-categories-checkboxes').innerHTML = Object.keys(masterBank).map(cat => `
-                <label class="flex items-center space-x-2 p-3 border rounded-2xl text-xs bg-slate-50 cursor-pointer">
-                    <input type="checkbox" name="custom-cat" value="${cat}" class="w-4 h-4 text-indigo-600">
-                    <span>${cat}</span>
-                </label>
-            `).join('');
+        function logout() {
+            sessionStorage.removeItem('tolclab_user');
+            currentUser = null;
+            userHistory = [];
+            navigate('auth');
         }
 
         function navigate(view) {
+            if (!currentUser && view !== 'auth') { view = 'auth'; }
             ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
             });
-            if (view === 'dashboard') {
-                document.getElementById('welcome-username').innerText = userProfile?.name || 'Studente';
-            }
+            if (view === 'dashboard') { renderSession(); }
+            if (view === 'custom-builder') { renderCustomCheckboxes(); }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function checkProAccess() {
-            if (!userProfile) return false;
-            if (userProfile.is_pro === true) return true;
-            if (userProfile.pro_expires && new Date(userProfile.pro_expires) > new Date()) return true;
+            if (!currentUser) return false;
+            if (currentUser.is_pro === true) return true;
+            if (currentUser.pro_expires && new Date(currentUser.pro_expires) > new Date()) return true;
             return false;
         }
 
         function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
         function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
 
+        function redirectToStripeCheckout() {
+            if (!currentUser) { alert("Effettua l'accesso prima."); navigate('auth'); closePaywallModal(); return; }
+            const stripeCheckoutUrl = `https://buy.stripe.com/inserisci_il_tuo_link_qui?prefilled_email=${encodeURIComponent(currentUser.email)}`;
+            window.location.href = stripeCheckoutUrl;
+        }
+
         async function applyPromoCode() {
-            const code = document.getElementById('promo-code-input').value.trim().toUpperCase();
+            const inputElement = document.getElementById('promo-code-input');
+            const code = inputElement.value.trim().toUpperCase();
+
             if (code === "TOLCLABPRO2026") {
-                let expire = new Date();
-                expire.setDate(expire.getDate() + 30);
+                if (!currentUser) { alert("Prima devi effettuare l'accesso!"); navigate('auth'); closePaywallModal(); return; }
+
+                let expireDate = new Date();
+                expireDate.setDate(expireDate.getDate() + 30);
+
                 try {
-                    await supabaseFetch(`utenti?id=eq.${currentUser.id}`, 'PATCH', { is_pro: true, pro_expires: expire.toISOString() }, { 'Prefer': 'return=minimal' });
-                    userProfile.is_pro = true;
+                    await supabaseFetch(`utenti?id=eq.${currentUser.id}`, 'PATCH', { is_pro: true, pro_expires: expireDate.toISOString() }, { 'Prefer': 'return=minimal' });
+                    currentUser.is_pro = true;
+                    currentUser.pro_expires = expireDate.toISOString();
+                    sessionStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+
                     closePaywallModal();
-                    alert("🎉 PRO Attivato per 30 giorni.");
-                    fetchUserData();
+                    alert("🎉 Codice valido! Abbonamento PRO sbloccato per 30 giorni.");
+                    renderSession();
+                    inputElement.value = '';
                 } catch(e) {
-                    alert("Errore attivazione PRO");
+                    alert("Errore attivazione PRO su cloud.");
                 }
             } else {
                 alert("❌ Codice non valido.");
+                inputElement.value = '';
             }
-        }
-
-        function logout() {
-            sessionStorage.removeItem('tolc_user');
-            currentUser = null;
-            document.getElementById('main-header').classList.add('hidden');
-            navigate('auth');
         }
 
         function startOfficialTest(tolcId) {
@@ -438,12 +728,13 @@
             let allQuestions = [];
             config.structure.forEach(sec => {
                 let pool = masterBank[sec.cat] || [];
-                let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, sec.count);
-                shuffled.forEach(q => {
+                let shuffled = [...pool].sort(() => Math.random() - 0.5);
+                let selected = shuffled.slice(0, sec.count);
+                selected.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-                    allQuestions.push({ cat: sec.cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText) });
+                    allQuestions.push({ cat: sec.cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: sec.cat === 'Inglese' });
                 });
             });
 
@@ -456,19 +747,25 @@
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
             if (checkedBoxes.length === 0) { alert("Seleziona almeno una materia!"); return; }
 
+            const countPerCat = parseInt(document.getElementById('custom-count-per-cat').value, 10);
+            const penaltyVal = parseFloat(document.getElementById('custom-penalty').value);
+
             let allQuestions = [];
             checkedBoxes.forEach(box => {
-                let pool = masterBank[box.value] || [];
-                let shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, 5);
-                shuffled.forEach(q => {
+                const cat = box.value;
+                let pool = masterBank[cat] || [];
+                let shuffled = [...pool].sort(() => Math.random() - 0.5);
+                let selected = shuffled.slice(0, countPerCat);
+
+                selected.forEach(q => {
                     let rawOpts = [...q.opts];
                     let correctText = rawOpts[q.correct];
                     rawOpts.sort(() => Math.random() - 0.5);
-                    allQuestions.push({ cat: box.value, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText) });
+                    allQuestions.push({ cat: cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: cat === 'Inglese' });
                 });
             });
 
-            currentTest = { title: `TOLC Personalizzato`, correctPts: 1.0, penalty: 0.25, questions: allQuestions };
+            currentTest = { title: `TOLC Personalizzato`, correctPts: 1.0, penalty: penaltyVal, questions: allQuestions };
             setupTestSession();
         }
 
@@ -499,9 +796,9 @@
             document.getElementById('question-text').innerText = q.text;
 
             document.getElementById('options-container').innerHTML = q.opts.map((opt, i) => `
-                <label class="flex items-center p-3.5 border rounded-2xl cursor-pointer hover:bg-indigo-50 transition ${userAnswers[currentIdx] === i ? 'bg-indigo-50 border-indigo-500' : 'border-slate-200'}">
-                    <input type="radio" name="opt" value="${i}" ${userAnswers[currentIdx] === i ? 'checked' : ''} onchange="userAnswers[currentIdx]=${i}; loadQ();" class="mr-3">
-                    <span class="text-xs font-semibold">${opt}</span>
+                <label class="flex items-center p-3.5 sm:p-4 border rounded-2xl cursor-pointer hover:bg-indigo-50/60 transition ${userAnswers[currentIdx] === i ? 'bg-indigo-50 border-indigo-500 ring-2 ring-indigo-500/20' : 'border-slate-200 bg-white'}">
+                    <input type="radio" name="opt" value="${i}" ${userAnswers[currentIdx] === i ? 'checked' : ''} onchange="userAnswers[currentIdx]=${i}; loadQ();" class="mr-3 text-indigo-600 focus:ring-indigo-500 w-4 h-4 shrink-0">
+                    <span class="text-xs sm:text-sm font-semibold text-slate-800">${opt}</span>
                 </label>
             `).join('');
 
@@ -523,12 +820,14 @@
                 const ans = userAnswers[i];
                 if (ans === null) omitted++;
                 else if (ans === q.correct) { correct++; score += currentTest.correctPts; }
-                else { wrong++; score -= currentTest.penalty; }
+                else { wrong++; if (!q.isEnglish) score -= currentTest.penalty; }
             });
 
             score = Math.max(0, score).toFixed(2);
             document.getElementById('result-score').innerText = score;
             document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
+
+            renderResultsReview(currentTest, userAnswers);
 
             try {
                 await supabaseFetch('user_history', 'POST', {
@@ -539,22 +838,93 @@
                     test_data: { questions: currentTest.questions, userAnswers: [...userAnswers] }
                 }, { 'Prefer': 'return=minimal' });
             } catch(e) {
-                console.error("Errore salvataggio storico:", e);
+                console.error("Errore salvataggio storico su cloud:", e);
             }
 
-            await fetchUserData();
+            await fetchCloudData();
             navigate('results');
         }
 
-        window.onload = () => {
-            const saved = sessionStorage.getItem('tolc_user');
-            if (saved) {
-                currentUser = JSON.parse(saved);
-                enterApp();
-            } else {
-                navigate('auth');
-            }
-        };
+        function renderResultsReview(testObj, answersArr) {
+            const container = document.getElementById('results-review-container');
+            container.innerHTML = testObj.questions.map((q, idx) => {
+                const userAns = answersArr[idx];
+                const isCorrect = userAns === q.correct;
+                const isOmitted = userAns === null;
+
+                let badge = isOmitted 
+                    ? `<span class="bg-amber-50 text-amber-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase">Omessa</span>`
+                    : (isCorrect 
+                        ? `<span class="bg-emerald-50 text-emerald-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-check mr-1"></i> Esatta</span>`
+                        : `<span class="bg-rose-50 text-rose-600 text-[10px] font-black px-2.5 py-1 rounded-lg uppercase"><i class="fa-solid fa-xmark mr-1"></i> Errata</span>`
+                    );
+
+                return `
+                    <div class="p-4 rounded-2xl border ${isCorrect ? 'border-emerald-200 bg-emerald-50/20' : (isOmitted ? 'border-amber-200 bg-amber-50/20' : 'border-rose-200 bg-rose-50/20')} space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-[11px] font-bold text-slate-500 uppercase">Domanda ${idx + 1} (${q.cat})</span>
+                            ${badge}
+                        </div>
+                        <p class="text-xs sm:text-sm font-bold text-slate-900">${q.text}</p>
+                        <div class="space-y-1 pt-1 text-xs font-medium">
+                            ${q.opts.map((opt, oIdx) => {
+                                let style = "bg-white border-slate-200 text-slate-700";
+                                if (oIdx === q.correct) style = "bg-emerald-100 border-emerald-300 text-emerald-900 font-bold";
+                                else if (oIdx === userAns && !isCorrect) style = "bg-rose-100 border-rose-300 text-rose-900 font-bold line-through";
+                                return `<div class="p-2.5 border rounded-xl ${style}">${opt}</div>`;
+                            }).join('')}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function viewHistoryDetail(historyIndex) {
+            const record = userHistory[historyIndex];
+            if (!record || !record.test_data) return;
+
+            currentTest = {
+                title: record.title,
+                questions: record.test_data.questions
+            };
+            userAnswers = record.test_data.userAnswers;
+
+            document.getElementById('result-score').innerText = record.score;
+            document.getElementById('result-breakdown').innerText = `Storico salvato del ${record.date}`;
+            renderResultsReview(currentTest, userAnswers);
+            navigate('results');
+        }
+
+        window.onload = init;
     </script>
+
+    <!-- MODALE ABBONAMENTO PRO -->
+    <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
+            <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio dettagliato dei progressi.</p>
+            </div>
+            <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
+                <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
+                <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
+                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
+            </div>
+            <div class="space-y-3">
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
+                
+                <div class="pt-2 border-t border-slate-100 flex space-x-2">
+                    <input type="text" id="promo-code-input" placeholder="Inserisci codice promo..." onkeydown="if(event.key === 'Enter') applyPromoCode();" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold tracking-wider text-center">
+                    <button onclick="applyPromoCode()" class="bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-800 transition shrink-0">Riscatta</button>
+                </div>
+
+                <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
