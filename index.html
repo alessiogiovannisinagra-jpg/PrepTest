@@ -80,7 +80,7 @@
                         <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">Bentornato, <span id="welcome-username">Studente</span>!</h2>
                         <span id="user-pro-badge" class="hidden bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-1 rounded-full uppercase tracking-wider shadow-sm"><i class="fa-solid fa-crown mr-1"></i>PRO</span>
                     </div>
-                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Allenati con i test ufficiali conformi agli standard ministeriali o crea simulazioni personalizzate.</p>
+                    <p class="text-indigo-100 max-w-xl text-xs sm:text-sm leading-relaxed font-medium">Hai a disposizione <span id="free-passes-text" class="font-bold underline">3 test ufficiali gratuiti</span> prima di passare alla versione PRO.</p>
                 </div>
                 <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3 z-10 w-full md:w-auto">
                     <button onclick="navigate('official-selector')" class="bg-white text-indigo-700 font-bold px-5 py-3.5 sm:px-6 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs sm:text-sm flex items-center justify-center">
@@ -268,29 +268,29 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PROMO) -->
+    <!-- MODALE ABBONAMENTO PRO (STRIPE + CODICE PASS 3 TEST) -->
     <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white max-w-md w-full p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative">
             <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
                 <i class="fa-solid fa-crown"></i>
             </div>
             <div class="space-y-2">
-                <h3 class="text-xl sm:text-2xl font-black text-slate-900">TOLC LAB PRO</h3>
-                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio progressi.</p>
+                <h3 id="paywall-title" class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
+                <p id="paywall-desc" class="text-xs text-slate-500 font-medium leading-relaxed">Hai esaurito i tuoi 3 test ufficiali gratuiti. Sblocca simulazioni illimitate e tutte le funzioni avanzate!</p>
             </div>
             <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
                 <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
                 <div class="text-2xl sm:text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
-                <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi.</p>
+                <p class="text-[11px] text-slate-600 font-medium">Accesso illimitato, disdici quando vuoi.</p>
             </div>
             <div class="space-y-3">
                 <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
                 
-                <!-- SEZIONE INSERIMENTO CODICE PROMO (BOX EVIDENZIATO) -->
+                <!-- SEZIONE INSERIMENTO CODICE PASS / PROMO (SENZA TESTO VISIBILE) -->
                 <div class="p-3 bg-slate-50 border border-slate-200 rounded-2xl text-left space-y-2">
-                    <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wide block">Hai un codice promo?</label>
+                    <label class="text-[10px] font-bold text-slate-500 uppercase tracking-wide block">Hai un codice promo o un pass?</label>
                     <div class="flex space-x-2">
-                        <input type="text" id="promo-code-input" placeholder="TOLCLABPRO2026" onkeydown="if(event.key === 'Enter') applyPromoCode();" style="text-transform: uppercase;" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center tracking-wider">
+                        <input type="text" id="promo-code-input" placeholder="••••••••••••" onkeydown="if(event.key === 'Enter') applyPromoCode();" style="text-transform: uppercase;" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold text-slate-800 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 text-center tracking-wider">
                         <button type="button" onclick="applyPromoCode()" class="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-xl text-xs font-bold transition shrink-0">Riscatta</button>
                     </div>
                 </div>
@@ -520,6 +520,7 @@
             const saved = localStorage.getItem('tolclab_user');
             if (saved) {
                 currentUser = JSON.parse(saved);
+                if (currentUser.freeTestsUsed === undefined) currentUser.freeTestsUsed = 0;
                 renderSession();
                 navigate('dashboard');
             } else {
@@ -595,12 +596,13 @@
             if (isReg) {
                 if (!name) { alert("Inserisci il nome"); return; }
                 if (users.find(u => u.email === email)) { alert("Email già registrata"); return; }
-                currentUser = { name, email, pass, isPro: false, proExpires: null, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
+                currentUser = { name, email, pass, isPro: false, freeTestsUsed: 0, history: [], stats: { completed: 0, scoreSum: 0, hours: 0 } };
                 users.push(currentUser);
                 localStorage.setItem('tolclab_users', JSON.stringify(users));
             } else {
                 currentUser = users.find(u => u.email === email && u.pass === pass);
                 if (!currentUser) { alert("Credenziali non valide"); return; }
+                if (currentUser.freeTestsUsed === undefined) currentUser.freeTestsUsed = 0;
             }
 
             localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
@@ -611,6 +613,10 @@
         function renderSession() {
             const isPro = checkProAccess();
             document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
+
+            let freeLeft = Math.max(0, 3 - (currentUser.freeTestsUsed || 0));
+            let freeTextMsg = isPro ? '<span class="text-amber-300 font-bold">Account PRO Illimitato 👑</span>' : `Hai a disposizione <span class="font-bold underline">${freeLeft} test ufficiali gratuiti</span>`;
+            document.getElementById('free-passes-text').innerHTML = freeTextMsg;
 
             document.getElementById('user-menu').innerHTML = `
                 <span class="text-xs font-bold bg-white/20 px-2.5 sm:px-3 py-1.5 rounded-2xl truncate max-w-[120px] sm:max-w-none flex items-center">
@@ -661,7 +667,8 @@
 
         function checkProAccess() {
             if (!currentUser) return false;
-            if (currentUser.isPro && currentUser.proExpires) {
+            if (currentUser.isPro === true) return true;
+            if (currentUser.proExpires) {
                 const expireDate = new Date(currentUser.proExpires);
                 if (expireDate > new Date()) return true;
             }
@@ -678,7 +685,7 @@
 
         function redirectToStripeCheckout() {
             if (!currentUser) {
-                alert("Effettua l'accesso prima di procedere con l'abbonamento.");
+                alert("Effettua l'accesso prima di procedere.");
                 navigate('auth');
                 closePaywallModal();
                 return;
@@ -690,13 +697,10 @@
 
         function applyPromoCode() {
             const inputElement = document.getElementById('promo-code-input');
-            if (!inputElement) {
-                alert("Errore interno.");
-                return;
-            }
+            if (!inputElement) return;
             
             const code = inputElement.value.trim().toUpperCase();
-            const SECRET_PROMO_CODE = "TOLCLABPRO2026";
+            const SECRET_PROMO_CODE = "TOLCLABPRO2026"; // Il codice segreto noto solo a te
 
             if (code === SECRET_PROMO_CODE) {
                 if (!currentUser) {
@@ -706,11 +710,8 @@
                     return;
                 }
 
-                let expireDate = new Date();
-                expireDate.setDate(expireDate.getDate() + 30); // 30 giorni di PRO
-
+                // Sblocca la versione PRO illimitata
                 currentUser.isPro = true;
-                currentUser.proExpires = expireDate.toISOString();
 
                 localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
                 
@@ -722,19 +723,34 @@
                 }
 
                 closePaywallModal();
-                alert("🎉 Codice valido! Abbonamento PRO attivato per 30 giorni.");
+                alert("🎉 Codice valido! Versione PRO illimitata sbloccata con successo.");
                 renderSession();
                 inputElement.value = '';
             } else {
-                alert("❌ Codice non valido. Inserisci TOLCLABPRO2026.");
+                alert("❌ Codice non valido.");
                 inputElement.value = '';
             }
         }
 
         function startOfficialTest(tolcId) {
+            // Controlla se è PRO o se ha ancora pass gratuiti (max 3)
             if (!checkProAccess()) {
-                openPaywallModal();
-                return;
+                if (currentUser.freeTestsUsed < 3) {
+                    currentUser.freeTestsUsed++;
+                    localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+                    
+                    let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+                    let idx = users.findIndex(u => u.email === currentUser.email);
+                    if (idx !== -1) {
+                        users[idx] = currentUser;
+                        localStorage.setItem('tolclab_users', JSON.stringify(users));
+                    }
+                    
+                    alert(`Hai avviato un test ufficiale gratuito (${currentUser.freeTestsUsed}/3). Buon allenamento!`);
+                } else {
+                    openPaywallModal();
+                    return;
+                }
             }
 
             const config = officialTolcs.find(t => t.id === tolcId);
