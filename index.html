@@ -268,9 +268,9 @@
 
         const officialTolcs = [
             { 
-                id: 'SANITARIE', 
-                name: 'Professioni Sanitarie', 
-                category: 'Area Sanitaria', 
+                id: 'MEDICINA', 
+                name: 'Medicina & Odontoiatria', 
+                category: 'Area Medica', 
                 timeMinutes: 100, 
                 penalty: 0.40, 
                 correctPts: 1.5, 
@@ -283,18 +283,18 @@
                 ] 
             },
             { 
-                id: 'TOLC-PSI', 
-                name: 'TOLC-PSI (Psicologia)', 
-                category: 'Psicologia', 
-                timeMinutes: 85, 
-                penalty: 0.25, 
-                correctPts: 1.0, 
+                id: 'SANITARIE', 
+                name: 'Professioni Sanitarie', 
+                category: 'Area Sanitaria', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
                 structure: [
-                    {cat: 'Psicologia', count: 20}, 
-                    {cat: 'Logica', count: 10}, 
-                    {cat: 'Matematica', count: 10}, 
-                    {cat: 'Comprensione Verbale', count: 10}, 
-                    {cat: 'Inglese', count: 30}
+                    {cat: 'Biologia', count: 23}, 
+                    {cat: 'Chimica', count: 15}, 
+                    {cat: 'Fisica', count: 7}, 
+                    {cat: 'Matematica', count: 6}, 
+                    {cat: 'Logica', count: 9}
                 ] 
             },
             { 
@@ -340,6 +340,119 @@
                     {cat: 'Fisica', count: 7}, 
                     {cat: 'Logica', count: 6},
                     {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-PSI', 
+                name: 'TOLC-PSI (Psicologia)', 
+                category: 'Psicologia', 
+                timeMinutes: 85, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Psicologia', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Comprensione Verbale', count: 10}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU', 
+                name: 'TOLC-SU (Scienze Umanistiche)', 
+                category: 'Umanistica', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Conoscenze e Comprensione', count: 10}, 
+                    {cat: 'Logica', count: 10},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SPS', 
+                name: 'TOLC-SPS (Scienze Politiche e Sociali)', 
+                category: 'Sociale', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, 
+                    {cat: 'Logica', count: 20}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-S', 
+                name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', 
+                category: 'Scienze', 
+                timeMinutes: 115, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Matematica', count: 20}, 
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Scienze', count: 20},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-AV', 
+                name: 'TOLC-AV (Agraria & Veterinaria)', 
+                category: 'Agraria', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Biologia', count: 10}, 
+                    {cat: 'Chimica', count: 10}, 
+                    {cat: 'Matematica', count: 10}, 
+                    {cat: 'Fisica', count: 10}, 
+                    {cat: 'Logica', count: 6},
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-LP', 
+                name: 'TOLC-LP (Lauree Professionalizzanti)', 
+                category: 'Professionalizzante', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Matematica', count: 12}, 
+                    {cat: 'Logica', count: 12}, 
+                    {cat: 'Comprensione Verbale', count: 12}, 
+                    {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'ARCHITETTURA', 
+                name: 'Test Architettura / Ingegneria Edile', 
+                category: 'Design & Architettura', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                structure: [
+                    {cat: 'Logica', count: 10}, 
+                    {cat: 'Storia dell’Arte', count: 10}, 
+                    {cat: 'Disegno e Rappresentazione', count: 10}, 
+                    {cat: 'Matematica e Fisica', count: 10}
+                ] 
+            },
+            { 
+                id: 'FORMAZIONE-PRIMARIA', 
+                name: 'Scienze della Formazione Primaria', 
+                category: 'Formazione', 
+                timeMinutes: 150, 
+                penalty: 0.40, 
+                correctPts: 1.0, 
+                structure: [
+                    {cat: 'Competenza Linguistica e Logica', count: 40}, 
+                    {cat: 'Cultura Letteraria e Storico-Sociale', count: 20}, 
+                    {cat: 'Cultura Scientifico-Matematica', count: 20}
                 ] 
             }
         ];
