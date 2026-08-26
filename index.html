@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -450,24 +450,38 @@
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
-                if (!name) { alert("Inserisci il nome"); return; }
+                if (!name) { alert("Inserisci il nome e cognome"); return; }
+                
                 const { data, error } = await supabase.auth.signUp({
-                    email,
-                    password,
+                    email: email,
+                    password: password,
                     options: { data: { full_name: name } }
                 });
-                if (error) { alert("Errore registrazione: " + error.message); return; }
-                
-                // Inserimento manuale preventivo nel profilo Supabase se il trigger non è attivo
-                if (data.user) {
-                    await supabase.from('profiles').upsert([{ id: data.user.id, name: name, is_pro: false }]);
+
+                if (error) { 
+                    alert("Errore durante la registrazione: " + error.message); 
+                    return; 
                 }
 
-                alert("🎉 Registrazione completata con successo! Effettua l'accesso.");
+                if (data.user) {
+                    await supabase.from('profiles').upsert([
+                        { id: data.user.id, name: name, is_pro: false }
+                    ]);
+                }
+
+                alert("🎉 Registrazione completata con successo! Ora puoi effettuare l'accesso.");
                 toggleAuthMode();
             } else {
-                const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-                if (error) { alert("Errore di accesso: " + error.message); return; }
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+                if (error) { 
+                    alert("Credenziali non valide o email non confermata: " + error.message); 
+                    return; 
+                }
+
                 currentUser = data.user;
                 await fetchUserData();
                 navigate('dashboard');
