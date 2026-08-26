@@ -857,5 +857,28 @@
 
         window.onload = init;
     </script>
+    <!-- MODALE ABBONAMENTO PRO -->
+<div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    upgrade-modal-content
+    <div class="bg-white max-w-md w-full p-8 rounded-3xl shadow-2xl border border-slate-200 text-center space-y-6 relative animate-in fade-in zoom-in duration-200">
+        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="space-y-2">
+            <h3 class="text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
+            <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio dettagliato dei progressi.</p>
+        </div>
+        <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-6 rounded-2xl border border-indigo-100 space-y-2">
+            <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
+            <div class="text-3xl font-black text-indigo-900">€9.99<span class="text-xs font-bold text-slate-500"> / mese</span></div>
+            <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi.</p>
+        </div>
+        <div class="space-y-3">
+            <button onclick="simulateUpgradePayment()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Attiva Abbonamento (Simula Pagamento)</button>
+            <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
