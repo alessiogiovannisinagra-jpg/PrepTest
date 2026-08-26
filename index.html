@@ -6,15 +6,13 @@
     <title>TOLC LAB - Piattaforma Ufficiale di Simulazione Test</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Supabase JS Client Library -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         .gradient-bg { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
 
-    <!-- HEADER DELL'APPLICAZIONE (Visibile dopo il login) -->
+    <!-- HEADER DELL'APPLICAZIONE -->
     <header id="main-header" class="hidden gradient-bg text-white shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 py-3.5 sm:py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2.5 sm:space-x-3 cursor-pointer" onclick="navigate('dashboard')">
@@ -40,7 +38,7 @@
     <!-- MAIN CONTAINER -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col justify-center">
         
-        <!-- 1. SCHERMATA AUTENTICAZIONE (Login / Registrazione) -->
+        <!-- 1. SCHERMATA AUTENTICAZIONE -->
         <section id="view-auth" class="max-w-md mx-auto w-full bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 gradient-bg text-white rounded-2xl flex items-center justify-center mx-auto text-2xl shadow-md mb-2">
@@ -50,7 +48,6 @@
                 <p class="text-xs text-slate-500 font-medium">Gestisci le tue simulazioni e monitora i progressi.</p>
             </div>
 
-            <!-- Form di autenticazione -->
             <div class="space-y-4">
                 <div id="name-field" class="hidden space-y-1">
                     <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wide">Nome e Cognome</label>
@@ -224,11 +221,35 @@
         </div>
     </div>
 
-    <!-- SCRIPT DI CONFIGURAZIONE E LOGICA -->
+    <!-- SCRIPT CON CHIAMATE REST DIRETTE -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
         const SUPABASE_ANON_KEY = 'Sb_publishable_EFPKlGgQygnwxe6D6Yufmw_dqHQyEOD';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Funzione REST centralizzata
+        async function supabaseFetch(endpoint, method = 'GET', body = null, extraHeaders = {}) {
+            const headers = {
+                'apikey': SUPABASE_ANON_KEY,
+                'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                'Content-Type': 'application/json',
+                ...extraHeaders
+            };
+            const options = { method, headers };
+            if (body) options.body = JSON.stringify(body);
+
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/${endpoint}`, options);
+                if (!response.ok) {
+                    const err = await response.text();
+                    throw new Error(err || response.statusText);
+                }
+                const text = await response.text();
+                return text ? JSON.parse(text) : null;
+            } catch (error) {
+                console.error("Errore REST Supabase:", error);
+                throw error;
+            }
+        }
 
         let currentUser = null;
         let userProfile = null;
@@ -246,7 +267,6 @@
             { id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 110, penalty: 0.25, correctPts: 1.0, structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}] }
         ];
 
-        // FUNZIONE AGGIUNTA: Gestisce l'apertura e la chiusura della schermata di registrazione al click
         function toggleAuthMode() {
             isRegistering = !isRegistering;
             const nameField = document.getElementById('name-field');
@@ -277,20 +297,25 @@
                 return;
             }
 
-            if (isRegistering) {
-                if (!name) { alert("Inserisci nome e cognome."); return; }
-                const { error } = await supabase.from('utenti').insert([{ username: name, email: email, password_hash: password }]);
-                if (error) { alert("Errore durante la registrazione: " + error.message); return; }
-                alert("🎉 Registrazione completata! Ora puoi accedere.");
-                toggleAuthMode();
-            } else {
-                const { data, error } = await supabase.from('utenti').select('*').eq('email', email).maybeSingle();
-                if (error || !data) { alert("Utente non trovato o email errata."); return; }
-                if (data.password_hash !== password) { alert("Password errata!"); return; }
+            try {
+                if (isRegistering) {
+                    if (!name) { alert("Inserisci nome e cognome."); return; }
+                    await supabaseFetch('utenti', 'POST', { username: name, email: email, password_hash: password });
+                    alert("🎉 Registrazione completata! Ora puoi accedere.");
+                    toggleAuthMode();
+                } else {
+                    const data = await supabaseFetch(`utenti?email=eq.${encodeURIComponent(email)}&select=*`, 'GET');
+                    if (!data || data.length === 0) { alert("Utente non trovato o email errata."); return; }
+                    
+                    const user = data[0];
+                    if (user.password_hash !== password) { alert("Password errata!"); return; }
 
-                currentUser = data;
-                sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
-                await enterApp();
+                    currentUser = user;
+                    sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
+                    await enterApp();
+                }
+            } catch (err) {
+                alert("Errore di autenticazione: " + err.message);
             }
         }
 
@@ -305,11 +330,17 @@
 
         async function fetchUserData() {
             if (!currentUser) return;
-            let { data } = await supabase.from('utenti').select('*').eq('id', currentUser.id).single();
-            if (data) userProfile = { name: data.username, is_pro: data.is_pro, pro_expires: data.pro_expires };
+            try {
+                const data = await supabaseFetch(`utenti?id=eq.${currentUser.id}&select=*`, 'GET');
+                if (data && data.length > 0) {
+                    userProfile = { name: data[0].username, is_pro: data[0].is_pro, pro_expires: data[0].pro_expires };
+                }
 
-            let { data: hist } = await supabase.from('user_history').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
-            userHistory = hist || [];
+                const hist = await supabaseFetch(`user_history?user_id=eq.${currentUser.id}&order=created_at.desc&select=*`, 'GET');
+                userHistory = hist || [];
+            } catch (e) {
+                console.error("Errore recupero dati utente:", e);
+            }
             
             const isPro = checkProAccess();
             document.getElementById('user-pro-badge').classList.toggle('hidden', !isPro);
@@ -378,11 +409,15 @@
             if (code === "TOLCLABPRO2026") {
                 let expire = new Date();
                 expire.setDate(expire.getDate() + 30);
-                await supabase.from('utenti').update({ is_pro: true, pro_expires: expire.toISOString() }).eq('id', currentUser.id);
-                userProfile.is_pro = true;
-                closePaywallModal();
-                alert("🎉 PRO Attivato per 30 giorni.");
-                fetchUserData();
+                try {
+                    await supabaseFetch(`utenti?id=eq.${currentUser.id}`, 'PATCH', { is_pro: true, pro_expires: expire.toISOString() }, { 'Prefer': 'return=minimal' });
+                    userProfile.is_pro = true;
+                    closePaywallModal();
+                    alert("🎉 PRO Attivato per 30 giorni.");
+                    fetchUserData();
+                } catch(e) {
+                    alert("Errore attivazione PRO");
+                }
             } else {
                 alert("❌ Codice non valido.");
             }
@@ -495,13 +530,17 @@
             document.getElementById('result-score').innerText = score;
             document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
 
-            await supabase.from('user_history').insert([{
-                user_id: currentUser.id,
-                title: currentTest.title,
-                score: score,
-                date: new Date().toLocaleDateString(),
-                test_data: { questions: currentTest.questions, userAnswers: [...userAnswers] }
-            }]);
+            try {
+                await supabaseFetch('user_history', 'POST', {
+                    user_id: currentUser.id,
+                    title: currentTest.title,
+                    score: score,
+                    date: new Date().toLocaleDateString(),
+                    test_data: { questions: currentTest.questions, userAnswers: [...userAnswers] }
+                }, { 'Prefer': 'return=minimal' });
+            } catch(e) {
+                console.error("Errore salvataggio storico:", e);
+            }
 
             await fetchUserData();
             navigate('results');
