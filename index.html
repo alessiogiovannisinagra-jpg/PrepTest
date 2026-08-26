@@ -92,16 +92,16 @@
                 </div>
             </div>
 
-            <!-- Stats Overview -->
+            <!-- Stats Overview (Cliccabili per Storico / Ore di Studio) -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                <div onclick="navigate('stats')" class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4 cursor-pointer hover:border-indigo-500 transition">
                     <div class="bg-blue-50 text-blue-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-file-lines"></i></div>
                     <div>
                         <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Test Svolti</p>
                         <h3 class="text-xl sm:text-2xl font-black text-slate-800" id="stat-completed">0</h3>
                     </div>
                 </div>
-                <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4">
+                <div onclick="navigate('stats')" class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4 cursor-pointer hover:border-emerald-500 transition">
                     <div class="bg-emerald-50 text-emerald-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-bullseye"></i></div>
                     <div>
                         <p class="text-[11px] text-slate-400 font-bold uppercase tracking-wider">Media Punteggi</p>
@@ -252,7 +252,10 @@
                     <h3 class="text-lg sm:text-xl font-black text-slate-900">Storico e Statistiche</h3>
                     <p class="text-xs text-slate-500 font-medium">I tuoi progressi e test salvati nel tempo.</p>
                 </div>
-                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <button onclick="startReviewErrorsTest()" class="text-xs bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-4 py-2.5 rounded-xl transition flex-1 sm:flex-initial text-center"><i class="fa-solid fa-rotate-right mr-1.5"></i> Rivedi Errori</button>
+                    <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition flex-1 sm:flex-initial text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+                </div>
             </div>
             <div class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200">
                 <div id="history-container" class="divide-y divide-slate-100">
@@ -766,6 +769,31 @@
             });
 
             currentTest = { title: `TOLC Personalizzato`, correctPts: 1.0, penalty: penaltyVal, questions: allQuestions };
+            setupTestSession();
+        }
+
+        function startReviewErrorsTest() {
+            let errorQuestions = [];
+            userHistory.forEach(h => {
+                if (h.test_data && h.test_data.questions && h.test_data.userAnswers) {
+                    h.test_data.questions.forEach((q, qIdx) => {
+                        const userAns = h.test_data.userAnswers[qIdx];
+                        if (userAns !== q.correct) {
+                            errorQuestions.push(q);
+                        }
+                    });
+                }
+            });
+
+            if (errorQuestions.length === 0) {
+                alert("Non ci sono errori registrati nei tuoi test precedenti!");
+                return;
+            }
+
+            // Rimuove eventuali duplicati e mescola
+            errorQuestions = [...new Set(errorQuestions)].sort(() => Math.random() - 0.5);
+
+            currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, questions: errorQuestions };
             setupTestSession();
         }
 
