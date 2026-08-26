@@ -440,21 +440,37 @@
             `).join('');
         }
 
+        // Funzione sicura al 100% per alternare la schermata di Accesso e Registrazione
         function toggleAuthMode() {
             const nameFieldDiv = document.getElementById('name-field');
-            const isHidden = nameFieldDiv.classList.toggle('hidden');
-            
-            document.getElementById('auth-title').innerText = !isHidden ? "Crea un account" : "Accesso Area Studio";
-            document.getElementById('auth-submit-btn').innerText = !isHidden ? "Registrati" : "Accedi";
-            document.getElementById('auth-switch-text').innerHTML = !isHidden 
-                ? `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`
-                : `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+            const authTitle = document.getElementById('auth-title');
+            const authSubmitBtn = document.getElementById('auth-submit-btn');
+            const authSwitchText = document.getElementById('auth-switch-text');
+
+            if (!nameFieldDiv) return;
+
+            const isHidden = nameFieldDiv.classList.contains('hidden');
+
+            if (isHidden) {
+                // Passa a Registrazione
+                nameFieldDiv.classList.remove('hidden');
+                document.getElementById('auth-name').required = true;
+                authTitle.innerText = "Crea un account";
+                authSubmitBtn.innerText = "Registrati";
+                authSwitchText.innerHTML = `Hai già un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Accedi</button>`;
+            } else {
+                // Passa a Login
+                nameFieldDiv.classList.add('hidden');
+                document.getElementById('auth-name').required = false;
+                authTitle.innerText = "Accesso Area Studio";
+                authSubmitBtn.innerText = "Accedi";
+                authSwitchText.innerHTML = `Non hai un account? <button type="button" onclick="toggleAuthMode()" class="text-indigo-600 font-bold hover:underline">Registrati gratis</button>`;
+            }
         }
 
-        // Funzione di Login e Registrazione unificata e robusta
+        // Gestione unificata e blindata di Login / Registrazione
         async function handleAuth(e) {
             e.preventDefault();
-            console.log("Inizio processo di autenticazione...");
 
             const emailField = document.getElementById('auth-email').value.trim();
             const passwordField = document.getElementById('auth-password').value;
@@ -462,13 +478,11 @@
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
             if (isReg) {
-                // Registrazione
                 if (!nameField) { 
                     alert("Inserisci il nome e cognome"); 
                     return; 
                 }
                 
-                console.log("Tentativo di registrazione per:", emailField);
                 const { error } = await supabase
                     .from('utenti')
                     .insert([{ 
@@ -481,7 +495,6 @@
 
                 if (error) { 
                     alert("Errore durante la registrazione (forse l'email è già in uso?): " + error.message); 
-                    console.error(error);
                     return; 
                 }
 
@@ -489,8 +502,6 @@
                 toggleAuthMode();
                 document.getElementById('auth-form').reset();
             } else {
-                // Login
-                console.log("Tentativo di login per:", emailField);
                 const { data, error } = await supabase
                     .from('utenti')
                     .select('*')
@@ -499,12 +510,11 @@
 
                 if (error) {
                     alert("Errore di connessione al database: " + error.message);
-                    console.error(error);
                     return;
                 }
 
                 if (!data) {
-                    alert("⚠️ Nessun account associato a questa email. Clicca su 'Registrati gratis' per crearne uno in pochi secondi!");
+                    alert("⚠️ Nessun account associato a questa email. Clicca su 'Registrati gratis' qui sotto per crearne uno!");
                     return;
                 }
 
@@ -519,7 +529,6 @@
                     return;
                 }
 
-                console.log("Login riuscito per l'utente:", data.username);
                 currentUser = data;
                 sessionStorage.setItem('tolc_user', JSON.stringify(currentUser));
                 await fetchUserData();
