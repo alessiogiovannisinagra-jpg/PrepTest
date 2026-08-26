@@ -779,7 +779,7 @@
             "text": "Qual è l'area del settore circolare di raggio R e angolo al centro di 90 gradi (π/2 radianti)?",
             "opts": ["(π * R²) / 4", "(π * R²) / 2", "π * R²", "2 * π * R"],
             "correct": 0
-        },
+        }
     ],
         "Scienze": [
         {
