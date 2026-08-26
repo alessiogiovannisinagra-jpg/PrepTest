@@ -856,6 +856,59 @@
         }
 
         window.onload = init;
+        function checkProAccess() {
+    if (!currentUser) return false;
+    
+    // Controlla se ha l'abbonamento attivo e non scaduto
+    if (currentUser.isPro && currentUser.proExpires) {
+        const expireDate = new Date(currentUser.proExpires);
+        if (expireDate > new Date()) {
+            return true; // Abbonamento valido
+        }
+    }
+    return false; // Abbonamento scaduto o inesistente
+}
+
+// Modifica la funzione startOfficialTest inserendo il blocco abbonamento:
+function startOfficialTest(tolcId) {
+    // BLOCCO PAYWALL: Se non è PRO, mostra il modale
+    if (!checkProAccess()) {
+        document.getElementById('modal-paywall').classList.remove('hidden');
+        return;
+    }
+
+    const config = officialTolcs.find(t => t.id === tolcId);
+    if (!config) return;
+    // ... resto della funzione di avvio test ufficiale ...
+}
+
+function closePaywallModal() {
+    document.getElementById('modal-paywall').classList.add('hidden');
+}
+
+// Funzione che simula l'acquisto dell'abbonamento mensile (es. Stripe / PayPal fittizio)
+function simulateUpgradePayment() {
+    // Imposta la scadenza a 30 giorni da oggi
+    let expireDate = new Date();
+    expireDate.setDate(expireDate.getDate() + 30);
+
+    currentUser.isPro = true;
+    currentUser.proExpires = expireDate.toISOString();
+
+    // Salva sul localStorage e sul database utenti
+    localStorage.setItem('tolclab_user', JSON.stringify(currentUser));
+    let users = JSON.parse(localStorage.getItem('tolclab_users')) || [];
+    let idx = users.findIndex(u => u.email === currentUser.email);
+    if (idx !== -1) {
+        users[idx] = currentUser;
+        localStorage.setItem('tolclab_users', JSON.stringify(users));
+    }
+
+    closePaywallModal();
+    alert("Congratulazioni! Abbonamento PRO attivato con successo per 30 giorni.");
+    renderSession();
+}
+
     </script>
     <!-- MODALE ABBONAMENTO PRO -->
 <div id="modal-paywall" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
