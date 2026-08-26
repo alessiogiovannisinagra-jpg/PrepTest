@@ -10,6 +10,231 @@
             "opts": ["A evitare ambiguità nella rappresentazione della profondità e completare le viste ortogonali (pianta, prospetto, fianco)", "A calcolare l'area superficiale del pezzo", "A eliminare la necessità delle sezioni", "A convertire il disegno in formato 3D vettoriale"],
             "correct": 0
         },
+                {
+            "text": "Come si rappresenta un ingranaggio cilindrico a denti dritti nei disegni d'insieme unificati?",
+            "opts": ["Con una linea continua grossa per la circonferenza di testa e una linea mista (tratto e punto) per la circonferenza primitiva", "Disegnando singolarmente ogni singolo dente in 3D dettagliato", "Con un tratteggio fitto a retino romboidale", "Utilizzando esclusivamente una linea tratteggiata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica la designazione 'M20 x 1.5' in una filettatura metrica indicata su un disegno costruttivo?",
+            "opts": ["Filettatura metrica a profilo triangolare normalizzato, diametro nominale 20 mm e passo fine di 1.5 mm", "Filettatura con diametro di 1.5 mm e lunghezza 20 metri", "Filettatura Whitworth in pollici con tolleranza di 20 micron", "Diametro del foro di nocciolo pari a 20.15 mm"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la differenza fondamentale tra una filettatura a 'passo grosso' e una a 'passo fine' a parità di diametro nominale?",
+            "opts": ["Il passo fine ha un'altezza di spira minore e un numero maggiore di filetti per unità di lunghezza, offrendo maggiore resistenza allo svitamento sotto vibrazioni", "Il passo fine è utilizzato esclusivamente per tubi idraulici in plastica", "Il passo grosso è vietato dalle normative UNI correnti", "Non c'è alcuna differenza meccanica funzionale"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'tolleranza dimensionale' in un disegno meccanico?",
+            "opts": ["La differenza ammessa tra la dimensione massima e la dimensione minima tollerata (scostamento tra i limiti ammissibili)", "La tolleranza sul peso specifico del materiale", "L'errore massimo di stampa del foglio CAD", "Il costo di tolleranza di produzione del pezzo"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce lo 'scostamento superiore' in un sistema di tolleranze dimensionali per un albero?",
+            "opts": ["La differenza algebrica tra la dimensione limite massima e la dimensione nominale", "La differenza tra la dimensione minima e lo zero assoluto", "Il valore massimo della rugosità superficiale", "La distanza tra l'asse dell'albero e il piano di riscontro"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema ISO, come viene identificata una tolleranza standard (grado di precisione, es. IT6, IT7, IT8)?",
+            "opts": ["Con la sigla 'IT' (International Tolerance) seguita da un numero progressivo che indica la qualità della lavorazione", "Con una lettera alfabetica maiuscola da A a Z", "Con la percentuale di errore tollerata sul volume", "Con il codice fiscale del responsabile di officina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di saldatura viene comunemente indicata nei disegni tecnici mediante specifici simboli unificati (freccia e linea di riferimento)?",
+            "opts": ["Saldatura a🔌 elettrodo rivestito, MIG/MAG, TIG o a resistenza", "Saldatura chimica con colle epossidiche", "Unione meccanica a freddo con rivetti in rame", "Giunzione a incastro in legno compensato"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica il simbolo grafico di una 'freccia con linea spezzata' associata a una saldatura nei disegni costruttivi?",
+            "opts": ["Che la linea di riferimento punta direttamente sulla faccia del giunto da saldare secondo le specifiche normative UNI EN ISO 2553", "Che la saldatura è difettosa e da rifare", "Che il pezzo non deve essere saldato", "Che la temperatura di fusione è superiore a 3000 gradi"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, data una retta e un punto esterno a essa, come si determina il piano passante per il punto e ortogonale alla retta?",
+            "opts": ["Conducendo dal punto le proiezioni ortogonali delle rette perpendicolari alle proiezioni omonime della retta data", "Tracciando un cerchio di raggio infinito", "Intersecando la retta con l'asse di terra", "Moltiplicando le coordinate cartesiane per due"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'intersezione di una superficie conica con un piano secante parallelo a una sola generatrice'?",
+            "opts": ["Una parabola", "Un'ellisse chiusa", "Un'iperbole a due rami", "Una circonferenza perfetta"],
+            "correct": 0
+        },
+        {
+            "text": "Quale curva geometrica si ottiene intersecando una superficie cilindrica retta con un piano obliquo rispetto all'asse che taglia tutte le generatrici?",
+            "opts": ["Un'ellisse", "Una parabola", "Una retta parallela", "Una linea spezzata"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della rappresentazione di un assieme meccanico, cosa significa l'operazione di 'esploso' (disegno esploso)?",
+            "opts": ["La rappresentazione tridimensionale in cui i componenti del gruppo sono distanziati lungo gli assi di montaggio per evidenziare la sequenza di assemblaggio", "La distruzione fisica del prototipo in laboratorio", "Il calcolo della pressione di scoppio del serbatoio", "Una simulazione termica agli elementi finiti"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo delle 'linee sottili a tratto e punto' doppie utilizzate in alcuni disegni di assieme?",
+            "opts": ["Indicare i contorni di pezzi adiacenti o le posizioni limite di parti mobili", "Delimitare l'area di stampa del plotter", "Segnare il percorso dei tubi dell'acqua", "Rappresentare gli assi di simmetria principali"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un foro cieco filettato nelle viste ortogonali?",
+            "opts": ["Indicando con due profondità distinte la fine del foro di fondo (punta elicoidale della sega) e la profondità utile della filettatura", "Disegnando il foro passante da parte a parte", "Utilizzando una linea continua grossa per tutto il percorso", "Omettendo la quota della profondità"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'parallelismo' applicata a una superficie rispetto a un piano di riferimento (datum)?",
+            "opts": ["Che la superficie considerata deve trovarsi compresa tra due piani paralleli distanti t e orientati parallelamente al piano di riferimento", "Che i due piani devono intersecarsi a 90 gradi", "Che la rugosità superficiale è nulla", "Che lo spessore del materiale è costante ovunque"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, come si rappresenta la traccia di un piano parallelo al Piano Orizzontale (PO)?",
+            "opts": ["Il piano possiede solo la traccia verticale sul PV, mentre la traccia orizzontale è impropria (all'infinito)", "Possiede entrambe le tracce parallele all'asse di terra", "Le tracce coincidono con l'origine degli assi", "Il piano non ha alcuna rappresentazione geometrica"],
+            "correct": 0
+        },
+        {
+            "text": "Quale comando o funzione nei moderni software CAD 3D parametrico corrisponde al concetto di 'rivoluzione' di un profilo 2D?",
+            "opts": ["Revolve (o Rivoluzione di un profilo attorno a un asse centrale)", "Extrude (Estrusione lineare)", "Loft (Unione di sezioni)", "Fillet (Raccordo di spigoli)"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'estrusione' nella modellazione solida parametrica?",
+            "opts": ["La generazione di un volume solido muovendo una sezione piana bidimensionale lungo una direzione ortogonale al piano del profilo", "La rotazione del profilo attorno a un punto focale", "Il taglio superficiale laser del metallo", "La compressione plastica a caldo di una barra"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è la funzione del 'raccordo' (arrotondamento degli spigoli vivi interni ed esterni) in un componente meccanico progettato?",
+            "opts": ["Evitare l'innesco di tensioni concentrate (tension concentrations) e prevenire la rottura a fatica del materiale", "Migliorare esclusivamente l'aspetto estetico commerciale del pezzo", "Ridurre il peso complessivo del componente del 50%", "Aumentare la rugosità superficiale dell'acciaio"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di carpenteria metallica, come vengono rappresentati i profilati normalizzati (es. travi a doppio T o profilati a U)?",
+            "opts": ["Mediante tabelle di designazione normalizzata e viste semplificate in scala secondo le norme UNI EN", "Disegnando a mano libera ogni singola imperfezione di laminazione", "Con linee tratteggiate di colore blu", "Utilizzando esclusivamente schemi elettrici di flusso"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa rappresenta la sigla 'H7/g6' in un accoppiamento albero-foro?",
+            "opts": ["Un accoppiamento con gioco raccomandato dal sistema ISO (foro con tolleranza fondamentale H7 e albero g6)", "Un accoppiamento con interferenza forzata a caldo", "Una filettatura metrica di precisione estrema", "La classe di resistenza a trazione dell'acciaio legato"],
+            "correct": 0
+        },
+        {
+            "text": "Nel sistema ISO dei fori base, qual è la caratteristica della lettera maiuscola 'H' associata alla tolleranza del foro?",
+            "opts": ["Lo scostamento inferiore è pari a zero, per cui la zona di tolleranza si estende interamente verso i valori positivi (sopra la linea nominale)", "Lo scostamento superiore è sempre negativo", "Il foro ha diametro fisso senza alcuna tolleranza", "Il foro è filettato a passo metrico fine"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipo di sezione viene impiegata per rappresentare oggetti simmetrici di grandi dimensioni risparmiando spazio sul foglio?",
+            "opts": ["La semisezione (o mezza sezione)", "La sezione ribaltata in loco", "La sezione con piani paralleli successivi", "La vista ausiliaria ribaltata"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, qual è la posizione della proiezione di un punto appartenente alla prima bisettrice dei quadranti (1° e 3°)?",
+            "opts": ["La prima e la seconda proiezione del punto sono equidistanti dall'asse di terra e si trovano in posizioni opposte rispetto ad esso", "Le proiezioni coincidono perfettamente sull'asse di terra", "La proiezione sul PV si trova sempre all'infinito", "Il punto non appartiene allo spazio tridimensionale"],
+            "correct": 0
+        },
+        {
+            "text": "Come si definisce una superficie rigata?",
+            "opts": ["Una superficie generata dal movimento continuo di una linea retta (generatrice) nello spazio", "Una superficie ottenuta esclusivamente per rotazione di cerchi perfetti", "Un piano geometrico perfettamente liscio senza asperità", "Una superficie sferica cava"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tra le seguenti è una superficie rigata non sviluppabile?",
+            "opts": ["Un iperboloide a una falda o un cono obliquo complesso (in generale superfici a doppia curvatura o coniche non sviluppabili)", "Un cilindro retto", "Un cono circolare retto", "Un piano inclinato"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'quota funzionale d'accoppiamento'?",
+            "opts": ["Una quota che condiziona direttamente il montaggio e il corretto funzionamento cinematico di due organi in contatto", "Una quota di puro cartiglio amministrativo", "La quota del peso totale in grammi del componente", "La quota stimata per il magazzino ricambi"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della rappresentazione grafica, cosa indica l'acronimo 'UNI'?",
+            "opts": ["Ente Nazionale Italiano di Unificazione", "Unione Navale Italiana", "Unificazione Numerica Industriale", "Ufficio Normative Internazionali"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è lo scopo dell'impiego dei 'simboli di finitura superficiale' estesi secondo le norme ISO 1302?",
+            "opts": ["Specificare chiaramente i requisiti di lavorazione e rugosità di una faccia meccanica lavorata", "Indicare il colore della vernice protettiva anticorrosione", "Definire la marca commerciale dell'utensile di tornitura", "Stabilire la durezza Rockwell dell'acciaio"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta l'intersezione tra due cilindri ortogonali di ugual diametro nelle viste ortogonali?",
+            "opts": ["Con linee curve che formano una sorta di 'sella di cavallo' (intersezione geometrica spaziale)", "Con una linea retta diagonale a 45 gradi", "Eliminando il punto di contatto", "Con un cerchio perfetto tracciato al centro"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, cosa rappresenta l'asse di terra (LT)?",
+            "opts": ["La retta d'intersezione tra il Piano Orizzontale (PO) e il Piano Verticale (PV)", "Il bordo inferiore fisico del foglio da disegno A4", "L'asse di simmetria longitudinale del pezzo meccanico", "La linea di riferimento per il calcolo delle scale di riduzione"],
+            "correct": 0
+        },
+        {
+            "text": "Quale tipologia di proiezione viene impiegata nei disegni tecnici industriali per garantire che le dimensioni misurate sul disegno siano direttamente proporzionali alla realtà senza distorsioni prospettiche?",
+            "opts": ["Proiezioni parallele ortogonali o assonometriche", "Prospettiva centrale a tre punti di fuga", "Prospettiva accidentale grandangolare", "Proiezione conica convergente"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'asimmetria' nella rappresentazione di un dettaglio in sezione?",
+            "opts": ["Una configurazione in cui la parte destra e la parte sinistra dell'oggetto non sono speculari, impedendo l'uso della semisezione simmetrica", "Un errore di esecuzione del disegno CAD", "L'uso di una scala di riduzione errata", "La mancanza delle linee di asse"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il formato di file standard universale utilizzato per l'interscambio di modelli geometrici 3D solidi destinati alla stampa o alla prototipazione rapida?",
+            "opts": ["Formato STL o STEP", "Formato di testo TXT", "Formato bitmap PNG", "Formato audio MP3"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa indica una tolleranza geometrica di 'perpendicolarità' tra due piani?",
+            "opts": ["Che il piano considerato deve trovarsi compreso tra due piani paralleli distanti t e orientati ortogonalmente al piano di riferimento", "Che i due piani formano un angolo esatto di 180 gradi", "Che la rugosità è inferiore a 0.1 micron", "Che non esiste alcun vincolo di orientamento"],
+            "correct": 0
+        },
+        {
+            "text": "Nel metodo di Monge, come si comporta la proiezione di una retta perpendicolare al Piano Orizzontale (PO)?",
+            "opts": ["La sua proiezione sul PO è un punto, mentre la proiezione sul PV è un segmento parallelo alle linee di richiamo verticali", "La proiezione sul PV è un punto", "Entrambe le proiezioni sono orizzontali", "La retta non può essere tracciata"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa sono le 'quote di coordinata' in un disegno meccanico di precisione?",
+            "opts": ["Quote riferite a un sistema di assi cartesiani locali o globali stabilito sul pezzo, ideali per centri di lavoro a controllo numerico (CNC)", "Quote inserite a caso lungo i bordi", "Quote relative unicamente al costo orario della macchina", "Le coordinate geografiche dell'officina"],
+            "correct": 0
+        },
+        {
+            "text": "Quale linea si utilizza per delimitare una vista parziale o locale interrotta da uno strappo?",
+            "opts": ["Linea sottile continua a mano libera o con zig-zag", "Linea grossa continua", "Linea mista a tratti", "Linea tratteggiata fitta"],
+            "correct": 0
+        },
+        {
+            "text": "Nel disegno di macchine, qual è la funzione principale di una copiglia o di un coprigiunto elastico inserito in un perno?",
+            "opts": ["Impedire lo sfilamento accidentale assiale di perni o dadi sottoposti a vibrazioni", "Trasmettere la potenza motrice principale", "Sigillare hermeticamente i fluidi in pressione", "Ridurre l'attrito radiale dell'albero"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa si intende per 'sviluppo geometrico di un tronco di cono retto'?",
+            "opts": ["Una porzione di corona circolare ottenuta sottraendo lo sviluppo del conetto superiore troncato dal cono intero", "Un rettangolo perfetto", "Un triangolo equilatero", "Una superficie sferica piana"],
+            "correct": 0
+        },
+        {
+            "text": "Quale norma ISO definisce i principi generali di quotatura e tolleramento nei disegni tecnici industriali?",
+            "opts": ["ISO 129", "ISO 9001", "ISO 14001", "ISO/IEC 27001"],
+            "correct": 0
+        },
+        {
+            "text": "Come si rappresenta un foro lamato (foro con un allargamento cilindrico superiore per alloggiare la testa di una vite a brugola) nelle viste ortogonali?",
+            "opts": ["Con due diametri concentrici nella vista dall'alto e con il profilo a gradino nella sezione o vista frontale", "Disegnando un unico foro cilindrico semplice", "Utilizzando una linea tratteggiata obliqua", "Omettendo la rappresentazione dell'allargamento"],
+            "correct": 0
+        },
+        {
+            "text": "Nel contesto della geometria descrittiva, cosa si intende per 'ribaltamento di un punto' appartenente a un piano inclinato?",
+            "opts": ["La determinazione della posizione del punto sul piano di proiezione dopo aver ruotato il piano giacitura fino a farlo sovrapporre al piano principale", "La cancellazione del punto dal foglio", "Il calcolo della velocità del punto nello spazio", "La proiezione ortogonale sul piano laterale"],
+            "correct": 0
+        },
+        {
+            "text": "Qual è il vantaggio principale di una piattaforma EdTech come TOLC LAB basata su web app rispetto ai vecchi corsi in presenza?",
+            "opts": ["Accessibilità h24 da qualsiasi dispositivo, autonomia totale dello studente, tracciamento analitico dei progressi e zero costi logistici", "L'obbligo di frequentare aule fisiche con orari rigidi", "Il pagamento anticipato obbligatorio di quote annuali elevate", "L'impossibilità di aggiornare i contenuti didattici"],
+            "correct": 0
+        },
+        {
+            "text": "Cosa garantisce l'architettura tecnica di TOLC LAB in termini di persistenza e sicurezza dei dati dello studente?",
+            "opts": ["L'uso combinato del `localStorage` del browser per la continuità offline/refresh e la sincronizzazione della banca dati tramite file JSON strutturati", "L'archiviazione dei dati su server cartacei fisici", "L'invio obbligatorio delle credenziali via email", "La cancellazione automatica di ogni storico a ogni chiusura di scheda"],
+            "correct": 0
+        },
         {
             "text": "Come si definisce un'assonometria ortogonale in cui i tre coefficienti di riduzione sugli assi sono uguali e gli angoli tra gli assi sono di 120°?",
             "opts": ["Assonometria isometrica", "Assonometria cavaliera", "Assonometria dimetrica", "Assonometria trimetrica"],
