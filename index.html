@@ -221,10 +221,10 @@
         </div>
     </div>
 
-    <!-- SCRIPT CON CHIAMATE REST DIRETTE -->
+    <!-- SCRIPT CON CHIAMATE REST DIRETTE E CHIAVE ANON CORRETTA -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
-        const SUPABASE_ANON_KEY = 'Sb_publishable_EFPKlGgQygnwxe6D6Yufmw_dqHQyEOD';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
 
         // Funzione REST centralizzata
         async function supabaseFetch(endpoint, method = 'GET', body = null, extraHeaders = {}) {
