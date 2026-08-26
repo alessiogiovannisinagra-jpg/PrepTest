@@ -449,6 +449,8 @@
             const name = document.getElementById('auth-name').value.trim();
             const isReg = !document.getElementById('name-field').classList.contains('hidden');
 
+            console.log("Tentativo di:", isReg ? "Registrazione" : "Login", "con email:", email);
+
             if (isReg) {
                 if (!name) { alert("Inserisci il nome e cognome"); return; }
                 
@@ -458,15 +460,18 @@
                     options: { data: { full_name: name } }
                 });
 
+                console.log("Risposta Supabase SignUp:", data, error);
+
                 if (error) { 
                     alert("Errore durante la registrazione: " + error.message); 
                     return; 
                 }
 
                 if (data.user) {
-                    await supabase.from('profiles').upsert([
+                    const { error: profileError } = await supabase.from('profiles').upsert([
                         { id: data.user.id, name: name, is_pro: false }
                     ]);
+                    if (profileError) console.error("Errore profilo:", profileError.message);
                 }
 
                 alert("🎉 Registrazione completata con successo! Ora puoi effettuare l'accesso.");
@@ -476,6 +481,8 @@
                     email: email,
                     password: password
                 });
+
+                console.log("Risposta Supabase Login:", data, error);
 
                 if (error) { 
                     alert("Credenziali non valide o email non confermata: " + error.message); 
