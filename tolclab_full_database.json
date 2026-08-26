@@ -1,4 +1,5 @@
-    "Disegno e Rappresentazione": [
+{
+        "Disegno e Rappresentazione": [
         {
             "text": "Nel metodo delle proiezioni ortogonali di Gaspard Monge, quali sono i due piani di proiezione principali ortogonali tra loro?",
             "opts": ["Piano Orizzontale (PO) e Piano Verticale (PV)", "Piano Cartesiano e Piano Polare", "Piano Assonometrico e Piano Quotato", "Piano di Sezione e Piano di Ribaltamento"],
