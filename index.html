@@ -714,7 +714,7 @@
             userAnswers = new Array(currentTest.module1.length).fill(null);
             seconds = 0;
             navigate('runner');
-            document.getElementById('runner-module-tag').innerText = "Modulo 1 (Materie Principali)";
+            document.getElementById('runner-module-tag').innerText = currentTest.isCustom ? "Test Personalizzato" : "Modulo 1 (Materie Principali)";
             loadQ();
             startTimer();
         }
@@ -746,7 +746,18 @@
             `).join('');
 
             document.getElementById('prev-btn').disabled = currentIdx === 0;
-            document.getElementById('next-btn').innerText = currentIdx === currentQuestions.length - 1 ? (activeModule === 1 ? 'Passa al Modulo Inglese' : 'Termina Prova') : 'Avanti';
+            
+            // Gestione etichetta pulsante "Avanti" / "Termina Test"
+            const isLastQuestion = currentIdx === currentQuestions.length - 1;
+            let nextBtnText = 'Avanti';
+            if (isLastQuestion) {
+                if (currentTest.isCustom) {
+                    nextBtnText = 'Termina Test';
+                } else {
+                    nextBtnText = activeModule === 1 ? 'Passa al Modulo Inglese' : 'Termina Prova';
+                }
+            }
+            document.getElementById('next-btn').innerText = nextBtnText;
         }
 
         function prevQuestion() { if (currentIdx > 0) { currentIdx--; loadQ(); } }
