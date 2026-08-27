@@ -93,7 +93,7 @@
                 </div>
             </div>
 
-            <!-- Stats Overview (Test Svolti porta allo Storico) -->
+            <!-- Stats Overview -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div onclick="navigate('stats')" class="bg-white p-5 sm:p-6 rounded-3xl shadow-sm border border-slate-200/80 flex items-center space-x-4 cursor-pointer hover:border-indigo-500 transition">
                     <div class="bg-blue-50 text-blue-600 p-3.5 sm:p-4 rounded-2xl text-lg sm:text-xl shadow-sm"><i class="fa-solid fa-file-lines"></i></div>
@@ -118,8 +118,8 @@
                 </div>
             </div>
 
-            <!-- Hub Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+            <!-- Hub Cards (Aggiornato a 3 colonne con Area Studio) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
                         <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
@@ -136,6 +136,15 @@
                         <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta il numero di quesiti e decidi la penalità.</p>
                     </div>
                     <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 transition text-xs shadow-md shadow-violet-500/20">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-blue-500 transition group">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-book-open"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">Area Studio & Formule</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Formulari rapidi e concetti chiave per ripassare la teoria al volo.</p>
+                    </div>
+                    <button onclick="navigate('study-hub')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-2xl hover:bg-blue-700 transition text-xs shadow-md shadow-blue-500/20">Apri Studio <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
             </div>
         </section>
@@ -692,7 +701,6 @@
 
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
-            // Aggiunto 'study-hub' nell'array delle viste gestite dal router
             ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
             });
