@@ -120,6 +120,34 @@
                 </div>
             </div>
 
+            <!-- WIDGET SCADENZE IN DASHBOARD -->
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4">
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-2.5">
+                        <div class="w-9 h-9 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center text-base shadow-sm"><i class="fa-solid fa-bell"></i></div>
+                        <h3 class="text-base font-black text-slate-900">Scadenze & Bandi in Evidenza</h3>
+                    </div>
+                    <button onclick="navigate('news-hub')" class="text-xs text-indigo-600 font-bold hover:underline flex items-center">Vedi tutte <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1.5">
+                        <div class="flex justify-between items-center text-[10px] font-black uppercase"><span class="text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded">CISIA</span><span class="text-slate-400">Settembre 2026</span></div>
+                        <h4 class="text-xs font-black text-slate-900">Sessioni Autunnali TOLC</h4>
+                        <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Iscrizioni aperte per le sessioni di recupero e test d'accesso autunnali.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1.5">
+                        <div class="flex justify-between items-center text-[10px] font-black uppercase"><span class="text-amber-600 bg-amber-50 px-2 py-0.5 rounded">Atenei</span><span class="text-slate-400">Scadenza Imminente</span></div>
+                        <h4 class="text-xs font-black text-slate-900">Immatricolazioni 1° Finestra</h4>
+                        <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Termini utili per confermare il posto in graduatoria senza mora.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 space-y-1.5">
+                        <div class="flex justify-between items-center text-[10px] font-black uppercase"><span class="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Didattica</span><span class="text-slate-400">Info</span></div>
+                        <h4 class="text-xs font-black text-slate-900">Assegnazione OFA</h4>
+                        <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Verifica i punteggi minimi per evitare gli Obblighi Formativi Aggiuntivi.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Hub Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
@@ -284,7 +312,7 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
                     <h3 class="text-lg sm:text-xl font-black text-slate-900">Bandi, Scadenze & News Universitarie</h3>
-                    <p class="text-xs text-slate-500 font-medium">Tutti gli aggiornamenti ufficiali sui TOLC, decreti ministeriali e guide all'immatricolazione.</p>
+                    <p class="text-xs text-slate-500 font-medium">Aggiornamenti ufficiali sui TOLC, decreti ministeriali e guide alle immatricolazioni.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
@@ -301,14 +329,19 @@
                 </button>
             </div>
 
+            <!-- LISTA NEWS E BANDI -->
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-2 hover:border-indigo-500 transition">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3 hover:border-indigo-500 transition">
                     <div class="flex items-center justify-between">
-                        <span class="bg-indigo-50 text-indigo-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Scadenze CISIA</span>
-                        <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
+                        <span class="bg-indigo-50 text-indigo-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Scadenza CISIA</span>
+                        <span class="text-xs text-slate-400 font-bold">Settembre 2026</span>
                     </div>
                     <h4 class="text-base font-black text-slate-900">Calendario Sessioni TOLC Autunnali: Date e Modalità</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Le iscrizioni per le sessioni dei TOLC sono aperte sul portale ufficiale CISIA. È possibile optare per la modalità TOLC@CASA o presso le sedi universitarie convenzionate.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Le iscrizioni per le sessioni dei TOLC autunnali sono aperte sul portale ufficiale CISIA. Scegli se sostenere il test in modalità TOLC@CASA o presso le sedi universitarie convenzionate prima della chiusura delle graduatorie.</p>
+                    <div class="pt-2 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="text-slate-500 font-semibold"><i class="fa-solid fa-circle-check mr-1 text-emerald-500"></i> Disponibile per tutti gli indirizzi</span>
+                        <button onclick="openAiChatModal()" class="bg-indigo-50 text-indigo-700 font-bold px-3.5 py-2 rounded-xl hover:bg-indigo-100 transition">Chiedi al Bot AI</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -409,7 +442,7 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- SCRIPT CORRETTO E PULITO -->
+    <!-- SCRIPT -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
@@ -747,7 +780,6 @@
 
             document.getElementById('prev-btn').disabled = currentIdx === 0;
             
-            // Gestione etichetta pulsante "Avanti" / "Termina Test"
             const isLastQuestion = currentIdx === currentQuestions.length - 1;
             let nextBtnText = 'Avanti';
             if (isLastQuestion) {
@@ -772,7 +804,6 @@
                     clearInterval(timer);
                     mod1AnswersStored = [...userAnswers];
                     
-                    // Se è un test personalizzato o di revisione errori, chiudi direttamente senza passare all'inglese
                     if (currentTest.isCustom) {
                         finishCustomDirectTest();
                         return;
@@ -971,11 +1002,68 @@
         function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
         function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
 
+        // --- BOT AI CHAT STILE CHATGPT ---
         function openAiChatModal() {
-            const promptMsg = prompt("🤖 Bot AI orientamento:\n\nFai una domanda sui bandi, scadenze o sul calcolo delle penalità TOLC:");
-            if (promptMsg) {
-                alert("🤖 Bot AI:\n\nOttima domanda! Per quanto riguarda \"" + promptMsg + "\", ti ricordo che puoi consultare le guide ufficiali nella nostra sezione News o chiedere direttamente ai tutor in aula durante la sessione live di IntesaTest.");
+            document.getElementById('modal-ai-chat').classList.remove('hidden');
+            const messagesContainer = document.getElementById('ai-chat-messages');
+            if (messagesContainer.children.length === 0) {
+                appendAiMessage("Ciao! Sono il tuo assistente AI per i TOLC e i bandi universitari. Come posso aiutarti oggi?");
             }
+        }
+
+        function closeAiChatModal() {
+            document.getElementById('modal-ai-chat').classList.add('hidden');
+        }
+
+        function sendAiMessage(event) {
+            event.preventDefault();
+            const input = document.getElementById('ai-chat-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            input.value = '';
+
+            // Simula risposta intelligente in stile ChatGPT basata su parole chiave
+            setTimeout(() => {
+                let reply = "Ottima domanda! Per quanto riguarda questo argomento, ti consiglio di verificare sempre le linee guida ufficiali sul portale CISIA o nella sezione Bandi della tua università.";
+                
+                const lower = text.toLowerCase();
+                if (lower.includes('penalit') || lower.includes('punteggio')) {
+                    reply = "I test TOLC applicano una penalità per le risposte errate (di solito -0.25 per la maggior parte dei corsi, o -0.40 per Area Medica e Architettura). Le risposte omesse non subiscono decurtazione.";
+                } else if (lower.includes('bando') || lower.includes('scadenz') || lower.includes('immatricol')) {
+                    reply = "Le scadenze variano in base all'ateneo di riferimento. A settembre sono aperte le sessioni autunnali TOLC@CASA: ricorda di completare l'iscrizione sul portale CISIA con almeno 5 giorni di anticipo.";
+                } else if (lower.includes('ofa') || lower.includes('obblig')) {
+                    reply = "Gli OFA (Obblighi Formativi Aggiuntivi) vengono assegnati se non raggiungi il punteggio minimo in Matematica o Logica. Potrai assolverli seguendo i corsi di recupero dedicati all'inizio delle lezioni.";
+                }
+
+                appendAiMessage(reply);
+            }, 600);
+        }
+
+        function appendUserMessage(text) {
+            const container = document.getElementById('ai-chat-messages');
+            container.innerHTML += `
+                <div class="flex justify-end">
+                    <div class="bg-indigo-600 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[85%] text-xs sm:text-sm font-medium shadow-sm leading-relaxed">
+                        ${text}
+                    </div>
+                </div>
+            `;
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function appendAiMessage(text) {
+            const container = document.getElementById('ai-chat-messages');
+            container.innerHTML += `
+                <div class="flex items-start space-x-2">
+                    <div class="w-7 h-7 bg-amber-400 text-slate-950 rounded-full flex items-center justify-center text-xs shrink-0 font-bold shadow-sm"><i class="fa-solid fa-robot"></i></div>
+                    <div class="bg-slate-100 text-slate-800 p-3.5 rounded-2xl rounded-tl-none max-w-[85%] text-xs sm:text-sm font-medium shadow-sm leading-relaxed border border-slate-200/60">
+                        ${text}
+                    </div>
+                </div>
+            `;
+            container.scrollTop = container.scrollHeight;
         }
 
         function redirectToStripeCheckout() {
@@ -1160,6 +1248,36 @@
 
                 <button onclick="closePaywallModal()" class="w-full text-slate-400 hover:text-slate-600 font-bold text-xs py-2 transition">Ci penso dopo</button>
             </div>
+        </div>
+    </div>
+
+    <!-- MODALE BOT AI CHAT (STILE CHATGPT) -->
+    <div id="modal-ai-chat" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div class="bg-white max-w-xl w-full h-[550px] rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden relative animate-in fade-in zoom-in duration-200">
+            <!-- Header Chat -->
+            <div class="gradient-bg px-6 py-4 text-white flex justify-between items-center shadow-md">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white/20 rounded-2xl flex items-center justify-center text-lg shadow-inner">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm sm:text-base font-black">TOLC LAB AI Assistant</h3>
+                        <p class="text-[10px] text-indigo-100 font-medium">Pronto a rispondere su bandi, scadenze e penalità</p>
+                    </div>
+                </div>
+                <button onclick="closeAiChatModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Area Messaggi -->
+            <div id="ai-chat-messages" class="flex-grow p-4 sm:p-6 overflow-y-auto space-y-4 bg-slate-50"></div>
+
+            <!-- Input Form -->
+            <form onsubmit="sendAiMessage(event)" class="p-3 sm:p-4 bg-white border-t border-slate-100 flex items-center gap-2">
+                <input type="text" id="ai-chat-input" placeholder="Scrivi una domanda (es. Come funzionano le penalità?)..." autocomplete="off" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 font-medium">
+                <button type="submit" class="gradient-bg text-white px-5 py-3 rounded-2xl font-bold text-xs sm:text-sm hover:opacity-95 shadow-md shadow-indigo-500/20 transition shrink-0">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
         </div>
     </div>
 
