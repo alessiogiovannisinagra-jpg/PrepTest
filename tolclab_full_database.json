@@ -1,786 +1,511 @@
 {
-        "Matematica e Fisica": [
-        {
-            "text": "Qual è il valore approssimato dell'accelerazione di gravità (g) standard sulla superficie terrestre?",
-            "opts": ["9.81 m/s²", "1 m/s²", "100 m/s²", "981 m/s²"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione canonica di una circonferenza nel piano cartesiano con centro nell'origine e raggio r?",
-            "opts": ["x² + y² = r²", "y = mx + q", "ax + by + c = 0", "x²/a² + y²/b² = 1"],
-            "correct": 0
-        },
-        {
-            "text": "In una trave appoggiata soggetta a un carico verticale, cosa rappresenta il 'momento flettente' in una sezione?",
-            "opts": ["La misura dell'effetto di flessione indotto dalle forze esterne sulla sezione della trave", "Il peso specifico del materiale isolante", "La velocità di deformazione plastica a caldo", "La resistenza all'attrito radente dei vincoli"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto misura la somma degli angoli interni di un triangolo in geometria euclidea?",
-            "opts": ["180 gradi (o π radianti)", "360 gradi", "90 gradi", "270 gradi"],
-            "correct": 0
-        },
-        {
-            "text": "Se un corpo rigido è in equilibrio statico, quale delle seguenti condizioni deve essere necessariamente soddisfatta per le forze?",
-            "opts": ["La risultante di tutte le forze applicate deve essere nulla", "La velocità del corpo deve essere pari a 10 m/s", "L'energia cinetica deve essere massima", "Il baricentro deve trovarsi all'infinito"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il seno dell'angolo di 30 gradi (π/6 radianti)?",
-            "opts": ["1/2", "√3/2", "√2/2", "1"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa esprime il principio di Archimede per un corpo immerso in un fluido?",
-            "opts": ["Il corpo riceve una spinta verticale dal basso verso l'alto pari al peso del fluido spostato", "Il corpo affonda sempre indipendentemente dalla densità", "La pressione è inversamente proporzionale alla profondità", "Il volume del corpo aumenta del 50%"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata della funzione f(x) = sin(x)?",
-            "opts": ["cos(x)", "-sin(x)", "-cos(x)", "1/sin(x)"],
-            "correct": 0
-        },
-        {
-            "text": "Nel sistema internazionale (SI), qual è l'unità di misura della pressione?",
-            "opts": ["Pascal (Pa)", "Newton (N)", "Joule (J)", "Watt (W)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la distanza tra i punti P1(1, 2) e P2(4, 6) nel piano cartesiano?",
-            "opts": ["5", "3", "7", "25"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la soluzione dell'equazione di primo grado 2x + 6 = 0?",
-            "opts": ["x = -3", "x = 3", "x = 2", "x = -2"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto vale la derivata della funzione esponenziale f(x) = e^x?",
-            "opts": ["e^x", "x * e^(x-1)", "1 / e^x", "ln(x)"],
-            "correct": 0
-        },
-        {
-            "text": "In cinematica, qual è la definizione di velocità media lungo una traiettoria?",
-            "opts": ["Il rapporto tra lo spazio totale percorso e l'impiego di tempo complessivo", "Il prodotto tra accelerazione e massa", "La derivata seconda dello spazio rispetto al tempo", "La forza applicata diviso il tempo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del logaritmo in base 10 di 1000 (log₁₀(1000))?",
-            "opts": ["3", "2", "10", "100"],
-            "correct": 0
-        },
-        {
-            "text": "Quale tra le seguenti grandezze fisiche è uno scalare e non un vettore?",
-            "opts": ["La temperatura", "La forza", "La velocità", "L'accelerazione"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il coefficiente angolare (pendenza) della retta di equazione y = -3x + 5?",
-            "opts": ["-3", "5", "3", "-5"],
-            "correct": 0
-        },
-        {
-            "text": "Secondo il secondo principio della dinamica (Legge di Newton), cosa afferma la formula F = m * a?",
-            "opts": ["La forza impressa a un corpo è direttamente proporzionale alla sua massa e all'accelerazione prodotta", "La forza è inversamente proporzionale allo spazio", "La massa varia in base alla velocità della luce", "L'accelerazione è sempre costante e nulla"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'area di un cerchio di raggio R?",
-            "opts": ["π * R²", "2 * π * R", "4 * π * R²", "π * R"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa rappresenta l'energia cinetica di un corpo in movimento?",
-            "opts": ["L'energia associata al movimento del corpo, pari a 1/2 * m * v²", "L'energia accumulata per effetto della quota altimetrica", "Il calore disperso per attrito viscoso", "Il lavoro compiuto dalla gravità"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula delle radici di un'equazione di secondo grado ax² + bx + c = 0?",
-            "opts": ["x = (-b ± √(b² - 4ac)) / (2a)", "x = -b / 2a", "x = (b ± √ac) / a", "x = (-a ± √b) / c"],
-            "correct": 0
-        },
-        {
-            "text": "Nel moto rettilineo uniforme, come varia la velocità nel tempo?",
-            "opts": ["La velocità è costante (accelerazione nulla)", "La velocità aumenta linearmente", "La velocità decresce esponenzialmente", "La velocità oscilla periodicamente"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di cos(0 radianti)?",
-            "opts": ["1", "0", "-1", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura dell'energia e del lavoro nel Sistema Internazionale?",
-            "opts": ["Joule (J)", "Watt (W)", "Newton (N)", "Volt (V)"],
-            "correct": 0
-        },
-        {
-            "text": "Come si definisce il baricentro di un sistema materiale piano?",
-            "opts": ["Il punto geometrico di applicazione della risultante delle forze peso elementari del sistema", "Il centro della circonferenza inscritta", "Il punto di intersezione delle diagonali esterne", "Il punto di massima tensione meccanica"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del limite per x che tende a 0 di sin(x) / x?",
-            "opts": ["1", "0", "Infinito", "Non esiste"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura della potenza nel Sistema Internazionale?",
-            "opts": ["Watt (W)", "Joule (J)", "Pascal (Pa)", "Ampere (A)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione generale di una retta passante per l'origine degli assi?",
-            "opts": ["y = mx", "y = mx + q", "x² + y² = r²", "y = ax² + bx + c"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa stabilisce il principio di conservazione dell'energia meccanica?",
-            "opts": ["In un sistema conservativo, la somma dell'energia cinetica e potenziale si mantiene costante", "L'energia totale diminuisce sempre per attrito", "La potenza meccanica è indipendente dal tempo", "L'energia potenziale è sempre pari a zero"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore della base dei logaritmi naturali 'e' (numero di Eulero) approssimato alla seconda cifra decimale?",
-            "opts": ["2.72", "3.14", "1.41", "1.73"],
-            "correct": 0
-        },
-        {
-            "text": "In un triangolo rettangolo, come si definisce il Teorema di Pitagora?",
-            "opts": ["Il quadrato dell'ipotenusa è uguale alla somma dei quadrati dei cateti", "La somma dei cateti è uguale all'ipotenusa", "Il prodotto dei cateti è pari all'area", "L'ipotenusa è sempre doppia del cateto minore"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il momento di una forza rispetto a un polo?",
-            "opts": ["Il prodotto vettoriale tra il braccio (distanza dal polo) e la forza applicata", "Il rapporto tra la forza e la massa", "La somma algebrica delle accelerazioni", "Il lavoro compiuto nell'unità di tempo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'integrale indefinito della funzione f(x) = 2x?",
-            "opts": ["x² + C", "2x² + C", "x + C", "2 + C"],
-            "correct": 0
-        },
-        {
-            "text": "Quale fenomeno descrive la legge di Ohm nei circuiti elettrici lineari?",
-            "opts": ["La tensione è direttamente proporzionale alla corrente elettrica e alla resistenza (V = R * I)", "La potenza è inversamente proporzionale al tempo", "La carica elettrica si disperde nel vuoto", "La resistenza azzera la corrente"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto misura la circonferenza di un cerchio di raggio R?",
-            "opts": ["2 * π * R", "π * R²", "4 * π * R", "π * R"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa si intende per 'lavoro' di una forza costante in fisica?",
-            "opts": ["Il prodotto scalare tra il vettore forza e il vettore spostamento (L = F * s * cos(θ))", "La forza moltiplicata per il tempo impiegato", "Il rapporto tra energia e potenza", "La variazione della sola temperatura"],
-            "correct": 0
-        },
-        {
-            "text": "Quali sono le coordinate del punto medio M di un segmento con estremi A(x₁, y₁) e B(x₂, y₂)?",
-            "opts": ["M = ((x₁ + x₂)/2, (y₁ + y₂)/2)", "M = (x₁ - x₂, y₁ - y₂)", "M = ((x₁ * x₂)/2, (y₁ * y₂)/2)", "M = (x₁ + y₁, x₂ + y₂)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la frequenza di un'onda il cui periodo T è pari a 0.5 secondi?",
-            "opts": ["2 Hz", "0.5 Hz", "1 Hz", "5 Hz"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di tan(0 radianti)?",
-            "opts": ["0", "1", "Non definito", "Infinito"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma il primo principio della termodinamica?",
-            "opts": ["La variazione di energia interna di un sistema è pari al calore scambiato meno il lavoro compiuto (ΔU = Q - L)", "Il calore fluisce spontaneamente dai corpi freddi a quelli caldi", "L'entropia dell'universo tende a diminuire", "Il rendimento di una macchina termica può essere del 100%"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la disequazione associata a una parabola y > ax² + bx + c con a > 0 le cui soluzioni rappresentano la parte superiore?",
-            "opts": ["L'insieme dei punti situati al di sopra della curva parabolica", "L'asse di simmetria verticale", "Il vertice della parabola", "L'intersezione con l'asse delle ascisse"],
-            "correct": 0
-        },
-        {
-            "text": "Quale tra le seguenti unità di misura corrisponde a un Coulomb al secondo (C/s)?",
-            "opts": ["Ampere (A)", "Volt (V)", "Ohm (Ω)", "Farad (F)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il volume di una sfera di raggio R?",
-            "opts": ["(4/3) * π * R³", "4 * π * R²", "(1/3) * π * R² * h", "2 * π * R³"],
-            "correct": 0
-        },
-        {
-            "text": "Nel moto circolare uniforme, come è diretta l'accelerazione centripeta?",
-            "opts": ["Sempre rivolta verso il centro della traiettoria circolare", "Tangente alla circonferenza nella direzione del moto", "Diretta verso l'esterno della curva", "Nulla"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata di f(x) = 3x² - 5x + 2?",
-            "opts": ["6x - 5", "3x - 5", "6x² - 5", "6x + 2"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa esprime il modulo di un vettore nel piano cartesiano v = (x, y)?",
-            "opts": ["La lunghezza geometrica del segmento orientato, pari a √(x² + y²)", "La somma delle coordinate x + y", "La pendenza rispetto all'asse y", "Il prodotto scalare per se stesso"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula del moto uniformemente accelerato per lo spazio percorso (partendo da fermo con accelerazione a)?",
-            "opts": ["s = 1/2 * a * t²", "s = v * t", "s = a * t", "s = v² / 2a"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del determinante di una matrice quadrata 2x2 [[a, b], [c, d]]?",
-            "opts": ["ad - bc", "ac - bd", "ab + cd", "a + d - b - c"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura della carica elettrica nel Sistema Internazionale?",
-            "opts": ["Coulomb (C)", "Ampere (A)", "Volt (V)", "Tesla (T)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'area di un triangolo di base b e altezza h?",
-            "opts": ["(b * h) / 2", "b * h", "2 * b * h", "b² + h²"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa misura il modulo di Young per un materiale elastico?",
-            "opts": ["Il rapporto tra lo sforzo normale applicato e la deformazione unitaria longitudinale nel regime elastico", "La temperatura di fusione della lega metallica", "La resistenza all'urto a freddo", "La densità volumetrica del solido"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di log₂(8)?",
-            "opts": ["3", "2", "8", "4"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula generale della forza di attrito radente statico o dinamico?",
-            "opts": ["F_attrito = μ * F_normale", "F_attrito = m * a", "F_attrito = G * (m1*m2)/r²", "F_attrito = q * E"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la pendenza (coefficiente angolare) di una retta perpendicolare a una retta di coefficiente m = 2?",
-            "opts": ["-1/2", "2", "-2", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma il principio di Pascal nei fluidi in equilibrio?",
-            "opts": ["La pressione esercitata su un fluido in equilibrio si trasmette in modo inalterato a ciascuna porzione del fluido e sulle pareti del recipiente", "Il volume di un gas è inversamente proporzionale alla pressione", "La spinta di galleggiamento è pari al peso del volume spostato", "La velocità di efflusso dipende dall'altezza del liquido"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata della funzione logaritmica naturale f(x) = ln(x)?",
-            "opts": ["1 / x", "e^x", "x", "1 / ln(x)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la condizione di parallelismo tra due rette nel piano cartesiano di equazioni y = m₁x + q₁ e y = m₂x + q₂?",
-            "opts": ["m₁ = m₂", "m₁ * m₂ = -1", "m₁ = -m₂", "q₁ = q₂"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura della resistenza elettrica nel Sistema Internazionale?",
-            "opts": ["Ohm (Ω)", "Volt (V)", "Watt (W)", "Siemens (S)"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto vale la somma degli angoli interni di un pentagono convesso?",
-            "opts": ["540 gradi", "360 gradi", "720 gradi", "180 gradi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula della forza di attrazione gravitazionale universale tra due masse m₁ e m₂ poste a distanza r?",
-            "opts": ["F = G * (m₁ * m₂) / r²", "F = m₁ * m₂ * r", "F = G * (m₁ + m₂) / r", "F = m * g * h"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il risultato dell'operazione con le matrici o dei polinomi: (x + 2)²?",
-            "opts": ["x² + 4x + 4", "x² + 4", "x² + 2x + 4", "4x² + 4"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa descrive la legge di Boyle-Mariotte per i gas perfetti a temperatura costante?",
-            "opts": ["Il prodotto tra la pressione e il volume del gas è costante (P * V = costante)", "La pressione è direttamente proporzionale alla temperatura", "Il volume è proporzionale al quadrato della temperatura", "La densità del gas si azzera"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata della funzione trigonometrica f(x) = cos(x)?",
-            "opts": ["-sin(x)", "sin(x)", "cos(x)", "-cos(x)"],
-            "correct": 0
-        },
-        {
-            "text": "Nel piano cartesiano, qual è l'equazione di una retta passante per un punto P(x₀, y₀) con coefficiente angolare m?",
-            "opts": ["y - y₀ = m * (x - x₀)", "y = mx + q", "ax + by = c", "y / y₀ = m * (x / x₀)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura del flusso magnetico nel Sistema Internazionale?",
-            "opts": ["Weber (Wb)", "Tesla (T)", "Henry (H)", "Coulomb (C)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il volume di un cilindro retto di raggio di base R e altezza h?",
-            "opts": ["π * R² * h", "2 * π * R * h", "(1/3) * π * R² * h", "4/3 * π * R³"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa misura l'impulso di una forza applicata a un corpo in un intervallo di tempo?",
-            "opts": ["La variazione della quantità di moto del corpo (I = F * Δt = Δp)", "La forza istantanea diviso la massa", "Il lavoro meccanico compiuto per unità di spazio", "La potenza termica dissipata"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto vale la radice quadrata di 144?",
-            "opts": ["12", "14", "16", "10"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la condizione di perpendicolarità tra due rette nel piano cartesiano di coefficienti angolari m₁ e m₂?",
-            "opts": ["m₁ * m₂ = -1", "m₁ = m₂", "m₁ + m₂ = 0", "m₁ * m₂ = 1"],
-            "correct": 0
-        },
-        {
-            "text": "Quale principio fisico spiega il volo degli aeroplani e il funzionamento del tubo di Venturi?",
-            "opts": ["Il principio di Bernoulli (conservazione dell'energia nei fluidi in movimento)", "Il principio di Arquimede", "La legge di Stevino", "Il secondo principio della termodinamica"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore dell'angolo complementare a un angolo di 35 gradi?",
-            "opts": ["55 gradi", "145 gradi", "90 gradi", "180 gradi"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma la legge di Stevino riguardo alla pressione idrostatico nei liquidi?",
-            "opts": ["La pressione in un liquido aumenta linearmente con la profondità (P = P₀ + ρ * g * h)", "La pressione è costante ovunque nel liquido", "La pressione dipende unicamente dalla superficie del contenitore", "La pressione è nulla sul fondo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la scomposizione in fattori del binomio notevole x² - y² (differenza di quadrati)?",
-            "opts": ["(x - y) * (x + y)", "(x - y)²", "(x + y)²", "x * (x - y)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura della capacità elettrica nel Sistema Internazionale?",
-            "opts": ["Farad (F)", "Ohm (Ω)", "Henry (H)", "Coulomb (C)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del seno dell'angolo di 90 gradi (π/2 radianti)?",
-            "opts": ["1", "0", "-1", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "Nel moto armonico semplice, cosa rappresenta la pulsazione (ω)?",
-            "opts": ["La velocità angolare del moto circolare uniforme associato, legata al periodo T dalla formula ω = 2π/T", "L'ampiezza massima dell'oscillazione", "L'accelerazione di gravità locale", "La forza elastica della molla"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'integrale definito tra 0 e 1 della funzione f(x) = x?",
-            "opts": ["1/2", "1", "0", "2"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura dell'induttanza magnetica nel Sistema Internazionale?",
-            "opts": ["Henry (H)", "Weber (Wb)", "Tesla (T)", "Volt (V)"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto misura la diagonale di un quadrato avente lato di lunghezza L?",
-            "opts": ["L * √2", "L * √3", "2 * L", "L²"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa descrive la legge di Coulomb per l'interazione elettrostatica tra due cariche puntiformi q₁ e q₂?",
-            "opts": ["La forza elettrostatica è direttamente proporzionale al prodotto delle cariche e inversamente proporzionale al quadrato della distanza", "La forza è indipendente dalla distanza", "Le cariche dello stesso segno si attraggono sempre", "Il campo elettrico è sempre nullo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del coseno di 180 gradi (π radianti)?",
-            "opts": ["-1", "1", "0", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "In un circuito RLC in corrente alternata, cos'è la 'risonanza'?",
-            "opts": ["La condizione in cui la reattanza induttiva e quella capacitiva si annullano a vicenda, massimizzando la corrente", "Il blocco totale della corrente alternata", "La fusione immediata del resistore", "La trasformazione della corrente in continua"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la soluzione della disequazione di secondo grado x² - 9 > 0?",
-            "opts": ["x < -3 oppure x > 3", "-3 < x < 3", "x > 9", "Nessuna soluzione"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura del campo magnetico nel Sistema Internazionale?",
-            "opts": ["Tesla (T)", "Weber (Wb)", "Gauss", "Volt/metro"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula per calcolare il perimetro di un rettangolo di base b e altezza h?",
-            "opts": ["2 * (b + h)", "b * h", "b² + h²", "4 * b * h"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma la legge dell'induzione elettromagnetica di Faraday-Neumann-Lenz?",
-            "opts": ["La variazione del flusso magnetico concatenato con un circuito induce una forza elettromotrice indotta nel circuito stesso", "La corrente elettrica genera sempre un campo gravitazionale", "La carica elettrica si conserva nei solenoidi", "La resistenza di un conduttore dipende dal campo magnetico"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto fa 2 alla quinta potenza (2⁵)?",
-            "opts": ["32", "16", "64", "10"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la definizione di 'potenza meccanica' erogata da una forza in fisica?",
-            "opts": ["Il lavoro compiuto nell'unità di tempo (P = L / t = F * v)", "Il prodotto tra forza e spazio", "La massa divisa per l'accelerazione", "L'energia potenziale totale"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione di una parabola con asse di simmetria parallelo all'asse y e vertice nell'origine?",
-            "opts": ["y = ax²", "x = ay²", "x² + y² = r²", "y = mx + q"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa misura il calore specifico di una sostanza?",
-            "opts": ["La quantità di calore necessaria per innalzare di 1 Kelvin (o 1°C) la temperatura dell'unità di massa di quella sostanza", "La temperatura esatta di fusione del solido", "La quantità di energia accumulata in fase di quiete", "Il calore disperso nell'ambiente circostante"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del limite per x che tende a infinito di 1/x?",
-            "opts": ["0", "1", "Infinito", "Non esiste"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura della frequenza nel Sistema Internazionale?",
-            "opts": ["Hertz (Hz)", "Secondi (s)", "Metri al secondo (m/s)", "Decibel (dB)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il baricentro geometrico di un triangolo nel piano cartesiano rispetto ai vertici A(x₁,y₁), B(x₂,y₂), C(x₃,y₃)?",
-            "opts": ["Il punto con coordinate medie aritmetiche: ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)", "Il punto di intersezione delle altezze esterne", "La metà del lato maggiore", "L'origine degli assi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula dell'energia potenziale gravitazionale di una massa m posta a un'altezza h dal suolo?",
-            "opts": ["E_p = m * g * h", "E_p = 1/2 * m * v²", "E_p = F * s", "E_p = m * c²"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata della funzione f(x) = 4?",
-            "opts": ["0", "4", "1", "4x"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa stabilisce il principio di conservazione della quantità di moto?",
-            "opts": ["In un sistema isolato (senza forze esterne risultanti), la quantità di moto totale si mantiene costante nel tempo", "L'energia cinetica raddoppia sempre negli urti anelastici", "La velocità dei corpi in collisione si azzera", "La massa si converte interamente in calore"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto fa l'espressione logaritmica log₂(32)?",
-            "opts": ["5", "4", "6", "32"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura del flusso luminoso nel Sistema Internazionale?",
-            "opts": ["Lumen (lm)", "Lux (lx)", "Candela (cd)", "Watt (W)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il perimetro di un cerchio di raggio R?",
-            "opts": ["2 * π * R", "π * R²", "4 * π * R", "π * R"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa descrive la legge di Gay-Lussac per i gas perfetti a volume costante?",
-            "opts": ["La pressione di un gas è direttamente proporzionale alla sua temperatura assoluta (P / T = costante)", "Il volume è inversamente proporzionale alla pressione", "La densità è costante a ogni temperatura", "Il calore specifico non dipende dalla pressione"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la scomposizione del trinomio notevole x² + 5x + 6?",
-            "opts": ["(x + 2) * (x + 3)", "(x - 2) * (x - 3)", "(x + 1) * (x + 6)", "(x + 5) * (x + 1)"],
-            "correct": 0
-        },
-        {
-            "text": "Quale fenomeno ottico spiega la scomposizione della luce bianca in uno spettro di colori attraverso un prisma di vetro?",
-            "opts": ["La dispersione della luce (dovuta alla dipendenza dell'indice di rifrazione dalla lunghezza d'onda)", "La riflessione totale interna", "La polarizzazione lineare", "L'interferenza costruttiva"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula per calcolare il discriminante (Delta, Δ) di un'equazione di secondo grado ax² + bx + c = 0?",
-            "opts": ["Δ = b² - 4ac", "Δ = b - 4ac", "Δ = 4a² - bc", "Δ = a² + b² + c²"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa misura l'intensità di corrente elettrica in un conduttore?",
-            "opts": ["La quantità di carica elettrica che attraversa la sezione del conduttore nell'unità di tempo (I = Q / t)", "La velocità degli elettroni nel vuoto", "La resistenza totale del circuito", "Il potenziale elettrostatico accumulato"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto misura l'angolo acuto di un triangolo rettangolo isoscele?",
-            "opts": ["45 gradi (π/4 radianti)", "60 gradi", "30 gradi", "90 gradi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la definizione di 'potenza termica' o flusso di calore trasmesso per conduzione (Legge di Fourier)?",
-            "opts": ["Il calore trasferito nell'unità di tempo, proporzionale alla conducibilità termica e al gradiente di temperatura", "Il rapporto tra la massa e il volume del solido", "L'energia cinetica delle molecole gassose", "La pressione esercitata dal vapore acqueo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di sin(30°) + cos(60°)?",
-            "opts": ["1", "0", "1/2", "√3"],
-            "correct": 0
-        },
-        {
-            "text": "Nel moto di un proiettile lanciato in aria con un angolo rispetto all'orizzontale (senza attrito dell'aria), quale componente della velocità rimane costante?",
-            "opts": ["La componente orizzontale della velocità (v_x)", "La componente verticale della velocità (v_y)", "La velocità totale in ogni istante", "L'accelerazione verticale"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'area della superficie laterale di un cilindro di raggio R e altezza h?",
-            "opts": ["2 * π * R * h", "π * R² * h", "4 * π * R²", "π * R * h"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma il principio di conservazione della carica elettrica?",
-            "opts": ["In un sistema isolato, la carica elettrica totale algebrica si mantiene costante nel tempo", "Le cariche negative si annullano spontaneamente", "La carica elettrica dipende dalla velocità della luce", "Il campo elettrico crea nuova carica dal nulla"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il risultato di 3! (fattoriale di 3)?",
-            "opts": ["6", "9", "3", "12"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula della forza elastica esercitata da una molla ideale (Legge di Hooke)?",
-            "opts": ["F = -k * x", "F = m * a", "F = G * M * m / r²", "F = q * E"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata di f(x) = x³?",
-            "opts": ["3x²", "x²", "3x", "6x"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa indica l'indice di rifrazione assoluto di un mezzo trasparente (n)?",
-            "opts": ["Il rapporto tra la velocità della luce nel vuoto e la velocità della luce in quel mezzo (n = c / v)", "La densità ottica del materiale rispetto all'acqua", "Il coefficiente di assorbimento del calore", "L'angolo massimo di riflessione"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione di una circonferenza di centro C(1, 2) e raggio r = 3?",
-            "opts": ["(x - 1)² + (y - 2)² = 9", "(x + 1)² + (y + 2)² = 3", "x² + y² = 9", "(x - 1) + (y - 2) = 3"],
-            "correct": 0
-        },
-        {
-            "text": "Quale grandezza fisica rappresenta la capacità di un corpo di immagazzinare energia potenziale elastica quando viene deformato?",
-            "opts": ["L'energia potenziale elastica immagazzinata pari a 1/2 * k * x²", "La quantità di moto lineare", "Il momento d'inerzia torsionale", "Il calore latente di fusione"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto vale la somma dei primi 10 numeri interi positivi (da 1 a 10)?",
-            "opts": ["55", "50", "45", "100"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma la legge di Coulomb per il campo elettrico generato da una carica puntiforme?",
-            "opts": ["Il campo elettrico generato è direttamente proporzionale alla carica sorgente e inversamente proporzionale al quadrato della distanza", "Il campo è costante a ogni distanza", "Il campo è indipendente dal segno della carica", "Il potenziale è sempre nullo"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la soluzione dell'equazione esponenziale 2^x = 16?",
-            "opts": ["x = 4", "x = 8", "x = 2", "x = 5"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'unità di misura dell'illuminamento nel Sistema Internazionale?",
-            "opts": ["Lux (lx)", "Lumen (lm)", "Candela (cd)", "Watt/m²"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il volume di una piramide retta di area di base B e altezza h?",
-            "opts": ["(1/3) * B * h", "B * h", "(1/2) * B * h", "3 * B * h"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa esprime il rendimento di una macchina termica (secondo il secondo principio della termodinamica)?",
-            "opts": ["Il rapporto tra il lavoro utile prodotto e il calore assorbito dalla sorgente calda (η = L / Q₁ < 1)", "Il rapporto tra calore disperso e lavoro totale", "Il valore fisso del 100%", "L'efficienza energetica dei circuiti resistivi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di log₅(125)?",
-            "opts": ["3", "5", "25", "2"],
-            "correct": 0
-        },
-        {
-            "text": "Quale grandezza fisica rappresenta la resistenza di un corpo a subire variazioni del proprio stato di moto (inerzia traslazionale)?",
-            "opts": ["La massa inerziale", "La forza peso", "La velocità istantanea", "Il momento torcente"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione canonica di un'ellisse centrata nell'origine con semiasse orizzontale a e semiasse verticale b?",
-            "opts": ["x²/a² + y²/b² = 1", "x² + y² = r²", "x²/a² - y²/b² = 1", "y = ax² + bx"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa stabilisce la legge di Ampère-Laplace nell'elettromagnetismo?",
-            "opts": ["La forza magnetica elementare esercitata su un tratto di filo percorso da corrente immerso in un campo magnetico (dF = i * dl × B)", "La carica accumulata nei condensatori a barre", "La velocità di propagazione delle onde radio", "La perdita di potenza nei trasformatori"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore della pendenza (coefficiente angolare) di una retta parallela all'asse delle ascisse (asse x)?",
-            "opts": ["0", "1", "Infinito", "Non definita"],
-            "correct": 0
-        },
-        {
-            "text": "Quale fenomeno ondulatorio descrive la flessione o curvatura delle onde quando incontrano un ostacolo o una fessura di dimensioni comparabili alla loro lunghezza d'onda?",
-            "opts": ["La diffrazione", "La riflessione speculare", "La rifrazione di Snell", "La polarizzazione trasversale"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore della somma di una progressione geometrica infinita con ragione q tale che |q| < 1 e primo termine a₁?",
-            "opts": ["S = a₁ / (1 - q)", "S = a₁ * (1 - q)", "S = a₁ / q", "S = infinito"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa esprime il principio di conservazione della quantità di moto angolare (o momento angolare)?",
-            "opts": ["Se il momento delle forze esterne applicate a un sistema è nullo, il momento angolare totale del sistema si conserva", "L'energia cinetica di rotazione raddoppia sempre", "La velocità angolare è inversamente proporzionale alla massa", "La frequenza delle oscillazioni aumenta"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore della tangente di 45 gradi (π/4 radianti)?",
-            "opts": ["1", "0", "√3", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il significato fisico del 'flusso del campo elettrico' attraverso una superficie chiusa (Teorema di Gauss)?",
-            "opts": ["Il flusso totale del campo elettrico attraverso una superficie chiusa è direttamente proporzionale alla carica totale interna racchiusa", "Il campo elettrico si annulla sempre all'interno della superficie", "La carica netta esterna determina il potenziale", "La corrente indotta nei circuiti chiusi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la formula per il calcolo delle combinazioni semplici di n elementi in gruppi di k (coefficiente binomiale)?",
-            "opts": ["C(n,k) = n! / (k! * (n - k)!)", "C(n,k) = n! / (n - k)!", "C(n,k) = n^k", "C(n,k) = k! / n!"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa si intende per 'corpo rigido' nella meccanica classica?",
-            "opts": ["Un sistema di punti materiali in cui la distanza tra ogni coppia di punti rimane assolutamente invariata nel tempo", "Un corpo che si deforma plasticamente sotto carico", "Un fluido privo di viscosità interna", "Un punto geometrico privo di massa"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la derivata della funzione f(x) = ln(3x)?",
-            "opts": ["1 / x", "3 / x", "3 / (3x²)", "1 / (3x)"],
-            "correct": 0
-        },
-        {
-            "text": "Quale legge termodinamica afferma che è impossibile raggiungere lo zero assoluto di temperatura in un numero finito di trasformazioni?",
-            "opts": ["Il terzo principio della termodinamica", "Il secondo principio della termodinamica", "Il primo principio della termodinamica", "Il principio zero della termodinamica"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del polinomio x³ - 8 per x = 2?",
-            "opts": ["0", "8", "-8", "16"],
-            "correct": 0
-        },
-        {
-            "text": "Quale grandezza fisica viene misurata in Volt nel Sistema Internazionale?",
-            "opts": ["Il potenziale elettrico o differenza di potenziale (tensione)", "La resistenza elettrica", "La corrente elettrica", "La carica elettrica"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione canonica di un'iperbole equilatera riferita ai propri assi di simmetria nel piano cartesiano?",
-            "opts": ["x² - y² = a² (o xy = k)", "x² + y² = r²", "x²/a² + y²/b² = 1", "y = ax²"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa descrive l'effetto Doppler acustico o elettromagnetico?",
-            "opts": ["La variazione della frequenza percepita di un'onda emessa da una sorgente in movimento rispetto all'osservatore", "L'aumento dell'intensità sonora in spazi chiusi", "La rifrazione della luce attraverso l'atmosfera", "La scomposizione delle frequenze nei prismi"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore dell'espressione sin²(x) + cos²(x) per qualsiasi angolo reale x (Prima relazione fondamentale della trigonometria)?",
-            "opts": ["1", "0", "2", "1/2"],
-            "correct": 0
-        },
-        {
-            "text": "Quale legge regola l'intensità della forza di interazione magnetica tra due cariche in movimento (forza di Lorentz su una carica in un campo magnetico)?",
-            "opts": ["F = q * (E + v × B)", "F = m * a", "F = G * m₁ * m₂ / r²", "F = i * L × B"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la somma delle soluzioni dell'equazione di secondo grado ax² + bx + c = 0 (quando Δ ≥ 0)?",
-            "opts": ["-b / a", "c / a", "b / a", "-c / a"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa esprime il 'teorema dell'energia cinetica' (o teorema delle forze vive)?",
-            "opts": ["Il lavoro totale compiuto da tutte le forze agenti su un punto materiale è pari alla variazione della sua energia cinetica (L_tot = ΔE_k)", "L'energia meccanica si dissipa sempre in calore", "La potenza è indipendente dal lavoro", "La forza elastica non compie lavoro"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il prodotto delle soluzioni dell'equazione di secondo grado ax² + bx + c = 0?",
-            "opts": ["c / a", "-b / a", "-c / a", "b / a"],
-            "correct": 0
-        },
-        {
-            "text": "Quale tra le seguenti affermazioni descrive correttamente una trasformazione adiabatica per un gas perfetto?",
-            "opts": ["Una trasformazione termodinamica in cui non vi è alcuno scambio di calore con l'esterno (Q = 0)", "Una trasformazione a temperatura costante", "Una trasformazione a pressione costante", "Una trasformazione in cui l'energia interna non varia"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore di log₁₀(1)?",
-            "opts": ["0", "1", "10", "Non definito"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa rappresenta il 'momento d'inerzia' di un corpo rigido in rotazione attorno a un asse?",
-            "opts": ["La misura dell'inerzia rotazionale del corpo, dipendente dalla distribuzione della massa rispetto all'asse di rotazione", "Il peso complessivo del corpo diviso per la velocità angolare", "La forza centripeta massima applicabile", "Il lavoro compiuto dall'attrito volvente"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'equazione della retta passante per i punti P₁(0, 2) e P₂(3, 5)?",
-            "opts": ["y = x + 2", "y = 2x + 1", "y = 3x - 1", "y = x + 3"],
-            "correct": 0
-        },
-        {
-            "text": "Quale legge regola l'espansione termica lineare dei solidi al variare della temperatura?",
-            "opts": ["ΔL = L₀ * λ * ΔT", "V = V₀ * (1 + β * ΔT)", "P * V = n * R * T", "Q = m * c * ΔT"],
-            "correct": 0
-        },
-        {
-            "text": "Quanto vale la derivata della funzione f(x) = e^(2x)?",
-            "opts": ["2 * e^(2x)", "e^(2x)", "2x * e^(2x)", "1 / e^(2x)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il significato fisico del coefficiente di attrito statico (μ_s)?",
-            "opts": ["Il rapporto massimo tra la forza di attrito statico limite e la forza normale premente prima che inizi il movimento relativo", "La velocità massima di scivolamento del blocco", "La rugosità microscopica misurata in micron", "La forza di distacco istantanea"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è il valore del limite per x che tende a 0 di (ln(1 + x)) / x?",
-            "opts": ["1", "0", "Infinito", "e"],
-            "correct": 0
-        },
-        {
-            "text": "Cosa afferma il principio di conservazione del momento angolare in un sistema isolato da momenti esterni?",
-            "opts": ["Il momento angolare totale si mantiene costante, per cui se il momento d'inerzia diminuisce, la velocità angolare deve aumentare", "L'energia di rotazione si azzera sempre", "La velocità angolare è inversamente proporzionale alla massa", "Il corpo tende a fermarsi immediatamente"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è la soluzione della disequazione fratta (x - 1) / (x + 2) ≥ 0?",
-            "opts": ["x < -2 oppure x ≥ 1", "-2 < x ≤ 1", "x ≥ 1", "x > -2"],
-            "correct": 0
-        },
-        {
-            "text": "Quale grandezza fisica rappresenta il rapporto tra il flusso magnetico concatenato con un circuito e la corrente elettrica che lo genera?",
-            "opts": ["L'induttanza (L)", "La capacità (C)", "La resistenza (R)", "La reattanza (X)"],
-            "correct": 0
-        },
-        {
-            "text": "Qual è l'area del settore circolare di raggio R e angolo al centro di 90 gradi (π/2 radianti)?",
-            "opts": ["(π * R²) / 4", "(π * R²) / 2", "π * R²", "2 * π * R"],
-            "correct": 0
-        }
-    ],
+  "Matematica": [
+    {
+      "text": "Qual è l'equazione della retta passante per il punto P(1, 2) e avente coefficiente angolare m = 3?",
+      "opts": ["y = 3x - 1", "y = 3x + 2", "y = 3x + 1", "y = -3x + 5"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è la distanza tra i punti A(1, 2) e B(4, 6) nel piano cartesiano?",
+      "opts": ["5", "7", "25", "3"],
+      "correct": 0
+    },
+    {
+      "text": "Data la circonferenza di equazione x^2 + y^2 - 4x + 6y - 3 = 0, qual è il raggio?",
+      "opts": ["r = 3", "r = 5", "r = 4", "r = 2"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'area di un triangolo rettangolo con i cateti lunghi rispettivamente 6 cm e 8 cm?",
+      "opts": ["48 cm^2", "24 cm^2", "14 cm^2", "20 cm^2"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo rettangolo, l'ipotenusa misura 10 cm e un angolo acuto misura 30°. Quanto misura il cateto opposto all'angolo di 30°?",
+      "opts": ["5 cm", "10 cm", "5√3 cm", "8 cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della parabola con asse verticale, vertice nell'origine e passante per il punto (2, 4)?",
+      "opts": ["y = x^2", "y = 2x^2", "y = 4x^2", "y = 1/2 x^2"],
+      "correct": 0
+    },
+    {
+      "text": "Due rette nel piano di equazioni y = 2x + 1 e y = kx - 3 sono perpendicolari se il valore di k è:",
+      "opts": ["2", "-2", "1/2", "-1/2"],
+      "correct": 3
+    },
+    {
+      "text": "Qual è il perimetro di un cerchio avente raggio r = 7 cm? (Usa pi ≈ 22/7)",
+      "opts": ["22 cm", "44 cm", "154 cm", "88 cm"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è la misura della diagonale di un quadrato avente il lato lungo 5 cm?",
+      "opts": ["5 cm", "10 cm", "5√2 cm", "25 cm"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è l'equazione dell'asse del segmento che unisce i punti A(0, 0) e B(4, 2)?",
+      "opts": ["2x + y - 5 = 0", "x + 2y - 5 = 0", "y = 2x", "x - 2y = 0"],
+      "correct": 0
+    },
+    {
+      "text": "In un triangolo equilatero, l'altezza h è legata al lato l dalla relazione:",
+      "opts": ["h = l * √3 / 2", "h = l * √2 / 2", "h = l / 2", "h = l * √3"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il volume di un cilindro retto avente raggio di base r = 3 cm e altezza h = 10 cm?",
+      "opts": ["30π cm^3", "90π cm^3", "60π cm^3", "45π cm^3"],
+      "correct": 1
+    },
+    {
+      "text": "Quali sono le coordinate del punto medio del segmento con estremi A(-2, 3) e B(4, 7)?",
+      "opts": ["(1, 5)", "(2, 5)", "(1, 3)", "(3, 2)"],
+      "correct": 0
+    },
+    {
+      "text": "Se la somma degli angoli interni di un poligono convesso è 540°, da quanti lati è composto il poligono?",
+      "opts": ["4", "5", "6", "7"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione dell'asintoto della funzione y = 1/x?",
+      "opts": ["Non ci sono asintoti", "Gli assi cartesiani (x=0 e y=0)", "La retta y = x", "La retta y = 1"],
+      "correct": 1
+    },
+    {
+      "text": "In un cerchio, un angolo al centro misura 60°. Quanto misura l'angolo alla circonferenza insisto sullo stesso arco?",
+      "opts": ["120°", "60°", "30°", "90°"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è l'area della superficie totale di un cubo il cui spigolo misura 4 cm?",
+      "opts": ["64 cm^2", "96 cm^2", "32 cm^2", "48 cm^2"],
+      "correct": 1
+    },
+    {
+      "text": "Data l'equazione x^2 / 16 + y^2 / 9 = 1, la lunghezza dell'asse maggiore dell'ellisse è:",
+      "opts": ["4", "8", "6", "3"],
+      "correct": 1
+    },
+    {
+      "text": "Quanto misura l'angolo acuto formato dalle lancette di un orologio alle ore 03:00?",
+      "opts": ["0°", "45°", "90°", "180°"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è il seno dell'angolo di 30° (o pi/6 radianti)?",
+      "opts": ["1/2", "√3 / 2", "√2 / 2", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per l'origine e per il punto P(-2, 4)?",
+      "opts": ["y = -2x", "y = 2x", "y = -1/2 x", "y = x - 2"],
+      "correct": 0
+    },
+    {
+      "text": "Se un trapezio isoscele ha le basi di 10 cm e 6 cm e l'altezza di 3 cm, qual è la sua area?",
+      "opts": ["24 cm^2", "48 cm^2", "30 cm^2", "18 cm^2"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della circonferenza con centro nell'origine e raggio r = 5?",
+      "opts": ["x^2 + y^2 = 5", "x^2 + y^2 = 25", "x + y = 25", "x^2 - y^2 = 25"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo rettangolo i cateti misurano 3 cm e 4 cm. Quanto misura l'ipotenusa?",
+      "opts": ["7 cm", "5 cm", "6 cm", "√7 cm"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il volume di una sfera avente raggio r = 3 cm?",
+      "opts": ["36π cm^3", "12π cm^3", "27π cm^3", "108π cm^3"],
+      "correct": 0
+    },
+    {
+      "text": "Due rette nel piano cartesiano con lo stesso coefficiente angolare m e diverso termine noto q sono:",
+      "opts": ["Incidenti", "Parallele e distinte", "Coincidenti", "Perpendicolari"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il valore di cos(60°)?",
+      "opts": ["1/2", "√3 / 2", "0", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della retta parallela all'asse x e passante per il punto P(3, -4)?",
+      "opts": ["x = 3", "y = -4", "y = 3x - 4", "x + y = -1"],
+      "correct": 1
+    },
+    {
+      "text": "Il Teorema di Pitagora si applica esclusivamente a:",
+      "opts": ["Triangoli qualsiasi", "Triangoli rettangoli", "Triangoli isosceli", "Quadrati"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il perimetro di un rettangolo con base b = 10 cm e altezza h = 5 cm?",
+      "opts": ["15 cm", "30 cm", "50 cm", "20 cm"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per i punti A(0, 2) e B(2, 0)?",
+      "opts": ["x + y = 2", "x - y = 2", "y = 2x + 2", "y = -2x"],
+      "correct": 0
+    },
+    {
+      "text": "In un rombo le diagonali misurano 12 cm e 16 cm. Qual è l'area del rombo?",
+      "opts": ["96 cm^2", "192 cm^2", "56 cm^2", "48 cm^2"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è la misura in radianti di un angolo piatto (180°)?",
+      "opts": ["pi / 2", "pi", "2 * pi", "pi / 4"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è la distanza dal centro dell'origine della retta di equazione 3x + 4y - 10 = 0?",
+      "opts": ["2", "10", "5", "1"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il volume di un cono avente raggio di base r = 3 cm e altezza h = 4 cm?",
+      "opts": ["36π cm^3", "12π cm^3", "24π cm^3", "48π cm^3"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il coefficiente angolare della retta passante per A(1, 2) e B(3, 8)?",
+      "opts": ["2", "3", "4", "1/3"],
+      "correct": 1
+    },
+    {
+      "text": "Se un angolo alla circonferenza misura 45°, quanto misura il corrispondente angolo al centro?",
+      "opts": ["45°", "90°", "22.5°", "180°"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'area di un cerchio il cui diametro misura 10 cm?",
+      "opts": ["100π cm^2", "25π cm^2", "10π cm^2", "50π cm^2"],
+      "correct": 1
+    },
+    {
+      "text": "L'equazione x^2 - y^2 = 9 rappresenta nel piano cartesiano:",
+      "opts": ["Una circonferenza", "Un'ellisse", "Un'iperbole", "Una parabola"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è il valore di tan(45°)?",
+      "opts": ["0", "1", "√3", "Indefinito"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo isoscele gli angoli alla base misurano 50° ciascuno. Quanto misura l'angolo al vertice?",
+      "opts": ["80°", "100°", "50°", "40°"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è la formula per trovare la diagonale d di un parallelepipedo rettangolo di dimensioni a, b, c?",
+      "opts": ["d = a + b + c", "d = √(a^2 + b^2 + c^2)", "d = a * b * c", "d = 2(ab + bc + ac)"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della retta parallela all'asse y e passante per il punto P(5, 2)?",
+      "opts": ["y = 2", "x = 5", "y = 5x + 2", "x + y = 7"],
+      "correct": 1
+    },
+    {
+      "text": "Se il lato di un quadrato raddoppia, la sua area:",
+      "opts": ["Raddoppia", "Quadriplica", "Triplica", "Rimane invariata"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il valore di sin(90°)?",
+      "opts": ["0", "1", "-1", "1/2"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della parabola con vertice V(1, 2) e asse verticale?",
+      "opts": ["y = a(x - 1)^2 + 2", "y = (x - 2)^2 + 1", "x = a(y - 2)^2 + 1", "y = ax^2 + bx + c"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è la somma degli angoli interni di un esagono regolare?",
+      "opts": ["360°", "540°", "720°", "1080°"],
+      "correct": 2
+    },
+    {
+      "text": "In un triangolo rettangolo, l'altezza relativa all'ipotenusa è media proporzionale tra:",
+      "opts": ["I due cateti", "Le proiezioni dei cateti sull'ipotenusa", "L'ipotenusa e un cateto", "Il perimetro e l'area"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il valore di cos(0°)?",
+      "opts": ["0", "1", "-1", "1/2"],
+      "correct": 1
+    },
+    {
+      "text": "Se due circonferenze hanno i raggi r1 = 3 cm e r2 = 5 cm e la distanza tra i centri è 8 cm, esse sono:",
+      "opts": ["Secanti", "Esterne", "Tangenti esternamente", "Concentriche"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è l'equazione dell'asse y nel piano cartesiano?",
+      "opts": ["y = 0", "x = 0", "y = x", "x = 1"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'area totale di un cilindro con raggio r = 2 cm e altezza h = 5 cm?",
+      "opts": ["20π cm^2", "28π cm^2", "14π cm^2", "40π cm^2"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è la pendenza della retta di equazione 4x - 2y + 6 = 0?",
+      "opts": ["2", "-2", "4", "1/2"],
+      "correct": 0
+    },
+    {
+      "text": "In trigonometria, per qualsiasi angolo acuto α vale l'identità fondamentale:",
+      "opts": ["sin^2(α) + cos^2(α) = 1", "sin(α) + cos(α) = 1", "sin(α) / cos(α) = 1", "sin(α) * cos(α) = 1"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della circonferenza con centro in C(1, -2) e raggio r = 3?",
+      "opts": ["(x - 1)^2 + (y + 2)^2 = 9", "(x + 1)^2 + (y - 2)^2 = 3", "(x - 1)^2 + (y - 2)^2 = 9", "x^2 + y^2 - 2x + 4y - 4 = 0"],
+      "correct": 0
+    },
+    {
+      "text": "Se un prisma retto ha per base un triangolo rettangolo con cateti di 3 e 4 cm, e altezza 10 cm, il suo volume è:",
+      "opts": ["60 cm^3", "120 cm^3", "30 cm^3", "24 cm^3"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'ordinata del vertice della parabola y = x^2 - 4x + 3?",
+      "opts": ["-1", "2", "0", "-4"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di sin(180°)?",
+      "opts": ["1", "0", "-1", "1/2"],
+      "correct": 1
+    },
+    {
+      "text": "Due triangoli che hanno i tre lati rispettivamente proporzionali si dicono:",
+      "opts": ["Congruenti", "Simili", "Equivalenti", "Isosceli"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è la formula dell'area di un trapezio con basi b1, b2 e altezza h?",
+      "opts": ["(b1 + b2) * h / 2", "b1 * b2 * h", "(b1 * b2) / h", "b1 + b2 + h"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di cos(180°)?",
+      "opts": ["0", "1", "-1", "1/2"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è la distanza del punto P(3, 4) dall'origine degli assi?",
+      "opts": ["7", "5", "25", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Se un angolo alla base di un triangolo isoscele misura 45°, il triangolo è anche:",
+      "opts": ["Rettangolo", "Ottusangolo", "Equilatero", "Scaleno"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il volume di una piramide retta avente area di base B = 15 cm^2 e altezza h = 6 cm?",
+      "opts": ["90 cm^3", "30 cm^3", "45 cm^3", "15 cm^3"],
+      "correct": 1
+    },
+    {
+      "text": "Data la retta 2x + 3y - 6 = 0, qual è la sua intercetta sull'asse y (quota q)?",
+      "opts": ["2", "3", "-2", "-3"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di tan(0°)?",
+      "opts": ["1", "0", "Indefinito", "√3"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo qualunque, il Teorema dei Seni stabilisce che il rapporto tra un lato e il seno dell'angolo opposto è:",
+      "opts": ["Costante e uguale al diametro della circonferenza circoscritta", "Uguale a 1", "Uguale all'area del triangolo", "Uguale al raggio della circonferenza inscritta"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'area della superficie laterale di un cono avente raggio r = 3 cm e apotema a = 5 cm?",
+      "opts": ["15π cm^2", "30π cm^2", "45π cm^2", "12π cm^2"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per il punto P(2, 3) e perpendicolare alla retta y = 2x + 1?",
+      "opts": ["y = -1/2 x + 4", "y = 2x - 1", "y = -2x + 7", "y = 1/2 x + 2"],
+      "correct": 0
+    },
+    {
+      "text": "Se il raggio di una sfera triplica, il suo volume diventa:",
+      "opts": ["Tre volte maggiore", "Nove volte maggiore", "Ventisette volte maggiore", "Sei volte maggiore"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è il valore di sin(30°) + cos(60°)?",
+      "opts": ["1", "0", "1/2", "√3"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della parabola con asse orizzontale, vertice nell'origine e passante per (4, 2)?",
+      "opts": ["x = y^2", "y = x^2", "x = 4y^2", "x = 1/2 y^2"],
+      "correct": 0
+    },
+    {
+      "text": "In un triangolo rettangolo, la proiezione di un cateto sull'ipotenusa misura 4 cm e l'altezza relativa all'ipotenusa misura 6 cm. Quanto misura l'altro segmento di proiezione?",
+      "opts": ["9 cm", "6 cm", "12 cm", "3 cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il perimetro di un esagono regolare avente il lato lungo 6 cm?",
+      "opts": ["36 cm", "30 cm", "24 cm", "42 cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di cos(30°)?",
+      "opts": ["1/2", "√3 / 2", "√2 / 2", "0"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per i punti A(2, 3) e B(2, 7)?",
+      "opts": ["x = 2", "y = 3", "y = 2x + 3", "x + y = 9"],
+      "correct": 0
+    },
+    {
+      "text": "Se la diagonale minore di un rombo è pari al lato e misura 10 cm, qual è il perimetro del rombo?",
+      "opts": ["40 cm", "20 cm", "30 cm", "50 cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è la misura dell'angolo interno di un pentagono regolare?",
+      "opts": ["108°", "120°", "90°", "135°"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di sin(60°)?",
+      "opts": ["1/2", "√3 / 2", "1", "√2 / 2"],
+      "correct": 1
+    },
+    {
+      "text": "Data una circonferenza di raggio r = 5 cm, quanto misura la lunghezza di un arco corrispondente a un angolo al centro di 90°?",
+      "opts": ["2.5π cm", "5π cm", "10π cm", "1.25π cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per P(-1, 2) e con coefficiente angolare m = -3?",
+      "opts": ["y = -3x - 1", "y = 3x + 5", "y = -3x + 1", "y = -3x - 5"],
+      "correct": 0
+    },
+    {
+      "text": "In un triangolo rettangolo, il Teorema di Euclide (primo teorema) afferma che il cateto è medio proporzionale tra:",
+      "opts": ["L'ipotenusa e la sua proiezione sull'ipotenusa", "I due cateti", "L'altezza e l'ipotenusa", "Le due proiezioni"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'area di un settore circolare appartenente a un cerchio di raggio r = 6 cm con angolo al centro di 60°?",
+      "opts": ["6π cm^2", "12π cm^2", "3π cm^2", "36π cm^2"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di cos(90°)?",
+      "opts": ["1", "0", "-1", "undefined"],
+      "correct": 1
+    },
+    {
+      "text": "Se il volume di un cubo è 125 cm^3, qual è la misura del suo spigolo?",
+      "opts": ["5 cm", "25 cm", "15 cm", "10 cm"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è l'equazione della retta che passa per l'origine degli assi e per il punto P(3, -3)?",
+      "opts": ["y = x", "y = -x", "y = 3x", "x + y = 3"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo qualsiasi, il Teorema del Coseno (o di Carnot) generalizza:",
+      "opts": ["Il Teorema di Pitagora", "Il Teorema dei Seni", "Il Teorema di Talete", "I teoremi di Euclide"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di sin(45°)?",
+      "opts": ["1/2", "√2 / 2", "√3 / 2", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della circonferenza con centro C(0, 0) e diametro d = 10?",
+      "opts": ["x^2 + y^2 = 10", "x^2 + y^2 = 25", "x^2 + y^2 = 100", "x + y = 5"],
+      "correct": 1
+    },
+    {
+      "text": "Se un solido ha 6 facce, 12 spigoli e 8 vertici (come un cubo), per la formula di Eulero si ha F + V - S =",
+      "opts": ["0", "1", "2", "-2"],
+      "correct": 2
+    },
+    {
+      "text": "Qual è l'area di un triangolo con lati di lunghezza 5 cm, 12 cm e 13 cm?",
+      "opts": ["30 cm^2", "60 cm^2", "32.5 cm^2", "25 cm^2"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di cos(45°)?",
+      "opts": ["1/2", "√2 / 2", "√3 / 2", "1"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per i punti A(-1, -1) e B(1, 1)?",
+      "opts": ["y = x", "y = -x", "y = 2x", "x + y = 1"],
+      "correct": 0
+    },
+    {
+      "text": "Se l'area di un cerchio è 16π cm^2, quanto misura il suo raggio?",
+      "opts": ["2 cm", "4 cm", "8 cm", "16 cm"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il valore di tan(60°)?",
+      "opts": ["1", "√3", "1/√3", "√2"],
+      "correct": 1
+    },
+    {
+      "text": "In un triangolo, il segmento che congiunge i punti medi di due lati è:",
+      "opts": ["Uguale al terzo lato", "Parallelo al terzo lato e lungo la metà", "Perpendicolare al terzo lato", "Uguale all'altezza"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'equazione della retta passante per P(4, 2) e parallela all'asse x?",
+      "opts": ["x = 4", "y = 2", "y = x - 2", "x + y = 6"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è il volume di una piramide retta a base quadrata con lato di base l = 4 cm e altezza h = 9 cm?",
+      "opts": ["144 cm^3", "48 cm^3", "36 cm^3", "72 cm^3"],
+      "correct": 1
+    },
+    {
+      "text": "Qual è l'ascissa del vertice della parabola y = 2x^2 - 8x + 5?",
+      "opts": ["2", "-2", "4", "-4"],
+      "correct": 0
+    },
+    {
+      "text": "Qual è il valore di sin^2(30°) + cos^2(30°)?",
+      "opts": ["0", "1", "1/2", "2"],
+      "correct": 1
+    },
+    {
+      "text": "Se due angoli supplementari hanno una differenza di 40°, il più piccolo misura:",
+      "opts": ["70°", "50°", "80°", "100°"],
+      "correct": 0
+    }
+  ],
         "Scienze": [
         {
             "text": "Quale organulo cellulare è sede della respirazione cellulare e della produzione di ATP?",
