@@ -236,29 +236,45 @@
             </div>
         </section>
 
-        <!-- INTESATEST HUB VIEW (CON SELETTORE GRATUITO LIVE) -->
+        <!-- INTESATEST HUB VIEW (PROTETTA DA PASS DEDICATO E CON TOLC SPECIFICI LIVE) -->
         <section id="view-intesatest-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
                     <h3 class="text-lg sm:text-xl font-black text-slate-900">Eventi & Simulazioni Live IntesaTest</h3>
-                    <p class="text-xs text-slate-500 font-medium">Sessioni ufficiali in aula: seleziona gratuitamente qualsiasi TOLC e avvia il test.</p>
+                    <p class="text-xs text-slate-500 font-medium">Inserisci il pass dell'evento per sbloccare gratuitamente i test in aula.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
 
-            <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-3">
-                <div class="flex justify-between items-start">
-                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Accesso Gratuito in Aula</span>
-                    <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-signal mr-1 text-emerald-400 animate-pulse"></i> Live Attivo</span>
+            <!-- Box Inserimento Pass Evento -->
+            <div id="intesatest-lock-box" class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 text-center max-w-md mx-auto space-y-4">
+                <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-xl shadow-sm">
+                    <i class="fa-solid fa-key"></i>
                 </div>
-                <h4 class="text-xl sm:text-2xl font-black">Scegli il tuo test e partecipa alla simulazione</h4>
-                <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Per l'evento di oggi con IntesaTest, tutti i test ufficiali sottostanti sono sbloccati gratuitamente. Scegli il tuo indirizzo e avvia la prova.</p>
+                <div class="space-y-1">
+                    <h4 class="text-lg font-black text-slate-900">Area Riservata IntesaTest</h4>
+                    <p class="text-xs text-slate-500 font-medium">Inserisci il codice pass comunicato in aula per accedere alla simulazione.</p>
+                </div>
+                <div class="flex space-x-2 pt-2">
+                    <input type="text" id="intesatest-pass-input" placeholder="ES. INTESA2026" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs uppercase font-bold tracking-wider focus:outline-none focus:ring-2 focus:ring-amber-500 text-center">
+                    <button onclick="verifyIntesaTestPass()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-3 rounded-2xl text-xs transition shrink-0">Sblocca</button>
+                </div>
             </div>
 
-            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
-                <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide"><i class="fa-solid fa-layer-group text-indigo-600 mr-2"></i> Seleziona il Test per la Simulazione Live:</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="intesatest-selector-grid">
-                    <!-- Generato via JavaScript -->
+            <!-- Contenuto Sbloccato (Nascosto finché non si inserisce il pass) -->
+            <div id="intesatest-content-box" class="hidden space-y-6">
+                <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-3">
+                    <div class="flex justify-between items-start">
+                        <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Pass Verificato • Live Attivo</span>
+                        <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-signal mr-1 text-emerald-400 animate-pulse"></i> Aula in Sincrono</span>
+                    </div>
+                    <h4 class="text-xl sm:text-2xl font-black">Scegli il tuo test e partecipa alla simulazione</h4>
+                    <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Tutti i test specifici sottostanti sono sbloccati gratuitamente per i partecipanti in aula.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide"><i class="fa-solid fa-layer-group text-indigo-600 mr-2"></i> Seleziona il Test per la Simulazione Live:</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="intesatest-selector-grid"></div>
                 </div>
             </div>
         </section>
@@ -292,16 +308,7 @@
                         <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
                     </div>
                     <h4 class="text-base font-black text-slate-900">Calendario Sessioni TOLC Autunnali: Date e Modalità</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Le iscrizioni per le sessioni dei TOLC (TOLC-I, TOLC-E, TOLC-F, Professioni Sanitarie) sono aperte sul portale ufficiale CISIA. È possibile optare per la modalità TOLC@CASA o presso le sedi universitarie convenzionate.</p>
-                </div>
-
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-2 hover:border-indigo-500 transition">
-                    <div class="flex items-center justify-between">
-                        <span class="bg-emerald-50 text-emerald-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Guida Graduatorie</span>
-                        <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
-                    </div>
-                    <h4 class="text-base font-black text-slate-900">Come funzionano le Penalità e il Punteggio Ponderato</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Ogni errore nei test ministeriali comporta una decurtazione del punteggio (solitamente -0.25 punti per Ingegneria/Economia e -0.40 per Area Medica e Sanitaria). Le risposte omesse non influiscono sul punteggio finale.</p>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Le iscrizioni per le sessioni dei TOLC sono aperte sul portale ufficiale CISIA. È possibile optare per la modalità TOLC@CASA o presso le sedi universitarie convenzionate.</p>
                 </div>
             </div>
         </section>
@@ -384,7 +391,7 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- SCRIPT CON SUPABASE REST API INTEGRATA -->
+    <!-- SCRIPT CON SUPABASE REST API E LISTE TOLC DIFFERENZIATE -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
@@ -415,6 +422,7 @@
 
         let masterBank = {};
 
+        // 1. LISTA STANDARD PER I TOLC UFFICIALI (MENU PRINCIPALE)
         const officialTolcs = [
             { 
                 id: 'SANITARIE', 
@@ -616,6 +624,166 @@
             }
         ];
 
+        // 2. LISTA DEDICATA ED ESCLUSIVA PER INTESATEST LIVE (CON I TOLC SPECIFICI AGGIORNATI)
+        const intesaTestLiveTolcs = [
+            { 
+                id: 'SANITARIE', 
+                name: 'Professioni Sanitarie', 
+                category: 'Area Sanitaria', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-user-nurse',
+                bgIconColor: 'bg-emerald-50 text-emerald-600',
+                structure: [
+                    {cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}
+                ] 
+            },
+            { 
+                id: 'TOLC-VET', 
+                name: 'Test Veterinaria (Allineato Sanitarie)', 
+                category: 'Area Sanitaria / Veterinaria', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-paw',
+                bgIconColor: 'bg-amber-50 text-amber-600',
+                structure: [
+                    {cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}
+                ] 
+            },
+            { 
+                id: 'TOLC-I', 
+                name: 'TOLC-I (Ingegneria / STEM)', 
+                category: 'Ingegneria', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-gears',
+                bgIconColor: 'bg-blue-50 text-blue-600',
+                structure: [
+                    {cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-E', 
+                name: 'TOLC-E (Economia)', 
+                category: 'Economia', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-chart-line',
+                bgIconColor: 'bg-indigo-50 text-indigo-600',
+                structure: [
+                    {cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SCIENTIFICO', 
+                name: 'TOLC Scientifico (F / S - Farmacia e Scienze)', 
+                category: 'Area Scientifica', 
+                timeMinutes: 110, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-flask',
+                bgIconColor: 'bg-teal-50 text-teal-600',
+                structure: [
+                    {cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 15}, {cat: 'Matematica', count: 15}, {cat: 'Fisica', count: 10}, {cat: 'Logica', count: 5}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU-LINGUE', 
+                name: 'TOLC-SU: Lingue e Letterature', 
+                category: 'Area Umanistica', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-language',
+                bgIconColor: 'bg-purple-50 text-purple-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU-MOTORIE', 
+                name: 'TOLC-SU: Scienze Motorie', 
+                category: 'Area Umanistica / Motoria', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-person-running',
+                bgIconColor: 'bg-orange-50 text-orange-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 20}, {cat: 'Biologia', count: 15}, {cat: 'Logica', count: 15}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SU-SOCIALE', 
+                name: 'TOLC-SU: Servizio Sociale', 
+                category: 'Area Umanistica / Sociale', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-hand-holding-heart',
+                bgIconColor: 'bg-rose-50 text-rose-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 25}, {cat: 'Cultura Generale', count: 15}, {cat: 'Logica', count: 10}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-SPS', 
+                name: 'TOLC-SPS (Scienze Politiche - Accesso Libero Palermo)', 
+                category: 'Sociale', 
+                timeMinutes: 100, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-scale-balanced',
+                bgIconColor: 'bg-sky-50 text-sky-600',
+                structure: [
+                    {cat: 'Comprensione Verbale', count: 30}, {cat: 'Logica', count: 20}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-AV-LIBERO', 
+                name: 'TOLC-AV (Agraria - Accesso Libero)', 
+                category: 'Agraria', 
+                timeMinutes: 90, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-seedling',
+                bgIconColor: 'bg-lime-50 text-lime-700',
+                structure: [
+                    {cat: 'Biologia', count: 10}, {cat: 'Chimica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Logica', count: 6}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'TOLC-PSI', 
+                name: 'TOLC-PSI (Psicologia)', 
+                category: 'Psicologia', 
+                timeMinutes: 85, 
+                penalty: 0.25, 
+                correctPts: 1.0, 
+                icon: 'fa-brain',
+                bgIconColor: 'bg-pink-50 text-pink-600',
+                structure: [
+                    {cat: 'Psicologia', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Inglese', count: 30}
+                ] 
+            },
+            { 
+                id: 'ARCHITETTURA', 
+                name: 'Test Architettura / Ingegneria Edile', 
+                category: 'Design & Architettura', 
+                timeMinutes: 100, 
+                penalty: 0.40, 
+                correctPts: 1.5, 
+                icon: 'fa-compass-drafting',
+                bgIconColor: 'bg-violet-50 text-violet-600',
+                structure: [
+                    {cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica e Fisica', count: 10}
+                ] 
+            }
+        ];
+
         let currentUser = null;
         let userHistory = [];
         let currentTest = null;
@@ -627,7 +795,6 @@
         async function init() {
             await loadSharedDatabaseFromGitHub();
             renderOfficialSelectorGrid();
-            renderIntesaTestGrid();
             renderCustomCheckboxes();
             
             const saved = sessionStorage.getItem('tolclab_user');
@@ -698,7 +865,8 @@
         function renderIntesaTestGrid() {
             const container = document.getElementById('intesatest-selector-grid');
             if (!container) return;
-            container.innerHTML = officialTolcs.map(t => {
+            // Usa esclusivamente la lista dedicata agli eventi live con le sottocategorie
+            container.innerHTML = intesaTestLiveTolcs.map(t => {
                 const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0);
                 return `
                     <div class="border border-slate-200 p-4 rounded-2xl flex justify-between items-center hover:border-amber-500 transition bg-slate-50/50">
@@ -715,9 +883,25 @@
             }).join('');
         }
 
+        function verifyIntesaTestPass() {
+            const input = document.getElementById('intesatest-pass-input');
+            const pass = input.value.trim().toUpperCase();
+
+            if (pass === "INTESA2026") {
+                document.getElementById('intesatest-lock-box').classList.add('hidden');
+                document.getElementById('intesatest-content-box').classList.remove('hidden');
+                renderIntesaTestGrid();
+                alert("🎉 Pass verificato! Benvenuto alla simulazione live IntesaTest.");
+            } else {
+                alert("❌ Codice pass errato. Chiedi il codice al tutor in aula.");
+                input.value = '';
+            }
+        }
+
         function startFreeLiveTest(tolcId) {
             if (!currentUser) { alert("Effettua l'accesso prima di avviare il test."); navigate('auth'); return; }
-            const config = officialTolcs.find(t => t.id === tolcId);
+            // Cerca nella lista dedicata live anziché in quella standard
+            const config = intesaTestLiveTolcs.find(t => t.id === tolcId);
             if (!config) return;
 
             let allQuestions = [];
@@ -856,11 +1040,12 @@
             }
         }
 
-                        function redirectToStripeCheckout() {
+        function redirectToStripeCheckout() {
             if (!currentUser) { alert("Effettua l'accesso prima."); navigate('auth'); closePaywallModal(); return; }
             const stripeCheckoutUrl = `https://buy.stripe.com/5kQ9ATfKygpWcnx5v1a?prefilled_email=${encodeURIComponent(currentUser.email)}`;
             window.location.href = stripeCheckoutUrl;
         }
+
         async function applyPromoCode() {
             const inputElement = document.getElementById('promo-code-input');
             const code = inputElement.value.trim().toUpperCase();
@@ -1108,7 +1293,7 @@
                 <p class="text-[11px] text-slate-600 font-medium">Accesso completo, disdici quando vuoi in modo sicuro tramite Stripe.</p>
             </div>
             <div class="space-y-3">
-                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button
+                <button onclick="redirectToStripeCheckout()" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Procedi al Pagamento Sicuro <i class="fa-solid fa-lock ml-1"></i></button>
                 
                 <div class="pt-2 border-t border-slate-100 flex space-x-2">
                     <input type="text" id="promo-code-input" placeholder="Inserisci codice promo..." onkeydown="if(event.key === 'Enter') applyPromoCode();" class="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-indigo-500 uppercase font-bold tracking-wider text-center">
