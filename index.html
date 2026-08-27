@@ -24,13 +24,14 @@
                 </div>
             </div>
             
-            <nav id="nav-links" class="hidden md:flex space-x-4 lg:space-x-5 text-sm font-semibold items-center">
+            <nav id="nav-links" class="hidden md:flex space-x-3 lg:space-x-4 text-xs lg:text-sm font-semibold items-center">
                 <a href="#" onclick="navigate('dashboard')" class="hover:text-indigo-200 transition">Dashboard</a>
                 <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
                 <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
-                <a href="#" onclick="navigate('study-hub')" class="hover:text-indigo-200 transition"><i class="fa-solid fa-book-open mr-1"></i>Studio</a>
-                <a href="#" onclick="navigate('news-hub')" class="hover:text-indigo-200 transition"><i class="fa-solid fa-bullhorn mr-1"></i>Bandi & News</a>
-                <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Statistiche & Storico</a>
+                <a href="#" onclick="checkStudyAccess()" class="hover:text-indigo-200 transition"><i class="fa-solid fa-book-open mr-1"></i>Studio <i class="fa-solid fa-crown text-amber-400 text-[10px] ml-0.5"></i></a>
+                <a href="#" onclick="navigate('intesatest-hub')" class="hover:text-indigo-200 transition text-amber-300 font-bold"><i class="fa-solid fa-calendar-check mr-1"></i>IntesaTest</a>
+                <a href="#" onclick="navigate('news-hub')" class="hover:text-indigo-200 transition"><i class="fa-solid fa-bullhorn mr-1"></i>News & Bandi</a>
+                <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Storico</a>
             </nav>
 
             <div id="user-menu" class="flex items-center space-x-2 sm:space-x-3"></div>
@@ -120,12 +121,12 @@
             </div>
 
             <!-- Hub Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
                         <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
                         <h3 class="text-lg font-black text-slate-900">Simulazioni Ufficiali</h3>
-                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Struttura, numero di quesiti e penalità conformi agli standard ministeriali e CISIA.</p>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Struttura, numero di quesiti e penalità conformi agli standard CISIA.</p>
                     </div>
                     <button onclick="navigate('official-selector')" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-2xl hover:bg-indigo-700 transition text-xs shadow-md shadow-indigo-500/20">Avvia Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
@@ -134,27 +135,28 @@
                     <div>
                         <div class="w-12 h-12 bg-violet-50 text-violet-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-sliders"></i></div>
                         <h3 class="text-lg font-black text-slate-900">TOLC Personalizzato</h3>
-                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta il numero di quesiti e decidi la penalità.</p>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Scegli quali materie includere, imposta quesiti e penalità.</p>
                     </div>
                     <button onclick="navigate('custom-builder')" class="w-full bg-violet-600 text-white font-bold py-3 rounded-2xl hover:bg-violet-700 transition text-xs shadow-md shadow-violet-500/20">Crea Test <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
 
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-blue-500 transition group">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-blue-500 transition group relative overflow-hidden">
+                    <span class="absolute top-3 right-3 bg-amber-400 text-slate-950 text-[9px] font-black px-2 py-0.5 rounded-full uppercase"><i class="fa-solid fa-crown mr-0.5"></i>PRO</span>
                     <div>
                         <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-book-open"></i></div>
                         <h3 class="text-lg font-black text-slate-900">Area Studio & Formule</h3>
-                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Formulari rapidi e concetti chiave per ripassare la teoria al volo.</p>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Formulari rapidi e concetti chiave protetti da abbonamento PRO.</p>
                     </div>
-                    <button onclick="navigate('study-hub')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-2xl hover:bg-blue-700 transition text-xs shadow-md shadow-blue-500/20">Apri Studio <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <button onclick="checkStudyAccess()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-2xl hover:bg-blue-700 transition text-xs shadow-md shadow-blue-500/20">Apri Studio <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
 
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-amber-500 transition group">
                     <div>
-                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-bullhorn"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">Bandi & News TOLC</h3>
-                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Aggiornamenti in tempo reale su scadenze, atenei e decreti ministeriali.</p>
+                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-calendar-check"></i></div>
+                        <h3 class="text-lg font-black text-slate-900">IntesaTest Live</h3>
+                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Simulazioni ufficiali in presenza con l'associazione IntesaTest.</p>
                     </div>
-                    <button onclick="navigate('news-hub')" class="w-full bg-amber-500 text-slate-950 font-bold py-3 rounded-2xl hover:bg-amber-400 transition text-xs shadow-md shadow-amber-500/20">Leggi Guide <i class="fa-solid fa-arrow-right ml-1"></i></button>
+                    <button onclick="navigate('intesatest-hub')" class="w-full bg-amber-500 text-slate-950 font-bold py-3 rounded-2xl hover:bg-amber-400 transition text-xs shadow-md shadow-amber-500/20">Scopri Eventi <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
             </div>
         </section>
@@ -212,11 +214,12 @@
             </form>
         </section>
 
-        <!-- STUDY HUB VIEW (AREA STUDIO) -->
+        <!-- STUDY HUB VIEW (AREA STUDIO PRO) -->
         <section id="view-study-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
-                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Area Studio & Formule Rapide</h3>
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i>Contenuto PRO Sbloccato</span>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-1">Area Studio & Formule Rapide</h3>
                     <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali prima di metterti alla prova.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
@@ -233,17 +236,42 @@
             </div>
         </section>
 
-        <!-- NEWS & BANDI HUB VIEW -->
-        <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
+        <!-- INTESATEST HUB VIEW -->
+        <section id="view-intesatest-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
-                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Bandi, Scadenze & News Universitarie</h3>
-                    <p class="text-xs text-slate-500 font-medium">Tutti gli aggiornamenti ufficiali sui TOLC e sui bandi d'ammissione.</p>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Eventi & Simulazioni IntesaTest</h3>
+                    <p class="text-xs text-slate-500 font-medium">Le sessioni ufficiali in presenza organizzate in collaborazione con IntesaTest.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
 
-            <!-- BANNER AI AGGIUNTO -->
+            <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-4">
+                <div class="flex justify-between items-start">
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Evento Live in Aula</span>
+                    <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-calendar-day mr-1"></i> Sessione Ufficiale</span>
+                </div>
+                <h4 class="text-xl sm:text-2xl font-black">Simulazione Generale TOLC-I & Sanitarie</h4>
+                <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Test in contemporanea con rilevazione automatica dei punteggi, gestione delle penalità CISIA e classifica live per tutti i partecipanti in aula.</p>
+                <div class="pt-2 flex flex-wrap gap-3">
+                    <button onclick="alert('🚀 Sessione IntesaTest pronta per il lancio in aula!')" class="bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-2xl shadow-md hover:bg-amber-300 transition text-xs">
+                        <i class="fa-solid fa-play mr-1.5"></i> Avvia Simulazione Live
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS & BANDI HUB VIEW (AMPLIATA) -->
+        <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Bandi, Scadenze & News Universitarie</h3>
+                    <p class="text-xs text-slate-500 font-medium">Tutti gli aggiornamenti ufficiali sui TOLC, decreti ministeriali e guide all'immatricolazione.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+            </div>
+
+            <!-- BANNER AI -->
             <div class="gradient-bg p-6 rounded-3xl text-white shadow-lg flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div class="space-y-1 text-center sm:text-left">
                     <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Nuovo • Funzione AI</span>
@@ -255,23 +283,33 @@
                 </button>
             </div>
 
+            <!-- CONTENUTI NEWS AMPLIATI -->
             <div class="space-y-4">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-2 hover:border-indigo-500 transition">
                     <div class="flex items-center justify-between">
-                        <span class="bg-indigo-50 text-indigo-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Scadenze TOLC</span>
-                        <span class="text-xs text-slate-400 font-bold">Aggiornato a Agosto 2026</span>
+                        <span class="bg-indigo-50 text-indigo-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Scadenze CISIA</span>
+                        <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
                     </div>
-                    <h4 class="text-base font-black text-slate-900">Calendario Sessioni TOLC-I e TOLC-E: Come iscriversi in tempo</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Ricorda che è possibile sostenere i TOLC sia in modalità TOLC@CASA che in presenza presso le università convenzionate. Controlla sempre il portale CISIA per le date utili della tua sessione.</p>
+                    <h4 class="text-base font-black text-slate-900">Calendario Sessioni TOLC Autunnali: Date e Modalità</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Le iscrizioni per le sessioni dei TOLC (TOLC-I, TOLC-E, TOLC-F, Professioni Sanitarie) sono aperte sul portale ufficiale CISIA. È possibile optare per la modalità TOLC@CASA o presso le sedi universitarie convenzionate. Ricordati di verificare con attenzione i bandi specifici del tuo Ateneo di riferimento per le scadenze ultime di immatricolazione.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-2 hover:border-indigo-500 transition">
                     <div class="flex items-center justify-between">
-                        <span class="bg-emerald-50 text-emerald-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Guida Università</span>
+                        <span class="bg-emerald-50 text-emerald-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Guida Graduatorie</span>
                         <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
                     </div>
-                    <h4 class="text-base font-black text-slate-900">Graduatorie e Punteggi Minimi: Cosa cambia quest'anno</h4>
-                    <p class="text-xs text-slate-600 leading-relaxed font-medium">L'accesso ai corsi a numero programmato richiede il raggiungimento della soglia minima e il calcolo corretto della penalità per le risposte errate. Scopri come interpretare il tuo punteggio ponderato nella sezione statistiche.</p>
+                    <h4 class="text-base font-black text-slate-900">Come funzionano le Penalità e il Punteggio Ponderato</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Ogni errore nei test ministeriali comporta una decurtazione del punteggio (solitamente -0.25 punti per Ingegneria/Economia e -0.40 per Area Medica e Sanitaria). Le risposte omesse non influiscono sul punteggio finale. Sfrutta il nostro simulatore per allenarti a gestire i dubbi strategici durante la prova.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-2 hover:border-indigo-500 transition">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-amber-50 text-amber-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Consigli Utili</span>
+                        <span class="text-xs text-slate-400 font-bold">Agosto 2026</span>
+                    </div>
+                    <h4 class="text-base font-black text-slate-900">Cosa portare il giorno del test e regole di riconoscimento</h4>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">Per sostenere il test in presenza è obbligatorio presentarsi con un documento di riconoscimento valido in corso di validità e la ricevuta di iscrizione/pagamento rilasciata dal sistema. Per le sessioni TOLC@CASA, assicurati di configurare correttamente la stanza secondo i requisiti tecnici e di sicurezza stabiliti dal regolamento CISIA.</p>
                 </div>
             </div>
         </section>
@@ -322,7 +360,6 @@
                 <button onclick="navigate('dashboard')" class="w-full gradient-bg text-white py-3.5 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">Torna alla Dashboard</button>
             </div>
 
-            <!-- DETAILED REVIEW ACCORDION / BOX -->
             <div class="bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200 space-y-6">
                 <h4 class="text-base sm:text-lg font-black text-slate-900 border-b border-slate-100 pb-3"><i class="fa-solid fa-list-check mr-2 text-indigo-600"></i> Riepilogo e Correzione Quesiti</h4>
                 <div id="results-review-container" class="space-y-4"></div>
@@ -754,7 +791,7 @@
 
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
-            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub'].forEach(v => {
+            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'intesatest-hub'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
             });
             if (view === 'dashboard') { renderSession(); }
@@ -767,6 +804,11 @@
             if (currentUser.is_pro === true) return true;
             if (currentUser.pro_expires && new Date(currentUser.pro_expires) > new Date()) return true;
             return false;
+        }
+
+        function checkStudyAccess() {
+            if (!checkProAccess()) { openPaywallModal(); return; }
+            navigate('study-hub');
         }
 
         function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
@@ -1017,7 +1059,7 @@
             </div>
             <div class="space-y-2">
                 <h3 class="text-xl sm:text-2xl font-black text-slate-900">Passa a TOLC LAB PRO</h3>
-                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, tutte le categorie avanzate e il monitoraggio dettagliato dei progressi.</p>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Sblocca simulazioni ufficiali illimitate, Area Studio avanzata e monitoraggio dettagliato dei progressi.</p>
             </div>
             <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 sm:p-6 rounded-2xl border border-indigo-100 space-y-2">
                 <span class="text-[10px] font-black uppercase tracking-wider bg-indigo-600 text-white px-3 py-1 rounded-full">Offerta Lancio</span>
