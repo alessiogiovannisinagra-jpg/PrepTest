@@ -198,18 +198,18 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
                     <h3 class="text-lg sm:text-xl font-black text-slate-900">Area Studio & Formule Rapide</h3>
-                    <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali.</p>
+                    <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali prima di metterti alla prova.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
                     <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-square-root-variable text-blue-600 mr-2"></i> Matematica</h4>
-                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3 rounded-xl border border-slate-100">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi.</p>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi utili per i test CISIA.</p>
                 </div>
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
                     <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-atom text-amber-600 mr-2"></i> Fisica</h4>
-                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3 rounded-xl border border-slate-100">Cinematica, dinamica ($F=ma$) ed energia cinetica.</p>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Cinematica, dinamica ($F=ma$) ed energia cinetica per affrontare i quesiti di fisica.</p>
                 </div>
             </div>
         </section>
@@ -692,6 +692,7 @@
 
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
+            // Aggiunto 'study-hub' nell'array delle viste gestite dal router
             ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub'].forEach(v => {
                 document.getElementById(`view-${v}`).classList.toggle('hidden', v !== view);
             });
