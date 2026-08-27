@@ -365,11 +365,11 @@
                 </div>
                 <div>
                     <h3 class="text-xl sm:text-2xl font-black text-slate-900">Test Completato!</h3>
-                    <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance (Modulo 1 + Modulo Inglese).</p>
+                    <p class="text-xs text-slate-500 font-medium mt-1">Ecco il riepilogo ufficiale della tua performance.</p>
                 </div>
                 <div class="bg-slate-50 p-5 sm:p-6 rounded-2xl space-y-3 border border-slate-200">
                     <div>
-                        <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato (Modulo 1)</p>
+                        <p class="text-[11px] text-slate-400 uppercase font-bold tracking-wider">Punteggio Ponderato</p>
                         <h4 id="result-score" class="text-3xl sm:text-4xl font-black text-indigo-600 mt-1">0.0</h4>
                     </div>
                     <div class="text-xs text-slate-600 font-bold pt-2 border-t border-slate-200/60" id="result-breakdown">Esatte: 0 | Errate: 0 | Omesse: 0</div>
@@ -409,7 +409,7 @@
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
 
-    <!-- SCRIPT CON GESTIONE 2 MODULI (MATERIE + INGLESE) -->
+    <!-- SCRIPT CORRETTO E PULITO -->
     <script>
         const SUPABASE_URL = 'https://fegplscjsahlxruuhiwj.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZlZ3Bsc2Nqc2FobHhydXVoaXdqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc3NjE4MzIsImV4cCI6MjEwMzMzNzgzMn0.PrwvAwZ7C-ej6T051XfF5RshUBahkj7BVlV-x1gCo2A';
@@ -440,7 +440,6 @@
 
         let masterBank = {};
 
-        // 1. LISTA STANDARD UFFICIALI (MENU PRINCIPALE)
         const officialTolcs = [
             { 
                 id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600',
@@ -492,7 +491,6 @@
             }
         ];
 
-        // 2. LISTA DEDICATA INTESATEST LIVE (CON I TOLC SPECIFICI E MODULO INGLESE SEPARATO)
         const intesaTestLiveTolcs = [
             { 
                 id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
@@ -587,7 +585,7 @@
 
         function renderOfficialSelectorGrid() {
             document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => {
-                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + 30; // +30 inglese
+                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + 30;
                 return `
                     <div class="bg-white border border-slate-200/80 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
                         <div>
@@ -653,7 +651,6 @@
             }
         }
 
-        // COSTRUZIONE TEST SUDDIVISO IN MODULO 1 E MODULO 2 (INGLESE)
         function buildTestStructure(config) {
             let mod1Questions = [];
             config.structure.forEach(sec => {
@@ -686,7 +683,8 @@
                 timeMinutes: config.timeMinutes,
                 englishMinutes: config.englishMinutes,
                 module1: mod1Questions,
-                module2: mod2EnglishQuestions
+                module2: mod2EnglishQuestions,
+                isCustom: false
             };
         }
 
@@ -752,6 +750,7 @@
         }
 
         function prevQuestion() { if (currentIdx > 0) { currentIdx--; loadQ(); } }
+        
         function nextQuestion() {
             const currentQuestions = activeModule === 1 ? currentTest.module1 : currentTest.module2;
             if (currentIdx < currentQuestions.length - 1) { 
@@ -761,6 +760,13 @@
                 if (activeModule === 1) {
                     clearInterval(timer);
                     mod1AnswersStored = [...userAnswers];
+                    
+                    // Se è un test personalizzato o di revisione errori, chiudi direttamente senza passare all'inglese
+                    if (currentTest.isCustom) {
+                        finishCustomDirectTest();
+                        return;
+                    }
+
                     ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'intesatest-hub', 'module-transition'].forEach(v => {
                         const el = document.getElementById(`view-${v}`);
                         if(el) el.classList.add('hidden');
@@ -771,6 +777,38 @@
                     finishTest(); 
                 }
             }
+        }
+
+        async function finishCustomDirectTest() {
+            let correct = 0, wrong = 0, omitted = 0, score = 0;
+
+            currentTest.module1.forEach((q, i) => {
+                const ans = mod1AnswersStored[i];
+                if (ans === null) omitted++;
+                else if (ans === q.correct) { correct++; score += currentTest.correctPts; }
+                else { wrong++; if (!q.isEnglish) score -= currentTest.penalty; }
+            });
+
+            score = Math.max(0, score).toFixed(2);
+            document.getElementById('result-score').innerText = score;
+            document.getElementById('result-breakdown').innerText = `Esatte: ${correct} | Errate: ${wrong} | Omesse: ${omitted}`;
+
+            renderResultsReview({ questions: currentTest.module1 }, mod1AnswersStored);
+
+            try {
+                await supabaseFetch('user_history', 'POST', {
+                    user_id: currentUser.id,
+                    title: currentTest.title,
+                    score: score,
+                    date: new Date().toLocaleDateString(),
+                    test_data: { questions: currentTest.module1, userAnswers: mod1AnswersStored }
+                }, { 'Prefer': 'return=minimal' });
+            } catch(e) {
+                console.error("Errore salvataggio storico su cloud:", e);
+            }
+
+            await fetchCloudData();
+            navigate('results');
         }
 
         async function finishTest() {
@@ -963,6 +1001,7 @@
                 inputElement.value = '';
             }
         }
+
         function startCustomTest(e) {
             e.preventDefault();
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
@@ -997,12 +1036,6 @@
             setupModule1Session();
         }
 
-            });
-
-            currentTest = { title: `TOLC Personalizzato`, correctPts: 1.0, penalty: penaltyVal, module1: allQuestions, module2: [] };
-            setupModule1Session();
-        }
-
         function startReviewErrorsTest() {
             let errorQuestions = [];
             userHistory.forEach(h => {
@@ -1023,7 +1056,7 @@
 
             errorQuestions = [...new Set(errorQuestions)].sort(() => Math.random() - 0.5);
 
-            currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, module1: errorQuestions, module2: [] };
+            currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, module1: errorQuestions, module2: [], isCustom: true };
             setupModule1Session();
         }
 
