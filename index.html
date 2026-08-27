@@ -236,32 +236,34 @@
             </div>
         </section>
 
-        <!-- INTESATEST HUB VIEW -->
+        <!-- INTESATEST HUB VIEW (CON SELETTORE GRATUITO LIVE) -->
         <section id="view-intesatest-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
-                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Eventi & Simulazioni IntesaTest</h3>
-                    <p class="text-xs text-slate-500 font-medium">Le sessioni ufficiali in presenza organizzate in collaborazione con IntesaTest.</p>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Eventi & Simulazioni Live IntesaTest</h3>
+                    <p class="text-xs text-slate-500 font-medium">Sessioni ufficiali in aula: seleziona gratuitamente qualsiasi TOLC e avvia il test.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
 
-            <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-4">
+            <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-3">
                 <div class="flex justify-between items-start">
-                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Evento Live in Aula</span>
-                    <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-calendar-day mr-1"></i> Sessione Ufficiale</span>
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Accesso Gratuito in Aula</span>
+                    <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-signal mr-1 text-emerald-400 animate-pulse"></i> Live Attivo</span>
                 </div>
-                <h4 class="text-xl sm:text-2xl font-black">Simulazione Generale TOLC-I & Sanitarie</h4>
-                <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Test in contemporanea con rilevazione automatica dei punteggi, gestione delle penalità CISIA e classifica live per tutti i partecipanti in aula.</p>
-                <div class="pt-2 flex flex-wrap gap-3">
-                    <button onclick="alert('🚀 Sessione IntesaTest pronta per il lancio in aula!')" class="bg-amber-400 text-slate-950 font-bold px-6 py-3 rounded-2xl shadow-md hover:bg-amber-300 transition text-xs">
-                        <i class="fa-solid fa-play mr-1.5"></i> Avvia Simulazione Live
-                    </button>
+                <h4 class="text-xl sm:text-2xl font-black">Scegli il tuo test e partecipa alla simulazione</h4>
+                <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Per l'evento di oggi con IntesaTest, tutti i test ufficiali sottostanti sono sbloccati gratuitamente. Scegli il tuo indirizzo e avvia la prova.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200 space-y-4">
+                <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide"><i class="fa-solid fa-layer-group text-indigo-600 mr-2"></i> Seleziona il Test per la Simulazione Live:</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="intesatest-selector-grid">
+                    <!-- Generato via JavaScript -->
                 </div>
             </div>
         </section>
 
-        <!-- NEWS & BANDI HUB VIEW -->
+        <!-- NEWS & BANDI HUB VIEW (CON BOT AI DISPONIBILE) -->
         <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
@@ -271,15 +273,15 @@
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
 
-            <!-- BANNER AI -->
+            <!-- BANNER BOT AI INTERATTIVO -->
             <div class="gradient-bg p-6 rounded-3xl text-white shadow-lg flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div class="space-y-1 text-center sm:text-left">
-                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Nuovo • Funzione AI</span>
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider">Nuovo • Bot AI Disponibile</span>
                     <h4 class="text-base sm:text-lg font-black">Hai dubbi su un bando o sul calcolo del punteggio?</h4>
-                    <p class="text-xs text-indigo-100 font-medium">Chiedi al nostro assistente virtuale dedicato all'orientamento universitario.</p>
+                    <p class="text-xs text-indigo-100 font-medium">Interagisci con il nostro assistente virtuale per ricevere risposte istantanee.</p>
                 </div>
-                <button onclick="alert('🤖 Tutor AI: Ciao! Per qualsiasi dubbio sui bandi o sui test d\\'ammissione di quest\\'anno, chiedi pure direttamente durante la sessione live di oggi!')" class="bg-white text-indigo-700 font-bold px-5 py-3 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs shrink-0 w-full sm:w-auto text-center">
-                    <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-amber-500"></i> Chiedi all'IA
+                <button onclick="openAiChatModal()" class="bg-white text-indigo-700 font-bold px-5 py-3 rounded-2xl shadow-md hover:bg-indigo-50 transition text-xs shrink-0 w-full sm:w-auto text-center">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-amber-500"></i> Apri Bot AI
                 </button>
             </div>
 
@@ -376,7 +378,8 @@
         </section>
 
     </main>
-       <!-- Footer -->
+
+    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 font-medium">
         <p>&copy; 2026 TOLC LAB. Tutti i diritti riservati.</p>
     </footer>
@@ -624,6 +627,7 @@
         async function init() {
             await loadSharedDatabaseFromGitHub();
             renderOfficialSelectorGrid();
+            renderIntesaTestGrid();
             renderCustomCheckboxes();
             
             const saved = sessionStorage.getItem('tolclab_user');
@@ -689,6 +693,48 @@
                     </div>
                 `;
             }).join('');
+        }
+
+        function renderIntesaTestGrid() {
+            const container = document.getElementById('intesatest-selector-grid');
+            if (!container) return;
+            container.innerHTML = officialTolcs.map(t => {
+                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0);
+                return `
+                    <div class="border border-slate-200 p-4 rounded-2xl flex justify-between items-center hover:border-amber-500 transition bg-slate-50/50">
+                        <div>
+                            <span class="text-[10px] font-black text-indigo-600 uppercase tracking-wider">${t.category}</span>
+                            <h5 class="text-sm font-black text-slate-900">${t.name}</h5>
+                            <p class="text-[11px] text-slate-500 font-medium">${totalQ} quesiti • ${t.timeMinutes} min</p>
+                        </div>
+                        <button onclick="startFreeLiveTest('${t.id}')" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-sm shrink-0">
+                            Avvia Live <i class="fa-solid fa-play ml-1"></i>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function startFreeLiveTest(tolcId) {
+            if (!currentUser) { alert("Effettua l'accesso prima di avviare il test."); navigate('auth'); return; }
+            const config = officialTolcs.find(t => t.id === tolcId);
+            if (!config) return;
+
+            let allQuestions = [];
+            config.structure.forEach(sec => {
+                let pool = masterBank[sec.cat] || [];
+                let shuffled = [...pool].sort(() => Math.random() - 0.5);
+                let selected = shuffled.slice(0, sec.count);
+                selected.forEach(q => {
+                    let rawOpts = [...q.opts];
+                    let correctText = rawOpts[q.correct];
+                    rawOpts.sort(() => Math.random() - 0.5);
+                    allQuestions.push({ cat: sec.cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: sec.cat === 'Inglese' });
+                });
+            });
+
+            currentTest = { title: `IntesaTest Live: ${config.name}`, correctPts: config.correctPts, penalty: config.penalty, questions: allQuestions };
+            setupTestSession();
         }
 
         function renderCustomCheckboxes() {
@@ -802,6 +848,13 @@
 
         function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
         function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
+
+        function openAiChatModal() {
+            const promptMsg = prompt("🤖 Bot AI orientamento:\n\nFai una domanda sui bandi, scadenze o sul calcolo delle penalità TOLC:");
+            if (promptMsg) {
+                alert("🤖 Bot AI:\n\nOttima domanda! Per quanto riguarda \"" + promptMsg + "\", ti ricordo che puoi consultare le guide ufficiali nella nostra sezione News o chiedere direttamente ai tutor in aula durante la sessione live di IntesaTest.");
+            }
+        }
 
         function redirectToStripeCheckout() {
             if (!currentUser) { alert("Effettua l'accesso prima."); navigate('auth'); closePaywallModal(); return; }
@@ -1070,4 +1123,3 @@
 
 </body>
 </html>
-
