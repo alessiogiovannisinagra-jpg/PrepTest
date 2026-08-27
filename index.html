@@ -963,7 +963,6 @@
                 inputElement.value = '';
             }
         }
-
         function startCustomTest(e) {
             e.preventDefault();
             const checkedBoxes = document.querySelectorAll('input[name="custom-cat"]:checked');
@@ -985,6 +984,19 @@
                     rawOpts.sort(() => Math.random() - 0.5);
                     allQuestions.push({ cat: cat, text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: false });
                 });
+            });
+
+            currentTest = { 
+                title: `TOLC Personalizzato`, 
+                correctPts: 1.0, 
+                penalty: penaltyVal, 
+                module1: allQuestions, 
+                module2: [], 
+                isCustom: true 
+            };
+            setupModule1Session();
+        }
+
             });
 
             currentTest = { title: `TOLC Personalizzato`, correctPts: 1.0, penalty: penaltyVal, module1: allQuestions, module2: [] };
