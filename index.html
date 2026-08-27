@@ -856,9 +856,9 @@
             }
         }
 
-        function redirectToStripeCheckout() {
+                function redirectToStripeCheckout() {
             if (!currentUser) { alert("Effettua l'accesso prima."); navigate('auth'); closePaywallModal(); return; }
-            const stripeCheckoutUrl = https://buy.stripe.com/5kQ9ATfKygpWcnx5v1aVa01{encodeURIComponent(currentUser.email)}`;
+            const stripeCheckoutUrl = `https://buy.stripe.com/5kQ9ATfKygpWcnx5v1a?prefilled_email=${encodeURIComponent(currentUser.email)}`;
             window.location.href = stripeCheckoutUrl;
         }
 
