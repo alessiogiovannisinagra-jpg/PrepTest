@@ -355,6 +355,23 @@
             </div>
         </section>
 
+        <!-- MODULO INTERMEDIO TRANSIZIONE (Solo per test con Inglese) -->
+        <section id="view-module-transition" class="hidden max-w-xl mx-auto bg-white p-8 rounded-3xl shadow-xl border border-slate-200 text-center space-y-6 my-10">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto text-2xl shadow-md">
+                <i class="fa-solid fa-check-double"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-2xl font-black text-slate-900">Modulo 1 Completato con Successo!</h3>
+                <p class="text-xs text-slate-500 font-medium leading-relaxed">Hai completato la prima parte del test. Adesso passerai automaticamente al <b>Modulo 2: Test della Lingua Inglese</b> (30 quesiti aggiuntivi).</p>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-xs font-semibold text-slate-600">
+                <i class="fa-solid fa-circle-info mr-1 text-indigo-600"></i> Ricorda: il modulo di inglese non concorre al punteggio ponderato di sbarramento, ma è obbligatorio ai fini della certificazione CISIA.
+            </div>
+            <button onclick="startModule2English()" class="w-full gradient-bg text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-500/30 hover:opacity-95 transition text-sm">
+                Avvia Modulo 2 (Inglese) <i class="fa-solid fa-arrow-right ml-1"></i>
+            </button>
+        </section>
+
         <!-- TEST RUNNER VIEW -->
         <section id="view-runner" class="hidden max-w-3xl mx-auto space-y-6 bg-white p-5 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-slate-100 pb-4 gap-3">
@@ -467,7 +484,7 @@
 
         const officialTolcs = [
             { 
-                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600',
+                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 0, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600',
                 structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] 
             },
             { 
@@ -507,38 +524,38 @@
                 structure: [{cat: 'Matematica', count: 12}, {cat: 'Logica', count: 12}, {cat: 'Comprensione Verbale', count: 12}] 
             },
             { 
-                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Architettura', timeMinutes: 85, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600',
+                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Architettura', timeMinutes: 85, englishMinutes: 0, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600',
                 structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica', count: 5}, {cat: 'Fisica', count: 5}] 
             },
             { 
-                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione primaria', timeMinutes: 130, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600',
+                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione primaria', timeMinutes: 130, englishMinutes: 0, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600',
                 structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica', count: 10}] 
             },
             { 
-                id: 'FORMAZIONE', name: 'Test Corso di Formazione', category: 'Formazione', timeMinutes: 60, penalty: 0.25, correctPts: 1.0, icon: 'fa-graduation-cap', bgIconColor: 'bg-indigo-50 text-indigo-600',
+                id: 'FORMAZIONE', name: 'Test Corso di Formazione', category: 'Formazione', timeMinutes: 60, englishMinutes: 0, penalty: 0.25, correctPts: 1.0, icon: 'fa-graduation-cap', bgIconColor: 'bg-indigo-50 text-indigo-600',
                 structure: [{cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 15}] 
             },
             { 
-                id: 'SERVIZIO-SOCIALE', name: 'Servizio Sociale', category: 'Servizio sociale', timeMinutes: 60, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', bgIconColor: 'bg-rose-50 text-rose-600',
+                id: 'SERVIZIO-SOCIALE', name: 'Servizio Sociale', category: 'Servizio sociale', timeMinutes: 60, englishMinutes: 0, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', bgIconColor: 'bg-rose-50 text-rose-600',
                 structure: [{cat: 'Comprensione Verbale', count: 15}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 10}] 
             }
         ];
 
         const intesaTestLiveTolcs = [
             { 
-                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
+                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 0, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
                 structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] 
             },
             { 
-                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Architettura', timeMinutes: 85, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', badgeColor: 'bg-violet-100 text-violet-800 border-violet-200', bgIconColor: 'bg-violet-50 text-violet-600',
+                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Architettura', timeMinutes: 85, englishMinutes: 0, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', badgeColor: 'bg-violet-100 text-violet-800 border-violet-200', bgIconColor: 'bg-violet-50 text-violet-600',
                 structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica', count: 5}, {cat: 'Fisica', count: 5}] 
             },
             { 
-                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione primaria', timeMinutes: 130, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', badgeColor: 'bg-pink-100 text-pink-800 border-pink-200', bgIconColor: 'bg-pink-50 text-pink-600',
+                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione primaria', timeMinutes: 130, englishMinutes: 0, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', badgeColor: 'bg-pink-100 text-pink-800 border-pink-200', bgIconColor: 'bg-pink-50 text-pink-600',
                 structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica', count: 10}] 
             },
             { 
-                id: 'SERVIZIO-SOCIALE', name: 'Servizio Sociale', category: 'Servizio sociale', timeMinutes: 60, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', badgeColor: 'bg-rose-100 text-rose-800 border-rose-200', bgIconColor: 'bg-rose-50 text-rose-600',
+                id: 'SERVIZIO-SOCIALE', name: 'Servizio Sociale', category: 'Servizio sociale', timeMinutes: 60, englishMinutes: 0, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', badgeColor: 'bg-rose-100 text-rose-800 border-rose-200', bgIconColor: 'bg-rose-50 text-rose-600',
                 structure: [{cat: 'Comprensione Verbale', count: 15}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 10}] 
             }
         ];
@@ -598,7 +615,7 @@
 
         function renderOfficialSelectorGrid() {
             document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => {
-                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + (t.englishMinutes ? 30 : 0);
+                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + (t.englishMinutes > 0 ? 30 : 0);
                 return `
                     <div class="bg-white border border-slate-200/80 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
                         <div>
@@ -611,7 +628,7 @@
                             <h4 class="text-base sm:text-lg font-black text-slate-900">${t.name}</h4>
                         </div>
                         <div class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3 font-medium">
-                            <p><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> Quesiti totali: <b>${totalQ}</b> ${t.englishMinutes ? '(Mod. 1 + Inglese)' : '(Senza Inglese)'}</p>
+                            <p><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> Quesiti totali: <b>${totalQ}</b> ${t.englishMinutes > 0 ? '(Mod. 1 + Inglese)' : '(Senza Inglese)'}</p>
                             <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.timeMinutes}m</p>
                             <p class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
                         </div>
@@ -625,7 +642,7 @@
             const container = document.getElementById('intesatest-selector-grid');
             if (!container) return;
             container.innerHTML = intesaTestLiveTolcs.map(t => {
-                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + (t.englishMinutes ? 30 : 0);
+                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + (t.englishMinutes > 0 ? 30 : 0);
                 return `
                     <div class="border border-slate-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 hover:border-indigo-500 transition bg-white shadow-sm group">
                         <div class="flex justify-between items-start">
@@ -679,7 +696,7 @@
             });
 
             let mod2EnglishQuestions = [];
-            if (config.englishMinutes) {
+            if (config.englishMinutes > 0) {
                 let engPool = masterBank['Inglese'] || [{ text: "Choose the correct option: If it ____ tomorrow, we will stay at home.", opts: ["rains", "rained", "will rain", "rain"], correct: 0 }];
                 let engShuffled = [...engPool].sort(() => Math.random() - 0.5);
                 for (let i = 0; i < 30; i++) {
@@ -699,7 +716,7 @@
                 englishMinutes: config.englishMinutes || 0,
                 module1: mod1Questions,
                 module2: mod2EnglishQuestions,
-                hasEnglish: !!config.englishMinutes,
+                hasEnglish: (config.englishMinutes > 0),
                 isCustom: false
             };
         }
@@ -730,7 +747,7 @@
             userAnswers = new Array(currentTest.module1.length).fill(null);
             seconds = 0;
             navigate('runner');
-            document.getElementById('runner-module-tag').innerText = currentTest.isCustom ? "Test Personalizzato" : "Modulo 1 (Materie Principali)";
+            document.getElementById('runner-module-tag').innerText = currentTest.isCustom ? "Test Personalizzato" : "Test Ufficiale";
             loadQ();
             startTimer();
         }
