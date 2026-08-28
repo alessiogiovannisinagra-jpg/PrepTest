@@ -535,7 +535,7 @@
 
         const intesaTestLiveTolcs = [
             { 
-                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
+                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 100, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
                 structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] 
             },
             { 
@@ -547,19 +547,19 @@
                 structure: [{cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}] 
             },
             { 
-                id: 'TOL-SCIENTIFICO', name: 'TOL Scientifico (F / S - Farmacia e Scienze)', category: 'Area Scientifica', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', badgeColor: 'bg-teal-100 text-teal-800 border-teal-200', bgIconColor: 'bg-teal-50 text-teal-600',
-                structure: [{cat: 'Biologia', count: 5}, {cat: 'Chimica', count: 5}, {cat: 'Matematica', count: 20}, {cat: 'Comprensione Verbale', count: 5}, {cat: 'Fisica', count: 5}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 5}] 
+                id: 'TOL-SCIENTIFICO', name: 'TOL Scientifico (F / S - Farmacia e Scienze)', category: 'Area Scientifica', timeMinutes: 60, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', badgeColor: 'bg-teal-100 text-teal-800 border-teal-200', bgIconColor: 'bg-teal-50 text-teal-600',
+                structure: [{cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 15}, {cat: 'Matematica', count: 7}, {cat: 'Comprensione Verbale', count: 5}, {cat: 'Fisica', count: 5}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 5}] 
             },
             { 
-                id: 'TOL-SU-LINGUE', name: 'TOL-SU: Lingue e Letterature', category: 'Area Umanistica', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-language', badgeColor: 'bg-purple-100 text-purple-800 border-purple-200', bgIconColor: 'bg-purple-50 text-purple-600',
+                id: 'TOL-SU-LINGUE', name: 'TOL-SU: Lingue e Letterature', category: 'Area Umanistica', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-language', badgeColor: 'bg-purple-100 text-purple-800 border-purple-200', bgIconColor: 'bg-purple-50 text-purple-600',
                 structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}] 
             },
             { 
-                id: 'TOL-SU-MOTORIE', name: 'TOL-SU: Scienze Motorie', category: 'Area Umanistica / Motoria', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-person-running', badgeColor: 'bg-orange-100 text-orange-800 border-orange-200', bgIconColor: 'bg-orange-50 text-orange-600',
+                id: 'TOL-SU-MOTORIE', name: 'TOL-SU: Scienze Motorie', category: 'Area Umanistica / Motoria', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-person-running', badgeColor: 'bg-orange-100 text-orange-800 border-orange-200', bgIconColor: 'bg-orange-50 text-orange-600',
                 structure: [{cat: 'Comprensione Verbale', count: 20}, {cat: 'Biologia', count: 15}, {cat: 'Logica', count: 15}] 
             },
             { 
-                id: 'TOL-SU-SOCIALE', name: 'TOL-SU: Servizio Sociale', category: 'Area Umanistica / Sociale', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', badgeColor: 'bg-rose-100 text-rose-800 border-rose-200', bgIconColor: 'bg-rose-50 text-rose-600',
+                id: 'TOL-SU-SOCIALE', name: 'TOL-SU: Servizio Sociale', category: 'Area Umanistica / Sociale', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', badgeColor: 'bg-rose-100 text-rose-800 border-rose-200', bgIconColor: 'bg-rose-50 text-rose-600',
                 structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Cultura Generale', count: 15}, {cat: 'Logica', count: 10}] 
             },
             { 
@@ -569,6 +569,10 @@
             { 
                 id: 'ARCHITETTURA', name: 'TOL (Architettura / Ingegneria Edile)', category: 'Design & Architettura', timeMinutes: 85, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', badgeColor: 'bg-violet-100 text-violet-800 border-violet-200', bgIconColor: 'bg-violet-50 text-violet-600',
                 structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10},{cat: 'Fisica', count: 10}, {cat: 'Matematica', count: 10}] 
+            },
+             { 
+                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 130, englishMinutes: 20, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600',
+                structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica e Fisica', count: 20}] 
             }
         ];
 
