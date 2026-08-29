@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,6 @@
                 <a href="#" onclick="navigate('official-selector')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-shield-halved mr-1.5"></i>TOLC Ufficiali</a>
                 <a href="#" onclick="navigate('custom-builder')" class="hover:text-indigo-200 transition bg-white/10 px-3 py-1.5 rounded-xl"><i class="fa-solid fa-sliders mr-1.5"></i>Personalizzato</a>
                 <a href="#" onclick="checkStudyAccess()" class="hover:text-indigo-200 transition"><i class="fa-solid fa-book-open mr-1"></i>Studio <i class="fa-solid fa-crown text-amber-400 text-[10px] ml-0.5"></i></a>
-                <a href="#" onclick="navigate('intesatest-hub')" class="hover:text-indigo-200 transition text-amber-300 font-bold"><i class="fa-solid fa-calendar-check mr-1"></i>IntesaTest</a>
                 <a href="#" onclick="navigate('news-hub')" class="hover:text-indigo-200 transition"><i class="fa-solid fa-bullhorn mr-1"></i>Bandi & Link</a>
                 <a href="#" onclick="navigate('stats')" class="hover:text-indigo-200 transition">Storico</a>
             </nav>
@@ -149,7 +148,7 @@
             </div>
 
             <!-- Hub Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-indigo-500 transition group">
                     <div>
                         <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-file-shield"></i></div>
@@ -177,15 +176,6 @@
                     </div>
                     <button onclick="checkStudyAccess()" class="w-full bg-blue-600 text-white font-bold py-3 rounded-2xl hover:bg-blue-700 transition text-xs shadow-md shadow-blue-500/20">Apri Studio <i class="fa-solid fa-arrow-right ml-1"></i></button>
                 </div>
-
-                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 flex flex-col justify-between space-y-4 hover:border-amber-500 transition group">
-                    <div>
-                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-calendar-check"></i></div>
-                        <h3 class="text-lg font-black text-slate-900">IntesaTest Live</h3>
-                        <p class="text-xs text-slate-500 mt-1 font-medium leading-relaxed">Simulazioni ufficiali in presenza con l'associazione IntesaTest.</p>
-                    </div>
-                    <button onclick="navigate('intesatest-hub')" class="w-full bg-amber-500 text-slate-950 font-bold py-3 rounded-2xl hover:bg-amber-400 transition text-xs shadow-md shadow-amber-500/20">Scopri Eventi <i class="fa-solid fa-arrow-right ml-1"></i></button>
-                </div>
             </div>
         </section>
 
@@ -194,7 +184,7 @@
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
                     <h3 class="text-lg sm:text-xl font-black text-slate-900">Simulazioni TOLC e Test Ufficiali</h3>
-                    <p class="text-xs text-slate-500 font-medium mt-0.5">Seleziona il test d'ammissione specifico con la struttura e la durata reali (Diviso in 2 Moduli: Materie + Inglese).</p>
+                    <p class="text-xs text-slate-500 font-medium mt-0.5">Seleziona il test d'ammissione specifico con la struttura e la durata reali ministeriali.</p>
                 </div>
                 <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
@@ -264,50 +254,7 @@
             </div>
         </section>
 
-        <!-- INTESATEST HUB VIEW -->
-        <section id="view-intesatest-hub" class="hidden max-w-4xl mx-auto space-y-6">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
-                <div>
-                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Eventi & Simulazioni Live IntesaTest</h3>
-                    <p class="text-xs text-slate-500 font-medium">Inserisci il pass dell'evento per sbloccare gratuitamente i test in aula.</p>
-                </div>
-                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
-            </div>
-
-            <!-- Box Inserimento Pass Evento -->
-            <div id="intesatest-lock-box" class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 text-center max-w-md mx-auto space-y-4">
-                <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center mx-auto text-xl shadow-sm">
-                    <i class="fa-solid fa-key"></i>
-                </div>
-                <div class="space-y-1">
-                    <h4 class="text-lg font-black text-slate-900">Area Riservata IntesaTest</h4>
-                    <p class="text-xs text-slate-500 font-medium">Inserisci il codice pass comunicato in aula per accedere alla simulazione.</p>
-                </div>
-                <div class="flex space-x-2 pt-2">
-                    <input type="text" id="intesatest-pass-input" placeholder="ES. INTESA2026" class="w-full px-4 py-3 border border-slate-200 rounded-2xl text-xs uppercase font-bold tracking-wider focus:outline-none focus:ring-2 focus:ring-amber-500 text-center">
-                    <button onclick="verifyIntesaTestPass()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-3 rounded-2xl text-xs transition shrink-0">Sblocca</button>
-                </div>
-            </div>
-
-            <!-- Contenuto Sbloccato -->
-            <div id="intesatest-content-box" class="hidden space-y-6">
-                <div class="gradient-bg p-6 sm:p-8 rounded-3xl text-white shadow-lg space-y-3">
-                    <div class="flex justify-between items-start">
-                        <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Pass Verificato</span>
-                        <span class="text-xs font-mono font-bold text-indigo-100"><i class="fa-solid fa-signal mr-1 text-emerald-400 animate-pulse"></i> Live Attivo</span>
-                    </div>
-                    <h4 class="text-xl sm:text-2xl font-black">Scegli il tuo test e partecipa alla simulazione</h4>
-                    <p class="text-xs sm:text-sm text-indigo-100 font-medium leading-relaxed">Tutti i test specifici sottostanti sono sbloccati gratuitamente per i partecipanti in aula.</p>
-                </div>
-
-                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-slate-200 space-y-5">
-                    <h4 class="text-sm font-black text-slate-900 uppercase tracking-wide flex items-center"><i class="fa-solid fa-layer-group text-indigo-600 mr-2 text-base"></i> Seleziona il Test per la Simulazione Live:</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="intesatest-selector-grid"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEWS & BANDI HUB VIEW (AGGIORNATA CON DATI REALI E LINK UTILI) -->
+        <!-- NEWS & BANDI HUB VIEW -->
         <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
                 <div>
@@ -335,7 +282,7 @@
                     <div class="space-y-2">
                         <span class="bg-indigo-50 text-indigo-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">CISIA • Calendario Ufficiale</span>
                         <h4 class="text-base font-black text-slate-900">Portale TOLC & Prenotazione Sessioni</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Il calendario dei TOLC (TOLC@CASA o in presenza) viene aggiornato costantemente dal CISIA. Verifica la disponibilità dei posti e i bandi di Ateneo prima di effettuare l'iscrizione.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Il calendario dei TOLC viene aggiornato costantemente dal CISIA. Verifica la disponibilità dei posti e i bandi di Ateneo prima di effettuare l'iscrizione.</p>
                     </div>
                     <a href="https://www.cisiaonline.it" target="_blank" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-2xl transition text-xs shadow-md shadow-indigo-500/20 text-center block">
                         Vai su CISIAonline.it <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
@@ -346,7 +293,7 @@
                     <div class="space-y-2">
                         <span class="bg-amber-50 text-amber-700 text-[10px] font-black px-3 py-1 rounded-full uppercase">Ateneo • Immatricolazioni</span>
                         <h4 class="text-base font-black text-slate-900">Bandi e Scadenze Universitarie (es. UniPa)</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Il punteggio del TOLC è lo strumento per l'accesso, ma la regola d'oro è consultare il bando specifico dell'università in cui intendi immatricolarti per conoscere scadenze e requisiti di sbarramento.</p>
+                        <p class="text-xs text-slate-600 leading-relaxed font-medium">Il punteggio del TOLC è lo strumento per l'accesso, ma la regola d'oro è consultare il bando specifico dell'università in cui intendi immatricolarti.</p>
                     </div>
                     <a href="https://www.unipa.it" target="_blank" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-2xl transition text-xs shadow-md shadow-amber-500/20 text-center block">
                         Vai su UniPa.it <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-[10px]"></i>
@@ -482,97 +429,55 @@
 
         let masterBank = {};
 
+        // TOLC Ministeriali Ufficiali con parametri corretti e supporto per l'inclusione/esclusione del modulo inglese
         const officialTolcs = [
             { 
-                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600',
+                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 80, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', bgIconColor: 'bg-emerald-50 text-emerald-600', hasEnglish: true,
                 structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] 
             },
             { 
-                id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-gears', bgIconColor: 'bg-blue-50 text-blue-600',
+                id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-gears', bgIconColor: 'bg-blue-50 text-blue-600', hasEnglish: true,
                 structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Comprensione Verbale', count: 10}] 
             },
             { 
-                id: 'TOLC-E', name: 'TOLC-E (Economia)', category: 'Economia', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-chart-line', bgIconColor: 'bg-indigo-50 text-indigo-600',
+                id: 'TOLC-E', name: 'TOLC-E (Economia)', category: 'Economia', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-chart-line', bgIconColor: 'bg-indigo-50 text-indigo-600', hasEnglish: true,
                 structure: [{cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}] 
             },
             { 
-                id: 'TOLC-F', name: 'TOLC-F (Farmacia / Biotecnologie)', category: 'Farmaceutica', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', bgIconColor: 'bg-teal-50 text-teal-600',
+                id: 'TOLC-F', name: 'TOLC-F (Farmacia / Biotecnologie)', category: 'Farmaceutica', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', bgIconColor: 'bg-teal-50 text-teal-600', hasEnglish: true,
                 structure: [{cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 15}, {cat: 'Matematica', count: 7}, {cat: 'Fisica', count: 7}, {cat: 'Logica', count: 6}] 
             },
             { 
-                id: 'TOLC-PSI', name: 'TOLC-PSI (Psicologia)', category: 'Psicologia', timeMinutes: 70, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-brain', bgIconColor: 'bg-purple-50 text-purple-600',
+                id: 'TOLC-PSI', name: 'TOLC-PSI (Psicologia)', category: 'Psicologia', timeMinutes: 70, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-brain', bgIconColor: 'bg-purple-50 text-purple-600', hasEnglish: true,
                 structure: [{cat: 'Psicologia', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Comprensione Verbale', count: 10}] 
             },
             { 
-                id: 'TOLC-SU', name: 'TOLC-SU (Scienze Umanistiche)', category: 'Umanistica', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-book-open', bgIconColor: 'bg-amber-50 text-amber-600',
+                id: 'TOLC-SU', name: 'TOLC-SU (Scienze Umanistiche)', category: 'Umanistica', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-book-open', bgIconColor: 'bg-amber-50 text-amber-600', hasEnglish: true,
                 structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}] 
             },
             { 
-                id: 'TOLC-SPS', name: 'TOLC-SPS (Scienze Politiche e Sociali)', category: 'Sociale', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-scale-balanced', bgIconColor: 'bg-rose-50 text-rose-600',
+                id: 'TOLC-SPS', name: 'TOLC-SPS (Scienze Politiche e Sociali)', category: 'Sociale', timeMinutes: 80, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-scale-balanced', bgIconColor: 'bg-rose-50 text-rose-600', hasEnglish: true,
                 structure: [{cat: 'Comprensione Verbale', count: 30}, {cat: 'Logica', count: 20}] 
             },
             { 
-                id: 'TOLC-S', name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', category: 'Scienze', timeMinutes: 95, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-atom', bgIconColor: 'bg-cyan-50 text-cyan-600',
+                id: 'TOLC-S', name: 'TOLC-S (Scienze Mat., Fis. e Naturali)', category: 'Scienze', timeMinutes: 95, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-atom', bgIconColor: 'bg-cyan-50 text-cyan-600', hasEnglish: true,
                 structure: [{cat: 'Matematica', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 20}] 
             },
             { 
-                id: 'TOLC-AV', name: 'TOLC-AV (Agraria & Veterinaria)', category: 'Agraria', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-seedling', bgIconColor: 'bg-lime-50 text-lime-700',
+                id: 'TOLC-AV', name: 'TOLC-AV (Agraria & Veterinaria)', category: 'Agraria', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-seedling', bgIconColor: 'bg-lime-50 text-lime-700', hasEnglish: true,
                 structure: [{cat: 'Biologia', count: 10}, {cat: 'Chimica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Fisica', count: 10}, {cat: 'Logica', count: 6}] 
             },
             { 
-                id: 'TOLC-LP', name: 'TOLC-LP (Lauree Professionalizzanti)', category: 'Professionalizzante', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-screwdriver-wrench', bgIconColor: 'bg-orange-50 text-orange-600',
+                id: 'TOLC-LP', name: 'TOLC-LP (Lauree Professionalizzanti)', category: 'Professionalizzante', timeMinutes: 75, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-screwdriver-wrench', bgIconColor: 'bg-orange-50 text-orange-600', hasEnglish: true,
                 structure: [{cat: 'Matematica', count: 12}, {cat: 'Logica', count: 12}, {cat: 'Comprensione Verbale', count: 12}] 
             },
             { 
-                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Design & Architettura', timeMinutes: 85, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600',
+                id: 'ARCHITETTURA', name: 'Test Architettura / Ingegneria Edile', category: 'Design & Architettura', timeMinutes: 85, englishMinutes: 0, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', bgIconColor: 'bg-violet-50 text-violet-600', hasEnglish: false,
                 structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 10}, {cat: 'Disegno e Rappresentazione', count: 10}, {cat: 'Matematica e Fisica', count: 10}] 
             },
             { 
-                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 130, englishMinutes: 20, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600',
+                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 130, englishMinutes: 0, penalty: 0.40, correctPts: 1.0, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600', hasEnglish: false,
                 structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica e Fisica', count: 20}] 
-            }
-        ];
-
-        const intesaTestLiveTolcs = [
-            { 
-                id: 'SANITARIE', name: 'Professioni Sanitarie', category: 'Area Sanitaria', timeMinutes: 100, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-user-nurse', badgeColor: 'bg-emerald-100 text-emerald-800 border-emerald-200', bgIconColor: 'bg-emerald-50 text-emerald-600',
-                structure: [{cat: 'Biologia', count: 23}, {cat: 'Chimica', count: 15}, {cat: 'Fisica', count: 7}, {cat: 'Matematica', count: 6}, {cat: 'Logica', count: 9}] 
-            },
-            { 
-                id: 'TOLC-I', name: 'TOLC-I (Ingegneria / STEM)', category: 'Ingegneria', timeMinutes: 105, englishMinutes: 15, penalty: 0.25, correctPts: 1.25, icon: 'fa-gears', badgeColor: 'bg-blue-100 text-blue-800 border-blue-200', bgIconColor: 'bg-blue-50 text-blue-600',
-                structure: [{cat: 'Matematica', count: 20}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Logica', count: 5}, {cat: 'Fisica', count: 10}, {cat: 'Chimica', count: 10}] 
-            },
-            { 
-                id: 'TOLC-E', name: 'TOLC-E (Economia)', category: 'Economia', timeMinutes: 90, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-chart-line', badgeColor: 'bg-indigo-100 text-indigo-800 border-indigo-200', bgIconColor: 'bg-indigo-50 text-indigo-600',
-                structure: [{cat: 'Logica', count: 13}, {cat: 'Comprensione Verbale', count: 10}, {cat: 'Matematica', count: 13}] 
-            },
-            { 
-                id: 'TOL-SCIENTIFICO', name: 'TOL Scientifico (F / S - Farmacia e Scienze)', category: 'Area Scientifica', timeMinutes: 60, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-flask', badgeColor: 'bg-teal-100 text-teal-800 border-teal-200', bgIconColor: 'bg-teal-50 text-teal-600',
-                structure: [{cat: 'Biologia', count: 15}, {cat: 'Chimica', count: 10}, {cat: 'Matematica', count: 15}, {cat: 'Fisica', count: 5}, {cat: 'Logica', count: 10}, {cat: 'Scienze', count: 5}] 
-            },
-            { 
-                id: 'TOL-SU-LINGUE', name: 'TOL-SU: Lingue e Letterature', category: 'Area Umanistica', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-language', badgeColor: 'bg-purple-100 text-purple-800 border-purple-200', bgIconColor: 'bg-purple-50 text-purple-600',
-                structure: [{cat: 'Comprensione Verbale', count: 5}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 10}] 
-            },
-            { 
-                id: 'TOL-SU-MOTORIE', name: 'TOL-SU: Scienze Motorie', category: 'Area Umanistica / Motoria', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-person-running', badgeColor: 'bg-orange-100 text-orange-800 border-orange-200', bgIconColor: 'bg-orange-50 text-orange-600',
-                structure: [{cat: 'Scienze Motorie', count: 15}, {cat: 'Cultura Generale', count: 15}, {cat: 'Biologia', count: 15}] 
-            },
-            { 
-                id: 'TOL-SU-SOCIALE', name: 'TOL-SU: Servizio Sociale', category: 'Area Umanistica / Sociale', timeMinutes: 45, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-hand-holding-heart', badgeColor: 'bg-rose-100 text-rose-800 border-rose-200', bgIconColor: 'bg-rose-50 text-rose-600',
-                structure: [{cat: 'Comprensione Verbale', count: 10}, {cat: 'Cultura Generale', count: 10}, {cat: 'Logica', count: 15}] 
-            },
-            { 
-                id: 'TOLC-PSI', name: 'TOLC-PSI (Psicologia)', category: 'Psicologia', timeMinutes: 85, englishMinutes: 15, penalty: 0.25, correctPts: 1.0, icon: 'fa-brain', badgeColor: 'bg-pink-100 text-pink-800 border-pink-200', bgIconColor: 'bg-pink-50 text-pink-600',
-                structure: [{cat: 'Psicologia', count: 20}, {cat: 'Logica', count: 10}, {cat: 'Matematica', count: 10}, {cat: 'Comprensione Verbale', count: 10}] 
-            },
-            { 
-                id: 'ARCHITETTURA', name: 'TOL (Architettura / Ingegneria Edile)', category: 'Design & Architettura', timeMinutes: 85, englishMinutes: 15, penalty: 0.40, correctPts: 1.5, icon: 'fa-compass-drafting', badgeColor: 'bg-violet-100 text-violet-800 border-violet-200', bgIconColor: 'bg-violet-50 text-violet-600',
-                structure: [{cat: 'Logica', count: 10}, {cat: 'Storia dell’Arte', count: 20}, {cat: 'Disegno e Rappresentazione', count: 10},{cat: 'Fisica', count: 5}, {cat: 'Matematica', count: 5}] 
-            },
-             { 
-                id: 'FORMAZIONE-PRIMARIA', name: 'Scienze della Formazione Primaria', category: 'Formazione', timeMinutes: 80, penalty: 0, correctPts: 1, icon: 'fa-children', bgIconColor: 'bg-pink-50 text-pink-600',
-                structure: [{cat: 'Comprensione Verbale', count: 25}, {cat: 'Logica', count: 15}, {cat: 'Cultura Generale', count: 20}, {cat: 'Matematica', count: 10}] 
             }
         ];
 
@@ -631,7 +536,8 @@
 
         function renderOfficialSelectorGrid() {
             document.getElementById('official-tests-grid').innerHTML = officialTolcs.map(t => {
-                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + 30;
+                const baseQ = t.structure.reduce((acc, s) => acc + s.count, 0);
+                const totalQ = baseQ + (t.hasEnglish ? 30 : 0);
                 return `
                     <div class="bg-white border border-slate-200/80 rounded-3xl p-5 sm:p-6 flex flex-col justify-between hover:border-indigo-500 transition shadow-sm space-y-4 group">
                         <div>
@@ -644,57 +550,14 @@
                             <h4 class="text-base sm:text-lg font-black text-slate-900">${t.name}</h4>
                         </div>
                         <div class="text-xs text-slate-500 space-y-1.5 border-t border-slate-100 pt-3 font-medium">
-                            <p><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> Quesiti totali: <b>${totalQ}</b> (Mod. 1 + Inglese)</p>
-                            <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.timeMinutes}m + ${t.englishMinutes}m</p>
+                            <p><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> Quesiti totali: <b>${totalQ}</b> ${t.hasEnglish ? '(Mod. 1 + Inglese)' : '(Modulo unico)'}</p>
+                            <p><i class="fa-solid fa-clock mr-1 text-indigo-500"></i> Durata: ${t.timeMinutes}m ${t.hasEnglish ? `+ ${t.englishMinutes}m` : ''}</p>
                             <p class="text-amber-600 font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Penalità: -${t.penalty}</p>
                         </div>
                         <button onclick="startOfficialTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-3 rounded-2xl hover:opacity-95 transition text-xs shadow-md shadow-indigo-500/20">Avvia Simulazione</button>
                     </div>
                 `;
             }).join('');
-        }
-
-        function renderIntesaTestGrid() {
-            const container = document.getElementById('intesatest-selector-grid');
-            if (!container) return;
-            container.innerHTML = intesaTestLiveTolcs.map(t => {
-                const totalQ = t.structure.reduce((acc, s) => acc + s.count, 0) + 30;
-                return `
-                    <div class="border border-slate-200/80 p-5 rounded-2xl flex flex-col justify-between space-y-4 hover:border-indigo-500 transition bg-white shadow-sm group">
-                        <div class="flex justify-between items-start">
-                            <div>
-                                <span class="text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider border ${t.badgeColor || 'bg-indigo-50 text-indigo-700 border-indigo-200'}">${t.category}</span>
-                                <h5 class="text-base font-black text-slate-900 mt-2">${t.name}</h5>
-                            </div>
-                            <div class="w-10 h-10 ${t.bgIconColor || 'bg-indigo-50 text-indigo-600'} rounded-2xl flex items-center justify-center text-lg shadow-sm shrink-0">
-                                <i class="fa-solid ${t.icon || 'fa-graduation-cap'}"></i>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between text-xs text-slate-500 font-medium border-t border-slate-100 pt-3">
-                            <span><i class="fa-solid fa-file-lines mr-1 text-indigo-500"></i> ${totalQ} quesiti</span>
-                            <span><i class="fa-solid fa-stopwatch mr-1 text-indigo-500"></i> ${t.timeMinutes}m + ${t.englishMinutes}m</span>
-                        </div>
-                        <button onclick="startFreeLiveTest('${t.id}')" class="w-full gradient-bg text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md shadow-indigo-500/20 hover:opacity-95 flex items-center justify-center">
-                            Avvia Live <i class="fa-solid fa-play ml-1.5 text-[10px]"></i>
-                        </button>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        function verifyIntesaTestPass() {
-            const input = document.getElementById('intesatest-pass-input');
-            const pass = input.value.trim().toUpperCase();
-
-            if (pass === "INTESA2026") {
-                document.getElementById('intesatest-lock-box').classList.add('hidden');
-                document.getElementById('intesatest-content-box').classList.remove('hidden');
-                renderIntesaTestGrid();
-                alert("🎉 Pass verificato! Benvenuto alla simulazione live IntesaTest.");
-            } else {
-                alert("❌ Codice pass errato. Chiedi il codice al tutor in aula.");
-                input.value = '';
-            }
         }
 
         function buildTestStructure(config) {
@@ -712,14 +575,16 @@
             });
 
             let mod2EnglishQuestions = [];
-            let engPool = masterBank['Inglese'] || [{ text: "Choose the correct option: If it ____ tomorrow, we will stay at home.", opts: ["rains", "rained", "will rain", "rain"], correct: 0 }];
-            let engShuffled = [...engPool].sort(() => Math.random() - 0.5);
-            for (let i = 0; i < 30; i++) {
-                let q = engShuffled[i % engShuffled.length];
-                let rawOpts = [...q.opts];
-                let correctText = rawOpts[q.correct];
-                rawOpts.sort(() => Math.random() - 0.5);
-                mod2EnglishQuestions.push({ cat: 'Inglese', text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: true });
+            if (config.hasEnglish) {
+                let engPool = masterBank['Inglese'] || [{ text: "Choose the correct option: If it ____ tomorrow, we will stay at home.", opts: ["rains", "rained", "will rain", "rain"], correct: 0 }];
+                let engShuffled = [...engPool].sort(() => Math.random() - 0.5);
+                for (let i = 0; i < 30; i++) {
+                    let q = engShuffled[i % engShuffled.length];
+                    let rawOpts = [...q.opts];
+                    let correctText = rawOpts[q.correct];
+                    rawOpts.sort(() => Math.random() - 0.5);
+                    mod2EnglishQuestions.push({ cat: 'Inglese', text: q.text, opts: rawOpts, correct: rawOpts.indexOf(correctText), isEnglish: true });
+                }
             }
 
             return {
@@ -728,6 +593,7 @@
                 penalty: config.penalty,
                 timeMinutes: config.timeMinutes,
                 englishMinutes: config.englishMinutes,
+                hasEnglish: config.hasEnglish,
                 module1: mod1Questions,
                 module2: mod2EnglishQuestions,
                 isCustom: false
@@ -739,15 +605,6 @@
             const config = officialTolcs.find(t => t.id === tolcId);
             if (!config) return;
             currentTest = buildTestStructure(config);
-            setupModule1Session();
-        }
-
-        function startFreeLiveTest(tolcId) {
-            if (!currentUser) { alert("Effettua l'accesso prima di avviare il test."); navigate('auth'); return; }
-            const config = intesaTestLiveTolcs.find(t => t.id === tolcId);
-            if (!config) return;
-            currentTest = buildTestStructure(config);
-            currentTest.title = `IntesaTest Live: ${config.name}`;
             setupModule1Session();
         }
 
@@ -796,7 +653,7 @@
             const isLastQuestion = currentIdx === currentQuestions.length - 1;
             let nextBtnText = 'Avanti';
             if (isLastQuestion) {
-                if (currentTest.isCustom) {
+                if (currentTest.isCustom || !currentTest.hasEnglish) {
                     nextBtnText = 'Termina Test';
                 } else {
                     nextBtnText = activeModule === 1 ? 'Passa al Modulo Inglese' : 'Termina Prova';
@@ -817,12 +674,12 @@
                     clearInterval(timer);
                     mod1AnswersStored = [...userAnswers];
                     
-                    if (currentTest.isCustom) {
+                    if (currentTest.isCustom || !currentTest.hasEnglish) {
                         finishCustomDirectTest();
                         return;
                     }
 
-                    ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'intesatest-hub', 'module-transition'].forEach(v => {
+                    ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'module-transition'].forEach(v => {
                         const el = document.getElementById(`view-${v}`);
                         if(el) el.classList.add('hidden');
                     });
@@ -991,7 +848,7 @@
 
         function navigate(view) {
             if (!currentUser && view !== 'auth') { view = 'auth'; }
-            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'intesatest-hub', 'module-transition'].forEach(v => {
+            ['auth', 'dashboard', 'official-selector', 'custom-builder', 'runner', 'results', 'stats', 'study-hub', 'news-hub', 'module-transition'].forEach(v => {
                 const el = document.getElementById(`view-${v}`);
                 if(el) el.classList.toggle('hidden', v !== view);
             });
@@ -1015,7 +872,6 @@
         function openPaywallModal() { document.getElementById('modal-paywall').classList.remove('hidden'); }
         function closePaywallModal() { document.getElementById('modal-paywall').classList.add('hidden'); }
 
-        // --- BOT AI CHAT STILE CHATGPT ---
         function openAiChatModal() {
             document.getElementById('modal-ai-chat').classList.remove('hidden');
             const messagesContainer = document.getElementById('ai-chat-messages');
@@ -1140,6 +996,7 @@
                 title: `TOLC Personalizzato`, 
                 correctPts: 1.0, 
                 penalty: penaltyVal, 
+                hasEnglish: false,
                 module1: allQuestions, 
                 module2: [], 
                 isCustom: true 
@@ -1167,7 +1024,7 @@
 
             errorQuestions = [...new Set(errorQuestions)].sort(() => Math.random() - 0.5);
 
-            currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, module1: errorQuestions, module2: [], isCustom: true };
+            currentTest = { title: `Sessione Rivedi Errori`, correctPts: 1.0, penalty: 0.25, hasEnglish: false, module1: errorQuestions, module2: [], isCustom: true };
             setupModule1Session();
         }
 
@@ -1263,7 +1120,7 @@
         </div>
     </div>
 
-    <!-- MODALE BOT AI CHAT (STILE CHATGPT) -->
+    <!-- MODALE BOT AI CHAT -->
     <div id="modal-ai-chat" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
         <div class="bg-white max-w-xl w-full h-[550px] rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden relative animate-in fade-in zoom-in duration-200">
             <!-- Header Chat -->
