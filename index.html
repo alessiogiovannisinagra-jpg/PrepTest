@@ -232,108 +232,27 @@
             </form>
         </section>
 
-        
         <!-- STUDY HUB VIEW (AREA STUDIO PRO) -->
-<section id="view-study-hub" class="hidden max-w-5xl mx-auto space-y-6">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
-        <div>
-            <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i>Contenuto PRO Sbloccato</span>
-            <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-1">Area Studio & Formulario</h3>
-            <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave, i formulari e i materiali di supporto per tutte le materie dei test CISIA.</p>
-        </div>
-        <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center flex items-center justify-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
-    </div>
-
-    <!-- Griglia Materie Completa -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        
-        <!-- Matematica -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
+        <section id="view-study-hub" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i>Contenuto PRO Sbloccato</span>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-1">Area Studio</h3>
+                    <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali prima di metterti alla prova.</p>
+                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
                     <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-square-root-variable text-blue-600 mr-2"></i> Matematica</h4>
-                    <span class="text-[10px] bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded-md">Core</span>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi utili per i test CISIA.</p>
                 </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi utili per i test CISIA.</p>
-            </div>
-            <a href="areastudio.html?materia=matematica" class="w-full text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-blue-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-        <!-- Fisica -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
                     <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-atom text-amber-600 mr-2"></i> Fisica</h4>
-                    <span class="text-[10px] bg-amber-50 text-amber-700 font-bold px-2 py-0.5 rounded-md">TOLC-I/S</span>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Cinematica, dinamica ($F=ma$) ed energia cinetica per affrontare i quesiti di fisica.</p>
                 </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Cinematica, dinamica ($F=ma$) ed energia cinetica per affrontare i quesiti di fisica.</p>
             </div>
-            <a href="areastudio.html?materia=fisica" class="w-full text-xs bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-        <!-- Chimica -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-flask text-emerald-600 mr-2"></i> Chimica</h4>
-                    <span class="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-md">TOLC-F/B</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Struttura atomica, tavola periodica, legami chimici, moli e reazioni redox fondamentali.</p>
-            </div>
-            <a href="areastudio.html?materia=chimica" class="w-full text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-emerald-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-        <!-- Biologia -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-dna text-rose-600 mr-2"></i> Biologia</h4>
-                    <span class="text-[10px] bg-rose-50 text-rose-700 font-bold px-2 py-0.5 rounded-md">TOLC-B</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Biologia cellulare, genetica mendeliana, sintesi proteica e anatomia umana.</p>
-            </div>
-            <a href="areastudio.html?materia=biologia" class="w-full text-xs bg-rose-600 hover:bg-rose-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-rose-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-        <!-- Logica -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-brain text-purple-600 mr-2"></i> Logica</h4>
-                    <span class="text-[10px] bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded-md">Obbligatorio</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Sillogismi, negazioni, condizioni necessarie/sufficienti e ragionamento deduttivo.</p>
-            </div>
-            <a href="areastudio.html?materia=logica" class="w-full text-xs bg-purple-600 hover:bg-purple-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-purple-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-        <!-- Inglese -->
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-globe text-cyan-600 mr-2"></i> Inglese & Altro</h4>
-                    <span class="text-[10px] bg-cyan-50 text-cyan-700 font-bold px-2 py-0.5 rounded-md">Trasversale</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Comprensione del testo in lingua inglese, grammatica e cenni di scienze della terra.</p>
-            </div>
-            <a href="areastudio.html?materia=inglese" class="w-full text-xs bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-cyan-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Area Studio
-            </a>
-        </div>
-
-    </div>
-</section>
-
+        </section>
 
         <!-- NEWS & BANDI HUB VIEW -->
         <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
