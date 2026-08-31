@@ -233,165 +233,36 @@
         </section>
 
         <!-- STUDY HUB VIEW (AREA STUDIO PRO) -->
-        <section id="view-study-hub" class="hidden max-w-6xl mx-auto space-y-8 p-4 sm:p-6">
-    
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-3xl border border-slate-200 shadow-sm gap-4">
-        <div>
-            <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1.5 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i>Contenuto PRO Sbloccato</span>
-            <h3 class="text-xl sm:text-2xl font-black text-slate-900 mt-2">Area Studio & Formulario CISIA</h3>
-            <p class="text-xs sm:text-sm text-slate-500 font-medium">Copertura totale per tutti i test TOLC (I, E, F, S, B). Formule, concetti chiave e trucchi di risoluzione rapida.</p>
-        </div>
-        <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-3 rounded-xl transition w-full sm:w-auto text-center flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-arrow-left mr-2"></i> Dashboard
-        </button>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-square-root-variable text-blue-600 mr-2 text-lg"></i> Matematica</h4>
-                    <span class="text-[10px] bg-blue-50 text-blue-700 font-bold px-2 py-0.5 rounded-md">Core</span>
+        <section id="view-study-hub" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <span class="bg-amber-400 text-slate-950 text-[10px] font-black px-2.5 py-1 rounded-full uppercase tracking-wider"><i class="fa-solid fa-crown mr-1"></i>Contenuto PRO Sbloccato</span>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-1">Area Studio</h3>
+                    <p class="text-xs text-slate-500 font-medium">Ripassa i concetti chiave e le formule essenziali prima di metterti alla prova.</p>
                 </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Algebra, equazioni/disequazioni fratte, logaritmi, esponenziali, geometria analitica e trigonometria.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-lightbulb text-amber-500 mr-1.5"></i> Focus Logaritmi:</div>
-                    <div class="text-[11px] font-mono text-slate-600 bg-white p-2 rounded-xl border border-slate-200/60 leading-tight">
-                        $\log_a(b \cdot c) = \log_a b + \log_a c$<br>
-                        $\log_a(b^n) = n \cdot \log_a b$
-                    </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
+                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-square-root-variable text-blue-600 mr-2"></i> Matematica</h4>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Prodotti notevoli, equazioni di secondo grado e proprietà dei logaritmi utili per i test CISIA.</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-3">
+                    <h4 class="text-base font-black text-slate-900"><i class="fa-solid fa-atom text-amber-600 mr-2"></i> Fisica</h4>
+                    <p class="text-xs text-slate-600 font-medium bg-slate-50 p-3.5 rounded-xl border border-slate-100 leading-relaxed">Cinematica, dinamica ($F=ma$) ed energia cinetica per affrontare i quesiti di fisica.</p>
                 </div>
             </div>
-            <button onclick="openSubjectModal('matematica')" class="w-full text-xs bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-blue-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Matematica
-            </button>
-        </div>
+        </section>
 
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-atom text-amber-600 mr-2 text-lg"></i> Fisica</h4>
-                    <span class="text-[10px] bg-amber-50 text-amber-700 font-bold px-2 py-0.5 rounded-md">TOLC-I/S</span>
+        <!-- NEWS & BANDI HUB VIEW -->
+        <section id="view-news-hub" class="hidden max-w-4xl mx-auto space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-5 sm:p-6 rounded-3xl border border-slate-200 shadow-sm gap-3">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-black text-slate-900">Bandi, Link & Guide Ufficiali</h3>
+                    <p class="text-xs text-slate-500 font-medium">Accedi direttamente ai portali istituzionali per verificare date, scadenze e decreti d'ateneo.</p>
                 </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Cinematica vettoriale, dinamica ($F=ma$), lavoro, energia, termodinamica ed elettromagnetismo di base.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-triangle-exclamation text-rose-500 mr-1.5"></i> Tranello Dinamica:</div>
-                    <p class="text-[11px] text-slate-600 leading-normal">
-                        Ricorda che $F = ma$ vale solo a massa costante. Attenzione ai sistemi a massa variabile.
-                    </p>
-                </div>
+                <button onclick="navigate('dashboard')" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-4 py-2.5 rounded-xl transition w-full sm:w-auto text-center"><i class="fa-solid fa-arrow-left mr-1"></i> Dashboard</button>
             </div>
-            <button onclick="openSubjectModal('fisica')" class="w-full text-xs bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl transition shadow-sm flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Fisica
-            </button>
-        </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-flask text-emerald-600 mr-2 text-lg"></i> Chimica</h4>
-                    <span class="text-[10px] bg-emerald-50 text-emerald-700 font-bold px-2 py-0.5 rounded-md">TOLC-F/B/S</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Struttura atomica, tavola periodica, legami chimici, stechiometria, moli e reazioni redox.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-lightbulb text-amber-500 mr-1.5"></i> Regola Mole:</div>
-                    <p class="text-[11px] text-slate-600 leading-normal">
-                        $\text{Moli } (n) = \frac{\text{Massa } (g)}{\text{Massa Molare } (g/mol)}$
-                    </p>
-                </div>
-            </div>
-            <button onclick="openSubjectModal('chimica')" class="w-full text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-emerald-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Chimica
-            </button>
-        </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-dna text-rose-600 mr-2 text-lg"></i> Biologia</h4>
-                    <span class="text-[10px] bg-rose-50 text-rose-700 font-bold px-2 py-0.5 rounded-md">TOLC-B/F</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Biologia cellulare, genetica mendeliana, sintesi proteica, anatomia umana e bioenergetica.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-lightbulb text-amber-500 mr-1.5"></i> Focus DNA:</div>
-                    <p class="text-[11px] text-slate-600 leading-normal">
-                        Complementarietà delle basi: Adenina si lega a Timina ($A=T$), Citosina a Guanina ($C\equiv G$).
-                    </p>
-                </div>
-            </div>
-            <button onclick="openSubjectModal('biologia')" class="w-full text-xs bg-rose-600 hover:bg-rose-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-rose-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Biologia
-            </button>
-        </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-brain text-purple-600 mr-2 text-lg"></i> Logica</h4>
-                    <span class="text-[10px] bg-purple-50 text-purple-700 font-bold px-2 py-0.5 rounded-md">Obbligatorio</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Sillogismi, negazioni complesse, condizioni necessarie/sufficienti e ragionamento numerico-deduttivo.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-bolt text-purple-600 mr-1.5"></i> Regola d'oro:</div>
-                    <p class="text-[11px] text-slate-600 leading-normal">
-                        "Se A allora B" $\neq$ "Se B allora A". La negazione di "Tutti" è "Almeno uno non".
-                    </p>
-                </div>
-            </div>
-            <button onclick="openSubjectModal('logica')" class="w-full text-xs bg-purple-600 hover:bg-purple-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-purple-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Logica
-            </button>
-        </div>
-
-        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-200/80 space-y-4 flex flex-col justify-between hover:shadow-md transition">
-            <div class="space-y-3">
-                <div class="flex items-center justify-between">
-                    <h4 class="text-base font-black text-slate-900 flex items-center"><i class="fa-solid fa-globe text-cyan-600 mr-2 text-lg"></i> Inglese & Altro</h4>
-                    <span class="text-[10px] bg-cyan-50 text-cyan-700 font-bold px-2 py-0.5 rounded-md">Trasversale</span>
-                </div>
-                <p class="text-xs text-slate-600 font-medium leading-relaxed">
-                    Comprensione del testo in lingua inglese, grammatica base/intermedia e cenni di scienze della terra.
-                </p>
-                <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-100 space-y-1.5">
-                    <div class="text-[11px] font-bold text-slate-800 flex items-center"><i class="fa-solid fa-lightbulb text-amber-500 mr-1.5"></i> Test Inglese:</div>
-                    <p class="text-[11px] text-slate-600 leading-normal">
-                        30 quesiti a risposta multipla incentrati su lettura rapida e sinonimi/contrari.
-                    </p>
-                </div>
-            </div>
-            <button onclick="openSubjectModal('inglese')" class="w-full text-xs bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-2.5 rounded-xl transition shadow-sm shadow-cyan-200 flex items-center justify-center">
-                <i class="fa-solid fa-book-open-reader mr-1.5"></i> Apri Modulo Inglese
-            </button>
-        </div>
-
-    </div>
-
-    <div class="bg-slate-900 text-white p-6 sm:p-8 rounded-3xl shadow-sm space-y-4">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-                <span class="bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Extra PRO</span>
-                <h4 class="text-lg sm:text-xl font-black mt-2">Dispense PDF & Formulari Stampabili</h4>
-                <p class="text-xs text-slate-400 font-medium">Scarica i cheat-sheet tascabili con i trucchi di calcolo rapido per risparmiare tempo prezioso durante il TOLC.</p>
-            </div>
-            <button class="bg-white text-slate-900 hover:bg-slate-100 text-xs font-bold px-5 py-3 rounded-xl transition shrink-0">
-                <i class="fa-solid fa-download mr-2 text-blue-600"></i> Scarica Tutti i PDF
-            </button>
-        </div>
-    </div>
-
-</section>
-
 
             <!-- BANNER BOT AI INTERATTIVO -->
             <div class="gradient-bg p-6 rounded-3xl text-white shadow-lg flex flex-col sm:flex-row justify-between items-center gap-4">
