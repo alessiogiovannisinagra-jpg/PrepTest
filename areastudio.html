@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOLCLAB - Area Studio PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-poppins { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen py-10 px-4 sm:px-6">
+
+    <div class="max-w-6xl mx-auto space-y-8">
+        
+        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl gap-4">
+            <div class="space-y-2">
+                <span class="inline-flex items-center bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">
+                    <i class="fa-solid fa-crown mr-1.5"></i> Contenuto PRO Sbloccato
+                </span>
+                <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Area Studio & Formulari TOLC</h1>
+                <p class="text-xs sm:text-sm text-slate-400 font-medium">Il percorso completo con teoria, esercizi mirati e dispense per superare qualsiasi test CISIA.</p>
+            </div>
+            <a href="dashboard.html" class="inline-flex items-center text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-5 py-3 rounded-2xl transition border border-slate-700">
+                <i class="fa-solid fa-arrow-left mr-2"></i> Torna alla Dashboard
+            </a>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-square-root-variable text-blue-500 mr-2.5 text-xl"></i> Matematica
+                        </h3>
+                        <span class="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 font-bold px-2.5 py-0.5 rounded-md">Core</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Algebra, equazioni/disequazioni di 2° grado, logaritmi, esponenziali, trigonometria e geometria analitica.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-lightbulb text-amber-400 mr-1.5"></i> Formule chiave:</div>
+                        <div class="text-[11px] font-mono text-blue-300 bg-slate-900 p-2 rounded-xl border border-slate-800 leading-tight">
+                            $\log_a(b \cdot c) = \log_a b + \log_a c$<br>
+                            $\Delta = b^2 - 4ac$
+                        </div>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Matematica')" class="w-full text-xs bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-blue-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-atom text-amber-500 mr-2.5 text-xl"></i> Fisica
+                        </h3>
+                        <span class="text-[10px] bg-amber-500/10 text-amber-400 border border-amber-500/20 font-bold px-2.5 py-0.5 rounded-md">TOLC-I/S</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Cinematica vettoriale, dinamica delle forze ($F=ma$), lavoro, energia meccanica e termodinamica.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-triangle-exclamation text-rose-400 mr-1.5"></i> Attenzione al tranello:</div>
+                        <p class="text-[11px] text-slate-400 leading-normal">
+                            $F = ma$ vale solo a massa costante. Nei sistemi variabili usa la quantità di moto.
+                        </p>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Fisica')" class="w-full text-xs bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-amber-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-flask text-emerald-500 mr-2.5 text-xl"></i> Chimica
+                        </h3>
+                        <span class="text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-bold px-2.5 py-0.5 rounded-md">TOLC-F/B</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Struttura dell'atomo, tavola periodica, legami chimici, stechiometria, moli e reazioni redox.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-lightbulb text-amber-400 mr-1.5"></i> Regola delle Moli:</div>
+                        <p class="text-[11px] font-mono text-emerald-300 bg-slate-900 p-2 rounded-xl border border-slate-800">
+                            $n = \frac{\text{Massa}}{\text{Massa Molare}}$
+                        </p>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Chimica')" class="w-full text-xs bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-emerald-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-dna text-rose-500 mr-2.5 text-xl"></i> Biologia
+                        </h3>
+                        <span class="text-[10px] bg-rose-500/10 text-rose-400 border border-rose-500/20 font-bold px-2.5 py-0.5 rounded-md">TOLC-B</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Biologia cellulare, genetica mendeliana, sintesi proteica, anatomia umana e bioenergetica.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-lightbulb text-amber-400 mr-1.5"></i> Basi DNA:</div>
+                        <p class="text-[11px] text-slate-400 leading-normal">
+                            Adenina si lega a Timina ($A-T$), Citosina si lega a Guanina ($C-G$).
+                        </p>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Biologia')" class="w-full text-xs bg-rose-600 hover:bg-rose-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-rose-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-brain text-purple-500 mr-2.5 text-xl"></i> Logica
+                        </h3>
+                        <span class="text-[10px] bg-purple-500/10 text-purple-400 border border-purple-500/20 font-bold px-2.5 py-0.5 rounded-md">Obbligatorio</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Sillogismi, negazioni complesse, condizioni necessarie e sufficienti, e ragionamento logico-verbale.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-bolt text-purple-400 mr-1.5"></i> Regola d'oro:</div>
+                        <p class="text-[11px] text-slate-400 leading-normal">
+                            La negazione di "Tutti sono" è "Almeno uno non è". Non invertire mai l'implicazione logica.
+                        </p>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Logica')" class="w-full text-xs bg-purple-600 hover:bg-purple-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-purple-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800/80 p-6 rounded-3xl flex flex-col justify-between space-y-4 hover:border-slate-700 transition">
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-black text-white flex items-center">
+                            <i class="fa-solid fa-globe text-cyan-500 mr-2.5 text-xl"></i> Inglese & Altro
+                        </h3>
+                        <span class="text-[10px] bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 font-bold px-2.5 py-0.5 rounded-md">Trasversale</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Comprensione del testo in lingua inglese, grammatica e cenni di scienze della terra e orientamento.</p>
+                    <div class="bg-slate-950 p-3.5 rounded-2xl border border-slate-800/60 space-y-2">
+                        <div class="text-[11px] font-bold text-slate-300 flex items-center"><i class="fa-solid fa-lightbulb text-amber-400 mr-1.5"></i> Info Test:</div>
+                        <p class="text-[11px] text-slate-400 leading-normal">
+                            30 quesiti incentrati su lettura rapida, sinonimi e completamento frasi.
+                        </p>
+                    </div>
+                </div>
+                <button onclick="alert('Apertura modulo Inglese')" class="w-full text-xs bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 rounded-2xl transition shadow-lg shadow-cyan-900/20 flex items-center justify-center">
+                    <i class="fa-solid fa-book-open-reader mr-2"></i> Accedi al Modulo
+                </button>
+            </div>
+
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-900/40 via-slate-900 to-slate-900 border border-blue-500/30 p-6 sm:p-8 rounded-3xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6 shadow-xl">
+            <div class="space-y-2">
+                <span class="bg-blue-500 text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider">Extra PRO</span>
+                <h3 class="text-xl font-black text-white">Dispense PDF & Cheat-Sheet Stampabili</h3>
+                <p class="text-xs text-slate-300 max-w-2xl font-medium">Scarica tutti i formulari tascabili e i trucchi di calcolo rapido per ripassare gli argomenti caldi direttamente offline prima del test.</p>
+            </div>
+            <button onclick="alert('Download avviato')" class="bg-white hover:bg-slate-200 text-slate-950 text-xs font-bold px-6 py-3.5 rounded-2xl transition shrink-0 shadow-lg flex items-center">
+                <i class="fa-solid fa-download mr-2 text-blue-600 text-sm"></i> Scarica Pacchetto PDF
+            </button>
+        </div>
+
+    </div>
+
+</body>
+</html>
