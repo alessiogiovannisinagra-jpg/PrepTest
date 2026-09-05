@@ -1,4 +1,366 @@
 {
+  "Economia per ingegneri": [
+    {
+      "text": "PER LE SEGUENTI DOMANDE, INDICARE CON UNA \"X\" QUALE DELLE AFFERMAZIONI NON È CORRETTA.",
+      "opts": [
+        "In un'economia dirigistica le principali decisioni economiche sono prese dal mercato",
+        "Non esiste nessun sistema economico che si affida unicamente al dirigismo",
+        "In un libero mercato gli individui perseguono obiettivi egoistici",
+        "Secondo Adam Smith la \"mano invisibile\" del mercato è efficiente"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Il mercato è in equilibrio quando la curva di domanda e di offerta si intersecano",
+        "Per un prezzo inferiore a quello di equilibrio vi è un eccesso di quantità offerta",
+        "L'aumento del prezzo di un bene sostituto aumenta la domanda",
+        "L'aumento del reddito dei consumatori determina un aumento della domanda se il bene è un \"bene normale\""
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La domanda di un bene è elastica se la sua elasticità al prezzo è maggiore di 0",
+        "I \"beni inferiori\" sono caratterizzati da un'elasticità della domanda al reddito negativa",
+        "L'elasticità dell'offerta misura la variazione percentuale della quantità offerta in ragione dell'aumento del 1% del prezzo del bene",
+        "L'elasticità incrociata al prezzo di un altro bene è positiva quando i due beni sono sostitutivi"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Dato un vincolo di bilancio, i panieri d'angolo sono le combinazioni massime acquistabili composte solo da uno dei beni",
+        "La pendenza della curva di utilità rappresenta il prezzo relativo tra i beni",
+        "La teoria della scelta del consumatore (teoria dell'indifferenza) si basa sull'ipotesi che il consumatore sia insaziabile",
+        "Curve di utilità orizzontali indicano che il tasso marginale di sostituzione tra i due beni è nullo"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "I proprietari azionisti di una società di capitali ottengono un reddito attraverso i dividendi che la società paga agli azionisti in proporzione alla loro quota di capitale sociale",
+        "I proprietari azionisti di una società di capitali ottengono un reddito attraverso i guadagni di capitale derivanti dall'aumento del valore dei titoli azionari della società",
+        "Il capitale netto di una società è il saldo positivo tra Ricavi e Costi",
+        "Gli azionisti di una società aspirano sempre a ottenere il massimo profitto, gli amministratori e i top-managers non sempre"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Una tecnica di produzione caratterizzata da un elevato rapporto tra capitale e lavoro utilizzato è detta ad alta intensità di capitale",
+        "Il lungo periodo è il tempo necessario per consentire all'impresa di modificare tutti i fattori produttivi in reazione a cambiamenti esogeni",
+        "I vantaggi delle economie di scala si presentano principalmente nel breve periodo",
+        "Una delle cause principali di diseconomie di scala è costituita dagli elevati costi di controllo e coordinamento che accompagnano la crescita della dimensione dell'impresa"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "PER LE SEGUENTI DOMANDE, INDICARE CON UNA \"X\" QUALE DELLE AFFERMAZIONI NON È CORRETTA.",
+      "opts": [
+        "In un'economia dirigistica le principali decisioni economiche sono prese dal governo",
+        "Non esiste nessun sistema economico che si affida unicamente al dirigismo",
+        "In un libero mercato gli individui perseguono obiettivi egoistici",
+        "Secondo Adam Smith la \"mano invisibile\" del mercato non è efficiente"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Il mercato è in equilibrio quando la curva di domanda e di offerta si intersecano",
+        "Per un prezzo inferiore a quello di equilibrio vi è un eccesso di quantità offerta",
+        "L'aumento del prezzo di un bene sostituto aumenta la domanda",
+        "L'aumento del reddito dei consumatori determina una riduzione della domanda se il bene è un \"bene normale\""
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La domanda di un bene è elastica se la sua elasticità al prezzo è maggiore di 1",
+        "I \"beni inferiori\" sono caratterizzati da un'elasticità della domanda al reddito negativa",
+        "L'elasticità dell'offerta misura la variazione percentuale della quantità offerta in ragione dell'aumento del 1% del prezzo del bene",
+        "L'elasticità incrociata al prezzo di un altro bene è positiva quando i due beni sono complementari"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La teoria della scelta del consumatore presuppone che il consumatore cerchi di massimizzare la sua utilità",
+        "Le curve d'indifferenza rappresentano le preferenze e i gusti dei consumatori",
+        "Le curve d'indifferenza sono caratterizzate da un tasso marginale di sostituzione decrescente",
+        "A prezzi costanti, un aumento del reddito del consumatore fa ruotare la curva di bilancio in senso antiorario verso l'alto"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Una società a responsabilità limitata (srl) è una società di capitali",
+        "I profitti sono la differenza tra i ricavi e i costi",
+        "I profitti massimi si ottengono per quel volume di produzione per il quale il costo marginale è uguale al ricavo marginale",
+        "A parità di ricavo marginale, un aumento del costo marginale accresce il volume ottimo di produzione"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La funzione di produzione mostra il massimo output producibile dati i fattori produttivi a disposizione",
+        "Il costo medio è uguale al costo totale diviso la quantità prodotta",
+        "In presenza di economie di scala, la curva del costo medio di lungo periodo (LAC) diminuisce al crescere della quantità prodotta",
+        "Il costo medio è sempre superiore al costo marginale"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "In un settore perfettamente concorrenziale il venditore è un \"price-taker\"",
+        "In un settore perfettamente concorrenziale il prezzo è uguale al ricavo marginale",
+        "In un settore perfettamente monopolistico le barriere all'ingresso sono infinitamente alte",
+        "Nel modello oligopolistico di Bertrand le imprese considerano dato il volume di produzione scelto dal rivale"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La macroeconomia si focalizza sull'interazione tra i diversi settori dell'economia",
+        "Il PIL può essere misurato attraverso il metodo del valore aggiunto e della spesa aggregata",
+        "Nel flusso circolare del reddito, i prelievi totali sono uguali alle immissioni totali",
+        "Il Prodotto Nazionale Lordo è il PIL al quale sono aggiunti i redditi dall'estero"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Un investimento modifica i dati economici e contabili d'impresa perché, tra le altre cose, aumenta le immobilizzazioni nell'attivo del bilancio",
+        "In regime di interesse composto il valore all'anno \"n\" di un capitale presente \"Po\", quando il tasso di interesse è \"i\" si calcola come P_n = P_0(1+i)^n",
+        "Il flusso di cassa si calcola come differenza tra le entrate e le uscite di periodo",
+        "Il valore attuale netto (NPV) di un investimento è uguale alla somma dei flussi di cassa attualizzati"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "PER LE SEGUENTI DOMANDE, INDICARE CON UNA \"X\" QUALE DELLE AFFERMAZIONI NON È CORRETTA.",
+      "opts": [
+        "Secondo la legge dei rendimenti decrescenti ogni lavoratore addizionale fa aumentare la produzione totale di un ammontare minore di quello prodotto dai precedenti lavoratori addizionali",
+        "Nel mercato le decisioni delle famiglia circa il consumo di beni e delle imprese circa cosa e come produrre sono rese compatibili attraverso aggiustamento dei prezzi",
+        "La Mano invisibile è l'azione del libero mercato che attraverso i prezzi spinge gli individui, orientati al perseguimento di interessi privati, a compiere scelte economicamente non efficienti per la società",
+        "Le organizzazioni economiche cubane e cinese sono più dirigistiche di quelle inglese e americana"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Si ha un eccesso di offerta quando la quantità offerta eccede la quantità domandata a prezzi correnti",
+        "In un mercato in equilibrio la spesa totale dei produttori e il ricavo totale dei consumatori coincidono",
+        "I beni inferiori sono caratterizzati da una domanda che diminuisce al crescere del reddito degli acquirenti",
+        "La disponibilità di una tecnologia più efficiente sposta verso destra e verso il basso la curva di offerta di un bene"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "L'elasticità della domanda di un bene indica il grado di reattività della quantità domandata alle variazioni del prezzo del bene",
+        "Se la domanda è elastica variazioni negative del prezzo determinano un incremento più che proporzionale alla spesa totale",
+        "I beni di lusso presentano un'elasticità della domanda al reddito uguale a 1",
+        "L'elasticità incrociata al prezzo di un altro bene è positiva quando i due beni sono sostitutivi"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La linea di bilancio mostra tutte le quantità massime acquistabili di un bene data la quantità di un altro bene",
+        "La pendenza della linea di bilancio rappresenta il prezzo relativo tra due beni",
+        "Lungo una curva di indifferenza l'utilità del consumatore è decrescente",
+        "I consumatori massimizzano la loro utilità scegliendo il paniere della curva di indifferenza tangente alla linea di bilancio"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Una società a responsabilità limitata (srl) è una società di capitali",
+        "I profitti sono la differenza tra i ricavi e i costi",
+        "I profitti massimi si ottengono per quel volume di produzione per il quale il costo medio è uguale al ricavo medio",
+        "A parità di ricavo marginale, un aumento del costo marginale diminuisce il volume ottimo di produzione"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La funzione di produzione mostra il massimo output producibile dati i fattori produttivi a disposizione",
+        "Il costo medio è uguale al costo totale diviso la quantità prodotta",
+        "In presenza di economie di scala, la curva del costo medio di lungo periodo (SATC) diminuisce al crescere della quantità prodotta",
+        "Il costo medio e costo marginale si eguagliano nel minimo del costo medio"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "PER LE SEGUENTI DOMANDE, INDICARE CON UNA \"X\" QUALE DELLE AFFERMAZIONI NON È CORRETTA.",
+      "opts": [
+        "In un settore perfettamente concorrenziale il venditore è un \"price-taker\"",
+        "In un settore perfettamente concorrenziale il prezzo è uguale al ricavo marginale",
+        "In un settore perfettamente monopolistico le barriere all'ingresso sono infinitamente alte",
+        "Nel modello oligopolistico di Bertrand le imprese considerano dato il volume di produzione scelto dal rivale"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La curva di offerta di un settore si ottiene sommando per ogni livello di prezzo le quantità domandate dalle famiglie",
+        "Il monopolista è un venditore \"price-maker\"",
+        "In un settore perfettamente concorrenziale il volume ottimo di produzione è determinato dall'uguaglianza tra prezzo e costo marginale",
+        "L'oligopolio è una struttura di mercato caratterizzata da un significativo grado di concentrazione dell'offerta"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La macroeconomia si focalizza sull'interazione tra i diversi settori dell'economia",
+        "Il PIL può essere misurato attraverso il metodo del valore aggiunto e della spesa aggregata",
+        "Nel flusso circolare del reddito, i prelievi totali sono uguali alle immissioni totali",
+        "Il Prodotto Nazionale Lordo è il PIL al quale sono aggiunte le importazioni"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Il PIL nominale misura il PIL ai prezzi correnti",
+        "Il PIL pro capite misura il valore medio del PIL e non è indicativo del benessere individuale di ciascun cittadino",
+        "Il PIL dell'Italia è circa 2.000 milioni di euro",
+        "Le esportazioni misurano il valore delle merci prodotte all'interno del sistema economico, ma vendute all'estero."
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Un investimento pluriennale modifica i dati patrimoniali di un'impresa ma non quelli del conto economico",
+        "In regime di interesse composto il valore all'anno \"n\" di un capitale presente \"Po\", quando il tasso di interesse è \"i\" si calcola come P_n = P_0(1+i)^n",
+        "Il flusso di cassa si calcola come differenza tra le entrate e le uscite di periodo",
+        "Il valore attuale netto (NPV) di un investimento è uguale alla somma dei flussi di cassa attualizzati"
+      ],
+      "correct": 0
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "In regime di interesse semplice (tasso i) il valore futuro F di un capitale presente P dopo n anni, è uguale a: F = P(1 + i * n)",
+        "Investimenti con periodi di recupero (PAYBACK) lunghi sono meno convenuti.",
+        "Se il NPV_A di un progetto A è superiore al NPV_B di un progetto B, allora AEA_A > AEA_B (con AE = Equivalente Annuo)",
+        "Una iniziativa di investimento è accettabile se presenta un TIR > MARR"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "PER LE SEGUENTI DOMANDE, INDICARE CON UNA \"X\" QUALE DELLE AFFERMAZIONI NON È CORRETTA.",
+      "opts": [
+        "L'economia positiva studia come funziona un sistema economico, l'economia normativa studia come è possibile migliorarlo",
+        "La frontiera delle possibilità produttive mostra la quantità minima che può essere prodotta di un bene, dato il livello di produzione di un altro bene",
+        "Il costo di opportunità di un bene corrisponde alla quantità di altri beni a cui deve rinunciarsi per un'unità addizionale del bene considerato",
+        "Il costo di opportunità rappresenta la pendenza della frontiera delle possibilità produttive"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La curva di domanda rappresenta la relazione che esiste tra quantità domandata e prezzo",
+        "Per un prezzo inferiore a quello di equilibrio vi è un eccesso di quantità domandata",
+        "L'aumento del prezzo di un bene complementare diminuisce la domanda",
+        "Uno spostamento verso destra della domanda determina un aumento del prezzo e una diminuzione della quantità di equilibrio"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "L'elasticità della domanda di un bene indica il grado di reattività della quantità domandata alle variazioni del prezzo del bene",
+        "Se la domanda è elastica variazioni negative del prezzo determinano un incremento meno che proporzionale alla spesa totale",
+        "I beni di lusso presentano un'elasticità della domanda al reddito maggiore di 1",
+        "L'elasticità incrociata al prezzo di un altro bene è positiva quando i due beni sono sostitutivi"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La linea di bilancio mostra tutte le quantità massime acquistabili di un bene data la quantità di un altro bene",
+        "La pendenza della linea di bilancio rappresenta il prezzo relativo tra due beni",
+        "Lungo una curva di indifferenza l'utilità del consumatore è decrescente",
+        "I consumatori massimizzano la loro utilità scegliendo il paniere della curva di indifferenza tangente alla linea di bilancio"
+      ],
+      "correct": 2
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "I soci in una società di persone sono illimitatamente responsabili",
+        "Il profitto è ciò che l'impresa ottiene dalla vendita di un bene e di un servizio",
+        "Il cotso marginale è la variazione del costo totale in ragione di un'unità addizionale di prodotto",
+        "A parità di ricavo marginale, uno spostamento verso destra del ricavo marginale accresce il volume ottimo di produzione"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "Nel lungo periodo l'impresa può variare tutti i fattori produttivi (fissi e variabili) a disposizione",
+        "In presenza di economie di scala, la curva del costo medio di lungo periodo (LAC) ha un andamento a \"U\"",
+        "Il costo medio di breve periodo (SATC) è la somma del costo medio fisso (SAFC) e costo medio variabile (SAVC)",
+        "Nel breve periodo l'impresa produce la quantità ottimale per la quale il costo marginale di breve periodo è uguale al ricavo marginale, purché il prezzo sia superiore al costo medio variabile"
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "La curva di offerta di un settore si ottiene sommando per ogni livello di prezzo le quantità offerte da ciascuna impresa",
+        "Il monopolista è un venditore \"price-maker\"",
+        "In un settore perfettamente concorrenziale il volume ottimo di produzione è determinato dall'uguaglianza tra prezzo e costo marginale",
+        "L'oligopolio è una struttura di mercato caratterizzata da un basso grado di concentrazione dell'offerta"
+      ],
+      "correct": 3
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "PIL nominale misura il PIL ai prezzi correnti",
+        "PIL pro capite misura il valore medio del PIL ed è indicativo del benessere individuale di ciascun cittadino",
+        "PIL dell'Italia è circa 1.600 miliardi di euro",
+        "Le esportazioni misurano il valore delle merci prodotte all'interno del sistema economico, ma vendute all'estero."
+      ],
+      "correct": 1
+    },
+    {
+      "text": "Indicare con una \"x\" quale delle seguenti affermazioni non è corretta.",
+      "opts": [
+        "TIR è uguale al tasso di interesse più elevato che l'investitore può pagare senza che l'investimento cessi di essere redditizio",
+        "I \"sunk cost\" non devono essere considerati nella valutazione economico-finanziaria di un progetto d'investimento",
+        "Il MARR è il tasso minimo di rendimento conveniente",
+        "Il periodo di recupero dell'investimento (PAYBACK) è un metodo di valutazione appropriato quando l'investimento non è rischioso"
+      ],
+      "correct": 0
+    }
+  ],
   "Matematica": [
     {
       "text": "Qual è l'equazione della retta passante per il punto P(1, 2) e avente coefficiente angolare m = 3?",
